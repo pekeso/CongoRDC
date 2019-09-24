@@ -63,29 +63,29 @@ Cash Flow Report example:
 ![Cash Flow Report Example](https://raw.githubusercontent.com/BananaAccounting/CongoRDC/master/reports/statements/cashflow/images/banana_report.png)
 
 # Releases history
-2019-01-14
-* Update Cash Flow with new formulas.
+2019-09-23
+* Update Banana Accounting file .ac2 templates.
+* Update Cash Flow, changed all formulas using only groups. Accounts are not used anymore.
 
-2019-01-21
-* Update Cash Flow, changed ZC formula.
+2019-05-27
+* Update Cash Flow, changed FH,FJ,FO and FQ formulas.
 
-2019-02-11
-* Update Cash Flow, changed FD,FJ,FK and FE formulas.
-* Added company and address information on the reports.
+2019-05-21
+* Update Cash Flow, changed FD,FE,FG,FH,FK,FL and FO formulas.
+
+2019-04-01
+* Update Cash Flow, changed FD and FE formulas
 
 2019-02-15
 * Update Cash Flow, changed FD,FF,FG and FN formulas.
 * Changed header information on the reports.
 
-2019-04-01
-* Update Cash Flow, changed FD and FE formulas
+2019-02-11
+* Update Cash Flow, changed FD,FJ,FK and FE formulas.
+* Added company and address information on the reports.
 
-2019-05-21
-* Update Cash Flow, changed FD,FE,FG,FH,FK,FL and FO formulas.
+2019-01-21
+* Update Cash Flow, changed ZC formula.
 
-2019-05-27
-* Update Cash Flow, changed FH,FJ,FO and FQ formulas.
-
-2019-09-23
-* Update Banana Accounting file .ac2 templates.
-* Update Cash Flow, changed all formulas using only groups. Accounts are not used anymore.
+2019-01-14
+* Update Cash Flow with new formulas.
