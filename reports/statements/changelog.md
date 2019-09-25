@@ -16,4 +16,4 @@
 
 2019-05-27: Update Cash Flow app; Changed formulas (FH,FJ,FO,FQ) 
 
-2019-09.23: Update Cash Flow app; Changed all formulas using only groups, accounts are not used anymore.
+2019-09.23: Update Cash Flow app; Changed all formulas. Now only groups are used, accounts are not used anymore.
