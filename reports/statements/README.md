@@ -1,14 +1,14 @@
-# Accounting reports for OHADA-RDC
+# Rapports comptables pour OHADA-RDC
 
-The BananaApp [Accounting Reports (OHADA - RDC)](https://www.banana.ch/apps/fr/node/9093) creates a report with the following three documents:
-* Balance Sheet
-* Profit/Loss Statement
-* Cash Flow
+L'App Banana [Rapports comptables (OHADA - RDC)](https://www.banana.ch/apps/fr/node/9093) crée un rapport avec les trois documents suivants
+* Bilan
+* Compte de Résultat 
+* Flux de Trésorerie
 
-The app has been developed following the specific OHADA-RDC documentations:
-* [Balance Sheet documentation](https://github.com/BananaAccounting/CongoRDC/blob/master/reports/statements/balancesheet/balancesheet_documentation.pdf)
-* [Profit/Loss Statement documentation](https://github.com/BananaAccounting/CongoRDC/blob/master/reports/statements/profitlossstatement/profitlosstatement_documentation.pdf)
-* [Cash Flow documentation](https://github.com/BananaAccounting/CongoRDC/blob/master/reports/statements/cashflow/cashflow_documentation.pdf)
+L'application a été développée en suivant les documentations spécifiques OHADA-RDC :
+* [Documentation concernant le Bilan](https://github.com/BananaAccounting/CongoRDC/blob/master/reports/statements/balancesheet/balancesheet_documentation.pdf)
+* [Documentation concernant le Compte de Résultat](https://github.com/BananaAccounting/CongoRDC/blob/master/reports/statements/profitlossstatement/profitlosstatement_documentation.pdf)
+* [Documentation concernant le Flux de Trésorerie](https://github.com/BananaAccounting/CongoRDC/blob/master/reports/statements/cashflow/cashflow_documentation.pdf)
 
 In the documentations, the syntax used to specify which data to use is **{account/group,column}**, where:
 * **account/group**: indicates the account or group of the Accounts table in Banana (groups begins with **Gr=**);
