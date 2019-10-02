@@ -42,7 +42,7 @@ Il est facultatif : si le fichier de l'année précédente est sélectionné, il
 
 ### Installer le BananaApp:
 * Démarrer Banana Comptabilité.
-* Installer le BananaApp **Rapports Comptables (OHADA - RDC)**. Consulter la documentation [Menu Apps](https://www.banana.ch/doc9/fr/node/4727).
+* Installer le BananaApp **Rapports Comptables (OHADA - RDC)**. Consulter la documentation [Menu Apps](https://www.banana.ch/doc/fr/node/4702).
 
 ### Run the BananaApp:
 * Open your accounting file with Banana.
