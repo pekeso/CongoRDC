@@ -52,7 +52,7 @@ Il est facultatif : si le fichier de l'année précédente est sélectionné, il
 Exemple rapport Bilan Actif :
 ![Active Balance Sheet Report Example](https://raw.githubusercontent.com/BananaAccounting/CongoRDC/master/reports/statements/balancesheet/images/balancesheet_active_report.png)
 
-Exemple rapport Bilan Passifs :
+Exemple rapport Bilan Passif :
 ![Passive Balance Sheet Report Example](https://raw.githubusercontent.com/BananaAccounting/CongoRDC/master/reports/statements/balancesheet/images/balancesheet_passive_report.png)
 
 Exemple rapport Compte de Résultat
