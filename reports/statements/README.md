@@ -10,15 +10,15 @@ L'application a été développée en suivant les documentations spécifiques OH
 * [Documentation concernant le Compte de Résultat](https://github.com/BananaAccounting/CongoRDC/blob/master/reports/statements/profitlossstatement/profitlosstatement_documentation.pdf)
 * [Documentation concernant le Flux de Trésorerie](https://github.com/BananaAccounting/CongoRDC/blob/master/reports/statements/cashflow/cashflow_documentation.pdf)
 
-In the documentations, the syntax used to specify which data to use is **{account/group,column}**, where:
-* **account/group**: indicates the account or group of the Accounts table in Banana (groups begins with **Gr=**);
-* **column**: indicates the type of data (Opening, Debit, Credit, Total(debit-credit)) of the Accounts table in Banana;
-* **(-1)**: indicates that the value must be inverted. If positive inverts to a negative value, if negative inverts to a positive value.
+Dans la documentation, la syntaxe utilisée pour spécifier les données à utiliser est **{compte/groupe,colonne}**, où:
+* **compte/groupe**: indique le compte ou le groupe du tableau Comptes dans Banana (les groupes commencent avec **Gr=**) ;
+* **colonne**: indique le type de données (Ouverture, Débit, Crédit, Total(débit-crédit)) du tableau Comptes dans Banana ;
+* **(-1)**: indique que la valeur doit être inversée. Si positif, inverse à une valeur négative, si négatif, inverse à une valeur positive.
 
-JavaScript files:
-* [Balance Sheet JavaScript file](https://raw.githubusercontent.com/BananaAccounting/CongoRDC/master/reports/statements/balancesheet/ch.banana.africa.balancesheetrdc.js)
-* [Profit/Loss Statement JavaScript file](https://raw.githubusercontent.com/BananaAccounting/CongoRDC/master/reports/statements/profitlossstatement/ch.banana.africa.profitlossstatementrdc.js)
-* [Cash Flow JavaScript file](https://raw.githubusercontent.com/BananaAccounting/CongoRDC/master/reports/statements/cashflow/ch.banana.africa.cashflowrdc.js)
+Fichiers JavaScript :
+* [Fichier JavaScript Bilan](https://raw.githubusercontent.com/BananaAccounting/CongoRDC/master/reports/statements/balancesheet/ch.banana.africa.balancesheetrdc.js)
+* [Fichier JavaScript Compte de Résultat](https://raw.githubusercontent.com/BananaAccounting/CongoRDC/master/reports/statements/profitlossstatement/ch.banana.africa.profitlossstatementrdc.js)
+* [Fichier JavaScript Flux de Trésorerie](https://raw.githubusercontent.com/BananaAccounting/CongoRDC/master/reports/statements/cashflow/ch.banana.africa.cashflowrdc.js)
 
 
 ## Banana Accounting file settings
