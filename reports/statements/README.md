@@ -21,29 +21,28 @@ Fichiers JavaScript :
 * [Fichier JavaScript Flux de Trésorerie](https://raw.githubusercontent.com/BananaAccounting/CongoRDC/master/reports/statements/cashflow/ch.banana.africa.cashflowrdc.js)
 
 
-## Banana Accounting file settings
-In Banana select from the **menu File** the command **File and accounting propeties...**.
-### Address
-* Select the **Address** tab.
-* Insert the **company name** in the Company field.
-* Insert the **Designation of the entity number** in the Fiscal number field.
-* Insert the **Identification number** in the Vat/Sales tex number.
+## Configurations fichier Banana Comptabilité
+Dans Banana sélectionnez dans le menu **Fichier** la commande **Propriétés...**
+### Adresse
+* Sélectionnez la section **Adresse**.
+* Insérez le **nom de la société** dans le champ Société.
+* Insérez le **Désignation du numéro de l'entité** dans le champ Numéro fiscal.
+* Insérez le **Numéro d'identification** dans le champ Numéro de TVA.
 
-The data inserted will be used to fill the header information of the report.
+Les données insérées seront utilisées pour remplir l'en-tête du rapport.
 
 ### Options
-* Select the **Options** tab.
-* Insert the **file from previous year**. 
+* Sélectionnez la section **Options**.
+* Insérez le **fichier de l'année précédente**. 
 
-The file from previous year is used only for the Cash Flow report.
-It is optional: if the previous year file is selected it is used to calculate and then insert on the report the data in the EXERCICE N-1 column. If no file is selected, the EXERCICE N-1 column will be empty.
+Le fichier de l'année précédente n'est utilisé que pour le rapport des flux de trésorerie.
+Il est facultatif : si le fichier de l'année précédente est sélectionné, il est utilisé pour calculer puis insérer dans le rapport les données dans la colonne EXERCICE N-1. Si aucun fichier n'est sélectionné, la colonne EXERCICE N-1 sera vide.
 
+## Comment cela fonctionne
 
-## How it works
-
-### Install the BananaApp:
-* Start Banana Accounting.
-* Install the BananaApp **Accounting Reports (OHADA - RDC)**. Visit the [Menu Apps](https://www.banana.ch/doc9/en/node/4727) documentation.
+### Installer le BananaApp:
+* Démarrer Banana Comptabilité.
+* Installer le BananaApp **Rapports Comptables (OHADA - RDC)**. Consulter la documentation [Menu Apps](https://www.banana.ch/doc9/fr/node/4727).
 
 ### Run the BananaApp:
 * Open your accounting file with Banana.
