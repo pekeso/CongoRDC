@@ -44,21 +44,21 @@ Il est facultatif : si le fichier de l'année précédente est sélectionné, il
 * Démarrer Banana Comptabilité.
 * Installer le BananaApp **Rapports Comptables (OHADA - RDC)**. Consulter la documentation [Menu Apps](https://www.banana.ch/doc/fr/node/4702).
 
-### Run the BananaApp:
-* Open your accounting file with Banana.
-* In Banana select from the **menu Apps** the BananaApp **Accounting Reports (OHADA - RDC)** then **Balance Sheet, Profit/Loss Statement, Cash Flow**.
-* Check the results.
+### Exécuter le BananaApp:
+* Ouvrez votre fichier de comptabilité avec Banana.
+* Dans Banana, sélectionnez de **menu Apps** le BananaApp **Rapports Comptables (OHADA - RDC)** ensuite **Bilan, Comptede Résultat, Flux de Trésorerie**.
+* Contrôler le résultat.
 
-Active Balance Sheet Report example:
+Exemple rapport Bilan Actif :
 ![Active Balance Sheet Report Example](https://raw.githubusercontent.com/BananaAccounting/CongoRDC/master/reports/statements/balancesheet/images/balancesheet_active_report.png)
 
-Passive Balance Sheet Report example:
+Exemple rapport Bilan Passifs :
 ![Passive Balance Sheet Report Example](https://raw.githubusercontent.com/BananaAccounting/CongoRDC/master/reports/statements/balancesheet/images/balancesheet_passive_report.png)
 
-Profit/Loss Statement Report example:
+Exemple rapport Compte de Résultat
 ![Profit/Loss Statement Report Example](https://raw.githubusercontent.com/BananaAccounting/CongoRDC/master/reports/statements/profitlossstatement/images/profitlossstatement_report.png)
 
-Cash Flow Report example:
+Exemple rapport Flux de Trésorerie
 ![Cash Flow Report Example](https://raw.githubusercontent.com/BananaAccounting/CongoRDC/master/reports/statements/cashflow/images/banana_report.png)
 
 # Releases history
