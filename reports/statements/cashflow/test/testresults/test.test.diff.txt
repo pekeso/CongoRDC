@@ -1,11 +1,11 @@
 Test Banana Apps
 ----------------
 
-Date:        2019-04-01 08:36:05.061
-Duration:    00:00:01.282
-Application: BananaExpm90 9.0.3.190320
-OS:          macOS Mojave (10.14)
-Qt:          5.12.1
+Date:        2019-10-11 15:05:12.532
+Duration:    00:00:02.806
+Application: BananaExpm90 9.0.4.191009
+OS:          macOS 10.15
+Qt:          5.12.3
 
 Test summary
 ------------

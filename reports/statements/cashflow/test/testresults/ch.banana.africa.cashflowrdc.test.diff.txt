@@ -1,85 +1,22 @@
 Test Banana Apps
 ----------------
 
-Date:        2019-09-17 15:27:52.927
-Duration:    00:00:01.105
-Application: BananaExpm90 9.0.4.190710
+Date:        2019-10-11 15:04:08.510
+Duration:    00:00:03.087
+Application: BananaExpm90 9.0.4.191009
 OS:          macOS 10.15
 Qt:          5.12.3
 
 Test summary
 ------------
 
-Test failed
+Test succesfully completed
 
-> Fatal errors:  2
-> Differences:   22
-> Added:         2
+> Fatal errors:  0
+> Differences:   0
+> Added:         0
 > Deleted:       0
-> Identical:     34
-> Total results: 58
+> Identical:     56
+> Total results: 56
 > Total files:   1
-
-Differences Summary
--------------------
-
-> Files with fatal errors
->> testresults/ch.banana.africa.cashflowrdc.test/ch.banana.africa.cashflowrdc.test.txt
-
-> Files with differences
->> testresults/ch.banana.africa.cashflowrdc.test/ch.banana.africa.cashflowrdc.test.txt
-
-> Files with results only in current
->> testresults/ch.banana.africa.cashflowrdc.test/ch.banana.africa.cashflowrdc.test.txt
-
-Differences Details
--------------------
-
->> testresults/ch.banana.africa.cashflowrdc.test/ch.banana.africa.cashflowrdc.test.txt
-			5  + \keyvalue{Result}{Failed}
-			6  + \fatalerror{Error: Assertion failed, actual: "-52.00", expected: "-38.00"}
-			 5 - \keyvalue{Result}{Passed}
-			24  + FA  & Capacité d'Autofinancement Globale (CAFG)  &  & -52.00  & -52.00 \\
-			25  + FB  & (-) Variation actif circulant HAO  &  & 0.00  & 0.00 \\
-			 23 - FA  & Capacité d'Autofinancement Globale (CAFG)  &  & -38.00  & -38.00 \\
-			 24 - FB  & (-) Variation actif circulant HAO  &  & 3.00  & 3.00 \\
-			27  + FD  & (-) Variation des créances  &  & -82.00  & -88.00 \\
-			28  + FE  & (+) Variation du passif circulant  &  & -22.00  & -22.00 \\
-			29  +  & Variation du BF lié aux activités opérationnelles (FB+FC+FD+FE)  &  & -96.00  & -102.00 \\
-			30  + ZB  & Flux de trésorerie provenant des activités opérationnelles (somme FA à FE)  & B  & 0.00  & 6.00 \\
-			 26 - FD  & (-) Variation des créances  &  & -74.00  & -80.00 \\
-			 27 - FE  & (+) Variation du passif circulant  &  & -36.00  & -36.00 \\
-			 28 -  & Variation du BF lié aux activités opérationnelles (FB+FC+FD+FE)  &  & -99.00  & -105.00 \\
-			 29 - ZB  & Flux de trésorerie provenant des activités opérationnelles (somme FA à FE)  & B  & -11.00  & -5.00 \\
-			33  + FG  & (-) Décaissements liés aux acquisitions d'immobilisations corporelles  &  & 35.00  & 35.00 \\
-			34  + FH  & (-) Décaissements liés aux acquisitions d'immobilisations financières  &  & 5.00  & 5.00 \\
-			35  + FI  & (+) Encaissements liés aux cessions d'immobilisations incorporelles et corporelles  &  & 0.00  & 0.00 \\
-			 32 - FG  & (-) Décaissements liés aux acquisitions d'immobilisations corporelles  &  & 4.00  & 4.00 \\
-			 33 - FH  & (-) Décaissements liés aux acquisitions d'immobilisations financières  &  & -5.00  & -5.00 \\
-			 34 - FI  & (+) Encaissements liés aux cessions d'immobilisations incorporelles et corporelles  &  & 109.00  & 109.00 \\
-			37  + ZC  & Flux de trésorerie provenant des activités d'investissement (somme FF à FJ)  & C  & -49.00  & -49.00 \\
-			 36 - ZC  & Flux de trésorerie provenant des activités d'investissement (somme FF à FJ)  & C  & 101.00  & 101.00 \\
-			39  + FK  & (+) Augmentations de capital par apports nouveaux  &  & 0.00  & 0.00 \\
-			40  + FL  & (+) Subventions d'investissement reçues  &  & 2.00  & 2.00 \\
-			41  + FM  & (-) Prélèvements sur le capital  &  & 0.00  & 0.00 \\
-			42  + FN  & (-) Dividendes verses  &  & 0.00  & 0.00 \\
-			43  + ZD  & Flux de trésorerie provenant des capitaux propres (somme FK à FN)  & D  & 2.00  & 2.00 \\
-			 38 - FK  & (+) Augmentations de capital par apports nouveaux  &  & 4.00  & 0.00 \\
-			 39 - FL  & (+) Subventions d'investissement reçues  &  & 13.00  & 13.00 \\
-			 40 - FM  & (-) Prélèvements sur le capital  &  & 10.00  & 10.00 \\
-			 41 - FN  & (-) Dividendes verses  &  & 5.00  & 5.00 \\
-			 42 - ZD  & Flux de trésorerie provenant des capitaux propres (somme FK à FN)  & D  & 2.00  & -2.00 \\
-			45  + FO  & (+) Emprunts  &  & 0.00  & 0.00 \\
-			 44 - FO  & (+) Emprunts  &  & 51.00  & 51.00 \\
-			47  + FQ  & (-) Remboursements des emprunts et autres dettes financières  &  & 0.00  & 0.00 \\
-			48  + ZE  & Flux de trésorerie provenant des capitaux étrangers (somme FO à FQ)  & E  & 0.00  & 0.00 \\
-			49  + ZF  & Flux de trésorerie provenant des activités de financement (D+E)  & F  & 2.00  & 2.00 \\
-			50  + ZG  & VARIATION DE LA TRESORERIE NETTE DE LA PERIODE (B+C+F)  & G  & -47.00  & -41.00 \\
-			51  + ZH  & Trésorerie nette au 31 Décembre (G+A) Contrôle : Trésorerie actif 2018 - trésorerie passif 2018 =  & H  & 93.00  & 99.00 \\
-			 46 - FQ  & (-) Remboursements des emprunts et autres dettes financières  &  & 47.00  & 47.00 \\
-			 47 - ZE  & Flux de trésorerie provenant des capitaux étrangers (somme FO à FQ)  & E  & 4.00  & 4.00 \\
-			 48 - ZF  & Flux de trésorerie provenant des activités de financement (D+E)  & F  & 6.00  & 2.00 \\
-			 49 - ZG  & VARIATION DE LA TRESORERIE NETTE DE LA PERIODE (B+C+F)  & G  & 96.00  & 98.00 \\
-			 50 - ZH  & Trésorerie nette au 31 Décembre (G+A) Contrôle : Trésorerie actif 2018 - trésorerie passif 2018 =  & H  & 236.00  & 238.00 \\
-			56  + \fatalerror{Error: One or more tests failed}
 

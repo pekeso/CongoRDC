@@ -18,21 +18,19 @@
 \newenvironment{testcase}[1]{\section*{Test: #1}}{\newpage}
 \newenvironment{test}[1]{\section*{Test case: #1}}{}
 %Begin test data
-%%SCRIPT{/Users/ivan/Documents/GitHub/Africa/RDC/statements/cashflow/test/ch.banana.africa.cashflowrdc.test.js}
+%%SCRIPT{/Users/ivan/Documents/GitHub/CongoRDC/reports/statements/cashflow/test/ch.banana.africa.cashflowrdc.test.js}
 %
 \begin{testcase}{TestCashflowRDC}
 \begin{test}{testVerifyMethods}
 \textvalue{The object Test defines methods to verify conditions.}\\
-\keyvalue{Result}{Failed}
-\fatalerror{Error: Assertion failed, actual: "-52.00", expected: "-38.00"}
-\info{Location}{qrc - /javascript/test/ch.banana.test.script.testsuite.js:180}
+\keyvalue{Result}{Passed}
 \end{test}
 \begin{test}{testBananaApps}
 \textvalue{This test will tests the BananaApp cashflow\_rdc.js}\\
 \begin{reportvalue}{Report Cash Flow RDC}
 \begin{longtable}[l]{ l  l }
-COMPANY NAME  & Exercice clos le 31.12.2018 \\
-ADDRESS - CITY - STATE  & Durée (en mois) 12 \\
+EROPER AUPA  & Exercice clos le 31.12.2019 \\
+Phrabo Ubelernem l°868, V/ URGET - EIURGERM O - SI Errum  & Durée (en mois) 12 \\
 \end{longtable}
   \\
   \\
@@ -40,41 +38,40 @@ ADDRESS - CITY - STATE  & Durée (en mois) 12 \\
 TABLEAU DES FLUX DE TRESORERIE \\
   \\
 \begin{longtable}[l]{ l  l  l  l  l }
-REF  & LIBELLES  &  & EXERCICE 2018  & EXERCICE 2017 \\
-ZA  & Trésorerie nette au 1er janvier (Trésorerie actif N-1 - trésorerie passif N-1)  & A  & 140.00  & 140.00 \\
+REF  & LIBELLES  &  & EXERCICE 2019  & EXERCICE 2018 \\
+ZA  & Trésorerie nette au 1er janvier (Trésorerie actif N-1 - trésorerie passif N-1)  & A  & 2'240'000.00  & 2'240'000.00 \\
  & Flux de trésorerie provenant des activités opérationnelles  &  &  & \\
-FA  & Capacité d'Autofinancement Globale (CAFG)  &  & -52.00  & -52.00 \\
+FA  & Capacité d'Autofinancement Globale (CAFG)  &  & 744'019.00  & 743'997.00 \\
 FB  & (-) Variation actif circulant HAO  &  & 0.00  & 0.00 \\
-FC  & (-) Variation des stocks  &  & 8.00  & 8.00 \\
-FD  & (-) Variation des créances  &  & -82.00  & -88.00 \\
-FE  & (+) Variation du passif circulant  &  & -22.00  & -22.00 \\
- & Variation du BF lié aux activités opérationnelles (FB+FC+FD+FE)  &  & -96.00  & -102.00 \\
-ZB  & Flux de trésorerie provenant des activités opérationnelles (somme FA à FE)  & B  & 0.00  & 6.00 \\
+FC  & (-) Variation des stocks  &  & 1'891'000.00  & 1'891'004.00 \\
+FD  & (-) Variation des créances  &  & 500'000.00  & 500'005.00 \\
+FE  & (+) Variation du passif circulant  &  & 1'267'191.00  & 1'267'198.00 \\
+ & Variation du BF lié aux activités opérationnelles (FB+FC+FD+FE)  &  & 3'658'191.00  & 3'658'207.00 \\
+ZB  & Flux de trésorerie provenant des activités opérationnelles (somme FA à FE)  & B  & -379'790.00  & -379'814.00 \\
  & Flux de trésorerie provenant des activités d'investissements   &  &  & \\
-FF  & (-) Décaissements liés aux acquisitions d'immobilisations incorporelles  &  & 19.00  & 19.00 \\
-FG  & (-) Décaissements liés aux acquisitions d'immobilisations corporelles  &  & 35.00  & 35.00 \\
-FH  & (-) Décaissements liés aux acquisitions d'immobilisations financières  &  & 5.00  & 5.00 \\
+FF  & (-) Décaissements liés aux acquisitions d'immobilisations incorporelles  &  & 0.00  & 0.00 \\
+FG  & (-) Décaissements liés aux acquisitions d'immobilisations corporelles  &  & 500'000.00  & 500'001.00 \\
+FH  & (-) Décaissements liés aux acquisitions d'immobilisations financières  &  & 0.00  & 0.00 \\
 FI  & (+) Encaissements liés aux cessions d'immobilisations incorporelles et corporelles  &  & 0.00  & 0.00 \\
-FJ  & (+) Encaissements liés aux cessions d'immobilisations financières  &  & 10.00  & 10.00 \\
-ZC  & Flux de trésorerie provenant des activités d'investissement (somme FF à FJ)  & C  & -49.00  & -49.00 \\
+FJ  & (+) Encaissements liés aux cessions d'immobilisations financières  &  & 0.00  & 0.00 \\
+ZC  & Flux de trésorerie provenant des activités d'investissement (somme FF à FJ)  & C  & -500'000.00  & -500'001.00 \\
  & Flux de trésorerie provenant du financement par les capitaux propres  &  &  & \\
 FK  & (+) Augmentations de capital par apports nouveaux  &  & 0.00  & 0.00 \\
-FL  & (+) Subventions d'investissement reçues  &  & 2.00  & 2.00 \\
+FL  & (+) Subventions d'investissement reçues  &  & 0.00  & 0.00 \\
 FM  & (-) Prélèvements sur le capital  &  & 0.00  & 0.00 \\
 FN  & (-) Dividendes verses  &  & 0.00  & 0.00 \\
-ZD  & Flux de trésorerie provenant des capitaux propres (somme FK à FN)  & D  & 2.00  & 2.00 \\
+ZD  & Flux de trésorerie provenant des capitaux propres (somme FK à FN)  & D  & 0.00  & 0.00 \\
  & Trésorerie provenant du financement par les capitaux étrangers  &  &  & \\
-FO  & (+) Emprunts  &  & 0.00  & 0.00 \\
+FO  & (+) Emprunts  &  & 500'000.00  & 500'001.00 \\
 FP  & (+) Autres dettes financières  &  & 0.00  & 0.00 \\
 FQ  & (-) Remboursements des emprunts et autres dettes financières  &  & 0.00  & 0.00 \\
-ZE  & Flux de trésorerie provenant des capitaux étrangers (somme FO à FQ)  & E  & 0.00  & 0.00 \\
-ZF  & Flux de trésorerie provenant des activités de financement (D+E)  & F  & 2.00  & 2.00 \\
-ZG  & VARIATION DE LA TRESORERIE NETTE DE LA PERIODE (B+C+F)  & G  & -47.00  & -41.00 \\
-ZH  & Trésorerie nette au 31 Décembre (G+A) Contrôle : Trésorerie actif 2018 - trésorerie passif 2018 =  & H  & 93.00  & 99.00 \\
+ZE  & Flux de trésorerie provenant des capitaux étrangers (somme FO à FQ)  & E  & 500'000.00  & 500'001.00 \\
+ZF  & Flux de trésorerie provenant des activités de financement (D+E)  & F  & 500'000.00  & 500'001.00 \\
+ZG  & VARIATION DE LA TRESORERIE NETTE DE LA PERIODE (B+C+F)  & G  & -379'790.00  & -379'814.00 \\
+ZH  & Trésorerie nette au 31 Décembre (G+A) Contrôle : Trésorerie actif 2019 - trésorerie passif 2019 =  & H  & 1'860'210.00  & 1'860'186.00 \\
 \end{longtable}
 \end{reportvalue}
 \keyvalue{Result}{Passed}
 \end{test}
-\fatalerror{Error: One or more tests failed}
 \end{testcase}
 \end{document}

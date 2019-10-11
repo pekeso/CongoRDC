@@ -14,7 +14,7 @@
 //
 // @id = ch.banana.africa.cashflowrdc.test
 // @api = 1.0
-// @pubdate = 2019-04-01
+// @pubdate = 2019-10-09
 // @publisher = Banana.ch SA
 // @description = [Test] Cash Flow RDC
 // @task = app.command
@@ -55,36 +55,36 @@ TestCashflowRDC.prototype.cleanup = function() {
 TestCashflowRDC.prototype.testVerifyMethods = function() {
    Test.logger.addText("The object Test defines methods to verify conditions.");
 
-   var banDoc = Banana.application.openDocument("file:script/../test/testcases/accounting_2018.ac2");
+   var banDoc = Banana.application.openDocument("file:script/../test/testcases/accounting_test_2019.ac2");
    var startDate = banDoc.info("AccountingDataBase","OpeningDate");
    var endDate = banDoc.info("AccountingDataBase","ClosureDate");
    
    // These methods verify that the two parameters are equals
-   Test.assertIsEqual(calculate_ZA(banDoc, startDate, endDate), "140.00");
-   Test.assertIsEqual(calculate_FA(banDoc, startDate, endDate), "-38.00");
-   Test.assertIsEqual(calculate_FB(banDoc, startDate, endDate), "3.00");
-   Test.assertIsEqual(calculate_FC(banDoc, startDate, endDate), "8.00");
-   Test.assertIsEqual(calculate_FD(banDoc, startDate, endDate), "-74.00");
-   Test.assertIsEqual(calculate_FE(banDoc, startDate, endDate), "-36.00");
-   Test.assertIsEqual(calculate_FF(banDoc, startDate, endDate), "19.00");
-   Test.assertIsEqual(calculate_FG(banDoc, startDate, endDate), "4.00");
-   Test.assertIsEqual(calculate_FH(banDoc, startDate, endDate), "-5.00");
-   Test.assertIsEqual(calculate_FI(banDoc, startDate, endDate), "109.00");
-   Test.assertIsEqual(calculate_FJ(banDoc, startDate, endDate), "10.00");
-   Test.assertIsEqual(calculate_FK(banDoc, startDate, endDate), "4.00");
-   Test.assertIsEqual(calculate_FL(banDoc, startDate, endDate), "13.00");
-   Test.assertIsEqual(calculate_FM(banDoc, startDate, endDate), "10.00");
-   Test.assertIsEqual(calculate_FN(banDoc, startDate, endDate), "5.00");
-   Test.assertIsEqual(calculate_FO(banDoc, startDate, endDate), "51.00");
-   Test.assertIsEqual(calculate_FP(banDoc, startDate, endDate), "");
-   Test.assertIsEqual(calculate_FQ(banDoc, startDate, endDate), "47.00");
+   Test.assertIsEqual(Number(calculate_ZA(banDoc, startDate, endDate)), Number("2240000.00"));
+   Test.assertIsEqual(Number(calculate_FA(banDoc, startDate, endDate)), Number("744019.00"));
+   Test.assertIsEqual(Number(calculate_FB(banDoc, startDate, endDate)), Number("0.00"));
+   Test.assertIsEqual(Number(calculate_FC(banDoc, startDate, endDate)), Number("1891000.00"));
+   Test.assertIsEqual(Number(calculate_FD(banDoc, startDate, endDate)), Number("500000.00"));
+   Test.assertIsEqual(Number(calculate_FE(banDoc, startDate, endDate)), Number("1267191.00"));
+   Test.assertIsEqual(Number(calculate_FF(banDoc, startDate, endDate)), Number("0.00"));
+   Test.assertIsEqual(Number(calculate_FG(banDoc, startDate, endDate)), Number("500000.00"));
+   Test.assertIsEqual(Number(calculate_FH(banDoc, startDate, endDate)), Number("0.00"));
+   Test.assertIsEqual(Number(calculate_FI(banDoc, startDate, endDate)), Number("0.00"));
+   Test.assertIsEqual(Number(calculate_FJ(banDoc, startDate, endDate)), Number("0.00"));
+   Test.assertIsEqual(Number(calculate_FK(banDoc, startDate, endDate)), Number("0.00"));
+   Test.assertIsEqual(Number(calculate_FL(banDoc, startDate, endDate)), Number("0.00"));
+   Test.assertIsEqual(Number(calculate_FM(banDoc, startDate, endDate)), Number("0.00"));
+   Test.assertIsEqual(Number(calculate_FN(banDoc, startDate, endDate)), Number("0.00"));
+   Test.assertIsEqual(Number(calculate_FO(banDoc, startDate, endDate)), Number("500000.00"));
+   Test.assertIsEqual(Number(calculate_FP(banDoc, startDate, endDate)), Number("0.00"));
+   Test.assertIsEqual(Number(calculate_FQ(banDoc, startDate, endDate)), Number("0.00"));
    
    var tot_BF = calculate_tot_BF(
       calculate_FB(banDoc, startDate, endDate),
       calculate_FC(banDoc, startDate, endDate),
       calculate_FD(banDoc, startDate, endDate),
       calculate_FE(banDoc, startDate, endDate));
-   Test.assertIsEqual(tot_BF, "-99.00");
+   Test.assertIsEqual(Number(tot_BF), Number("3658191.00"));
    
    var tot_ZB = calculate_tot_ZB(
       calculate_FA(banDoc, startDate, endDate),
@@ -92,7 +92,7 @@ TestCashflowRDC.prototype.testVerifyMethods = function() {
       calculate_FC(banDoc, startDate, endDate),
       calculate_FD(banDoc, startDate, endDate),
       calculate_FE(banDoc, startDate, endDate));
-   Test.assertIsEqual(tot_ZB, "-11.00");
+   Test.assertIsEqual(Number(tot_ZB), Number("-379790.00"));
 
    var tot_ZC = calculate_tot_ZC(
       calculate_FF(banDoc, startDate, endDate),
@@ -100,39 +100,39 @@ TestCashflowRDC.prototype.testVerifyMethods = function() {
       calculate_FH(banDoc, startDate, endDate),
       calculate_FI(banDoc, startDate, endDate),
       calculate_FJ(banDoc, startDate, endDate));
-   Test.assertIsEqual(tot_ZC, "101.00");
+   Test.assertIsEqual(Number(tot_ZC), Number("-500000.00"));
 
    var tot_ZD = calculate_tot_ZD(
       calculate_FK(banDoc, startDate, endDate),
       calculate_FL(banDoc, startDate, endDate),
       calculate_FM(banDoc, startDate, endDate),
       calculate_FN(banDoc, startDate, endDate));
-   Test.assertIsEqual(tot_ZD, "2.00");
+   Test.assertIsEqual(Number(tot_ZD), Number("0.00"));
 
    var tot_ZE = calculate_tot_ZE(
       calculate_FO(banDoc, startDate, endDate),
       calculate_FP(banDoc, startDate, endDate),
       calculate_FQ(banDoc, startDate, endDate));
-   Test.assertIsEqual(tot_ZE, "4.00");
+   Test.assertIsEqual(Number(tot_ZE), Number("500000.00"));
 
    var tot_ZF = calculate_tot_ZF(tot_ZD,tot_ZE);
-   Test.assertIsEqual(tot_ZF, "6.00");
+   Test.assertIsEqual(Number(tot_ZF), Number("500000.00"));
 
    var tot_ZG = calculate_tot_ZG(tot_ZB,tot_ZC,tot_ZF);
-   Test.assertIsEqual(tot_ZG, "96.00");
+   Test.assertIsEqual(Number(tot_ZG), Number("-379790.00"));
 
    var tot_ZH = calculate_tot_ZH(tot_ZG,calculate_ZA(banDoc, startDate, endDate));
-   Test.assertIsEqual(tot_ZH, "236.00");
+   Test.assertIsEqual(Number(tot_ZH), Number("1860210.00"));
 
 }
 
 TestCashflowRDC.prototype.testBananaApps = function() {
    Test.logger.addText("This test will tests the BananaApp cashflow_rdc.js");
    
-   var currentDocument = Banana.application.openDocument("file:script/../test/testcases/accounting_2018.ac2");
+   var currentDocument = Banana.application.openDocument("file:script/../test/testcases/accounting_test_2019.ac2");
    Test.assert(currentDocument, "Current year file ac2 not found");
 
-   var previousDocument = Banana.application.openDocument("file:script/../test/testcases/accounting_2017.ac2");
+   var previousDocument = Banana.application.openDocument("file:script/../test/testcases/accounting_test_2018.ac2");
    Test.assert(previousDocument, "Previous year file ac2 not found");
    
    // Add the report content text to the result txt file
