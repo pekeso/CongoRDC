@@ -14,7 +14,7 @@
 //
 // @id = ch.banana.africa.cashflowrdc
 // @api = 1.0
-// @pubdate = 2019-10-09
+// @pubdate = 2019-10-14
 // @publisher = Banana.ch SA
 // @description = Cash Flow Report (OHADA - RDC) [BETA]
 // @description.fr = Tableau des flux de tresorerie (OHADA - RDC) [BETA]
@@ -600,7 +600,6 @@ function calculate_FA(banDoc, startDate, endDate) {
       + getAmount(Gr=654,total)
       - (-1)getAmount(Gr=754,total)
       + (-1)getAmount(Gr=136,total)
-      + getAmount(Gr=671,total)
       + (-1)getAmount(Gr=TO,total)
       - getAmount(Gr=RP,total)
       - getAmount(Gr=RQ,total)
@@ -610,8 +609,7 @@ function calculate_FA(banDoc, startDate, endDate) {
    var gr654 = getAmount(banDoc,'Gr=654','total',startDate,endDate);
    var gr754 = getAmount(banDoc,'Gr=754','total',startDate,endDate);
    var gr136 = getAmount(banDoc,'Gr=136','total',startDate,endDate);
-   var gr671 = getAmount(banDoc,'Gr=671','total',startDate,endDate);
-   var grTO = getAmount(banDoc,'Gr=TO','total',startDate,endDate);
+   var grTO = getAmount(banDoc,'Gr=TO','total',startDate,endDate);   
    var grRP = getAmount(banDoc,'Gr=RP','total',startDate,endDate);
    var grRQ = getAmount(banDoc,'Gr=RQ','total',startDate,endDate);
    var grRS = getAmount(banDoc,'Gr=RS','total',startDate,endDate);
@@ -620,8 +618,7 @@ function calculate_FA(banDoc, startDate, endDate) {
    res = Banana.SDecimal.add(res,gr654);
    res = Banana.SDecimal.subtract(res, Banana.SDecimal.invert(gr754));
    res = Banana.SDecimal.add(res, Banana.SDecimal.invert(gr136));
-   res = Banana.SDecimal.add(res,gr671);
-   res = Banana.SDecimal.add(res, Banana.SDecimal.invert(grTO));
+   res = Banana.SDecimal.add(res, Banana.SDecimal.invert(grTO));   
    res = Banana.SDecimal.subtract(res,grRP);
    res = Banana.SDecimal.subtract(res,grRQ);
    res = Banana.SDecimal.subtract(res,grRS);
@@ -630,12 +627,18 @@ function calculate_FA(banDoc, startDate, endDate) {
 
 function calculate_FB(banDoc, startDate, endDate) {
    /*
-        getAmount(Gr=BA1,total)
+        getAmount(Gr=BA-1,total)
       - getAmount(Gr=485,total)
+      - getAmount(Gr=4856,total)
    */
-   var grBA1 = getAmount(banDoc,'Gr=BA1','total',startDate,endDate);
+   var grBA1 = getAmount(banDoc,'Gr=BA-1','total',startDate,endDate);
    var gr485 = getAmount(banDoc,'Gr=485','total',startDate,endDate);
-   return Banana.SDecimal.subtract(grBA1,gr485);
+   var gr4856 = getAmount(banDoc,'Gr=4856','total',startDate,endDate);
+   var res = 0;
+   res = Banana.SDecimal.add(res,grBA1);
+   res = Banana.SDecimal.subtract(res,gr485);
+   res = Banana.SDecimal.subtract(res,gr4856);
+   return res;
 }
 
 function calculate_FC(banDoc, startDate, endDate) {
@@ -754,6 +757,7 @@ function calculate_FG(banDoc, startDate, endDate) {
       - (-1)getAmount(Gr=4042,total)
       - getAmount(Gr=252,credit)
       - getAmount(Gr=DB1,credit)
+      - getAmount(Gr=CE,credit)
    */
    var grAJ1 = getAmount(banDoc,'Gr=AJ-1','debit',startDate,endDate);
    var grAK1 = getAmount(banDoc,'Gr=AK-1','debit',startDate,endDate);
@@ -766,6 +770,7 @@ function calculate_FG(banDoc, startDate, endDate) {
    var gr4042 = getAmount(banDoc,'Gr=4042','total',startDate,endDate);
    var gr252_c = getAmount(banDoc,'Gr=252','credit',startDate,endDate);
    var grDB1 = getAmount(banDoc,'Gr=DB1','credit',startDate,endDate);
+   var grCE = getAmount(banDoc,'Gr=CE','credit',startDate,endDate);
    var res = 0;
    res = Banana.SDecimal.add(res,grAJ1);
    res = Banana.SDecimal.add(res,grAK1);
@@ -778,6 +783,7 @@ function calculate_FG(banDoc, startDate, endDate) {
    res = Banana.SDecimal.subtract(res, Banana.SDecimal.invert(gr4042));
    res = Banana.SDecimal.subtract(res,gr252_c);
    res = Banana.SDecimal.subtract(res,grDB1);
+   res = Banana.SDecimal.subtract(res,grCE);
    return res;
 }
 
