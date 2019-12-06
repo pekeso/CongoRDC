@@ -14,7 +14,7 @@
 //
 // @id = ch.banana.africa.prifitlossstatementrdc
 // @api = 1.0
-// @pubdate = 2019-02-15
+// @pubdate = 2019-12-06
 // @publisher = Banana.ch SA
 // @description = Profit/Loss Statement Report (OHADA - RDC) [BETA]
 // @description.fr = Compte de résultat (OHADA - RDC) [BETA]
@@ -92,12 +92,12 @@ function createProfitLossStatementReport(current,report) {
 
    // Table with cash flow data
    var table = report.addTable("tableProfitLossStatement");
-   var col1 = table.addColumn("col1");
-   var col2 = table.addColumn("col2");
-   var col3 = table.addColumn("col3");
-   var col4 = table.addColumn("col4");
-   var col5 = table.addColumn("col5");
-   var col6 = table.addColumn("col6");
+   var col1 = table.addColumn("plCol1");
+   var col2 = table.addColumn("plCol2");
+   var col3 = table.addColumn("plCol3");
+   var col4 = table.addColumn("plCol4");
+   var col5 = table.addColumn("plCol5");
+   var col6 = table.addColumn("plCol6");
    var tableRow;
    
    tableRow = table.addRow();
@@ -656,12 +656,12 @@ function createStyleSheet() {
 
    var tableStyle = stylesheet.addStyle(".tableProfitLossStatement");
    tableStyle.setAttribute("width", "100%");
-   stylesheet.addStyle(".col1", "width:5%");
-   stylesheet.addStyle(".col2", "width:53%");
-   stylesheet.addStyle(".col3", "width:5%");
-   stylesheet.addStyle(".col4", "width:7%");
-   stylesheet.addStyle(".col5", "width:15%");
-   stylesheet.addStyle(".col6", "width:15%");
+   stylesheet.addStyle(".plCol1", "width:5%");
+   stylesheet.addStyle(".plCol2", "width:53%");
+   stylesheet.addStyle(".plCol3", "width:5%");
+   stylesheet.addStyle(".plCol4", "width:7%");
+   stylesheet.addStyle(".plCol5", "width:15%");
+   stylesheet.addStyle(".plCol6", "width:15%");
    stylesheet.addStyle("table.tableProfitLossStatement td", "border:thin solid black;padding-bottom:1px;padding-top:3px");
 
    return stylesheet;
