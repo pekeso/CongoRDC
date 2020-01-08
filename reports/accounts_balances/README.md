@@ -1,8 +1,8 @@
 # Rapport Balance des comptes
 
-L'extension Banana [Balance des comptes]() crée un rapport avec les balances des comptes sur base de l'example OHADA.
+L'extension Banana Balance des comptes crée un rapport avec les balances des comptes sur base de l'example OHADA.
 
-L'application a été développée en suivant la documentation spécifique [Balance_des_comptes](https://github.com/BananaAccounting/CongoRDC/blob/master/reports/accounts_balances/balance_des_comptes.pdf)
+L'application a été développée en suivant la [documentation spécifique OHADA](https://github.com/BananaAccounting/CongoRDC/blob/master/reports/accounts_balances/balance_des_comptes.pdf)
 
 Fichiers JavaScript: [Fichier JavaScript Balances des comptes](https://raw.githubusercontent.com/BananaAccounting/CongoRDC/master/reports/accounts_balances/ch.banana.africa.accountsbalances.js)
 
