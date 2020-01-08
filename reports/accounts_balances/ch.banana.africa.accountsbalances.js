@@ -14,7 +14,7 @@
 //
 // @id = ch.banana.africa.accountsbalances
 // @api = 1.0
-// @pubdate = 2020-01-07
+// @pubdate = 2020-01-08
 // @publisher = Banana.ch SA
 // @description = Balance des comptes [BETA]
 // @description.fr = Balance des comptes [BETA]
@@ -67,8 +67,8 @@ function exec() {
 **************************************************************************************/
 function createAccountsBalancesReport(current, currentStartDate, currentEndDate, form, userParam) {
 
-  // var currentStartDate = current.info("AccountingDataBase","OpeningDate");
-  // var currentEndDate = current.info("AccountingDataBase","ClosureDate");
+  var report = Banana.Report.newReport("Balance des comptes");
+
   var currentYear = Banana.Converter.toDate(currentStartDate).getFullYear();
   var previousYear = currentYear-1;
   var company = current.info("AccountingDataBase","Company");
@@ -78,10 +78,6 @@ function createAccountsBalancesReport(current, currentStartDate, currentEndDate,
   var months = monthDiff(Banana.Converter.toDate(currentEndDate), Banana.Converter.toDate(currentStartDate));
   var fiscalNumber = current.info("AccountingDataBase","FiscalNumber");
   var vatNumber = current.info("AccountingDataBase","VatNumber");
-
-  if (!report) {
-    var report = Banana.Report.newReport("Balance des comptes");
-  }
 
   // Header of the report
   var table = report.addTable("table");
@@ -98,7 +94,7 @@ function createAccountsBalancesReport(current, currentStartDate, currentEndDate,
   report.addParagraph(" ", "");
   report.addParagraph(" ", "");
   report.addParagraph(" ", "");
-  report.addParagraph(userParam.title,"bold center");
+  report.addParagraph(userParam.title,"heading bold center");
   report.addParagraph(" ", "");
 
   // Table with cash flow data
@@ -168,6 +164,8 @@ function createAccountsBalancesReport(current, currentStartDate, currentEndDate,
        amountMovementCredit = tRow.value("JCreditAmountAccountCurrency");
        tmpMovementBalance = tRow.value("JBalanceAccountCurrency");
     }
+
+    /* Closure balances */
     if (Banana.SDecimal.sign(tmpMovementBalance) > 0) {
        amountClosureDebit = tmpMovementBalance;
     }
@@ -175,29 +173,29 @@ function createAccountsBalancesReport(current, currentStartDate, currentEndDate,
        amountClosureCredit = Banana.SDecimal.abs(tmpMovementBalance);
     }
 
-    tableRow = table.addRow();
-    tableRow.addCell(form[i].gr,"borderLeft borderRight paddingBottom paddingTop",1);
-    tableRow.addCell(form[i].account,"right borderLeft borderRight paddingBottom paddingTop",1);
-    // if(userParam.characters_number > 0 && form[i].description.length > userParam.characters_number) {
-    //    tableRow.addCell(form[i].description.substring(0,userParam.characters_number),"borderLeft borderRight paddingBottom paddingTop",1);
-    // } else {
-    //    tableRow.addCell(form[i].description,"borderLeft borderRight paddingBottom paddingTop",1);
-    // }
-    tableRow.addCell(form[i].description,"borderLeft borderRight paddingBottom paddingTop",1);
-    tableRow.addCell(formatValues(amountOpeningDebit),"right borderLeft borderRight paddingBottom paddingTop",1);
-    tableRow.addCell(formatValues(amountOpeningCredit),"right borderLeft borderRight paddingBottom paddingTop",1);
-    tableRow.addCell(formatValues(amountMovementDebit),"right borderLeft borderRight paddingBottom paddingTop",1);
-    tableRow.addCell(formatValues(amountMovementCredit),"right borderLeft borderRight paddingBottom paddingTop",1);
-    tableRow.addCell(formatValues(amountClosureDebit),"right borderLeft borderRight paddingBottom paddingTop",1);
-    tableRow.addCell(formatValues(amountClosureCredit),"right borderLeft borderRight paddingBottom paddingTop",1);
 
-    /* Calculate totals */
-    totalAmountOpeningDebit = Banana.SDecimal.add(totalAmountOpeningDebit, amountOpeningDebit);
-    totalAmountOpeningCredit = Banana.SDecimal.add(totalAmountOpeningCredit, amountOpeningCredit);
-    totalAmountMovementDebit = Banana.SDecimal.add(totalAmountMovementDebit, amountMovementDebit);
-    totalAmountMovementCredit = Banana.SDecimal.add(totalAmountMovementCredit, amountMovementCredit);
-    totalAmountClosureDebit = Banana.SDecimal.add(totalAmountClosureDebit, amountClosureDebit);
-    totalAmountClosureCredit = Banana.SDecimal.add(totalAmountClosureCredit, amountClosureCredit);
+    // Add accounts with opening or movements or balances that are not zero
+    if (amountOpeningDebit || amountOpeningCredit || amountMovementDebit || amountMovementCredit || amountClosureDebit || amountClosureCredit) {
+
+      tableRow = table.addRow();
+      tableRow.addCell(form[i].gr,"borderLeft borderRight paddingBottom paddingTop",1);
+      tableRow.addCell(form[i].account,"right borderLeft borderRight paddingBottom paddingTop",1);
+      tableRow.addCell(form[i].description,"borderLeft borderRight paddingBottom paddingTop",1);
+      tableRow.addCell(formatValues(amountOpeningDebit),"right borderLeft borderRight paddingBottom paddingTop",1);
+      tableRow.addCell(formatValues(amountOpeningCredit),"right borderLeft borderRight paddingBottom paddingTop",1);
+      tableRow.addCell(formatValues(amountMovementDebit),"right borderLeft borderRight paddingBottom paddingTop",1);
+      tableRow.addCell(formatValues(amountMovementCredit),"right borderLeft borderRight paddingBottom paddingTop",1);
+      tableRow.addCell(formatValues(amountClosureDebit),"right borderLeft borderRight paddingBottom paddingTop",1);
+      tableRow.addCell(formatValues(amountClosureCredit),"right borderLeft borderRight paddingBottom paddingTop",1);
+
+      /* Calculate totals */
+      totalAmountOpeningDebit = Banana.SDecimal.add(totalAmountOpeningDebit, amountOpeningDebit);
+      totalAmountOpeningCredit = Banana.SDecimal.add(totalAmountOpeningCredit, amountOpeningCredit);
+      totalAmountMovementDebit = Banana.SDecimal.add(totalAmountMovementDebit, amountMovementDebit);
+      totalAmountMovementCredit = Banana.SDecimal.add(totalAmountMovementCredit, amountMovementCredit);
+      totalAmountClosureDebit = Banana.SDecimal.add(totalAmountClosureDebit, amountClosureDebit);
+      totalAmountClosureCredit = Banana.SDecimal.add(totalAmountClosureCredit, amountClosureCredit);
+    }
 
   }
 
@@ -426,6 +424,7 @@ function createStyleSheet(userParam) {
   stylesheet.addStyle(".right", "text-align:right;");
   stylesheet.addStyle(".center", "text-align:center");
   stylesheet.addStyle(".footer", "font-size:8pt;text-align:center");
+  stylesheet.addStyle(".heading", "font-size:12pt;");
 
   stylesheet.addStyle(".borderTop","border-top:thin solid black;");
   stylesheet.addStyle(".borderBottom","border-bottom:thin solid black;");
