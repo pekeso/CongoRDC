@@ -27,6 +27,8 @@ Les données insérées seront utilisées pour remplir l'en-tête du rapport.
 ### Exécuter la Banana Extension:
 * Ouvrez votre fichier de comptabilité avec Banana Comptabilité.
 * Dans Banana, sélectionnez de menu **Extensions** l'extension **Balance des comptes**.
+* Sélectionnez la période.
+* Changez les paramètres (le titre, éventuellement la largeur des colonnes et les marges de la page).
 * Contrôler le résultat.
 
 Exemple:
