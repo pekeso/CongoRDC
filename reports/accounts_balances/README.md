@@ -32,5 +32,6 @@ Les données insérées seront utilisées pour remplir l'en-tête du rapport.
 * Contrôler le résultat.
 
 Exemple:
+
 ![Balance des comptes exemple](https://github.com/BananaAccounting/CongoRDC/raw/master/reports/accounts_balances/balance_des_comptes_exemple.png)
 
