@@ -156,14 +156,9 @@ function createAccountsBalancesReport(current, currentStartDate, currentEndDate,
     }
 
     /* Movements */
-    var transTab = current.currentCard(form[i].account, currentStartDate, currentEndDate);
-    var tmpMovementBalance = "";
-    for (var j = 0; j < transTab.rowCount; j++) {
-       var tRow = transTab.row(j);
-       amountMovementDebit = tRow.value("JDebitAmountAccountCurrency");
-       amountMovementCredit = tRow.value("JCreditAmountAccountCurrency");
-       tmpMovementBalance = tRow.value("JBalanceAccountCurrency");
-    }
+    var amountMovementDebit = getAmount(current, form[i].account,'debit', currentStartDate, currentEndDate);
+    var amountMovementCredit = getAmount(current, form[i].account,'credit', currentStartDate, currentEndDate);
+    var tmpMovementBalance = getAmount(current, form[i].account,'balance', currentStartDate, currentEndDate);
 
     /* Closure balances */
     if (Banana.SDecimal.sign(tmpMovementBalance) > 0) {
