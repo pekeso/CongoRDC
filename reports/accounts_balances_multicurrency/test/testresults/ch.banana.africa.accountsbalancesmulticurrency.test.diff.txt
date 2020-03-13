@@ -1,0 +1,22 @@
+Test Banana Apps
+----------------
+
+Date:        2020-03-13 14:26:47.077
+Duration:    00:00:01.434
+Application: BananaExpm90 9.0.4.191009
+OS:          macOS 10.15
+Qt:          5.12.3
+
+Test summary
+------------
+
+Test succesfully completed
+
+> Fatal errors:  0
+> Differences:   0
+> Added:         0
+> Deleted:       0
+> Identical:     160
+> Total results: 160
+> Total files:   1
+

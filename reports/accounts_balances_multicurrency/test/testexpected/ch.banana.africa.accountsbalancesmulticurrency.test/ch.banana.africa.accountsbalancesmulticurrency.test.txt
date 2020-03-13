@@ -1,0 +1,181 @@
+%%info_test_name{ch.banana.africa.accountsbalancesmulticurrency.test}
+\documentclass{report}
+\usepackage{longtable}
+\usepackage{color}
+\usepackage{listings}
+\usepackage[margin=1cm]{geometry}
+\begin{document}
+\newenvironment{tablevalue}[2]{\textbf{Table: #1}\begin{longtable}[l]{#2}}{\end{longtable}}
+\newenvironment{reportvalue}[1]{\textbf{Report: #1}\\}{}
+\lstnewenvironment{jsonvalue}[1]{\textbf{Json: #1}\lstset{language=Java}}{}
+\lstnewenvironment{xmlvalue}[1]{\textbf{Xml: #1}\lstset{language=Xml}}{}
+\newcommand{\info}[2]{\textit{#1: #2}\\}
+\newcommand{\fatalerror}[1]{\textbf{\textcolor[rgb]{1,0,0}{Fatal error: #1}}\\}
+\newcommand{\keyvalue}[2]{\textbf{Keyvalue: #1} #2\\}
+\newcommand{\textvalue}[1]{#1\\}
+\newcommand{\excltest}[1]{\\Excluded from compare: #1}
+\newcommand{\lognewpage}{\newpage}
+\newenvironment{testcase}[1]{\section*{Test: #1}}{\newpage}
+\newenvironment{test}[1]{\section*{Test case: #1}}{}
+%Begin test data
+%%SCRIPT{/Users/ivan/Documents/GitHub/CongoRDC/reports/accounts_balances_multicurrency/test/ch.banana.africa.accountsbalancesmulticurrency.test.js}
+%
+\begin{testcase}{TestAccountsBalancesMulticurrency}
+\begin{test}{testBananaExtensions}
+\textvalue{This test will tests the Banana Extension accountsbalancesmulticurrency.js}\\
+\begin{reportvalue}{TEST 1 - Report Accounts Balances}
+\begin{longtable}[l]{ l  l }
+KINANO SARL  & Exercice clos le 31.12.2020 \\
+Avenue Tshibangu n°007, C/ LEMBA - KINSHASA I - RD Congo  & Durée (en mois) 12 \\
+\end{longtable}
+  \\
+  \\
+  \\
+Balance des comptes \\
+Devise: CDF \\
+  \\
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l }
+Réf  & N° des comptes  & Intitulés Comptes  & \multicolumn{2}{l}{Soldes à l'ouverture } & \multicolumn{2}{l}{Mouvement } & \multicolumn{2}{l}{Soldes à la clôture }\\
+ &  &  & Débiteur   & Créditeur   & Débit   & Crédit   & Débiteur   & Créditeur  \\
+CA  & 101000  & CAPITAL SOCIAL   & 0.00  & 130'865'000.00  & 0.00  & 0.00  & 0.00  & 130'865'000.00 \\
+DA1  & 162000  & EMPRUNTS ET DETTES AUPRES DES ETABLISSEMENTS DE CREDIT   & 0.00  & 8'500'000.00  & 0.00  & 0.00  & 0.00  & 8'500'000.00 \\
+AJ-1  & 223200  & TERRAINS BÂTIS POUR BATIMENTS ADMINISTRATIFS ET COMMERCIAUX   & 42'500'000.00  & 0.00  & 0.00  & 0.00  & 42'500'000.00  & 0.00 \\
+AK-1  & 231300  & BATIMENTS ADMINISTRATIFS ET COMMERCIAUX SUR SOL PROPRE   & 85'000'000.00  & 0.00  & 0.00  & 0.00  & 85'000'000.00  & 0.00 \\
+BB-1  & 311100  & STOCKS DE MARCHANDISES A1   & 0.00  & 0.00  & 500'000.00  & 0.00  & 500'000.00  & 0.00 \\
+BB-1  & 311200  & STOCKS DE MARCHANDISES A2   & 0.00  & 0.00  & 200'000.00  & 160'000.00  & 40'000.00  & 0.00 \\
+BB-1  & 312200  & STOCKS DE MARCHANDISES B2   & 9'350'000.00  & 0.00  & 520'000.00  & 8'000'000.00  & 1'870'000.00  & 0.00 \\
+BB-1  & 312300  & STOCKS DE MARCHANDISES C1  & 0.00  & 0.00  & 26'250'000.00  & 750'000.00  & 25'500'000.00  & 0.00 \\
+401A  & 401001  & DIENA KINANO   & 0.00  & 0.00  & 0.00  & 500'000.00  & 0.00  & 500'000.00 \\
+401A  & 401002  & KAMBEMBE CLAUDIA   & 0.00  & 3'400'000.00  & 750'000.00  & 26'250'000.00  & 0.00  & 28'900'000.00 \\
+401A  & 401003  & MAMAN ANNIE   & 0.00  & 0.00  & 210'000.00  & 210'000.00  & 0.00  & 0.00 \\
+411A  & 411001  & DOMENICO ZUCCHETTI   & 935'000.00  & 0.00  & 40'000'000.00  & 2'600'000.00  & 38'335'000.00  & 0.00 \\
+411A  & 411003  & DIDIER KINANO   & 340'000.00  & 0.00  & 0.00  & 0.00  & 340'000.00  & 0.00 \\
+411A  & 411110  & BENIMMA  & 0.00  & 0.00  & 246'000.00  & 246'000.00  & 0.00  & 0.00 \\
+BS-1  & 521100  & BANQUE EN CDF  & 1'000'000.00  & 0.00  & 0.00  & 0.00  & 1'000'000.00  & 0.00 \\
+BS-1  & 521510  & BANQUE EN USA  & 2'040'000.00  & 0.00  & 0.00  & 0.00  & 2'040'000.00  & 0.00 \\
+BS-1  & 521540  & BANQUE EN KWANZA  & 1'600'000.00  & 0.00  & 250'000.00  & 210'000.00  & 1'640'000.00  & 0.00 \\
+RA  & 601110  & ACHATS DE MARCHANDISES AU PAYS  & 0.00  & 0.00  & 500'000.00  & 0.00  & 500'000.00  & 0.00 \\
+RA  & 601220  & ACHATS DE MARCHANDISES AUX USA  & 0.00  & 0.00  & 26'250'000.00  & 0.00  & 26'250'000.00  & 0.00 \\
+RA  & 601230  & ACHATS DE MARCHANDISES EN ANGOLA  & 0.00  & 0.00  & 200'000.00  & 0.00  & 200'000.00  & 0.00 \\
+RB  & 603100  & VARIATIONS DES STOCKS MARCHANDISES PAYS  & 0.00  & 0.00  & 0.00  & 500'000.00  & 0.00  & 500'000.00 \\
+RB  & 603110  & VARIATIONS DES STOCKS MARCHANDISES USA  & 0.00  & 0.00  & 0.00  & 26'250'000.00  & 0.00  & 26'250'000.00 \\
+RB  & 603120  & VARIATIONS DES STOCKS MARCHANDISES EURO  & 0.00  & 0.00  & 8'000'000.00  & 0.00  & 8'000'000.00  & 0.00 \\
+RB  & 603140  & VARIATIONS DES STOCKS MARCHANDISES ANGOLA  & 0.00  & 0.00  & 160'000.00  & 200'000.00  & 0.00  & 40'000.00 \\
+RM  & 676000  & PERTES DE CHARGES FINANCIERES   & 0.00  & 0.00  & 3'360'000.00  & 0.00  & 3'360'000.00  & 0.00 \\
+TA  & 701210  & VENTES DE MARCHANDISES EURO  & 0.00  & 0.00  & 0.00  & 40'000'000.00  & 0.00  & 40'000'000.00 \\
+TA  & 701230  & VENTES DE MARCHANDISES ANGOLA  & 0.00  & 0.00  & 0.00  & 240'000.00  & 0.00  & 240'000.00 \\
+TK  & 776000  & GAINS DE CHANGE FINANCIER   & 0.00  & 0.00  & 0.00  & 1'280'000.00  & 0.00  & 1'280'000.00 \\
+ &  &  & 142'765'000.00  & 142'765'000.00  & 107'396'000.00  & 107'396'000.00  & 237'075'000.00  & 237'075'000.00 \\
+\end{longtable}
+  \\
+  \\
+ -  \#page-nr  -  \\
+\end{reportvalue}
+\begin{reportvalue}{TEST 2 - Report Accounts Balances}
+\begin{longtable}[l]{ l  l }
+KINANO SARL  & Exercice clos le 31.12.2020 \\
+Avenue Tshibangu n°007, C/ LEMBA - KINSHASA I - RD Congo  & Durée (en mois) 12 \\
+\end{longtable}
+  \\
+  \\
+  \\
+Balance des comptes \\
+Devise: USD \\
+  \\
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l }
+Réf  & N° des comptes  & Intitulés Comptes  & \multicolumn{2}{l}{Soldes à l'ouverture } & \multicolumn{2}{l}{Mouvement } & \multicolumn{2}{l}{Soldes à la clôture }\\
+ &  &  & Débiteur   & Créditeur   & Débit   & Crédit   & Débiteur   & Créditeur  \\
+CA  & 101000  & CAPITAL SOCIAL   & 0.00  & 76'979.41  & 0.00  & 0.00  & 0.00  & 76'979.41 \\
+DA1  & 162000  & EMPRUNTS ET DETTES AUPRES DES ETABLISSEMENTS DE CREDIT   & 0.00  & 5'000.00  & 0.00  & 0.00  & 0.00  & 5'000.00 \\
+AJ-1  & 223200  & TERRAINS BÂTIS POUR BATIMENTS ADMINISTRATIFS ET COMMERCIAUX   & 25'000.00  & 0.00  & 0.00  & 0.00  & 25'000.00  & 0.00 \\
+AK-1  & 231300  & BATIMENTS ADMINISTRATIFS ET COMMERCIAUX SUR SOL PROPRE   & 50'000.00  & 0.00  & 0.00  & 0.00  & 50'000.00  & 0.00 \\
+BB-1  & 311100  & STOCKS DE MARCHANDISES A1   & 0.00  & 0.00  & 294.12  & 0.00  & 294.12  & 0.00 \\
+BB-1  & 311200  & STOCKS DE MARCHANDISES A2   & 0.00  & 0.00  & 117.65  & 94.12  & 23.53  & 0.00 \\
+BB-1  & 312200  & STOCKS DE MARCHANDISES B2   & 5'500.00  & 0.00  & 305.88  & 4'705.88  & 1'100.00  & 0.00 \\
+BB-1  & 312300  & STOCKS DE MARCHANDISES C1  & 0.00  & 0.00  & 15'441.18  & 441.18  & 15'000.00  & 0.00 \\
+401A  & 401001  & DIENA KINANO   & 0.00  & 0.00  & 0.00  & 294.12  & 0.00  & 294.12 \\
+401A  & 401002  & KAMBEMBE CLAUDIA   & 0.00  & 2'000.00  & 441.18  & 15'441.18  & 0.00  & 17'000.00 \\
+401A  & 401003  & MAMAN ANNIE   & 0.00  & 0.00  & 123.53  & 123.53  & 0.00  & 0.00 \\
+411A  & 411001  & DOMENICO ZUCCHETTI   & 550.00  & 0.00  & 23'529.41  & 1'529.41  & 22'550.00  & 0.00 \\
+411A  & 411003  & DIDIER KINANO   & 200.00  & 0.00  & 0.00  & 0.00  & 200.00  & 0.00 \\
+411A  & 411110  & BENIMMA  & 0.00  & 0.00  & 144.71  & 144.71  & 0.00  & 0.00 \\
+BS-1  & 521100  & BANQUE EN CDF  & 588.24  & 0.00  & 0.00  & 0.00  & 588.24  & 0.00 \\
+BS-1  & 521510  & BANQUE EN USA  & 1'200.00  & 0.00  & 0.00  & 0.00  & 1'200.00  & 0.00 \\
+BS-1  & 521540  & BANQUE EN KWANZA  & 941.18  & 0.00  & 147.06  & 123.53  & 964.71  & 0.00 \\
+RA  & 601110  & ACHATS DE MARCHANDISES AU PAYS  & 0.00  & 0.00  & 294.12  & 0.00  & 294.12  & 0.00 \\
+RA  & 601220  & ACHATS DE MARCHANDISES AUX USA  & 0.00  & 0.00  & 15'441.18  & 0.00  & 15'441.18  & 0.00 \\
+RA  & 601230  & ACHATS DE MARCHANDISES EN ANGOLA  & 0.00  & 0.00  & 117.65  & 0.00  & 117.65  & 0.00 \\
+RB  & 603100  & VARIATIONS DES STOCKS MARCHANDISES PAYS  & 0.00  & 0.00  & 0.00  & 294.12  & 0.00  & 294.12 \\
+RB  & 603110  & VARIATIONS DES STOCKS MARCHANDISES USA  & 0.00  & 0.00  & 0.00  & 15'441.18  & 0.00  & 15'441.18 \\
+RB  & 603120  & VARIATIONS DES STOCKS MARCHANDISES EURO  & 0.00  & 0.00  & 4'705.88  & 0.00  & 4'705.88  & 0.00 \\
+RB  & 603140  & VARIATIONS DES STOCKS MARCHANDISES ANGOLA  & 0.00  & 0.00  & 94.12  & 117.65  & 0.00  & 23.53 \\
+RM  & 676000  & PERTES DE CHARGES FINANCIERES   & 0.00  & 0.00  & 1'976.47  & 0.00  & 1'976.47  & 0.00 \\
+TA  & 701210  & VENTES DE MARCHANDISES EURO  & 0.00  & 0.00  & 0.00  & 23'529.41  & 0.00  & 23'529.41 \\
+TA  & 701230  & VENTES DE MARCHANDISES ANGOLA  & 0.00  & 0.00  & 0.00  & 141.18  & 0.00  & 141.18 \\
+TK  & 776000  & GAINS DE CHANGE FINANCIER   & 0.00  & 0.00  & 0.00  & 752.94  & 0.00  & 752.94 \\
+ &  &  & 83'979.41  & 83'979.41  & 63'174.12  & 63'174.12  & 139'455.88  & 139'455.88 \\
+\end{longtable}
+  \\
+  \\
+  \\
+Change: 1700.000000000000 \\
+  \\
+  \\
+ -  \#page-nr  -  \\
+\end{reportvalue}
+\begin{reportvalue}{TEST 3 - Report Accounts Balances}
+\begin{longtable}[l]{ l  l }
+KINANO SARL  & Exercice clos le 31.12.2020 \\
+Avenue Tshibangu n°007, C/ LEMBA - KINSHASA I - RD Congo  & Durée (en mois) 12 \\
+\end{longtable}
+  \\
+  \\
+  \\
+Balance des comptes \\
+Devise: USD \\
+  \\
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l }
+Réf  & N° des comptes  & Intitulés Comptes  & \multicolumn{2}{l}{Soldes à l'ouverture } & \multicolumn{2}{l}{Mouvement } & \multicolumn{2}{l}{Soldes à la clôture }\\
+ &  &  & Débiteur   & Créditeur   & Débit   & Crédit   & Débiteur   & Créditeur  \\
+CA  & 101000  & CAPITAL SOCIAL   & 0.00  & 130'865'000.00  & 0.00  & 0.00  & 0.00  & 130'865'000.00 \\
+DA1  & 162000  & EMPRUNTS ET DETTES AUPRES DES ETABLISSEMENTS DE CREDIT   & 0.00  & 8'500'000.00  & 0.00  & 0.00  & 0.00  & 8'500'000.00 \\
+AJ-1  & 223200  & TERRAINS BÂTIS POUR BATIMENTS ADMINISTRATIFS ET COMMERCIAUX   & 42'500'000.00  & 0.00  & 0.00  & 0.00  & 42'500'000.00  & 0.00 \\
+AK-1  & 231300  & BATIMENTS ADMINISTRATIFS ET COMMERCIAUX SUR SOL PROPRE   & 85'000'000.00  & 0.00  & 0.00  & 0.00  & 85'000'000.00  & 0.00 \\
+BB-1  & 311100  & STOCKS DE MARCHANDISES A1   & 0.00  & 0.00  & 500'000.00  & 0.00  & 500'000.00  & 0.00 \\
+BB-1  & 311200  & STOCKS DE MARCHANDISES A2   & 0.00  & 0.00  & 200'000.00  & 160'000.00  & 40'000.00  & 0.00 \\
+BB-1  & 312200  & STOCKS DE MARCHANDISES B2   & 9'350'000.00  & 0.00  & 520'000.00  & 8'000'000.00  & 1'870'000.00  & 0.00 \\
+BB-1  & 312300  & STOCKS DE MARCHANDISES C1  & 0.00  & 0.00  & 26'250'000.00  & 750'000.00  & 25'500'000.00  & 0.00 \\
+401A  & 401001  & DIENA KINANO   & 0.00  & 0.00  & 0.00  & 500'000.00  & 0.00  & 500'000.00 \\
+401A  & 401002  & KAMBEMBE CLAUDIA   & 0.00  & 3'400'000.00  & 750'000.00  & 26'250'000.00  & 0.00  & 28'900'000.00 \\
+401A  & 401003  & MAMAN ANNIE   & 0.00  & 0.00  & 210'000.00  & 210'000.00  & 0.00  & 0.00 \\
+411A  & 411001  & DOMENICO ZUCCHETTI   & 935'000.00  & 0.00  & 40'000'000.00  & 2'600'000.00  & 38'335'000.00  & 0.00 \\
+411A  & 411003  & DIDIER KINANO   & 340'000.00  & 0.00  & 0.00  & 0.00  & 340'000.00  & 0.00 \\
+411A  & 411110  & BENIMMA  & 0.00  & 0.00  & 246'000.00  & 246'000.00  & 0.00  & 0.00 \\
+BS-1  & 521100  & BANQUE EN CDF  & 1'000'000.00  & 0.00  & 0.00  & 0.00  & 1'000'000.00  & 0.00 \\
+BS-1  & 521510  & BANQUE EN USA  & 2'040'000.00  & 0.00  & 0.00  & 0.00  & 2'040'000.00  & 0.00 \\
+BS-1  & 521540  & BANQUE EN KWANZA  & 1'600'000.00  & 0.00  & 250'000.00  & 210'000.00  & 1'640'000.00  & 0.00 \\
+RA  & 601110  & ACHATS DE MARCHANDISES AU PAYS  & 0.00  & 0.00  & 500'000.00  & 0.00  & 500'000.00  & 0.00 \\
+RA  & 601220  & ACHATS DE MARCHANDISES AUX USA  & 0.00  & 0.00  & 26'250'000.00  & 0.00  & 26'250'000.00  & 0.00 \\
+RA  & 601230  & ACHATS DE MARCHANDISES EN ANGOLA  & 0.00  & 0.00  & 200'000.00  & 0.00  & 200'000.00  & 0.00 \\
+RB  & 603100  & VARIATIONS DES STOCKS MARCHANDISES PAYS  & 0.00  & 0.00  & 0.00  & 500'000.00  & 0.00  & 500'000.00 \\
+RB  & 603110  & VARIATIONS DES STOCKS MARCHANDISES USA  & 0.00  & 0.00  & 0.00  & 26'250'000.00  & 0.00  & 26'250'000.00 \\
+RB  & 603120  & VARIATIONS DES STOCKS MARCHANDISES EURO  & 0.00  & 0.00  & 8'000'000.00  & 0.00  & 8'000'000.00  & 0.00 \\
+RB  & 603140  & VARIATIONS DES STOCKS MARCHANDISES ANGOLA  & 0.00  & 0.00  & 160'000.00  & 200'000.00  & 0.00  & 40'000.00 \\
+RM  & 676000  & PERTES DE CHARGES FINANCIERES   & 0.00  & 0.00  & 3'360'000.00  & 0.00  & 3'360'000.00  & 0.00 \\
+TA  & 701210  & VENTES DE MARCHANDISES EURO  & 0.00  & 0.00  & 0.00  & 40'000'000.00  & 0.00  & 40'000'000.00 \\
+TA  & 701230  & VENTES DE MARCHANDISES ANGOLA  & 0.00  & 0.00  & 0.00  & 240'000.00  & 0.00  & 240'000.00 \\
+TK  & 776000  & GAINS DE CHANGE FINANCIER   & 0.00  & 0.00  & 0.00  & 1'280'000.00  & 0.00  & 1'280'000.00 \\
+ &  &  & 142'765'000.00  & 142'765'000.00  & 107'396'000.00  & 107'396'000.00  & 237'075'000.00  & 237'075'000.00 \\
+\end{longtable}
+  \\
+  \\
+  \\
+Change: 1.00 \\
+  \\
+  \\
+ -  \#page-nr  -  \\
+\end{reportvalue}
+\keyvalue{Result}{Passed}
+\end{test}
+\end{testcase}
+\end{document}
