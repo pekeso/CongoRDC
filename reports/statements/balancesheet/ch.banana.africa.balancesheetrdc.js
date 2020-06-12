@@ -159,7 +159,7 @@ function createBalanceSheetReport(current,report) {
    tableRow.addCell("Brevets, licences, logiciels, et  droits similaires","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell("","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AF1_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(Banana.SDecimal.invert(AF2_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(formatValues(Banana.SDecimal.invert(AF2_exerciceN)),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AF_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AF_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
