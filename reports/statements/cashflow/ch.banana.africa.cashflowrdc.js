@@ -816,7 +816,7 @@ function calculate_FH(banDoc, startDate, endDate) {
    /*
       + getAmount(Gr=AR-1,debit)
       + getAmount(Gr=AS-1,debit)
-      - getAmount(Gr=4813,total)
+      - (-1)getAmount(Gr=4813,total)
       - getAmount(Gr=4782,credit)
       - getAmount(Gr=4792,debit)
    */
@@ -828,7 +828,7 @@ function calculate_FH(banDoc, startDate, endDate) {
    var res = 0;
    res = Banana.SDecimal.add(res,grAR1);
    res = Banana.SDecimal.add(res,grAS1);
-   res = Banana.SDecimal.subtract(res,gr4813);
+   res = Banana.SDecimal.subtract(res,Banana.SDecimal.invert(gr4813));
    res = Banana.SDecimal.subtract(res,gr4782);
    res = Banana.SDecimal.subtract(res,gr4792);
    return res;
