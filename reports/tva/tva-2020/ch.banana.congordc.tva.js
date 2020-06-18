@@ -49,10 +49,7 @@ function exec() {
    }    
 
    // Create the VAT report for the selected period
-   var startDate = dateForm.selectionStartDate;
-   var endDate = dateForm.selectionEndDate;
-
-   var report = createVATDeclaration(startDate, endDate, current);
+   var report = createVATDeclaration( current, dateForm.selectionStartDate, dateForm.selectionEndDate);
    var stylesheet = createStyleSheet();
    Banana.Report.preview(report, stylesheet);
 }
@@ -62,7 +59,7 @@ function exec() {
 * Function that creates and prints the VAT report
 *
 **************************************************************************************/
-function createVATDeclaration(startDate, endDate, current) {
+function createVATDeclaration(current, startDate, endDate, ) {
 
    // Accounting period for the current year file
    var currentStartDate = current.info("AccountingDataBase","OpeningDate");
@@ -78,7 +75,7 @@ function createVATDeclaration(startDate, endDate, current) {
    var email = current.info("AccountingDataBase","Email");
 
    // Extract data from journal and calculate balances
-   var transactions = getJournal(current, startDate, endDate);
+   var transactions = VatGetJournal(current, startDate, endDate);
 
    if (!report) {
       var report = Banana.Report.newReport("VAT Declaration");
@@ -210,8 +207,10 @@ function createVATDeclaration(startDate, endDate, current) {
    tableRow = table.addRow();
    tableRow.addCell("1","center",1).setStyleAttributes("border:thin black solid");
    tableRow.addCell("Livraisons de biens", "", 11).setStyleAttributes("border:thin black solid");
-   tableRow.addCell("", "center", 4).setStyleAttributes("border:thin black solid");
-   tableRow.addCell("", "center", 4).setStyleAttributes("border:thin black solid");
+   var v1Taxable = VatGetGr1Balance(current, transactions, "1", 2, startDate, endDate);
+   var v1Amount = VatGetGr1Balance(current, transactions, "1", 4, startDate, endDate);
+   tableRow.addCell(formatNumber(v1Taxable), "center", 4).setStyleAttributes("border:thin black solid");
+   tableRow.addCell(formatNumber(v1Amount), "center", 4).setStyleAttributes("border:thin black solid");
 
    /* Row 2: */
    tableRow = table.addRow();
@@ -301,8 +300,11 @@ function createVATDeclaration(startDate, endDate, current) {
    tableRow = table.addRow();
    tableRow.addCell("11", "center", 1);
    tableRow.addCell("Immobilisations", "", 7).setStyleAttributes("border:thin black solid");
-   tableRow.addCell("", "center", 4).setStyleAttributes("border:thin black solid");
-   tableRow.addCell("", "center", 4).setStyleAttributes("border:thin black solid");
+   var v11AmountE = VatGetGr1BalanceExtraInfo(current, transactions, "11", 3, "", startDate, endDate);
+   var v11AmountF = VatGetGr1BalanceExtraInfo(current, transactions, "11", 3, "IMP", startDate, endDate);
+
+   tableRow.addCell(formatNumber(v11AmountE), "center", 4).setStyleAttributes("border:thin black solid");
+   tableRow.addCell(formatNumber(v11AmountF), "center", 4).setStyleAttributes("border:thin black solid");
    tableRow.addCell("", "center", 4).setStyleAttributes("border:thin black solid");
 
    /* Row 12: */
@@ -338,7 +340,6 @@ function createVATDeclaration(startDate, endDate, current) {
    tableRow.addCell("", "center", 4).setStyleAttributes("border:thin black solid");
 
    /* Row 16: */
-   var gr4449 = getAmount(current,'Gr=4449','opening',startDate,endDate);
    tableRow = table.addRow();
    tableRow.addCell("16", "center", 1);
    tableRow.addCell("Report de crédit du mois précédent (déclaration précédente, ligne 24)", "", 7).setStyleAttributes("border:thin black solid");
@@ -561,162 +562,332 @@ function createVATDeclaration(startDate, endDate, current) {
 
 /**************************************************************************************
 *
-* Functions that retrieve and format values from Banana
+* Fromat functions 
 *
 **************************************************************************************/
-
-function getAmount(banDoc,account,property,startDate,endDate) {
-   var currentBal = banDoc.currentBalance(account,startDate,endDate)
-   var value = currentBal[property];
-   return value;
-}
-
-function formatValues(value) {
-   if (!value || value === "0" || value == null) {
-      value = "0";
-   }
-   return Banana.Converter.toLocaleNumberFormat(value);
-}
 
 function formatNumber(amount, convZero) {
 
 	return Banana.Converter.toLocaleNumberFormat(amount, 2, convZero);
 }
 
+/**************************************************************************************
+*
+* VAT functions 
+*
+**************************************************************************************/
+
+/* Function that checks for all the used vat codes without Gr1 and prints a warning message */
+function VatUsedVatCodeWithInappropriateGr1HaveGr1(banDoc, report) {
+
+	// Get all the vat codes used on the Transactions table
+	var usedVatCodes = VatCodeUsedInTransactions(banDoc);
+
+	// For each code checks if on the VatCodes table there is a Gr1
+	// Shows a warning message in red for all the vat codes without the Gr1
+	var codesWithoutGr1 = [];
+
+	// Save all the vat codes without Gr1 into an array
+	for (var i = 0; i < usedVatCodes.length; i++) {
+		var gr1 = VatGetVatCodesForGr1(banDoc, usedVatCodes[i]);
+		if (!gr1) {
+			codesWithoutGr1.push(usedVatCodes[i]);
+		}
+	}
+
+	// Print all the warning messages
+	for (var i = 0; i < codesWithoutGr1.length; i++) {
+		report.addParagraph(param.checkVatCode4 + codesWithoutGr1[i] + param.checkVatCode5, "red");
+	}
+}
+
 /* Function that retrieves the total vat from Banana */
-function getTotalFromBanana(banDoc, checkValues, startDate, endDate) {
-   
+function VatGetTotalFromBananaVatReport(banDoc, startDate, endDate) {
+	var vatReportTable = banDoc.vatReport(startDate, endDate);
+	var res = "";
+
+	for (var i = 0; i < vatReportTable.rowCount; i++) {
+		var tRow = vatReportTable.row(i);
+		var group = tRow.value("Group");
+
+		//The balance is summed in group named "_tot_"
+		if (group === "_tot_") {
+			res = tRow.value("VatBalance"); //VatAmount VatBalance
+
+			// //In order to compare correctly the values we have to invert the sign of the result from Banana (if negative)
+			// if (Banana.SDecimal.sign(totalFromBanana) == -1) {
+			//     totalFromBanana = Banana.SDecimal.invert(totalFromBanana);
+			// }
+		}
+	}
+	return res;
 }
 
-function getPeriodSettings(name) {
+/* checks all the vat/gr1 codes used in the transactions.
+*  Add a warning message (red) to the report if codes with not appropriate Gr1 are used */
+function VatUsedVatCodeWithInappropriateGr1(param, banDoc, report) {
+	var usedGr1Codes = [];
+	var vatCodes = VatCodeUsedInTransactions(banDoc);
+	for (var i = 0; i < vatCodes.length; i++) {
+		var gr1Codes = VatGetVatCodesForGr1(banDoc, vatCodes[i]);
+		for (var j = 0; j < gr1Codes.length; j++) {
+			usedGr1Codes.push(gr1Codes[j]);
+		}
+	}
 
-   // The parameters of the period 
-   var scriptForm = {
-      "selectionStartDate": "",
-      "selectionEndDate": "",
-      "selectionChecked": "false"
-   }
+	//Removing duplicates
+	for (var i = 0; i < usedGr1Codes.length; i++) {
+		for (var x = i + 1; x < usedGr1Codes.length; x++) {
+			if (usedGr1Codes[x] === usedGr1Codes[i]) {
+				usedGr1Codes.splice(x, 1);
+				--x;
+			}
+		}
+	}
 
-   // Read script settings
-   var data = Banana.document.getScriptSettings();
-
-   // Check if there are previously saved settings and read them
-   if (data.length > 0) {
-      try {
-         var readSettings = JSON.parse(data);
-
-         // Check if readSettings is not null, then fill the form parameters with the acquired values
-         if (readSettings) {
-            scriptForm = readSettings;
-         }
-      } catch (e) {}
-   }
-
-   // Take the accounting start date and end date from the document. These will be used as default dates
-   var docStartDate = Banana.document.startPeriod();
-   var docEndDate = Banana.document.endPeriod();
-
-   // A dialog window is opened asking the user to insert the desired period. By defaults, its the accounting period
-   var selectedDates = Banana.Ui.getPeriod(name, docStartDate, docEndDate,
-               scriptForm.selectionStartDate, scriptForm.selectionEndDate, scriptForm.selectionChecked);
-
-   // Take the values entered by the user and save them as new default values
-   // Next time the script will be executed, the dialog window will contain the new values.
-   if (selectedDates) {
-      scriptForm["selectionStartDate"] = selectedDates.startDate;
-      scriptForm["selectionEndDate"] = selectedDates.endDate;
-      scriptForm["selectionChecked"] = selectedDates.hasSelection;
-
-      // Save script settings
-      var formToString = JSON.stringify(scriptForm);
-      var value = Banana.document.setScriptSettings(formToString);
-   } else {
-      // User clicked cancel
-      return;
-   }
-   return scriptForm;
+	for (var j = 0; j < usedGr1Codes.length; j++) {
+		if (usedGr1Codes[j] !== "1" &&
+			usedGr1Codes[j] !== "1a" &&
+			usedGr1Codes[j] !== "1b" &&
+			usedGr1Codes[j] !== "1c" &&
+			usedGr1Codes[j] !== "1d" &&
+			usedGr1Codes[j] !== "1e" &&
+			usedGr1Codes[j] !== "1f" &&
+			usedGr1Codes[j] !== "1g" &&
+			usedGr1Codes[j] !== "2" &&
+			usedGr1Codes[j] !== "3" &&
+			usedGr1Codes[j] !== "4" &&
+			usedGr1Codes[j] !== "5" &&
+			usedGr1Codes[j] !== "6" &&
+			usedGr1Codes[j] !== "7" &&
+			usedGr1Codes[j] !== "8" &&
+			usedGr1Codes[j] !== "9" &&
+			usedGr1Codes[j] !== "10" &&
+			usedGr1Codes[j] !== "11" &&
+			usedGr1Codes[j] !== "12" &&
+			usedGr1Codes[j] !== "13" &&
+			usedGr1Codes[j] !== "14" &&
+			usedGr1Codes[j] !== "xxx" &&
+			usedGr1Codes[j] !== "") {
+			report.addParagraph("VAT code " + " '" + usedGr1Codes[j] + "' " + " invalid", "red");
+		}
+	}
 }
 
-/* Function returning lines from the journal */
-function getJournal(banDoc, startDate, endDate) {
-   var journal = banDoc.journal(banDoc.ORIGINTYPE_CURRENT, banDoc.ACCOUNTTYPE_NORMAL);
-   var length = journal.rowCount;
-   var transactions = []; // Array that will contain all the lines of the transactions
+/* returns an array with all the gr1 codes for the given vat code 
+*  Gr1 code can be separated by ";"                */
+function VatGetVatCodesForGr1(banDoc, vatCode) {
+	var str = [];
+	var table = banDoc.table("VatCodes");
+	if (table === undefined || !table) {
+		return str;
+	}
+	//Loop to take the values of each rows of the table
+	for (var i = 0; i < table.rowCount; i++) {
+		var tRow = table.row(i);
+		var gr1 = tRow.value("Gr1");
+		var vatcode = tRow.value("VatCode");
 
-   for (var i=0; i < length; i++) {
-      var line = {};
-      var tableRow = journal.row(i);
-
-      if (tableRow.value("JDate") >= startDate && tableRow.value("JDate") <= endDate) {
-         line.date = tableRow.value("JDate");
-         line.account = tableRow.value("JAccount");
-         line.vatcode = tableRow.value("JVatCodeWithoutSign");
-         line.doc = tableRow.value("Doc");
-         line.description = tableRow.value("Description");
-         line.isvatoperation = tableRow.value("JVatIsVatOperation");
-
-         // We only take the rows with a VAT code
-         if (line.isvatoperation) {
-            line.vattaxable = tableRow.value("JVatTaxable");   
-            line.vatamount = tableRow.value("VatAmount");
-            line.vatposted = tableRow.value("VatPoste");
-            line.amount = tableRow.value("JAmount");
-
-            transactions.push(line);
-         }
-      }
-   }
-   return transactions;
-}
-
-/* This function sums the vat amounts for the specified vat code and period retrieved from transactions (converted journal's lines)
-   Returns an object containing {vatTaxable, vatPosted} */
-function getVatCodesBalance(transactions, vatCodes, startDate, endDate) {
-   
-}
-
-/* The purpose of this function is to calculate all the VAT balances of the accounts belonging to the same group (grText) */
-function getGr1VatBalance(banDoc, transactions, grCodes, vatClass, startDate, endDate) {
-   
-}
-
-/* The main purpose of this function is to create an array with all the values 
-   of a given column of the table (codeColumn) belonging to the same group (grText) */
-function getVatCodeForGr(banDoc, grText, grColumn) {
-   var codes = [];
-
-   if (!banDoc || !banDoc.table("VatCodes")) {
-      return codes;
-   }
-
-   var table = banDoc.table("VatCodes");
-
-   if (!grColumn) {
-      grColumn = "Gr1";
-   }
-
-   /* Can have multiple values */
-   var arrayGrText = grText.split(';');
-
-   // Loop to take the values of each rows of the table
-   for (var i = 0; i < table.rowCount; i++) {
-      var tRow = table.row(i);
-
-      // If Gr1 column contains other characters (in this case ";") we know there are more values
-		// We have to split them and take all values separately
-      // If there are only alphanumeric characters in Gr1 column we know there is only one value
-      var arrCodeString = tRow.value(grColumn).split(";");
-      for (var j = 0; j < arrayGrText.length; j++) {
-			if (arrayContains(arrCodeString, arrayGrText[j])) {
-				var vatCode = tRow.value('VatCode');
-				if (!arrayContains(codes, vatCode)) {
-					codes.push(vatCode);
+		if (gr1 && vatcode === vatCode) {
+			var code = gr1.split(";");
+			for (var j = 0; j < code.length; j++) {
+				if (code[j]) {
+					str.push(code[j]);
 				}
 			}
 		}
-   }
-   // Return the array  
-   return codes;
+	}
+	return str;
+}
+
+/* Returns an array with all the vat codes used in the Transactions table */
+function VatCodeUsedInTransactions(banDoc) {
+	var str = [];
+	var table = banDoc.table("Transactions");
+	if (table === undefined || !table) {
+		return str;
+	}
+	//Loop to take the values of each rows of the table
+	for (var i = 0; i < table.rowCount; i++) {
+		var tRow = table.row(i);
+		var vatRow = tRow.value("VatCode");
+
+		if (vatRow) {
+			var code = vatRow.split(";");
+			for (var j = 0; j < code.length; j++) {
+				if (code[j]) {
+					str.push(code[j]);
+				}
+			}
+		}
+	}
+	//Removing duplicates
+	for (var i = 0; i < str.length; i++) {
+		for (var x = i + 1; x < str.length; x++) {
+			if (str[x] === str[i]) {
+				str.splice(x, 1);
+				--x;
+			}
+		}
+	}
+	//Return the array
+	return str;
+}
+
+/* Function that returns the lines from the journal as an array */
+function VatGetJournal(banDoc, startDate, endDate) {
+
+	var journal = banDoc.journal(banDoc.ORIGINTYPE_CURRENT, banDoc.ACCOUNTTYPE_NORMAL);
+	var len = journal.rowCount;
+	var transactions = []; //Array that will contain all the lines of the transactions
+
+	for (var i = 0; i < len; i++) {
+
+		var line = {};
+		var tRow = journal.row(i);
+
+		if (tRow.value("JDate") >= startDate && tRow.value("JDate") <= endDate) {
+
+			line.date = tRow.value("JDate");
+			line.account = tRow.value("JAccount");
+			line.vatcode = tRow.value("JVatCodeWithoutSign");
+			line.doc = tRow.value("Doc");
+			line.description = tRow.value("Description");
+			line.isvatoperation = tRow.value("JVatIsVatOperation");
+			
+
+			//We take only the rows with a VAT code and then we convert values from base currency to CHF
+			if (line.isvatoperation) {
+
+				line.vattaxable = tRow.value("JVatTaxable");
+				line.vatamount = tRow.value("VatAmount");
+				line.vatposted = tRow.value("VatPosted");
+				line.amount = tRow.value("JAmount");
+				line.vatextrainfo = tRow.value("VatExtraInfo");
+
+				transactions.push(line);
+			}
+		}
+	}
+	return transactions;
+}
+
+/* Sums the vat amounts for the specified vat code and period retrieved from transactions (converted journal's lines)
+Returns an object containing {vatTaxable, vatPosted, vatAmount} 
+extraInfo is "*" for all or a specific value, inclusive void 
+*/
+function VatGetVatCodesBalanceExtraInfo(transactions, vatCodes, vatExtraInfo, startDate, endDate) {
+
+	var sDate = Banana.Converter.toDate(startDate);
+	var eDate = Banana.Converter.toDate(endDate);
+	var vattaxable = "";
+	var vatposted = "";
+	var vatamount = "";
+	var currentBal = {};
+
+		for (var i = 0; i < transactions.length; i++) {
+         var row = transactions[i];
+         var tDate = Banana.Converter.toDate(row.date);
+			if (tDate >= sDate && tDate <= eDate) {
+            for (var j = 0; j < vatCodes.length; j++) {
+				if (vatCodes[j] === row.vatcode) {
+					if (vatExtraInfo === "*" || vatExtraInfo === row.vatextrainfo) { // The VatExtraInfo column is not used
+						vattaxable = Banana.SDecimal.add(vattaxable, row.vattaxable);
+						vatposted = Banana.SDecimal.add(vatposted, row.vatposted);
+						vatamount = Banana.SDecimal.add(vatamount, row.vatamount);
+					}
+					
+				}
+			}
+		}
+	}
+   currentBal.vatTaxable = vattaxable;
+   currentBal.vatPosted = vatposted;
+   currentBal.vatAmount = vatamount;
+   return currentBal;
+}
+
+/* Retrieve the Vat value for a specific gr1 Codes
+*  grCodes can be more then one, sepatated by ";"
+*  vatClass determines the return value  */
+function VatGetGr1Balance(banDoc, transactions, grCodes, vatClass, startDate, endDate) {
+
+   return VatGetGr1BalanceExtraInfo(banDoc, transactions, grCodes, vatClass, "*", startDate, endDate);
+   
+}
+
+
+/* Retrieve the Vat value for a specific gr1 Codes
+*  grCodes can be more then one, sepatated by ";"
+*  vatClass determines the return value  
+*  extraInfo is "*" for all or a specific value, inclusive void */
+function VatGetGr1BalanceExtraInfo(banDoc, transactions, grCodes, vatClass, vatExtraInfo, startDate, endDate) {
+
+	var vatCodes = VatGetVatCodesForGr(banDoc, grCodes, 'Gr1');
+
+	//Sum the vat amounts for the specified vat code and period
+	var currentBal = VatGetVatCodesBalanceExtraInfo(transactions, vatCodes, vatExtraInfo, startDate, endDate);
+
+	//The "vatClass" decides which value to use
+	if (vatClass == "1") {
+		// Recoverable VAT Taxable (VAT netto)
+		return currentBal.vatTaxable;
+	} else if (vatClass == "2") {
+		// Due  VAT Taxable
+		return Banana.SDecimal.invert(currentBal.vatTaxable);
+	} else if (vatClass == "3") {
+		// Recoverable VAT posted (VAT Amount)
+		return currentBal.vatPosted;
+	} else if (vatClass == "4") {
+		// Due  VAT posted  (VAT Amount)
+		return Banana.SDecimal.invert(currentBal.vatPosted);
+	} else if (vatClass == "5") {
+		// Recoverable VAT gross amount (VAT taxable + VAT amount)
+		return Banana.SDecimal.add(currentBal.vatTaxable, currentBal.vatAmount);
+	} else if (vatClass == "6") {
+		// Due VAT gross amount (VAT taxable + VAT amount)
+		return Banana.SDecimal.invert(Banana.SDecimal.add(currentBal.vatTaxable, currentBal.vatAmount));
+	}
+}
+
+/* Return and array with all the VAT Codes 
+*  belonging to the same group (grCodes) , can include different values separated by ";"
+*  in the indicate colums, usually "Gr1"           */
+function VatGetVatCodesForGr(banDoc, grCodes, grColumn) {
+
+	var str = [];
+	if (!grCodes || !banDoc || !banDoc.table("VatCodes")) {
+		return str;
+	}
+	var table = banDoc.table("VatCodes");
+
+	if (!grColumn) {
+		grColumn = "Gr1";
+	}
+
+	/* Can have multiple values */
+	var arrayGrCodes = grCodes.split(';');
+
+	//Loop to take the values of each rows of the table
+	for (var i = 0; i < table.rowCount; i++) {
+		var tRow = table.row(i);
+
+		//If Gr1 column contains other characters (in this case ";") we know there are more values
+		//We have to split them and take all values separately
+		//If there are only alphanumeric characters in Gr1 column we know there is only one value
+		var arrCodeString = tRow.value(grColumn).split(";");
+		for (var j = 0; j < arrayGrCodes.length; j++) {
+			if (arrayContains(arrCodeString, arrayGrCodes[j])) {
+				var vatCode = tRow.value('VatCode');
+				if (!arrayContains(str, vatCode)) {
+					str.push(vatCode);
+				}
+			}
+		}
+	}
+
+	//Return the array
+	return str;
 }
 
 function arrayContains(array, value) {
@@ -728,130 +899,61 @@ function arrayContains(array, value) {
 	return false;
 }
 
-/* Function that checks for all the used vat codes without Gr1 and prints a warning message */
-function checkUsedVatCodesHaveGr1(banDoc, report) {
-   // Get all the vat codes used on the Transactions table
-   var usedVatCodes = getVatCodesUsed(banDoc);
+/**************************************************************************************
+*
+* Period Settings 
+*
+**************************************************************************************/
 
-   // For each code check if on the VatCode table there is a Gr1
-   // Shows a warning message in red for all the vat codes without the Gr1
-   var codesWithoutGr1 = [];
+/* The main purpose of this function is to allow the user to enter the accounting period desired and saving it for the next time the script is run
+Every time the user runs of the script he has the possibility to change the date of the accounting period */
+function getPeriodSettings(param) {
 
-   // Save all the vat codes without Gr1 into an array
-   for (var i = 0; i < usedVatCodes.length; i++) {
-      var gr1 = getVatCodeGr1(banDoc, usedVatCodes[i]);
-      if (!gr1) {
-         codesWithoutGr1.push(usedVatCodes[i]);
-      }
-   }
+	//The formeters of the period that we need
+	var scriptform = {
+		"selectionStartDate": "",
+		"selectionEndDate": "",
+		"selectionChecked": "false"
+	};
 
-   // Print the warning messages
-   for (var i = 0; i < codesWithoutGr1.length; i++) {
-      report.addParagraph("Warning: " + codesWithoutGr1[i] + " does not exist in Gr1", "red");
-   }
-}
+	//Read script settings
+	var data = Banana.document.getScriptSettings();
 
-/* Function that checks all the vat/gr1 codes used in the transactions.
-   It returns a warning message (red) if wrong codes are used. */
-function checkUsedVatCodes(banDoc, report) {
-   var usedGr1Codes = [];
-   var vatCodes = getVatCodesUsed(banDoc);
-   for (i = 0; i < vatCodes.length; i++) {
-      var gr1Codes = getVatCodeGr1(banDoc, vatCodes[i]);
-      for (var j = 0; j < gr1Codes.length; j++) {
-         usedGr1Codes.push(gr1Codes[j]);
-      }
-   }
+	//Check if there are previously saved settings and read them
+	if (data.length > 0) {
+		try {
+			var readSettings = JSON.parse(data);
 
-   // Removing duplicates
-   for (var i = 0; i < usedGr1Codes.length; i++) {
-      for (var x = i + 1; x < usedGr1Codes.length; x++) {
-         if (usedGr1Codes[x] === usedGr1Codes[i]) {
-            usedGr1Codes.splice(x, 1);
-            --x;
-         }
-      }
-   }
+			//We check if "readSettings" is not null, then we fill the formeters with the values just read
+			if (readSettings) {
+				scriptform = readSettings;
+			}
+		} catch (e) {}
+	}
 
-   for (var j = 0; j < usedGr1Codes.length; j++) {
-      if (usedGr1Codes[j] !== "II-1" && usedGr1Codes[j] !== "II-2" &&
-          usedGr1Codes[j] !== "II-3" && usedGr1Codes[j] !== "II-4" &&
-          usedGr1Codes[j] !== "II-5" && usedGr1Codes[j] !== "II-6" && 
-          usedGr1Codes[j] !== "II-7" && usedGr1Codes[j] !== "II-8" && 
-          usedGr1Codes[j] !== "III-10" && 
-          usedGr1Codes[j] !== "IV-11-e" && usedGr1Codes[j] !== "IV-12-e" &&
-          usedGr1Codes[j] !== "IV-13-e" && usedGr1Codes[j] !== "IV-14-e" &&
-          usedGr1Codes[j] !== "IV-11-f" && usedGr1Codes[j] !== "IV-12-f" &&
-          usedGr1Codes[j] !== "IV-13-f" && usedGr1Codes[j] !== "IV-14-f" && 
-          usedGr1Codes[j] !== "V-18" && usedGr1Codes[j] !== "V-19" &&
-          usedGr1Codes[j] != "V-20") {
-             report.addParagraph("Warning: " + usedGr1Codes[j], "red");
-          }
-   }
-}
+	//We take the accounting "starting date" and "ending date" from the document. These will be used as default dates
+	var docStartDate = Banana.document.startPeriod();
+	var docEndDate = Banana.document.endPeriod();
 
-/* Function that returns an array with all the gr1 codes for the given vat code */
-function getVatCodeGr1(banDoc, vatCode) {
-   var codes = [];
-   var table = banDoc.table("VatCodes");
-   if (table === undefined || !table) {
-      return codes;
-   }
+	//A dialog window is opened asking the user to insert the desired period. By default is the accounting period
+	var selectedDates = Banana.Ui.getPeriod(param.reportName, docStartDate, docEndDate,
+			scriptform.selectionStartDate, scriptform.selectionEndDate, scriptform.selectionChecked);
 
-   // Loop to take the values of each row in the table
-   for (var i = 0; i < table.rowCount; i++) {
-      var tableRow = table.row(i);
-      var gr1 = tableRow.value("Gr1");
-      var vatcode = tableRow.value("VatCode");
+	//We take the values entered by the user and save them as "new default" values.
+	//This because the next time the script will be executed, the dialog window will contains the new values.
+	if (selectedDates) {
+		scriptform["selectionStartDate"] = selectedDates.startDate;
+		scriptform["selectionEndDate"] = selectedDates.endDate;
+		scriptform["selectionChecked"] = selectedDates.hasSelection;
 
-      if (gr1 && vatcode === vatCode) {
-         var code = gr1.split(";");
-         for (var j = 0; j < code.length; j++) {
-            if (code[j]) {
-               codes.push(code[j]);
-            }
-         }
-      }
-   }
-
-   return codes;
-}
-
-/* Function that returns all the vat codes used in the transaction table */
-function getVatCodesUsed(banDoc) {
-   var codes = [];
-   var table = banDoc.table("Transactions");
-   if (table === undefined || !table) {
-      return codes;
-   }
-
-   // Loop to take the values of each row in the table
-   for (var i = 0; i < table.rowCount; i++) {
-      var tableRow = table.row(i);
-      var vatRow = tableRow.value("VatCode");
-
-      if (vatRow) {
-         var code = vatRow.split(";");
-         for (var j = 0; j < code.length; j++) {
-            if (code[j]) {
-               codes.push(code[j]);
-            }
-         }
-      }
-   }
-
-   // Remove duplicates
-   for (var i = 0; i < codes.length; i++) {
-      for (var x = i + 1; x < codes.length; x++) {
-         if (codes[x] === codes[i]) {
-            codes.splice(x, 1);
-            --x;
-         }
-      }
-   }
-
-   // Return the array of vat codes
-   return codes;
+		//Save script settings
+		var formToString = JSON.stringify(scriptform);
+		var value = Banana.document.setScriptSettings(formToString);
+	} else {
+		//User clicked cancel
+		return;
+	}
+	return scriptform;
 }
 
 /**************************************************************************************
