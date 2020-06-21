@@ -34,6 +34,8 @@
 
 */
 
+var param = {};
+
 function exec() {
 
    var dateForm = getPeriodSettings("Select Date");
@@ -59,7 +61,7 @@ function exec() {
 * Function that creates and prints the VAT report
 *
 **************************************************************************************/
-function createVATDeclaration(current, startDate, endDate, ) {
+function createVATDeclaration(current, startDate, endDate) {
 
    // Accounting period for the current year file
    var currentStartDate = current.info("AccountingDataBase","OpeningDate");
@@ -212,61 +214,88 @@ function createVATDeclaration(current, startDate, endDate, ) {
    tableRow.addCell(formatNumber(v1Taxable), "center", 4).setStyleAttributes("border:thin black solid");
    tableRow.addCell(formatNumber(v1Amount), "center", 4).setStyleAttributes("border:thin black solid");
 
-   /* Row 2: */
+   /* Row 2: Prestations de services */
    tableRow = table.addRow();
    tableRow.addCell("2","center",1).setStyleAttributes("border:thin black solid");
    tableRow.addCell("Prestations de services", "", 11).setStyleAttributes("border:thin black solid");
-   tableRow.addCell("", "", 4).setStyleAttributes("border:thin black solid");
-   tableRow.addCell("", "", 4).setStyleAttributes("border:thin black solid");
+   var v2Taxable = VatGetGr1Balance(current, transactions, "2", 2, startDate, endDate);
+   var v2Amount = VatGetGr1Balance(current, transactions, "2", 4, startDate, endDate);
+   tableRow.addCell(formatNumber(v2Taxable), "center", 4).setStyleAttributes("border:thin black solid");
+   tableRow.addCell(formatNumber(v2Amount), "center", 4).setStyleAttributes("border:thin black solid");
 
-   /* Row 3: */
+   /* Row 3: Livraisons de biens à soi-même */
    tableRow = table.addRow();
    tableRow.addCell("3","center",1).setStyleAttributes("border:thin black solid");
    tableRow.addCell("Livraisons de biens à soi-même", "", 11).setStyleAttributes("border:thin black solid");
-   tableRow.addCell("", "", 4).setStyleAttributes("border:thin black solid");
-   tableRow.addCell("", "", 4).setStyleAttributes("border:thin black solid");
+   var v3Taxable = VatGetGr1Balance(current, transactions, "3", 2, startDate, endDate);
+   var v3Amount = VatGetGr1Balance(current, transactions, "3", 4, startDate, endDate);
+   tableRow.addCell(formatNumber(v3Taxable), "center", 4).setStyleAttributes("border:thin black solid");
+   tableRow.addCell(formatNumber(v3Amount), "center", 4).setStyleAttributes("border:thin black solid");
 
-   /* Row 4: */
+   /* Row 4: Prestations de services à soi-même */
    tableRow = table.addRow();
    tableRow.addCell("4","center",1).setStyleAttributes("border:thin black solid");
    tableRow.addCell("Prestations de services à soi-même", "", 11).setStyleAttributes("border:thin black solid");
-   tableRow.addCell("", "", 4).setStyleAttributes("border:thin black solid");
-   tableRow.addCell("", "", 4).setStyleAttributes("border:thin black solid");
+   var v4Taxable = VatGetGr1Balance(current, transactions, "4", 2, startDate, endDate);
+   var v4Amount = VatGetGr1Balance(current, transactions, "4", 4, startDate, endDate);
+   tableRow.addCell(formatNumber(v4Taxable), "center", 4).setStyleAttributes("border:thin black solid");
+   tableRow.addCell(formatNumber(v4Amount), "center", 4).setStyleAttributes("border:thin black solid");
 
-   /* Row 5: */
+   /* Row 5: Opérations afférentes aux marchés publics à financement extérieur */
    tableRow = table.addRow();
    tableRow.addCell("5","center",1).setStyleAttributes("border:thin black solid");
    tableRow.addCell("Opérations afférentes aux marchés publics à financement extérieur", "", 11).setStyleAttributes("border:thin black solid");
-   tableRow.addCell("", "", 4).setStyleAttributes("border:thin black solid");
-   tableRow.addCell("", "", 4).setStyleAttributes("border:thin black solid");
+   var v5Taxable = VatGetGr1Balance(current, transactions, "5", 2, startDate, endDate);
+   var v5Amount = VatGetGr1Balance(current, transactions, "5", 4, startDate, endDate);
+   tableRow.addCell(formatNumber(v5Taxable), "center", 4).setStyleAttributes("border:thin black solid");
+   tableRow.addCell(formatNumber(v5Amount), "center", 4).setStyleAttributes("border:thin black solid");
 
-   /* Row 6: */
+   /* Row 6: Exportations et opérations assimilées */
    tableRow = table.addRow();
    tableRow.addCell("6","center",1).setStyleAttributes("border:thin black solid");
    tableRow.addCell("Exportations et opérations assimilées", "", 11).setStyleAttributes("border:thin black solid");
-   tableRow.addCell("", "", 4).setStyleAttributes("border:thin black solid");
+   var v6Taxable = VatGetGr1Balance(current, transactions, "6", 2, startDate, endDate);
+   tableRow.addCell(formatNumber(v6Taxable), "center", 4).setStyleAttributes("border:thin black solid");
    tableRow.addCell("", "greyCell", 4).setStyleAttributes("border:thin black solid");
 
-   /* Row 7: */
+   /* Row 7: Opérations exonérées */
    tableRow = table.addRow();
    tableRow.addCell("7","center",1).setStyleAttributes("border:thin black solid");
    tableRow.addCell("Opérations exonérées", "", 11).setStyleAttributes("border:thin black solid");
-   tableRow.addCell("", "", 4).setStyleAttributes("border:thin black solid");
+   var v7Taxable = VatGetGr1Balance(current, transactions, "7", 2, startDate, endDate);
+   tableRow.addCell(formatNumber(v7Taxable), "center", 4).setStyleAttributes("border:thin black solid");
    tableRow.addCell("", "greyCell", 4).setStyleAttributes("border:thin black solid");
 
-   /* Row 8: */
+   /* Row 8: Opérations non imposables */
    tableRow = table.addRow();
    tableRow.addCell("8","center",1).setStyleAttributes("border:thin black solid");
    tableRow.addCell("Opérations non imposables", "", 11).setStyleAttributes("border:thin black solid");
-   tableRow.addCell("", "", 4).setStyleAttributes("border:thin black solid");
+   var v8Taxable = VatGetGr1Balance(current, transactions, "8", 2, startDate, endDate);
+   tableRow.addCell(formatNumber(v8Taxable), "center", 4).setStyleAttributes("border:thin black solid");
    tableRow.addCell("", "greyCell", 4).setStyleAttributes("border:thin black solid");
 
-   /* Row 9: */
+   /* Row 9: Total */
    tableRow = table.addRow();
    tableRow.addCell("9","center",1).setStyleAttributes("border:thin black solid");
-   tableRow.addCell("Total", "", 11).setStyleAttributes("border:thin black solid");
-   tableRow.addCell("", "", 4).setStyleAttributes("border:thin black solid");
-   tableRow.addCell("", "", 4).setStyleAttributes("border:thin black solid");
+   tableRow.addCell("Total", "bold", 11).setStyleAttributes("border:thin black solid");
+   var totalTaxable = 0;
+   var totalVatAmount = 0;
+   totalTaxable = Banana.SDecimal.add(totalTaxable, v1Taxable);
+   totalTaxable = Banana.SDecimal.add(totalTaxable, v2Taxable);
+   totalTaxable = Banana.SDecimal.add(totalTaxable, v3Taxable);
+   totalTaxable = Banana.SDecimal.add(totalTaxable, v4Taxable);
+   totalTaxable = Banana.SDecimal.add(totalTaxable, v5Taxable);
+   totalTaxable = Banana.SDecimal.add(totalTaxable, v6Taxable);
+   totalTaxable = Banana.SDecimal.add(totalTaxable, v7Taxable);
+   totalTaxable = Banana.SDecimal.add(totalTaxable, v8Taxable);
+
+   totalVatAmount = Banana.SDecimal.add(totalVatAmount, v1Amount);
+   totalVatAmount = Banana.SDecimal.add(totalVatAmount, v2Amount);
+   totalVatAmount = Banana.SDecimal.add(totalVatAmount, v3Amount);
+   totalVatAmount = Banana.SDecimal.add(totalVatAmount, v4Amount);
+   totalVatAmount = Banana.SDecimal.add(totalVatAmount, v5Amount);
+   tableRow.addCell(formatNumber(totalTaxable), "center", 4).setStyleAttributes("border:thin black solid");
+   tableRow.addCell(totalVatAmount, "center", 4).setStyleAttributes("border:thin black solid");
 
    tableRow = table.addRow();
    tableRow.addCell(" ", "", 20);
@@ -276,7 +305,7 @@ function createVATDeclaration(current, startDate, endDate, ) {
    tableRow.addCell("Montant des factures (c)", "bold center", 4).setStyleAttributes("border:thin black solid");
    tableRow.addCell("TVA Collectée(d)=c * 16%", "bold center", 4).setStyleAttributes("border:thin black solid");
 
-   /* Row 10: */
+   /* Row 10: Prestations reçues des prestataires non établis en RDC */
    tableRow = table.addRow();
    tableRow.addCell("10","center",1).setStyleAttributes("border:thin black solid");
    tableRow.addCell("Prestations reçues des prestataires non établis en RDC", "", 11).setStyleAttributes("border:thin black solid");
@@ -296,88 +325,127 @@ function createVATDeclaration(current, startDate, endDate, ) {
    tableRow.addCell("Local (f)", "bold center", 4).setStyleAttributes("border:thin black solid");
    tableRow.addCell("Total(g)=e + f", "bold center", 4).setStyleAttributes("border:thin black solid");
 
-   /* Row 11: */
+   /* Row 11: Immobilisations */
    tableRow = table.addRow();
    tableRow.addCell("11", "center", 1);
    tableRow.addCell("Immobilisations", "", 7).setStyleAttributes("border:thin black solid");
-   var v11AmountE = VatGetGr1BalanceExtraInfo(current, transactions, "11", 3, "", startDate, endDate);
-   var v11AmountF = VatGetGr1BalanceExtraInfo(current, transactions, "11", 3, "IMP", startDate, endDate);
+   var d11AmountE = VatGetGr1BalanceExtraInfo(current, transactions, "11", 3, "IMP", startDate, endDate);
+   var d11AmountF = VatGetGr1BalanceExtraInfo(current, transactions, "11", 3, "", startDate, endDate);
+   var total11G = 0;
+   total11G = Banana.SDecimal.add(total11G, d11AmountE);
+   total11G = Banana.SDecimal.add(total11G, d11AmountF);
+   tableRow.addCell(formatNumber(d11AmountE), "center", 4).setStyleAttributes("border:thin black solid");
+   tableRow.addCell(formatNumber(d11AmountF), "center", 4).setStyleAttributes("border:thin black solid");
+   tableRow.addCell(formatNumber(total11G), "center", 4).setStyleAttributes("border:thin black solid");
 
-   tableRow.addCell(formatNumber(v11AmountE), "center", 4).setStyleAttributes("border:thin black solid");
-   tableRow.addCell(formatNumber(v11AmountF), "center", 4).setStyleAttributes("border:thin black solid");
-   tableRow.addCell("", "center", 4).setStyleAttributes("border:thin black solid");
-
-   /* Row 12: */
+   /* Row 12: Marchandises */
    tableRow = table.addRow();
    tableRow.addCell("12", "center", 1);
    tableRow.addCell("Marchandises", "", 7).setStyleAttributes("border:thin black solid");
-   tableRow.addCell("", "center", 4).setStyleAttributes("border:thin black solid");
-   tableRow.addCell("", "center", 4).setStyleAttributes("border:thin black solid");
-   tableRow.addCell("", "center", 4).setStyleAttributes("border:thin black solid");
+   var d12AmountE = VatGetGr1BalanceExtraInfo(current, transactions, "12", 3, "IMP", startDate, endDate);
+   var d12AmountF = VatGetGr1BalanceExtraInfo(current, transactions, "12", 3, "", startDate, endDate);
+   var total12G = 0;
+   total12G = Banana.SDecimal.add(total12G, d12AmountE);
+   total12G = Banana.SDecimal.add(total12G, d12AmountF);
+   tableRow.addCell(formatNumber(d12AmountE), "center", 4).setStyleAttributes("border:thin black solid");
+   tableRow.addCell(formatNumber(d12AmountF), "center", 4).setStyleAttributes("border:thin black solid");
+   tableRow.addCell(formatNumber(total12G), "center", 4).setStyleAttributes("border:thin black solid");
 
-   /* Row 13: */
+   /* Row 13: Matières premières */
    tableRow = table.addRow();
    tableRow.addCell("13", "center", 1);
    tableRow.addCell("Matières premières", "", 7).setStyleAttributes("border:thin black solid");
-   tableRow.addCell("", "center", 4).setStyleAttributes("border:thin black solid");
-   tableRow.addCell("", "center", 4).setStyleAttributes("border:thin black solid");
-   tableRow.addCell("", "center", 4).setStyleAttributes("border:thin black solid");
+   var d13AmountE = VatGetGr1BalanceExtraInfo(current, transactions, "13", 3, "IMP", startDate, endDate);
+   var d13AmountF = VatGetGr1BalanceExtraInfo(current, transactions, "13", 3, "", startDate, endDate);
+   var total13G = 0;
+   total13G = Banana.SDecimal.add(total13G, d13AmountE);
+   total13G = Banana.SDecimal.add(total13G, d13AmountF);
+   tableRow.addCell(formatNumber(d13AmountE), "center", 4).setStyleAttributes("border:thin black solid");
+   tableRow.addCell(formatNumber(d13AmountF), "center", 4).setStyleAttributes("border:thin black solid");
+   tableRow.addCell(formatNumber(total13G), "center", 4).setStyleAttributes("border:thin black solid");
 
-   /* Row 14: */
+   /* Row 14: Autres biens et services */
    tableRow = table.addRow();
    tableRow.addCell("14", "center", 1);
    tableRow.addCell("Autres biens et services", "", 7).setStyleAttributes("border:thin black solid");
-   tableRow.addCell("", "center", 4).setStyleAttributes("border:thin black solid");
-   tableRow.addCell("", "center", 4).setStyleAttributes("border:thin black solid");
-   tableRow.addCell("", "center", 4).setStyleAttributes("border:thin black solid");
+   var d14AmountE = VatGetGr1BalanceExtraInfo(current, transactions, "14", 3, "IMP", startDate, endDate);
+   var d14AmountF = VatGetGr1BalanceExtraInfo(current, transactions, "14", 3, "", startDate, endDate);
+   var total14G = 0;
+   total14G = Banana.SDecimal.add(total14G, d14AmountE);
+   total14G = Banana.SDecimal.add(total14G, d14AmountF);
+   tableRow.addCell(formatNumber(d14AmountE), "center", 4).setStyleAttributes("border:thin black solid");
+   tableRow.addCell(formatNumber(d14AmountF), "center", 4).setStyleAttributes("border:thin black solid");
+   tableRow.addCell(formatNumber(total14G), "center", 4).setStyleAttributes("border:thin black solid");
 
-   /* Row 15: */
+   /* Row 15: Total TVA déductible */
    tableRow = table.addRow();
    tableRow.addCell("15", "center", 1);
    tableRow.addCell("Total TVA déductible (g11+g12+g13+g14)", "", 7).setStyleAttributes("border:thin black solid");
-   tableRow.addCell("", "center", 4).setStyleAttributes("border:thin black solid");
-   tableRow.addCell("", "center", 4).setStyleAttributes("border:thin black solid");
-   tableRow.addCell("", "center", 4).setStyleAttributes("border:thin black solid");
+   var total15E = 0;
+   var total15F = 0;
+   var total15G = 0;
+   total15E = Banana.SDecimal.add(total15E, d11AmountE);
+   total15E = Banana.SDecimal.add(total15E, d12AmountE);
+   total15E = Banana.SDecimal.add(total15E, d13AmountE);
+   total15E = Banana.SDecimal.add(total15E, d14AmountE);
+   total15F = Banana.SDecimal.add(total15F, d11AmountF);
+   total15F = Banana.SDecimal.add(total15F, d11AmountF);
+   total15F = Banana.SDecimal.add(total15F, d11AmountF);
+   total15F = Banana.SDecimal.add(total15F, d11AmountF);
+   total15G = Banana.SDecimal.add(total15G, total11G);
+   total15G = Banana.SDecimal.add(total15G, total12G);
+   total15G = Banana.SDecimal.add(total15G, total13G);
+   total15G = Banana.SDecimal.add(total15G, total14G);
+   tableRow.addCell(formatNumber(total15E), "center", 4).setStyleAttributes("border:thin black solid");
+   tableRow.addCell(formatNumber(total15F), "center", 4).setStyleAttributes("border:thin black solid");
+   tableRow.addCell(formatNumber(total15G), "center", 4).setStyleAttributes("border:thin black solid");
 
-   /* Row 16: */
+   /* Row 16: Report de crédit du mois précédent */
    tableRow = table.addRow();
    tableRow.addCell("16", "center", 1);
    tableRow.addCell("Report de crédit du mois précédent (déclaration précédente, ligne 24)", "", 7).setStyleAttributes("border:thin black solid");
+   var previousMonthCredit = getCredit(current, startDate, endDate);
    tableRow.addCell("", "lightGreyCell", 4).setStyleAttributes("border:thin black solid");
    tableRow.addCell("", "lightGreyCell", 4).setStyleAttributes("border:thin black solid");
-   tableRow.addCell("", "center", 4).setStyleAttributes("border:thin black solid");
+   tableRow.addCell(formatNumber(previousMonthCredit), "center", 4).setStyleAttributes("border:thin black solid");
 
-   /* Row 17: */
+   /* Row 17: Montant de la TVA déductible */
    tableRow = table.addRow();
    tableRow.addCell("17", "center", 1);
    tableRow.addCell("Montant de la TVA déductible (g15+g16)", "", 7).setStyleAttributes("border:thin black solid");
+   var vatAmountDeductible = 0;
+   vatAmountDeductible = Banana.SDecimal.add(vatAmountDeductible, total15G);
+   vatAmountDeductible = Banana.SDecimal.add(vatAmountDeductible, previousMonthCredit);
    tableRow.addCell("", "lightGreyCell", 4).setStyleAttributes("border:thin black solid");
    tableRow.addCell("", "lightGreyCell", 4).setStyleAttributes("border:thin black solid");
-   tableRow.addCell("", "center", 4).setStyleAttributes("border:thin black solid");
+   tableRow.addCell(formatNumber(vatAmountDeductible), "center", 4).setStyleAttributes("border:thin black solid");
 
    tableRow = table.addRow();
    tableRow.addCell("V. RÉGULARISATIONS (8)", "bold", 8);
    tableRow.addCell("h", "center", 8);
 
-   /* Row 18: */
+   /* Row 18: Reversement de TVA */
    tableRow = table.addRow();
    tableRow.addCell("18", "center", 1);
    tableRow.addCell("Reversement de TVA", "", 7);
-   tableRow.addCell("", "center", 4);
+   var r18Amount = VatGetGr1BalanceExtraInfo(current, transactions, "V-18", 3, "", startDate, endDate);
+   tableRow.addCell(formatNumber(Banana.SDecimal.invert(r18Amount)), "center", 4);
    tableRow.addCell("", "darkGreyCell", 4);
 
-   /* Row 19: */
+   /* Row 19: Complément de déduction */
    tableRow = table.addRow();
    tableRow.addCell("19", "center", 1);
    tableRow.addCell("Complément de déduction", "", 7);
+   var r19Amount = VatGetGr1BalanceExtraInfo(current, transactions, "V-19", 3, "", startDate, endDate);
    tableRow.addCell("", "darkGreyCell", 4);
-   tableRow.addCell("", "center", 4);
+   tableRow.addCell(formatNumber(r19Amount), "center", 4);
 
-   /* Row 20: */
+   /* Row 20: Récupération de la TVA déductible sur marchés publics à financement extérieur */
    tableRow = table.addRow();
    tableRow.addCell("20", "center", 1);
    tableRow.addCell("Récupération de la TVA déductible sur marchés publics à financement extérieur", "", 7);
-   tableRow.addCell("", "center", 4);
+   var r20Amount = VatGetGr1BalanceExtraInfo(current, transactions, "V-20", 3, "", startDate, endDate);
+   tableRow.addCell(formatNumber(r20Amount), "center", 4);
    tableRow.addCell("", "darkGreyCell", 4);
 
    tableRow = table.addRow();
@@ -387,42 +455,67 @@ function createVATDeclaration(current, startDate, endDate, ) {
    tableRow.addCell("VI. CALCUL DE L'IMPÔT (9)", "bold", 8);
    tableRow.addCell("i", "center", 8);
 
+   /* Row 21: TVA nette à verser */
    tableRow = table.addRow();
    tableRow.addCell("21", "center", 1);
    tableRow.addCell("TVA nette à verser (b9+d10+h18+h20-g17-h19-b5)", "", 7);
-   tableRow.addCell("", "center", 4);
+   var netVatAmount = 0;
+   var vatCredit = 0;
+   if(totalVatAmount > vatAmountDeductible) {
+      vatCredit = "";
+      netVatAmount = Banana.SDecimal.add(netVatAmount, totalVatAmount);
+      netVatAmount = Banana.SDecimal.add(netVatAmount, Banana.SDecimal.invert(r18Amount));
+      netVatAmount = Banana.SDecimal.add(netVatAmount, r20Amount);
+      netVatAmount = Banana.SDecimal.subtract(netVatAmount, vatAmountDeductible);
+      netVatAmount = Banana.SDecimal.subtract(netVatAmount, r19Amount);
+      //netVatAmount = Banana.SDecimal.subtract(netVatAmount, )
+   } else {
+      netVatAmount = "";
+      vatCredit = Banana.SDecimal.add(vatCredit, vatAmountDeductible);
+      vatCredit = Banana.SDecimal.add(vatCredit, r19Amount);
+      vatCredit = Banana.SDecimal.subtract(vatCredit, totalVatAmount);
+      vatCredit = Banana.SDecimal.subtract(vatCredit, Banana.SDecimal.invert(r18Amount));
+      vatCredit = Banana.SDecimal.subtract(vatCredit, r20Amount);
+   }
+   tableRow.addCell(formatNumber(netVatAmount), "center", 4);
    tableRow.addCell("", "darkGreyCell", 4);
 
+   /* Row 22: Crédit de TVA */
    tableRow = table.addRow();
    tableRow.addCell("22", "center", 1);
    tableRow.addCell("Crédit de TVA (g17+h19+b5-b9-d10-h18-h20)", "", 7);
    tableRow.addCell("", "darkGreyCell", 4);
-   tableRow.addCell("", "center", 4);
+   tableRow.addCell(formatNumber(vatCredit), "center", 4);
 
+   /* Row 23: Remboursement de crédit de TVA demandé */
    tableRow = table.addRow();
    tableRow.addCell("23", "center", 1);
    tableRow.addCell("Remboursement de crédit de TVA demandé (montant figurant sur la demande de remboursement)", "", 7);
    tableRow.addCell("", "center", 4);
    tableRow.addCell("", "darkGreyCell", 4);
 
+   /* Row 24: Crédit de TVA reportable */
    tableRow = table.addRow();
    tableRow.addCell("24", "center", 1);
    tableRow.addCell("Crédit de TVA reportable (i22-i23)", "", 7);
    tableRow.addCell("", "darkGreyCell", 4);
    tableRow.addCell("", "center", 4);
 
+   /* Row 25: TVA sur marchés publics à financement extérieur */
    tableRow = table.addRow();
    tableRow.addCell("25", "center", 1);
    tableRow.addCell("TVA sur marchés publics à financement extérieur (case b5)", "", 7);
    tableRow.addCell("", "center", 4);
    tableRow.addCell("", "greyCell", 4);
 
+   /* Row 26: TVA POUR COMPTE DES TIERS */
    tableRow = table.addRow();
    tableRow.addCell("26", "center", 1);
    tableRow.addCell("TVA POUR COMPTE DES TIERS", "bold", 7);
    tableRow.addCell("", "center", 4);
    tableRow.addCell("", "greyCell", 4);
 
+   /* Row 27: MONTANT À PAYER */
    tableRow = table.addRow();
    tableRow.addCell("27", "center", 1);
    tableRow.addCell("MONTANT À PAYER (i21+i25+i26)", "bold", 7);
@@ -558,6 +651,25 @@ function createVATDeclaration(current, startDate, endDate, ) {
 
 
    return report;
+}
+
+/**************************************************************************************
+*
+* Functions that retrieve and format values from Banana
+*
+**************************************************************************************/
+
+function getAmount(banDoc,account,property,startDate,endDate) {
+   var currentBal = banDoc.currentBalance(account,startDate,endDate)
+   var value = currentBal[property];
+   return value;
+}
+
+function formatValues(value) {
+   if (!value || value === "0" || value == null) {
+      value = "0";
+   }
+   return Banana.Converter.toLocaleNumberFormat(value);
 }
 
 /**************************************************************************************
@@ -897,6 +1009,11 @@ function arrayContains(array, value) {
 		}
 	}
 	return false;
+}
+
+/* Get report de credit from the transactions journal */
+function getCredit(banDoc, startDate, endDate) {
+   return getAmount(banDoc, "Gr=4449","balance", startDate, endDate);
 }
 
 /**************************************************************************************
