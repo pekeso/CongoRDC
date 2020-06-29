@@ -66,7 +66,7 @@ function exec() {
 * Function that create the report
 *
 **************************************************************************************/
-function createCashFlowReport(current, previous, report, startDate, endDate) {
+function createCashFlowReport(current, previous, startDate, endDate, report) {
 
    // Accounting period for the current year file
    var currentStartDate = startDate;
