@@ -60,13 +60,13 @@ TestVatReportRDC.prototype.testBananaApp = function() {
     if (!banDoc) {return;}
     Test.assert(banDoc);
 
-    this.report_test(banDoc, "2018-01-01", "2018-12-31", "Whole year report");
-    this.report_test(banDoc, "2018-01-01", "2018-06-30", "First semester report");
-    this.report_test(banDoc, "2018-07-01", "2018-12-31", "Second semester report");
-    this.report_test(banDoc, "2018-01-01", "2018-03-31", "First quarter report");
-    this.report_test(banDoc, "2018-04-01", "2018-06-30", "Second quarter report");
-    this.report_test(banDoc, "2018-07-01", "2018-09-30", "Third quarter report");
-    this.report_test(banDoc, "2018-10-01", "2018-12-31", "Fourth quarter report");
+    this.report_test(banDoc, "2020-01-01", "2020-12-31", "Whole year report");
+    this.report_test(banDoc, "2020-01-01", "2020-06-30", "First semester report");
+    this.report_test(banDoc, "2020-07-01", "2020-12-31", "Second semester report");
+    this.report_test(banDoc, "2020-01-01", "2020-03-31", "First quarter report");
+    this.report_test(banDoc, "2020-04-01", "2020-06-30", "Second quarter report");
+    this.report_test(banDoc, "2020-07-01", "2020-09-30", "Third quarter report");
+    this.report_test(banDoc, "2020-10-01", "2020-12-31", "Fourth quarter report");
     this.table_test(banDoc, "Vat codes table");
 }
 
