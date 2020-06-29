@@ -53,18 +53,31 @@ function exec() {
    Banana.Report.preview(report, stylesheet);
 }
 
-function createFinancialAnalysisReport(current, startDate, endDate) {
-  var report = Banana.Report.newReport("Balance des comptes");
+function createFinancialAnalysisReport(current, startDate, endDate, report) {
+   
+   // Accounting period for the current year file
+   var currentStartDate = startDate;
+   var currentEndDate = endDate;
+   if(!startDate) {
+      currentStartDate = current.info("AccountingDataBase","OpeningDate");
+   }
+   if(!endDate) {
+      currentEndDate = current.info("AccountingDataBase","ClosureDate");
+   }
 
-  var currentYear = Banana.Converter.toDate(startDate).getFullYear();
+  var currentYear = Banana.Converter.toDate(currentStartDate).getFullYear();
   var previousYear = currentYear-1;
   var company = current.info("AccountingDataBase","Company");
   var address = current.info("AccountingDataBase","Address1");
   var city = current.info("AccountingDataBase","City");
   var state = current.info("AccountingDataBase","State");
-  var months = monthDiff(Banana.Converter.toDate(endDate), Banana.Converter.toDate(startDate));
+  var months = monthDiff(Banana.Converter.toDate(currentEndDate), Banana.Converter.toDate(currentStartDate));
   var fiscalNumber = current.info("AccountingDataBase","FiscalNumber");
   var vatNumber = current.info("AccountingDataBase","VatNumber");
+
+  if (!report) {
+   var report = Banana.Report.newReport("Analyse Financière");
+  }
 
    // Header of the report
   var table = report.addTable("table");
@@ -73,7 +86,7 @@ function createFinancialAnalysisReport(current, startDate, endDate) {
   var tableRow;
   tableRow = table.addRow();
   tableRow.addCell(company,"bold",1);
-  tableRow.addCell("Exercice clos le " + Banana.Converter.toLocaleDateFormat(endDate), "",1);
+  tableRow.addCell("Exercice clos le " + Banana.Converter.toLocaleDateFormat(currentEndDate), "",1);
   tableRow = table.addRow();
   tableRow.addCell(address + " - " + city + " - " + state, "", 1);
   tableRow.addCell("Durée (en mois) " + months, "", 1);   
@@ -98,15 +111,15 @@ function createFinancialAnalysisReport(current, startDate, endDate) {
   tableRow.addCell("En valeur de flux", "bold center", 3);
 
   /* FRN */
-  var result_FRN = calculate_FRN(current, startDate, endDate);
+  var result_FRN = calculate_FRN(current, currentStartDate, currentEndDate);
   var tableRow = table.addRow();
   tableRow.addCell("FRN", "bold", 2);
   tableRow.addCell("Fonds de Roulement Net", "", 6);
-  tableRow.addCell("Par haut du bilan: (Ressources Stables) - (Actifs Immobilisés Nets)", "", 9);
+  tableRow.addCell("(Ressources Stables) - (Actifs Immobilisés Nets)", "", 9);
   tableRow.addCell(formatValues(result_FRN), "center", 3);
 
   /* FRP */
-  var result_FRP = calculate_FRP(current, startDate, endDate);
+  var result_FRP = calculate_FRP(current, currentStartDate, currentEndDate);
   var tableRow = table.addRow();
   tableRow.addCell("FRP", "bold", 2);
   tableRow.addCell("Fonds de Roulement Propre", "", 6);
@@ -114,7 +127,7 @@ function createFinancialAnalysisReport(current, startDate, endDate) {
   tableRow.addCell(formatValues(result_FRP), "center", 3);
 
   /* FRE */
-  var result_FRE = calculate_FRE(current, startDate, endDate);
+  var result_FRE = calculate_FRE(current, currentStartDate, currentEndDate);
   var tableRow = table.addRow();
   tableRow.addCell("FRE", "bold", 2);
   tableRow.addCell("Fonds de Roulement Étranger", "", 6);
@@ -122,7 +135,7 @@ function createFinancialAnalysisReport(current, startDate, endDate) {
   tableRow.addCell(formatValues(result_FRE), "center", 3);
 
   /* BFRG */
-  var result_BFRG = calculate_BFRG(current, startDate, endDate);
+  var result_BFRG = calculate_BFRG(current, currentStartDate, currentEndDate);
   var tableRow = table.addRow();
   tableRow.addCell("BFRG", "bold", 2);
   tableRow.addCell("Besoin en Fonds de Roulement Global", "", 6);
@@ -130,7 +143,7 @@ function createFinancialAnalysisReport(current, startDate, endDate) {
   tableRow.addCell(formatValues(result_BFRG), "center", 3);
 
   /* BFRE */
-  var result_BFRE = calculate_BFRE(current, startDate, endDate);
+  var result_BFRE = calculate_BFRE(current, currentStartDate, currentEndDate);
   var tableRow = table.addRow();
   tableRow.addCell("BFRE", "bold", 2);
   tableRow.addCell("Besoin en Fonds de Roulement d'Exploitation", "", 6);
@@ -138,7 +151,7 @@ function createFinancialAnalysisReport(current, startDate, endDate) {
   tableRow.addCell(formatValues(result_BFRE), "center", 3);
 
   /* BFHAO */
-  var result_BFHAO = calculate_BFHAO(current, startDate, endDate);
+  var result_BFHAO = calculate_BFHAO(current, currentStartDate, currentEndDate);
   var tableRow = table.addRow();
   tableRow.addCell("BFHAO", "bold", 2);
   tableRow.addCell("Besoin en Fonds de Roulement Hors Activité Ordinaire", "", 6);
@@ -146,7 +159,7 @@ function createFinancialAnalysisReport(current, startDate, endDate) {
   tableRow.addCell(formatValues(result_BFHAO), "center", 3);
 
   /* TN */
-  var result_TN = calculate_TN(current, startDate, endDate);
+  var result_TN = calculate_TN(current, currentStartDate, currentEndDate);
   var tableRow = table.addRow();
   tableRow.addCell("TN", "bold", 2);
   tableRow.addCell("Trésorerie Nette", "", 6);
@@ -157,15 +170,15 @@ function createFinancialAnalysisReport(current, startDate, endDate) {
   tableRow.addCell("Analyse de la structure financière par la méthode des ratios", "bold center", 20);
 
   /* RCAFR */
-  var result_RCAFR = calculate_RCAFR(current, startDate, endDate);
+  var result_RCAFR = calculate_RCAFR(current, currentStartDate, currentEndDate);
   var tableRow = table.addRow();
   tableRow.addCell("RCAFR", "bold", 2);
   tableRow.addCell("Ratio de couverture des actifs fixes par les ressources stables","", 6);
   tableRow.addCell("(Ressources stables)/(Actifs Immobilisés)","", 9);
-  tableRow.addCell(formatValues(result_RCAFR),"center", 3);
+  tableRow.addCell(formatValues(result_RCAFR), "center", 3);
 
   /* RCAFC */
-  var result_RCAFC = calculate_RCAFC(current, startDate, endDate);
+  var result_RCAFC = calculate_RCAFC(current, currentStartDate, currentEndDate);
   var tableRow = table.addRow();
   tableRow.addCell("RCAFC", "bold", 2);
   tableRow.addCell("Ratio de couverture des actifs fixes par les capitaux propres","", 6);
@@ -173,7 +186,7 @@ function createFinancialAnalysisReport(current, startDate, endDate) {
   tableRow.addCell(formatValues(result_RCAFC), "center", 3);
 
   /* RBFRG */
-  var result_RBFRG = calculate_RBFRG(current, startDate, endDate);
+  var result_RBFRG = calculate_RBFRG(current, currentStartDate, currentEndDate);
   var tableRow = table.addRow();
   tableRow.addCell("RBFRG", "bold", 2);
   tableRow.addCell("Ratio de couverture de besoin en fonds de roulement global", "", 6);
@@ -181,7 +194,7 @@ function createFinancialAnalysisReport(current, startDate, endDate) {
   tableRow.addCell(formatValues(result_RBFRG), "center", 3);
 
   /* RS */
-  var result_RS = calculate_RS(current, startDate, endDate);
+  var result_RS = calculate_RS(current, currentStartDate, currentEndDate);
   var tableRow = table.addRow();
   tableRow.addCell("RS", "bold", 2);
   tableRow.addCell("Ratio de solvabilité","", 6);
@@ -189,7 +202,7 @@ function createFinancialAnalysisReport(current, startDate, endDate) {
   tableRow.addCell(formatValues(result_RS), "center", 3);
 
   /* RIF */
-  var result_RIF = calculate_RIF(current, startDate, endDate);
+  var result_RIF = calculate_RIF(current, currentStartDate, currentEndDate);
   var tableRow = table.addRow();
   tableRow.addCell("RIF", "bold", 2);
   tableRow.addCell("Ratio d'indépendance financière ou autonomie financière","", 6);
@@ -197,7 +210,7 @@ function createFinancialAnalysisReport(current, startDate, endDate) {
   tableRow.addCell(formatValues(result_RIF), "center", 3);
 
   /* RDF */
-  var result_RDF = calculate_RDF(current, startDate, endDate);
+  var result_RDF = calculate_RDF(current, currentStartDate, currentEndDate);
   var tableRow = table.addRow();
   tableRow.addCell("RDF", "bold", 2);
   tableRow.addCell("Ratio de dépendance financière","", 6);
@@ -205,7 +218,7 @@ function createFinancialAnalysisReport(current, startDate, endDate) {
   tableRow.addCell(formatValues(result_RDF), "center", 3);
 
   /* RLG */
-  var result_RLG = calculate_RLG(current, startDate, endDate);
+  var result_RLG = calculate_RLG(current, currentStartDate, currentEndDate);
   var tableRow = table.addRow();
   tableRow.addCell("RLG", "bold", 2);
   tableRow.addCell("Ratio de liquidité générale","", 6);
@@ -213,7 +226,7 @@ function createFinancialAnalysisReport(current, startDate, endDate) {
   tableRow.addCell(formatValues(result_RLG), "center", 3);
 
   /* RLR */
-  var result_RLR = calculate_RLR(current, startDate, endDate);
+  var result_RLR = calculate_RLR(current, currentStartDate, currentEndDate);
   var tableRow = table.addRow();
   tableRow.addCell("RLR", "bold", 2);
   tableRow.addCell("Ratio de liquidité restreinte ou réduite","", 6);
@@ -221,7 +234,7 @@ function createFinancialAnalysisReport(current, startDate, endDate) {
   tableRow.addCell(formatValues(result_RLR), "center", 3);
 
   /* RLI */
-  var result_RLI = calculate_RLI(current, startDate, endDate);
+  var result_RLI = calculate_RLI(current, currentStartDate, currentEndDate);
   var tableRow = table.addRow();
   tableRow.addCell("RLI", "bold", 2);
   tableRow.addCell("Ratio de liquidité immédiate","", 6);
@@ -233,7 +246,7 @@ function createFinancialAnalysisReport(current, startDate, endDate) {
   tableRow.addCell("Valeur en %", "bold center", 3);
 
   /* RA */
-  var result_RA = calculate_RA(current, startDate, endDate);
+  var result_RA = calculate_RA(current, currentStartDate, currentEndDate);
   var tableRow = table.addRow();
   tableRow.addCell("RA", "bold", 2);
   tableRow.addCell("Rentabilité de l'activité","", 6);
@@ -241,7 +254,7 @@ function createFinancialAnalysisReport(current, startDate, endDate) {
   tableRow.addCell(formatValues(result_RA), "center", 3);
 
   /* TM */
-  var result_TM = calculate_TM(current, startDate, endDate);
+  var result_TM = calculate_TM(current, currentStartDate, currentEndDate);
   var tableRow = table.addRow();
   tableRow.addCell("TM", "bold", 2);
   tableRow.addCell("Taux de marque ou Taux de Marge Commerciale","", 6);
@@ -249,7 +262,7 @@ function createFinancialAnalysisReport(current, startDate, endDate) {
   tableRow.addCell(formatValues(result_TM), "center", 3);
 
   /* ROI */
-  var result_ROI = calculate_ROI(current, startDate, endDate);
+  var result_ROI = calculate_ROI(current, currentStartDate, currentEndDate);
   var tableRow = table.addRow();
   tableRow.addCell("ROI", "bold", 2);
   tableRow.addCell("Rentabilité économique ou Return on Investment (ROI)","", 6);
@@ -257,7 +270,7 @@ function createFinancialAnalysisReport(current, startDate, endDate) {
   tableRow.addCell(formatValues(result_ROI), "center", 3);
 
   /* RCP */
-  var result_RCP = calculate_RCP(current, startDate, endDate);
+  var result_RCP = calculate_RCP(current, currentStartDate, currentEndDate);
   var tableRow = table.addRow();
   tableRow.addCell("RCP", "bold", 2);
   tableRow.addCell("Rentabilité des capitaux propres","", 6);
@@ -265,7 +278,7 @@ function createFinancialAnalysisReport(current, startDate, endDate) {
   tableRow.addCell(formatValues(result_RCP), "center", 3);
 
   /* RCS */
-  var result_RCS = calculate_RCS(current, startDate, endDate);
+  var result_RCS = calculate_RCS(current, currentStartDate, currentEndDate);
   var tableRow = table.addRow();
   tableRow.addCell("RCS", "bold", 2);
   tableRow.addCell("Rentabilité du capital social ou capital initial","", 6);
@@ -506,7 +519,7 @@ function calculate_RCAFR(banDoc, startDate, endDate) {
    res_D = Banana.SDecimal.add(res_D, gr4782);
    res_D = Banana.SDecimal.add(res_D, gr4792);
    var res = 0;
-   res = Banana.SDecimal.divide(res_N, res_D);
+   res = Banana.SDecimal.divide(res_N, res_D, {'decimals':2});
    return res;
 }
 
@@ -536,7 +549,7 @@ function calculate_RCAFC(banDoc, startDate, endDate) {
    res_D = Banana.SDecimal.add(res_D, gr4782);
    res_D = Banana.SDecimal.add(res_D, Banana.SDecimal.invert(gr4792));
    var res = 0;
-   res = Banana.SDecimal.divide(res_N, res_D);
+   res = Banana.SDecimal.divide(res_N, res_D, {'decimals':2});
    return res;
 }
 
@@ -584,7 +597,7 @@ function calculate_RBFRG(banDoc, startDate, endDate) {
    var res_D = 0;
    res_D = Banana.SDecimal.subtract(res_D_a, res_D_b);
    var res = 0;
-   res = Banana.SDecimal.divide(res_N, res_D);
+   res = Banana.SDecimal.divide(res_N, res_D, {'decimals':2});
    return res;
 }
 
@@ -627,7 +640,7 @@ function calculate_RS(banDoc, startDate, endDate) {
    res_D = Banana.SDecimal.add(res_D, Banana.SDecimal.invert(gr47941));
    res_D = Banana.SDecimal.add(res_D, Banana.SDecimal.invert(gr47942));
    var res = 0;
-   res = Banana.SDecimal.divide(res_N, res_D);
+   res = Banana.SDecimal.divide(res_N, res_D, {'decimals':2});
    return res;
 }
 
@@ -649,7 +662,7 @@ function calculate_RIF(banDoc, startDate, endDate) {
    var res = 0;
    res_N = Banana.SDecimal.add(res_N, Banana.SDecimal.invert(grCP));
    res_D = Banana.SDecimal.add(res_D, Banana.SDecimal.invert(grDZ));
-   res = Banana.SDecimal.divide(res_N, res_D);
+   res = Banana.SDecimal.divide(res_N, res_D, {'decimals':2});
    return res;
 }
 
@@ -694,7 +707,7 @@ function calculate_RDF(banDoc, startDate, endDate) {
    var res_D = 0
    res_D = Banana.SDecimal.add(res_D, Banana.SDecimal.invert(grDZ));
    var res = 0;
-   res = Banana.SDecimal.divide(res_N, res_D);
+   res = Banana.SDecimal.divide(res_N, res_D, {'decimals':2});
    return res;
 }
 
@@ -736,7 +749,7 @@ function calculate_RLG(banDoc, startDate, endDate) {
    res_D = Banana.SDecimal.add(res_D, gr4793);
    res_D = Banana.SDecimal.add(res_D, grDT);
    var res = 0;
-   res = Banana.SDecimal.divide(res_N, res_D);
+   res = Banana.SDecimal.divide(res_N, res_D, {'decimals':2});
    return res;
 }
 
@@ -781,7 +794,7 @@ function calculate_RLR(banDoc, startDate, endDate) {
    res_D = Banana.SDecimal.add(res_D, Banana.SDecimal.invert(gr4793));
    res_D = Banana.SDecimal.add(res_D, Banana.SDecimal.invert(grDT));
    var res = 0;
-   res = Banana.SDecimal.divide(res_N, res_D);
+   res = Banana.SDecimal.divide(res_N, res_D, {'decimals':2});
    return res;
 }
 
@@ -814,7 +827,7 @@ function calculate_RLI(banDoc, startDate, endDate) {
    res_D = Banana.SDecimal.add(res_D, Banana.SDecimal.invert(gr4793));
    res_D = Banana.SDecimal.add(res_D, Banana.SDecimal.invert(grDT));
    var res = 0;
-   res = Banana.SDecimal.divide(res_N, res_D);
+   res = Banana.SDecimal.divide(res_N, res_D, {'decimals':2});
    return res;
 }
 
@@ -846,7 +859,7 @@ function calculate_RA(banDoc, startDate, endDate) {
    res_D = Banana.SDecimal.add(res_D, Banana.SDecimal.invert(grTC));
    res_D = Banana.SDecimal.add(res_D, Banana.SDecimal.invert(grTD));
    var res = 0;
-   res = Banana.SDecimal.divide(res_N, res_D);
+   res = Banana.SDecimal.divide(res_N, res_D, {'decimals':2});
    return res;
 }
 
@@ -865,7 +878,7 @@ function calculate_TM(banDoc, startDate, endDate) {
    res_N = Banana.SDecimal.multiply(res_N, '100');
    res_D = Banana.SDecimal.add(res_D, Banana.SDecimal.invert(grTA));
    var res = 0;
-   res = Banana.SDecimal.divide(res_N, res_D);
+   res = Banana.SDecimal.divide(res_N, res_D, {'decimals':2});
    return res;
 }
 
@@ -884,7 +897,7 @@ function calculate_ROI(banDoc, startDate, endDate) {
    res_N = Banana.SDecimal.multiply(res_N, '100');
    res_D = Banana.SDecimal.add(res_D, grBZ);
    var res = 0;
-   res = Banana.SDecimal.divide(res_N, res_D);
+   res = Banana.SDecimal.divide(res_N, res_D, {'decimals':2});
    return res;
 }
 
@@ -903,7 +916,7 @@ function calculate_RCP(banDoc, startDate, endDate) {
    res_N = Banana.SDecimal.multiply(res_N, '100');
    res_D = Banana.SDecimal.add(res_D, Banana.SDecimal.invert(grCP));
    var res = 0;
-   res = Banana.SDecimal.divide(res_N, res_D);
+   res = Banana.SDecimal.divide(res_N, res_D, {'decimals':2});
    return res;
 }
 
@@ -922,7 +935,7 @@ function calculate_RCS(banDoc, startDate, endDate) {
    res_N = Banana.SDecimal.multiply(res_N, '100');
    res_D = Banana.SDecimal.add(res_D, Banana.SDecimal.invert(grCA));
    var res = 0;
-   res = Banana.SDecimal.divide(res_N, res_D);
+   res = Banana.SDecimal.divide(res_N, res_D, {'decimals':2});
    return res;
 }
 

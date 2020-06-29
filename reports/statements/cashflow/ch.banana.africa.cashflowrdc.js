@@ -77,8 +77,6 @@ function createCashFlowReport(current, previous, startDate, endDate, report) {
    if(!endDate) {
       currentEndDate = current.info("AccountingDataBase","ClosureDate");
    }
-   var currentStartDate = current.info("AccountingDataBase","OpeningDate");
-   var currentEndDate = current.info("AccountingDataBase","ClosureDate");
    var currentYear = Banana.Converter.toDate(currentStartDate).getFullYear();
    var company = current.info("AccountingDataBase","Company");
    var address = current.info("AccountingDataBase","Address1");
