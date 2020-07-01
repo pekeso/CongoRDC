@@ -14,7 +14,7 @@
 //
 // @id = ch.banana.africa.reportsohadardc
 // @api = 1.0
-// @pubdate = 2019-12-06
+// @pubdate = 2020-07-01
 // @publisher = Banana.ch SA
 // @description = Balance Sheet, Profit/Loss Statement, Cash Flow
 // @description.fr = Bilan, Compte de résultat, Tableau des flux de tresorerie
