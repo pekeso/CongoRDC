@@ -61,7 +61,7 @@ function exec() {
 * Function that creates and prints the VAT report
 *
 **************************************************************************************/
-function createVATDeclaration(current, startDate, endDate) {
+function createVATDeclaration(current, startDate, endDate, report) {
 
    // Accounting period for the current year file
    var currentStartDate = startDate;
@@ -83,13 +83,13 @@ function createVATDeclaration(current, startDate, endDate) {
    var email = current.info("AccountingDataBase","Email");
    var month = Banana.Converter.toDate(currentEndDate).getMonth() + 1;
    var currentMonth = getMonthString(month);
-   //currentMonth = currentMonth.getMonth();
+   var today = new Date(); // The day the report will be generated
 
    // Extract data from journal and calculate balances
    var transactions = VatGetJournal(current, currentStartDate, currentEndDate);
 
    if (!report) {
-      var report = Banana.Report.newReport("VAT Declaration");
+      var report = Banana.Report.newReport("VAT Report");
    }
 
    // Header of the report
@@ -230,8 +230,9 @@ function createVATDeclaration(current, startDate, endDate) {
    tableRow.addCell("2","center",1).setStyleAttributes("border:thin black solid");
    tableRow.addCell("Prestations de services", "", 7).setStyleAttributes("border:thin black solid");
    var v2Taxable = VatGetGr1Balance(current, transactions, "2", 2, currentStartDate, currentEndDate);
-   var v2Amount = VatGetGr1Balance(current, transactions, "2", 4, currentStartDate, currentEndDate);
-   tableRow.addCell("", "", 4).setStyleAttributes("border:thin black solid");
+   var v2Amount = VatGetGr1Balance(current, transactions, "2", 4, currentStartDate, currentEndDate);   
+   var v2CA = VatGetGr1Balance(current, transactions, "2", 2, currentStartDate, currentEndDate);
+   tableRow.addCell(formatNumber(v2CA), "center", 4).setStyleAttributes("border:thin black solid");
    tableRow.addCell(formatNumber(v2Taxable), "center", 4).setStyleAttributes("border:thin black solid");
    tableRow.addCell(formatNumber(v2Amount), "center", 4).setStyleAttributes("border:thin black solid");
 
@@ -580,8 +581,8 @@ function createVATDeclaration(current, startDate, endDate) {
 
    tableRow = table.addRow();
    tableRow.addCell("", "", 2);
-   tableRow.addCell("Fait à          " + city, "", 1).setStyleAttributes("font-size:6.5px;font-weight:bold");  
-   tableRow.addCell(",le ", "", 1).setStyleAttributes("font-size:6.5px;font-weight:bold"); 
+   tableRow.addCell("Fait à       " + city, "", 1).setStyleAttributes("font-size:6.5px;font-weight:bold");  
+   tableRow.addCell(",le " + formatDate(today), "", 1).setStyleAttributes("font-size:6.5px;font-weight:bold"); 
 
    tableRow = table.addRow();
    tableRow.addCell("Déclaré conforme à nos écritures,", "", 4).setStyleAttributes("padding-left:40px;font-size:6.5px;font-weight:bold");
@@ -663,26 +664,11 @@ function createVATDeclaration(current, startDate, endDate) {
    var tableRow = table.addRow();
    tableRow.addCell("IMPORTANT", "bold italic", 20).setStyleAttributes("font-size:7px;padding-left:15px");
 
-   // tableRow = table.addRow();
-   // tableRow.addCell("* Lire attentivement la notice au verso avant de remplir la déclaration. " + 
-   //             "En cas d'hésitation, se référer au service de la DGI du lieu de souscription.", "", 20).setStyleAttributes("font-size:7px;padding-left:15px");
-
-   // tableRow = table.addRow();
-   // tableRow.addCell("* Le montant de la TVA payé par l'assujetti bénéficiaire de marché public " +
-   //             "à financement extérieur ne comprend pas la TVA prise en charge par l'État.", "", 20).setStyleAttributes("font-size:7px;padding-left:15px");
-
-   // tableRow = table.addRow();
-   // tableRow.addCell("* Remplir correctement en majuscule toutes les cases.", "", 20).setStyleAttributes("font-size:7px;padding-left:15px");
-
-   // tableRow = table.addRow();
-   // tableRow.addCell("* En cas de rature ou de surcharge, la déclaration ne sera pas acceptée.", "", 20).setStyleAttributes("font-size:7px;padding-left:15px");
-
    tableRow = table.addRow();
    tableRow.addCell("Cette impression ne peut pas être envoyée aux services des impôts.", "bold", 20).setStyleAttributes("font-size:7px;padding-left:15px");
 
    tableRow = table.addRow();
-   tableRow.addCell("Copier les données sur le formulaire officiel", "bold", 20).setStyleAttributes("font-size:7px;padding-left:15px");
-
+   tableRow.addCell("Copier les données sur le formulaire officiel.", "bold", 20).setStyleAttributes("font-size:7px;padding-left:15px");
 
    return report;
 }
@@ -715,6 +701,19 @@ function formatValues(value) {
 function formatNumber(amount, convZero) {
 
 	return Banana.Converter.toLocaleNumberFormat(amount, 2, convZero);
+}
+
+function formatDate(date) {
+   month = '' + (date.getMonth() + 1);
+       day = '' + date.getDate();
+       year = date.getFullYear();
+
+   if (month.length < 2) 
+       month = '0' + month;
+   if (day.length < 2) 
+       day = '0' + day;
+
+   return [day, month, year].join('/');
 }
 
 /**************************************************************************************

@@ -1,8 +1,8 @@
 Test Banana Apps
 ----------------
 
-Date:        2020-06-26 03:57:45.225
-Duration:    00:00:00.479
+Date:        2020-06-29 16:05:01.247
+Duration:    00:00:00.368
 Application: Banana90 9.0.5
 OS:          Windows 10 (10.0)
 Qt:          5.12.6
@@ -16,7 +16,7 @@ Test succesfully completed
 > Differences:   0
 > Added:         0
 > Deleted:       0
-> Identical:     645
-> Total results: 645
+> Identical:     648
+> Total results: 648
 > Total files:   1
 
