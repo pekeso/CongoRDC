@@ -202,7 +202,7 @@ function createVATDeclaration(current, startDate, endDate, report) {
    tableRow.addCell("", "", 9).setStyleAttributes("border:thin black solid");
 
    tableRow = table.addRow();
-   tableRow.addCell("", "", 8).setStyleAttributes("border:thin black solid");
+   tableRow.addCell(state, "", 8).setStyleAttributes("border:thin black solid");
    tableRow.addCell("E-mail:", "", 3).setStyleAttributes("border:thin black solid");
    tableRow.addCell(email, "", 9).setStyleAttributes("border:thin black solid");
 
