@@ -705,8 +705,8 @@ function calculate_FE(banDoc, startDate, endDate) {
       - (-1)getAmount(Gr=465,total)
       - (-1)getAmount(Gr=4752,total)
       - (-1)getAmount(Gr=DH,total)
-      + getAmount(Gr=DA2,credit)
-      + getAmount(Gr=DB2,credit)
+      + (-1)getAmount(Gr=DA2,total)
+      + (-1)getAmount(Gr=DB2,total)
       - getAmount(Gr=443412,credit)
       - getAmount(Gr=REVERS,credit)
    */
@@ -720,8 +720,8 @@ function calculate_FE(banDoc, startDate, endDate) {
    var gr465 = getAmount(banDoc,'Gr=465','total',startDate,endDate);
    var gr4752 = getAmount(banDoc,'Gr=4752','total',startDate,endDate);
    var grDH = getAmount(banDoc,'Gr=DH','total',startDate,endDate);
-   var grDA2 = getAmount(banDoc,'Gr=DA2','credit',startDate,endDate);
-   var grDB2 = getAmount(banDoc,'Gr=DB2','credit',startDate,endDate);
+   var grDA2 = getAmount(banDoc,'Gr=DA2','total',startDate,endDate);
+   var grDB2 = getAmount(banDoc,'Gr=DB2','total',startDate,endDate);
    var gr443412 = getAmount(banDoc,'Gr=443412','credit',startDate,endDate);
    var grRevers = getAmount(banDoc,'Gr=REVERS','credit',startDate,endDate);
    var res = 0;
@@ -735,8 +735,8 @@ function calculate_FE(banDoc, startDate, endDate) {
    res = Banana.SDecimal.subtract(res, Banana.SDecimal.invert(gr465));
    res = Banana.SDecimal.subtract(res, Banana.SDecimal.invert(gr4752));
    res = Banana.SDecimal.subtract(res, Banana.SDecimal.invert(grDH));
-   res = Banana.SDecimal.add(res,grDA2);
-   res = Banana.SDecimal.add(res,grDB2);
+   res = Banana.SDecimal.add(res, Banana.SDecimal.invert(grDA2));
+   res = Banana.SDecimal.add(res, Banana.SDecimal.invert(grDB2));
    res = Banana.SDecimal.subtract(res,gr443412);
    res = Banana.SDecimal.subtract(res,grRevers); 
    return res;
@@ -936,8 +936,8 @@ function calculate_FK(banDoc, startDate, endDate) {
 
 function calculate_FL(banDoc, startDate, endDate) {
    /*
-      + getAmount(Gr=45821,total)
-      + getAmount(Gr=44941,total)
+      + getAmount(Gr=45821,credit)
+      + getAmount(Gr=44941,credit)
    */
 
    var gr45821 = getAmount(banDoc,'Gr=45821','credit',startDate,endDate);

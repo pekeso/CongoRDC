@@ -43,7 +43,7 @@ Mois de (2): DÉCEMBRE \\
 \multicolumn{8}{l}{Sigle: } & \multicolumn{3}{l}{Adresse Postale: } & \multicolumn{9}{l}{}\\
 \multicolumn{8}{l}{Adresse Physique: } & \multicolumn{3}{l}{Nº téléphone: } & \multicolumn{9}{l}{+243 898752062 }\\
 \multicolumn{8}{l}{Avenue Tshibangu n°007, C/ LEMBA } & \multicolumn{3}{l}{Fax: } & \multicolumn{9}{l}{}\\
-\multicolumn{8}{l}{} & \multicolumn{3}{l}{E-mail: } & \multicolumn{9}{l}{ddrkinano1@gmail.com }\\
+\multicolumn{8}{l}{RD Congo } & \multicolumn{3}{l}{E-mail: } & \multicolumn{9}{l}{ddrkinano1@gmail.com }\\
 \multicolumn{20}{l}{  }\\
 \multicolumn{8}{l}{II. OPÉRATIONS RÉALISÉES (4) } & \multicolumn{4}{l}{Chiffre d'affaires réalisé du mois* } & \multicolumn{4}{l}{Chiffre d'affaires imposable du mois (a) } & \multicolumn{4}{l}{TVA Collectée(b)=a * 16\% }\\
 1  & \multicolumn{7}{l}{Livraisons de biens } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{304'410'000.00 } & \multicolumn{4}{l}{48'705'600.00 }\\
@@ -75,8 +75,8 @@ Mois de (2): DÉCEMBRE \\
 21  & \multicolumn{6}{l}{Récupération de la TVA déductible sur marchés publics à financement extérieur } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 \multicolumn{20}{l}{  }\\
 \multicolumn{7}{l}{VI. CALCUL DE L'IMPÔT (8) } & \multicolumn{10}{l}{i }\\
-22  & \multicolumn{6}{l}{TVA nette à verser (b9+d10+h18+h20-g17-h19-b5) } & \multicolumn{5}{l}{10'926'080.00 } & \multicolumn{5}{l}{}\\
-23  & \multicolumn{6}{l}{Crédit de TVA (g17+h19+b5-b9-d10-h18-h20) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+22  & \multicolumn{6}{l}{TVA nette à verser (b9+d10+h18-g17-h19-h20-b5) } & \multicolumn{5}{l}{10'926'080.00 } & \multicolumn{5}{l}{}\\
+23  & \multicolumn{6}{l}{Crédit de TVA (g17+h19+h20+b5-b9-d10-h18) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 24  & \multicolumn{6}{l}{Remboursement de crédit de TVA demandé (montant figurant sur la demande de remboursement) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 25  & \multicolumn{6}{l}{Crédit de TVA reportable (i23-i24) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 26  & \multicolumn{6}{l}{TVA sur marchés publics à financement extérieur (case b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
@@ -87,7 +87,7 @@ Mois de (2): DÉCEMBRE \\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l }
 \multicolumn{4}{l}{}\\
-\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 29/06/2020 \\
+\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 12/07/2020 \\
 \multicolumn{4}{l}{Déclaré conforme à nos écritures, }\\
 Sceau de l'entreprise  & \multicolumn{2}{l}{Nom et qualité du signataire (10) } & Signature \\
 \multicolumn{4}{l}{}\\
@@ -124,7 +124,7 @@ Mois de (2): JUIN \\
 \multicolumn{8}{l}{Sigle: } & \multicolumn{3}{l}{Adresse Postale: } & \multicolumn{9}{l}{}\\
 \multicolumn{8}{l}{Adresse Physique: } & \multicolumn{3}{l}{Nº téléphone: } & \multicolumn{9}{l}{+243 898752062 }\\
 \multicolumn{8}{l}{Avenue Tshibangu n°007, C/ LEMBA } & \multicolumn{3}{l}{Fax: } & \multicolumn{9}{l}{}\\
-\multicolumn{8}{l}{} & \multicolumn{3}{l}{E-mail: } & \multicolumn{9}{l}{ddrkinano1@gmail.com }\\
+\multicolumn{8}{l}{RD Congo } & \multicolumn{3}{l}{E-mail: } & \multicolumn{9}{l}{ddrkinano1@gmail.com }\\
 \multicolumn{20}{l}{  }\\
 \multicolumn{8}{l}{II. OPÉRATIONS RÉALISÉES (4) } & \multicolumn{4}{l}{Chiffre d'affaires réalisé du mois* } & \multicolumn{4}{l}{Chiffre d'affaires imposable du mois (a) } & \multicolumn{4}{l}{TVA Collectée(b)=a * 16\% }\\
 1  & \multicolumn{7}{l}{Livraisons de biens } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{303'610'000.00 } & \multicolumn{4}{l}{48'577'600.00 }\\
@@ -156,8 +156,8 @@ Mois de (2): JUIN \\
 21  & \multicolumn{6}{l}{Récupération de la TVA déductible sur marchés publics à financement extérieur } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 \multicolumn{20}{l}{  }\\
 \multicolumn{7}{l}{VI. CALCUL DE L'IMPÔT (8) } & \multicolumn{10}{l}{i }\\
-22  & \multicolumn{6}{l}{TVA nette à verser (b9+d10+h18+h20-g17-h19-b5) } & \multicolumn{5}{l}{10'935'680.00 } & \multicolumn{5}{l}{}\\
-23  & \multicolumn{6}{l}{Crédit de TVA (g17+h19+b5-b9-d10-h18-h20) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+22  & \multicolumn{6}{l}{TVA nette à verser (b9+d10+h18-g17-h19-h20-b5) } & \multicolumn{5}{l}{10'935'680.00 } & \multicolumn{5}{l}{}\\
+23  & \multicolumn{6}{l}{Crédit de TVA (g17+h19+h20+b5-b9-d10-h18) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 24  & \multicolumn{6}{l}{Remboursement de crédit de TVA demandé (montant figurant sur la demande de remboursement) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 25  & \multicolumn{6}{l}{Crédit de TVA reportable (i23-i24) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 26  & \multicolumn{6}{l}{TVA sur marchés publics à financement extérieur (case b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
@@ -168,7 +168,7 @@ Mois de (2): JUIN \\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l }
 \multicolumn{4}{l}{}\\
-\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 29/06/2020 \\
+\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 12/07/2020 \\
 \multicolumn{4}{l}{Déclaré conforme à nos écritures, }\\
 Sceau de l'entreprise  & \multicolumn{2}{l}{Nom et qualité du signataire (10) } & Signature \\
 \multicolumn{4}{l}{}\\
@@ -205,7 +205,7 @@ Mois de (2): DÉCEMBRE \\
 \multicolumn{8}{l}{Sigle: } & \multicolumn{3}{l}{Adresse Postale: } & \multicolumn{9}{l}{}\\
 \multicolumn{8}{l}{Adresse Physique: } & \multicolumn{3}{l}{Nº téléphone: } & \multicolumn{9}{l}{+243 898752062 }\\
 \multicolumn{8}{l}{Avenue Tshibangu n°007, C/ LEMBA } & \multicolumn{3}{l}{Fax: } & \multicolumn{9}{l}{}\\
-\multicolumn{8}{l}{} & \multicolumn{3}{l}{E-mail: } & \multicolumn{9}{l}{ddrkinano1@gmail.com }\\
+\multicolumn{8}{l}{RD Congo } & \multicolumn{3}{l}{E-mail: } & \multicolumn{9}{l}{ddrkinano1@gmail.com }\\
 \multicolumn{20}{l}{  }\\
 \multicolumn{8}{l}{II. OPÉRATIONS RÉALISÉES (4) } & \multicolumn{4}{l}{Chiffre d'affaires réalisé du mois* } & \multicolumn{4}{l}{Chiffre d'affaires imposable du mois (a) } & \multicolumn{4}{l}{TVA Collectée(b)=a * 16\% }\\
 1  & \multicolumn{7}{l}{Livraisons de biens } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{800'000.00 } & \multicolumn{4}{l}{128'000.00 }\\
@@ -237,8 +237,8 @@ Mois de (2): DÉCEMBRE \\
 21  & \multicolumn{6}{l}{Récupération de la TVA déductible sur marchés publics à financement extérieur } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 \multicolumn{20}{l}{  }\\
 \multicolumn{7}{l}{VI. CALCUL DE L'IMPÔT (8) } & \multicolumn{10}{l}{i }\\
-22  & \multicolumn{6}{l}{TVA nette à verser (b9+d10+h18+h20-g17-h19-b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
-23  & \multicolumn{6}{l}{Crédit de TVA (g17+h19+b5-b9-d10-h18-h20) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{228'800.00 }\\
+22  & \multicolumn{6}{l}{TVA nette à verser (b9+d10+h18-g17-h19-h20-b5) } & \multicolumn{5}{l}{-228'800.00 } & \multicolumn{5}{l}{}\\
+23  & \multicolumn{6}{l}{Crédit de TVA (g17+h19+h20+b5-b9-d10-h18) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 24  & \multicolumn{6}{l}{Remboursement de crédit de TVA demandé (montant figurant sur la demande de remboursement) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 25  & \multicolumn{6}{l}{Crédit de TVA reportable (i23-i24) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 26  & \multicolumn{6}{l}{TVA sur marchés publics à financement extérieur (case b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
@@ -249,7 +249,7 @@ Mois de (2): DÉCEMBRE \\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l }
 \multicolumn{4}{l}{}\\
-\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 29/06/2020 \\
+\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 12/07/2020 \\
 \multicolumn{4}{l}{Déclaré conforme à nos écritures, }\\
 Sceau de l'entreprise  & \multicolumn{2}{l}{Nom et qualité du signataire (10) } & Signature \\
 \multicolumn{4}{l}{}\\
@@ -286,7 +286,7 @@ Mois de (2): MARS \\
 \multicolumn{8}{l}{Sigle: } & \multicolumn{3}{l}{Adresse Postale: } & \multicolumn{9}{l}{}\\
 \multicolumn{8}{l}{Adresse Physique: } & \multicolumn{3}{l}{Nº téléphone: } & \multicolumn{9}{l}{+243 898752062 }\\
 \multicolumn{8}{l}{Avenue Tshibangu n°007, C/ LEMBA } & \multicolumn{3}{l}{Fax: } & \multicolumn{9}{l}{}\\
-\multicolumn{8}{l}{} & \multicolumn{3}{l}{E-mail: } & \multicolumn{9}{l}{ddrkinano1@gmail.com }\\
+\multicolumn{8}{l}{RD Congo } & \multicolumn{3}{l}{E-mail: } & \multicolumn{9}{l}{ddrkinano1@gmail.com }\\
 \multicolumn{20}{l}{  }\\
 \multicolumn{8}{l}{II. OPÉRATIONS RÉALISÉES (4) } & \multicolumn{4}{l}{Chiffre d'affaires réalisé du mois* } & \multicolumn{4}{l}{Chiffre d'affaires imposable du mois (a) } & \multicolumn{4}{l}{TVA Collectée(b)=a * 16\% }\\
 1  & \multicolumn{7}{l}{Livraisons de biens } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{303'610'000.00 } & \multicolumn{4}{l}{48'577'600.00 }\\
@@ -318,8 +318,8 @@ Mois de (2): MARS \\
 21  & \multicolumn{6}{l}{Récupération de la TVA déductible sur marchés publics à financement extérieur } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 \multicolumn{20}{l}{  }\\
 \multicolumn{7}{l}{VI. CALCUL DE L'IMPÔT (8) } & \multicolumn{10}{l}{i }\\
-22  & \multicolumn{6}{l}{TVA nette à verser (b9+d10+h18+h20-g17-h19-b5) } & \multicolumn{5}{l}{11'140'480.00 } & \multicolumn{5}{l}{}\\
-23  & \multicolumn{6}{l}{Crédit de TVA (g17+h19+b5-b9-d10-h18-h20) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+22  & \multicolumn{6}{l}{TVA nette à verser (b9+d10+h18-g17-h19-h20-b5) } & \multicolumn{5}{l}{11'140'480.00 } & \multicolumn{5}{l}{}\\
+23  & \multicolumn{6}{l}{Crédit de TVA (g17+h19+h20+b5-b9-d10-h18) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 24  & \multicolumn{6}{l}{Remboursement de crédit de TVA demandé (montant figurant sur la demande de remboursement) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 25  & \multicolumn{6}{l}{Crédit de TVA reportable (i23-i24) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 26  & \multicolumn{6}{l}{TVA sur marchés publics à financement extérieur (case b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
@@ -330,7 +330,7 @@ Mois de (2): MARS \\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l }
 \multicolumn{4}{l}{}\\
-\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 29/06/2020 \\
+\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 12/07/2020 \\
 \multicolumn{4}{l}{Déclaré conforme à nos écritures, }\\
 Sceau de l'entreprise  & \multicolumn{2}{l}{Nom et qualité du signataire (10) } & Signature \\
 \multicolumn{4}{l}{}\\
@@ -367,7 +367,7 @@ Mois de (2): JUIN \\
 \multicolumn{8}{l}{Sigle: } & \multicolumn{3}{l}{Adresse Postale: } & \multicolumn{9}{l}{}\\
 \multicolumn{8}{l}{Adresse Physique: } & \multicolumn{3}{l}{Nº téléphone: } & \multicolumn{9}{l}{+243 898752062 }\\
 \multicolumn{8}{l}{Avenue Tshibangu n°007, C/ LEMBA } & \multicolumn{3}{l}{Fax: } & \multicolumn{9}{l}{}\\
-\multicolumn{8}{l}{} & \multicolumn{3}{l}{E-mail: } & \multicolumn{9}{l}{ddrkinano1@gmail.com }\\
+\multicolumn{8}{l}{RD Congo } & \multicolumn{3}{l}{E-mail: } & \multicolumn{9}{l}{ddrkinano1@gmail.com }\\
 \multicolumn{20}{l}{  }\\
 \multicolumn{8}{l}{II. OPÉRATIONS RÉALISÉES (4) } & \multicolumn{4}{l}{Chiffre d'affaires réalisé du mois* } & \multicolumn{4}{l}{Chiffre d'affaires imposable du mois (a) } & \multicolumn{4}{l}{TVA Collectée(b)=a * 16\% }\\
 1  & \multicolumn{7}{l}{Livraisons de biens } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
@@ -399,8 +399,8 @@ Mois de (2): JUIN \\
 21  & \multicolumn{6}{l}{Récupération de la TVA déductible sur marchés publics à financement extérieur } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 \multicolumn{20}{l}{  }\\
 \multicolumn{7}{l}{VI. CALCUL DE L'IMPÔT (8) } & \multicolumn{10}{l}{i }\\
-22  & \multicolumn{6}{l}{TVA nette à verser (b9+d10+h18+h20-g17-h19-b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
-23  & \multicolumn{6}{l}{Crédit de TVA (g17+h19+b5-b9-d10-h18-h20) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{424'000.00 }\\
+22  & \multicolumn{6}{l}{TVA nette à verser (b9+d10+h18-g17-h19-h20-b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+23  & \multicolumn{6}{l}{Crédit de TVA (g17+h19+h20+b5-b9-d10-h18) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{424'000.00 }\\
 24  & \multicolumn{6}{l}{Remboursement de crédit de TVA demandé (montant figurant sur la demande de remboursement) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 25  & \multicolumn{6}{l}{Crédit de TVA reportable (i23-i24) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 26  & \multicolumn{6}{l}{TVA sur marchés publics à financement extérieur (case b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
@@ -411,7 +411,7 @@ Mois de (2): JUIN \\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l }
 \multicolumn{4}{l}{}\\
-\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 29/06/2020 \\
+\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 12/07/2020 \\
 \multicolumn{4}{l}{Déclaré conforme à nos écritures, }\\
 Sceau de l'entreprise  & \multicolumn{2}{l}{Nom et qualité du signataire (10) } & Signature \\
 \multicolumn{4}{l}{}\\
@@ -448,7 +448,7 @@ Mois de (2): SEPTEMBRE \\
 \multicolumn{8}{l}{Sigle: } & \multicolumn{3}{l}{Adresse Postale: } & \multicolumn{9}{l}{}\\
 \multicolumn{8}{l}{Adresse Physique: } & \multicolumn{3}{l}{Nº téléphone: } & \multicolumn{9}{l}{+243 898752062 }\\
 \multicolumn{8}{l}{Avenue Tshibangu n°007, C/ LEMBA } & \multicolumn{3}{l}{Fax: } & \multicolumn{9}{l}{}\\
-\multicolumn{8}{l}{} & \multicolumn{3}{l}{E-mail: } & \multicolumn{9}{l}{ddrkinano1@gmail.com }\\
+\multicolumn{8}{l}{RD Congo } & \multicolumn{3}{l}{E-mail: } & \multicolumn{9}{l}{ddrkinano1@gmail.com }\\
 \multicolumn{20}{l}{  }\\
 \multicolumn{8}{l}{II. OPÉRATIONS RÉALISÉES (4) } & \multicolumn{4}{l}{Chiffre d'affaires réalisé du mois* } & \multicolumn{4}{l}{Chiffre d'affaires imposable du mois (a) } & \multicolumn{4}{l}{TVA Collectée(b)=a * 16\% }\\
 1  & \multicolumn{7}{l}{Livraisons de biens } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{800'000.00 } & \multicolumn{4}{l}{128'000.00 }\\
@@ -480,8 +480,8 @@ Mois de (2): SEPTEMBRE \\
 21  & \multicolumn{6}{l}{Récupération de la TVA déductible sur marchés publics à financement extérieur } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 \multicolumn{20}{l}{  }\\
 \multicolumn{7}{l}{VI. CALCUL DE L'IMPÔT (8) } & \multicolumn{10}{l}{i }\\
-22  & \multicolumn{6}{l}{TVA nette à verser (b9+d10+h18+h20-g17-h19-b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
-23  & \multicolumn{6}{l}{Crédit de TVA (g17+h19+b5-b9-d10-h18-h20) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{171'200.00 }\\
+22  & \multicolumn{6}{l}{TVA nette à verser (b9+d10+h18-g17-h19-h20-b5) } & \multicolumn{5}{l}{-171'200.00 } & \multicolumn{5}{l}{}\\
+23  & \multicolumn{6}{l}{Crédit de TVA (g17+h19+h20+b5-b9-d10-h18) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 24  & \multicolumn{6}{l}{Remboursement de crédit de TVA demandé (montant figurant sur la demande de remboursement) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 25  & \multicolumn{6}{l}{Crédit de TVA reportable (i23-i24) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 26  & \multicolumn{6}{l}{TVA sur marchés publics à financement extérieur (case b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
@@ -492,7 +492,7 @@ Mois de (2): SEPTEMBRE \\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l }
 \multicolumn{4}{l}{}\\
-\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 29/06/2020 \\
+\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 12/07/2020 \\
 \multicolumn{4}{l}{Déclaré conforme à nos écritures, }\\
 Sceau de l'entreprise  & \multicolumn{2}{l}{Nom et qualité du signataire (10) } & Signature \\
 \multicolumn{4}{l}{}\\
@@ -529,7 +529,7 @@ Mois de (2): DÉCEMBRE \\
 \multicolumn{8}{l}{Sigle: } & \multicolumn{3}{l}{Adresse Postale: } & \multicolumn{9}{l}{}\\
 \multicolumn{8}{l}{Adresse Physique: } & \multicolumn{3}{l}{Nº téléphone: } & \multicolumn{9}{l}{+243 898752062 }\\
 \multicolumn{8}{l}{Avenue Tshibangu n°007, C/ LEMBA } & \multicolumn{3}{l}{Fax: } & \multicolumn{9}{l}{}\\
-\multicolumn{8}{l}{} & \multicolumn{3}{l}{E-mail: } & \multicolumn{9}{l}{ddrkinano1@gmail.com }\\
+\multicolumn{8}{l}{RD Congo } & \multicolumn{3}{l}{E-mail: } & \multicolumn{9}{l}{ddrkinano1@gmail.com }\\
 \multicolumn{20}{l}{  }\\
 \multicolumn{8}{l}{II. OPÉRATIONS RÉALISÉES (4) } & \multicolumn{4}{l}{Chiffre d'affaires réalisé du mois* } & \multicolumn{4}{l}{Chiffre d'affaires imposable du mois (a) } & \multicolumn{4}{l}{TVA Collectée(b)=a * 16\% }\\
 1  & \multicolumn{7}{l}{Livraisons de biens } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
@@ -561,8 +561,8 @@ Mois de (2): DÉCEMBRE \\
 21  & \multicolumn{6}{l}{Récupération de la TVA déductible sur marchés publics à financement extérieur } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 \multicolumn{20}{l}{  }\\
 \multicolumn{7}{l}{VI. CALCUL DE L'IMPÔT (8) } & \multicolumn{10}{l}{i }\\
-22  & \multicolumn{6}{l}{TVA nette à verser (b9+d10+h18+h20-g17-h19-b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
-23  & \multicolumn{6}{l}{Crédit de TVA (g17+h19+b5-b9-d10-h18-h20) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{276'800.00 }\\
+22  & \multicolumn{6}{l}{TVA nette à verser (b9+d10+h18-g17-h19-h20-b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+23  & \multicolumn{6}{l}{Crédit de TVA (g17+h19+h20+b5-b9-d10-h18) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{276'800.00 }\\
 24  & \multicolumn{6}{l}{Remboursement de crédit de TVA demandé (montant figurant sur la demande de remboursement) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 25  & \multicolumn{6}{l}{Crédit de TVA reportable (i23-i24) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 26  & \multicolumn{6}{l}{TVA sur marchés publics à financement extérieur (case b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
@@ -573,7 +573,7 @@ Mois de (2): DÉCEMBRE \\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l }
 \multicolumn{4}{l}{}\\
-\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 29/06/2020 \\
+\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 12/07/2020 \\
 \multicolumn{4}{l}{Déclaré conforme à nos écritures, }\\
 Sceau de l'entreprise  & \multicolumn{2}{l}{Nom et qualité du signataire (10) } & Signature \\
 \multicolumn{4}{l}{}\\
