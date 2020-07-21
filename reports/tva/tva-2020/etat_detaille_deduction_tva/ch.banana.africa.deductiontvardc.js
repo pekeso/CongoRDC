@@ -50,7 +50,7 @@ function exec() {
     }    
  
     // Create the VAT report for the selected period
-    //var report = createVATDeductionDetailsReport(current, dateForm.selectionStartDate, dateForm.selectionEndDate);
+    var report = createVATDeductionDetailsReport(current, dateForm.selectionStartDate, dateForm.selectionEndDate);
     var stylesheet = createStyleSheet();
     Banana.Report.preview(report, stylesheet);
 }
