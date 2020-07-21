@@ -12,49 +12,49 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-// @id = ch.banana.africa.tvardc.test
+// @id = ch.banana.africa.deductiontvardc.test
 // @api = 1.0
-// @pubdate = 2019-10-14
+// @pubdate = 2020-07-21
 // @publisher = Banana.ch SA
-// @description = VAT Declaration (OHADA - RDC) [BETA]
-// @description.fr = Taxe sur la valeur ajoutée TVA (OHADA - RDC) [BETA]
+// @description = VAT Deduction Details (OHADA - RDC) [BETA]
+// @description.fr = Etat Détaillé des Déductions de TVA (OHADA - RDC) [BETA]
 // @task = app.command
 // @doctype = *.*
 // @docproperties =
 // @outputformat = none
 // @inputdataform = none
 // @timeout = -1
-// @includejs = ../ch.banana.africa.tvardc.js
+// @includejs = ../ch.banana.africa.deductiontvardc.js
 
 // Register this test case to be executed
-Test.registerTestCase(new TestVatReportRDC());
+Test.registerTestCase(new TestVATDeductionReportRDC());
 
 // Define the test class, the name of the class is not important
-function TestVatReportRDC() {
+function TestVATDeductionReportRDC() {
 }
 
 // This method will be called at the beginning of the test case
-TestVatReportRDC.prototype.initTestCase = function() {
+TestVATDeductionReportRDC.prototype.initTestCase = function() {
 
 }
 
 // This method will be called at the end of the test case
-TestVatReportRDC.prototype.cleanupTestCase = function() {
+TestVATDeductionReportRDC.prototype.cleanupTestCase = function() {
 
 }
 
 // This method will be called before every test method is executed
-TestVatReportRDC.prototype.init = function() {
+TestVATDeductionReportRDC.prototype.init = function() {
 
 }
 
 // This method will be called after every test method is executed
-TestVatReportRDC.prototype.cleanup = function() {
+TestVATDeductionReportRDC.prototype.cleanup = function() {
 
 }
 
 // Generate the expected (correct) file
-TestVatReportRDC.prototype.testBananaApp = function() {
+TestVATDeductionReportRDC.prototype.testBananaApp = function() {
     // Open the banana document
     var banDoc = Banana.application.openDocument("file:script/../test/testcases/ohada_tva_cdf_2020.ac2");
     if (!banDoc) {return;}
@@ -71,13 +71,13 @@ TestVatReportRDC.prototype.testBananaApp = function() {
 }
 
 // Function that creates the report for the test
-TestVatReportRDC.prototype.report_test = function(banDoc, startDate, endDate, reportName) {
-    var vatReport = createVATDeclaration(banDoc, startDate, endDate);
-    Test.logger.addReport(reportName, vatReport);
+TestVATDeductionReportRDC.prototype.report_test = function(banDoc, startDate, endDate, reportName) {
+    var vatDeductionReport = createVATDeductionDetailsReport(banDoc, startDate, endDate);
+    Test.logger.addReport(reportName, vatDeductionReport);
 }
 
 // Function that creates the table for the test
-TestVatReportRDC.prototype.table_test = function(banDoc, tableName) {
+TestVATDeductionReportRDC.prototype.table_test = function(banDoc, tableName) {
     if (banDoc) {
         var table = banDoc.table("VatCodes");
         Test.logger.addTable(tableName, table, ["Group","VatCode","Description","Gr","Gr1","IsDue","AmountType","VatRate","VatRateOnGross","VatAccount"]);
