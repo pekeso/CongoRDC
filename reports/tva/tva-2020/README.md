@@ -35,5 +35,5 @@ Les données insérées seront utilisées pour remplir la partie IDENTIFICATION 
 * Copier les résultats sur un formulaire original de la DGI.
 
 Exemple de déclaration de la TVA RDC
-![VAT Report DRC](/images/vat_declaration_rdc_report.png)
+![VAT Report DRC](images/vat_declaration_rdc_report.png)
 
