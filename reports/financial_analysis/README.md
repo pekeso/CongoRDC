@@ -36,4 +36,4 @@ Les données insérées seront utilisées pour remplir l'en-tête du rapport.
 * Contrôler le résultat.
 
 Exemple du rapport
-![Financial Analysis Report Example](/images/financial_analysis_report.png)
+![Financial Analysis Report Example](images/financial_analysis_report.png)

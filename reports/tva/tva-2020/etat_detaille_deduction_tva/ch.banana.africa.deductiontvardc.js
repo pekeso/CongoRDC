@@ -687,7 +687,7 @@ function VatGetJournal(banDoc, startDate, endDate) {
 				line.vatposted = tRow.value("VatPosted");
 				line.amount = tRow.value("JAmount");
             line.vatextrainfo = tRow.value("VatExtraInfo");
-            line.docinvoice = tRow.value("DocInvoice"); // Not displaying with .sbaa file
+            line.docinvoice = tRow.value("DocInvoice"); // Not displaying in .sbaa file
 
 				transactions.push(line);
 			}

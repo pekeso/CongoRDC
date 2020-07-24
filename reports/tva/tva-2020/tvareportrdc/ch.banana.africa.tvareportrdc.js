@@ -538,22 +538,43 @@ function createVATDeclaration(current, startDate, endDate, report) {
    sumAmount2 = Banana.SDecimal.add(sumAmount2, r19Amount);
    sumAmount2 = Banana.SDecimal.add(sumAmount2, r20Amount);
    
-   if(sumAmount1 > sumAmount2) {
-      vatCredit = "";
-      netVatAmount = Banana.SDecimal.add(netVatAmount, totalVatAmount);
-      netVatAmount = Banana.SDecimal.add(netVatAmount, Banana.SDecimal.invert(r18Amount));
-      netVatAmount = Banana.SDecimal.subtract(netVatAmount, vatAmountDeductible);
-      netVatAmount = Banana.SDecimal.subtract(netVatAmount, r19Amount);
-      netVatAmount = Banana.SDecimal.subtract(netVatAmount, r20Amount);
-      netVatAmount = Banana.SDecimal.subtract(netVatAmount, v5Amount);
-   } else if(sumAmount2 > sumAmount1) {
-      netVatAmount = "";
-      vatCredit = Banana.SDecimal.add(vatCredit, vatAmountDeductible);
-      vatCredit = Banana.SDecimal.add(vatCredit, r19Amount);
-      vatCredit = Banana.SDecimal.add(vatCredit, r20Amount);
-      vatCredit = Banana.SDecimal.add(vatCredit, v5Amount);
-      vatCredit = Banana.SDecimal.subtract(vatCredit, totalVatAmount);
-      vatCredit = Banana.SDecimal.subtract(vatCredit, Banana.SDecimal.invert(r18Amount));
+   if (month != 2) {
+      if(sumAmount1 > sumAmount2) {
+         vatCredit = "";      
+         netVatAmount = Banana.SDecimal.add(netVatAmount, totalVatAmount);
+         netVatAmount = Banana.SDecimal.add(netVatAmount, Banana.SDecimal.invert(r18Amount));
+         netVatAmount = Banana.SDecimal.subtract(netVatAmount, vatAmountDeductible);
+         netVatAmount = Banana.SDecimal.subtract(netVatAmount, r19Amount);
+         netVatAmount = Banana.SDecimal.subtract(netVatAmount, r20Amount);
+         netVatAmount = Banana.SDecimal.subtract(netVatAmount, v5Amount);
+      } else if(sumAmount2 > sumAmount1) {
+         netVatAmount = "";      
+         vatCredit = Banana.SDecimal.add(vatCredit, vatAmountDeductible);
+         vatCredit = Banana.SDecimal.add(vatCredit, r19Amount);
+         vatCredit = Banana.SDecimal.add(vatCredit, r20Amount);
+         vatCredit = Banana.SDecimal.add(vatCredit, v5Amount);
+         vatCredit = Banana.SDecimal.subtract(vatCredit, totalVatAmount);
+         vatCredit = Banana.SDecimal.subtract(vatCredit, Banana.SDecimal.invert(r18Amount));
+      }
+   } else {
+      if(Number(sumAmount1) > Number(sumAmount2)) {
+         vatCredit = "";      
+         netVatAmount = Banana.SDecimal.add(netVatAmount, totalVatAmount);
+         netVatAmount = Banana.SDecimal.add(netVatAmount, Banana.SDecimal.invert(r18Amount));
+         netVatAmount = Banana.SDecimal.subtract(netVatAmount, vatAmountDeductible);
+         netVatAmount = Banana.SDecimal.subtract(netVatAmount, r19Amount);
+         netVatAmount = Banana.SDecimal.subtract(netVatAmount, r20Amount);
+         netVatAmount = Banana.SDecimal.subtract(netVatAmount, v5Amount);
+      } else if(Number(sumAmount2) > Number(sumAmount1)) {
+         netVatAmount = "";      
+         vatCredit = Banana.SDecimal.add(vatCredit, vatAmountDeductible);
+         vatCredit = Banana.SDecimal.add(vatCredit, r19Amount);
+         vatCredit = Banana.SDecimal.add(vatCredit, r20Amount);
+         vatCredit = Banana.SDecimal.add(vatCredit, v5Amount);
+         vatCredit = Banana.SDecimal.subtract(vatCredit, totalVatAmount);
+         vatCredit = Banana.SDecimal.subtract(vatCredit, Banana.SDecimal.invert(r18Amount));
+         vatCredit = sumAmount2;
+      }
    }
    /* i22 */
    tableRow.addCell(formatNumber(netVatAmount), "center", 5);
