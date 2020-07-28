@@ -250,7 +250,7 @@ function createVATDeductionDetailsReport(current, startDate, endDate, report) {
    if (details[0]) {
       tableRow.addCell("", "center", 5).setStyleAttributes("font-size:8pt");
       tableRow.addCell("", "center", 5).setStyleAttributes("font-size:8pt");
-      tableRow.addCell(details[0].doc, "center", 2).setStyleAttributes("font-size:8pt");
+      tableRow.addCell(details[0].docinvoice, "center", 2).setStyleAttributes("font-size:8pt");
       tableRow.addCell(details[0].date, "center", 3).setStyleAttributes("font-size:8pt");
       tableRow.addCell(formatNumber(details[0].amount), "center", 5).setStyleAttributes("font-size:8pt");
    } else {
@@ -687,7 +687,8 @@ function VatGetJournal(banDoc, startDate, endDate) {
 				line.vatposted = tRow.value("VatPosted");
 				line.amount = tRow.value("JAmount");
             line.vatextrainfo = tRow.value("VatExtraInfo");
-            line.docinvoice = tRow.value("DocInvoice"); // Not displaying in .sbaa file
+            line.docinvoice = tRow.value('DocInvoice'); // Not displaying in .sbaa file
+            //line.customer = tRow.value('AccountCredit');
 
 				transactions.push(line);
 			}
