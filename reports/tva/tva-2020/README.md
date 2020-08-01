@@ -19,29 +19,7 @@ Fichier Javascript:
 * Démarrer Banana Comptabilité.
 * Installer l'extension Banana **Taxe sur la valeur ajoutée TVA OHADA et Congo RDC**. 
 
-Pour installer l'extension Banana **Taxe sur la valeur ajoutée TVA OHADA et Congo RDC**:
-- Cliquer sur **Extensions**
-- Ensuite **Gérer extensions...**
-
-![vat report](images/vat_doc2.jpg)
-
-Une fenêtre s'ouvre et affiche toutes les extensions Banana.
-
-![vat report](images/vat_doc3.jpg)
-
-Dans la barre de recherche, taper "taxe" et le résultat qui s'affiche est celui de l'extension de la TVA RDC.
-
-![vat report](images/vat_doc4.jpg)
-
-Cliquer sur **Installer** pour installer l'extension dans Banana Comptabilité.
-
-Une fenêtre de dialogue s'affiche. Cliquer sur **OK** pour démarrer l'installation de l'extension.
-
-Vérifier que l'installation a réussi en cliquant sur **Installée**
-
-![vat report](images/vat_doc5.jpg)
-
-Cliquer sur **Fermer** pour fermer la fenêtre.
+Pour installer l'extension Banana **Taxe sur la valeur ajoutée TVA OHADA et Congo RDC**, référez-vous à la documentation Banana en cliquant sur le lien suivant. https://www.banana.ch/doc/fr/node/4702
 
 ## Configuration fichier Banana Comptabilité
 Dans Banana, sélectionnez dans le menu **Fichier** la commande **Propriétés fichier...**
