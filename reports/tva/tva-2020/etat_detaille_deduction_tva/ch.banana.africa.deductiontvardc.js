@@ -79,6 +79,7 @@ function createVATDeductionDetailsReport(current, startDate, endDate, report) {
    var vatNumber = current.info("AccountingDataBase","VatNumber"); 
    var phoneNumber = current.info("AccountingDataBase","Phone");
    var email = current.info("AccountingDataBase","Email");
+   var invoicesSuppliers = current.invoicesSuppliers();
    var month = Banana.Converter.toDate(currentEndDate).getMonth() + 1;
    var currentMonth = getMonthString(month);
    var today = new Date(); // The day the report will be generated
@@ -526,7 +527,8 @@ function createVATDeductionDetailsReport(current, startDate, endDate, report) {
    table = styleTable(report, "tableNoBorder");
 
    tableRow = table.addRow();
-   tableRow.addCell("", "", 20);
+   tableRow.addCell(invoicesSuppliers.length, "", 20);
+   Banana.console.debug("test");
 
    tableRow = table.addRow();
    tableRow.addCell("", "", 7);
@@ -730,6 +732,23 @@ function getImportTransactionDetails(banDoc, startDate, endDate) {
       }
    }
    return importDetails;
+}
+
+function getSuppliers(banDoc) {
+   var invoicesSuppliers = banDoc.invoicesSuppliers();
+   if (invoicesSuppliers) {
+      for (var i = 0; i < invoicesSuppliers.rowCount; i++) {
+         var tRow = invoicesSuppliers.row(i);
+         var jsonString = tRow.toJSON();
+         if (jsonString.length > 0) {
+            var jsonRow = JSON.parse(jsonString);
+            for (key in jsonRow) {
+               if (jsonRow[key])
+                  Banana.console.debug(key + ": " + jsonRow[key].toString());
+            }
+         }
+      }
+   }
 }
 
 /* Return and array with all the VAT Codes 
