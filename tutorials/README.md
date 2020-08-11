@@ -1,4 +1,4 @@
-# Tutoriels: Comment utiliser les extensions Banana?
+# Tutoriels: Comment utiliser les extensions Banana (Congo RDC)?
 
 Une série de tutoriels pour comprendre comment utiliser les extensions suivantes dans le logiciel Banana Comptabilité: **rapports comptables OHADA**, **rapports balance des comptes OHADA**, **analyse financière OHADA** et **taxe sur la valeur ajoutée RDCongo**.
 
@@ -11,11 +11,11 @@ https://www.banana.ch/doc/fr/node/4702
 
 Maintenant, passons à l'utilisation proprement dite des extensions précitées dans le logiciel Banana Comptabilité.
 
-- [Tutoriel 1: Rapports comptables OHADA]()
+- [Tutoriel 1: Rapports comptables OHADA](tutorial1_accounting_reports.md)
 
-- [Tutoriel 2: Rapports balance des comptes OHADA]
+- [Tutoriel 2: Rapports balance des comptes OHADA]()
 
-- [Tutoriel 3: Analyse financière OHADA]
+- [Tutoriel 3: Analyse financière OHADA]()
 
-- [Tutoriel 4: Taxe sur la valeur ajoutée RDCongo]
+- [Tutoriel 4: Taxe sur la valeur ajoutée RDCongo]()
 
