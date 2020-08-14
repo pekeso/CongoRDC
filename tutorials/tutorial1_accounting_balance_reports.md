@@ -2,7 +2,7 @@
 
 ### 1. Introduction
 
-Cette extension permet de générer, en quelques clics, les rapport balance des comptes selon le modèle OHADA.
+Cette extension permet de générer, en quelques clics, le rapport balance des comptes selon le modèle OHADA.
 
 ### 2. Préalables
 
