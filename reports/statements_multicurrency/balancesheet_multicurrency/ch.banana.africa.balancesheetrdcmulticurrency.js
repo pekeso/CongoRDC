@@ -147,7 +147,7 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("NET","bold center",1).setStyleAttributes("border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 1: AD */
-  var AD1_exerciceN = getAmount(current,'Gr=AE-1|AF-1|AG-1|AH-1','balance',currentStartDate,currentEndDate);
+  var AD1_exerciceN = getAmount(current,'Gr=AE-1|AF-1|AG-1|AH-1','balance',currentStartDate,currentEndDate,userParam);
   var AD2_exerciceN = getAmount(current,'Gr=AE-2|AF-2|AG-2|AH-2','balance',currentStartDate,currentEndDate);
   var AD_exerciceN = getAmount(current,'Gr=AE|AF|AG|AH','balance',currentStartDate,currentEndDate);
   var AD_exerciceN1 = getAmount(current,'Gr=AE|AF|AG|AH','opening',currentStartDate,currentEndDate);
