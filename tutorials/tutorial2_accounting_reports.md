@@ -125,6 +125,10 @@ Les rapports comptables concernés sont:
 
 - Le tableau des flux de trésorerie
 
+Pour obtenir les états financiers selon le modèle OHADA:
+
+- Menu **Extensions** -> **Rapport Comptables (OHADA - RDC) [BETA]** -> **Bilan, Compte de résultat, Tableau des flux de trésorerie**
+
 ##### 1. BILAN
 
 ![bilan](images/bilan.jpg)
