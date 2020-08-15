@@ -138,3 +138,5 @@ Les rapports comptables concernés sont:
 
 ![tableau des flux de trésorerie](images/tft.jpg)
 
+Pour comprendre les différentes lignes du tableau des flux de trésorerie, référez-vous à la documentation de Banana Education en cliquant sur ce lien. https://github.com/BananaEducation/CongoRDC/blob/master/manuel_d_utilisation/Activity8.md
+
