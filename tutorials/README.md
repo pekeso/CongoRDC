@@ -15,7 +15,7 @@ Maintenant, passons à l'utilisation proprement dite des extensions précitées 
 
 - [Tutoriel 2: Rapports comptables OHADA](tutorial2_accounting_reports.md)
 
-- [Tutoriel 3: Analyse financière OHADA]()
+- [Tutoriel 3: Analyse financière OHADA](tutorial3_financial_analysis.md)
 
 - [Tutoriel 4: Taxe sur la valeur ajoutée RDCongo]()
 
