@@ -109,3 +109,22 @@ Pour plus de détails sur les différents types d'écritures, les écritures ré
 
 https://www.banana.ch/doc9/fr/node/2630
 
+
+#### Analyse Financière
+
+Pour obtenir le rapport d'analyse financière:
+
+- Menu **Extensions** -> **Analyse Financière OHADA et RDC [BETA]**
+
+- Sélection de la période de comptabilité dans la fenêtre de dialogue qui s'affiche.
+
+![analyse financière](images/financial_analysis.jpg)
+
+Le tableau est subdivisé en 3 parties:
+
+- L'analyse financière par la méthode des flux de fonds
+
+- L'analyse de la structure financière par la méthode des ratios
+
+- Le ratio de la rentabilité
+
