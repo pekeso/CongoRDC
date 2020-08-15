@@ -4,7 +4,7 @@ Une série de tutoriels pour comprendre comment utiliser les extensions suivante
 
 **INSTALLATION**
 
-L'installation des extensions Banana Comptabilité est très simple. Pour savoir comment y procéder, référez-vous à la documentation du logiciel Banana Comptabilité en cliquant sur le lien ci-dessous:
+L'installation des extensions Banana Comptabilité est très simple. Pour savoir comment y procéder, référez-vous à la documentation du logiciel Banana Comptabilité en cliquant sur le lien suivant: 
 https://www.banana.ch/doc/fr/node/4702
 
 **UTILISATION**
