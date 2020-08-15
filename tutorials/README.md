@@ -11,7 +11,7 @@ https://www.banana.ch/doc/fr/node/4702
 
 Maintenant, passons à l'utilisation proprement dite des extensions précitées dans le logiciel Banana Comptabilité.
 
-- [Tutoriel 1: Rapports balance des comptes OHADA](tutorial1_accounting_reports.md)
+- [Tutoriel 1: Rapports balance des comptes OHADA](tutorial1_accounting_balance_reports.md)
 
 - [Tutoriel 2: Rapports comptables OHADA](tutorial2_accounting_reports.md)
 
