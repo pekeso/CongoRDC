@@ -17,5 +17,7 @@ Maintenant, passons à l'utilisation proprement dite des extensions précitées 
 
 - [Tutoriel 3: Analyse financière OHADA](tutorial3_financial_analysis.md)
 
-- [Tutoriel 4: Taxe sur la valeur ajoutée RDCongo]()
+- [Tutoriel 4: Taxe sur la valeur ajoutée RDCongo](tutorial4_vat_report.md)
+
+- [Tutoriel 5: Codes TVA](tutorial5_vat_codes.md)
 
