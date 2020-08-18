@@ -61,8 +61,8 @@ function exec() {
   if (!userParam) {
     return "@Cancel";
   }
-  var form = getAccounts(current);
-  var report = createBalanceSheetMulticurrencyReport(current, userParam.selectionStartDate, userParam.selectionEndDate, userParam, form);
+  // var form = getAccounts(current);
+  var report = createBalanceSheetMulticurrencyReport(current, userParam.selectionStartDate, userParam.selectionEndDate, userParam);
    var stylesheet = createStyleSheet();
    Banana.Report.preview(report, stylesheet);
 
@@ -73,7 +73,7 @@ function exec() {
 * Function that create the report
 *
 **************************************************************************************/
-function createBalanceSheetMulticurrencyReport(current, startDate, endDate, userParam, form, report) {
+function createBalanceSheetMulticurrencyReport(current, startDate, endDate, userParam) {
 
   // Accounting period for the current year file
   var currentStartDate = startDate;
@@ -148,9 +148,9 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
 
   /* Row 1: AD */
   var AD1_exerciceN = getAmount(current,'Gr=AE-1|AF-1|AG-1|AH-1','balance',currentStartDate,currentEndDate,userParam);
-  var AD2_exerciceN = getAmount(current,'Gr=AE-2|AF-2|AG-2|AH-2','balance',currentStartDate,currentEndDate);
-  var AD_exerciceN = getAmount(current,'Gr=AE|AF|AG|AH','balance',currentStartDate,currentEndDate);
-  var AD_exerciceN1 = getAmount(current,'Gr=AE|AF|AG|AH','opening',currentStartDate,currentEndDate);
+  var AD2_exerciceN = getAmount(current,'Gr=AE-2|AF-2|AG-2|AH-2','balance',currentStartDate,currentEndDate,userParam);
+  var AD_exerciceN = getAmount(current,'Gr=AE|AF|AG|AH','balance',currentStartDate,currentEndDate,userParam);
+  var AD_exerciceN1 = getAmount(current,'Gr=AE|AF|AG|AH','opening',currentStartDate,currentEndDate,userParam);
   tableRow = table.addRow();
   tableRow.addCell("AD","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("IMMOBILISATIONS INCORPORELLES","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -161,10 +161,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(AD_exerciceN1),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 2: AE */
-  var AE1_exerciceN = getAmount(current,'Gr=AE-1','balance',currentStartDate,currentEndDate);
-  var AE2_exerciceN = getAmount(current,'Gr=AE-2','balance',currentStartDate,currentEndDate);
-  var AE_exerciceN = getAmount(current,'Gr=AE','balance',currentStartDate,currentEndDate);
-  var AE_exerciceN1 = getAmount(current,'Gr=AE','opening',currentStartDate,currentEndDate);
+  var AE1_exerciceN = getAmount(current,'Gr=AE-1','balance',currentStartDate,currentEndDate,userParam);
+  var AE2_exerciceN = getAmount(current,'Gr=AE-2','balance',currentStartDate,currentEndDate,userParam);
+  var AE_exerciceN = getAmount(current,'Gr=AE','balance',currentStartDate,currentEndDate,userParam);
+  var AE_exerciceN1 = getAmount(current,'Gr=AE','opening',currentStartDate,currentEndDate,userParam);
   tableRow = table.addRow();
   tableRow.addCell("AE","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Frais de développement et de prospection","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -926,6 +926,7 @@ function getAmount(banDoc,account,property,startDate,endDate,userParam) {
   
     var currentBal = banDoc.currentBalance(account,startDate,endDate)
     var amount = currentBal[property];
+    // userParam = initUserParam();
   
     // base currency CDF, currency2 = USD
     if (userParam.currency.toUpperCase() !== 'CDF') {
@@ -1133,7 +1134,7 @@ function settingsDialog() {
   //A dialog window is opened asking the user to insert the desired period. By default is the accounting period
   var selectedDates = Banana.Ui.getPeriod('', docStartDate, docEndDate, 
      scriptform.selectionStartDate, scriptform.selectionEndDate, scriptform.selectionChecked);
-      
+       
   //We take the values entered by the user and save them as "new default" values.
   //This because the next time the script will be executed, the dialog window will contains the new values.
   if (selectedDates) {

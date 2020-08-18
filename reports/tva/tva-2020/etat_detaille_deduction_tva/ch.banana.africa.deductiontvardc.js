@@ -79,7 +79,7 @@ function createVATDeductionDetailsReport(current, startDate, endDate, report) {
    var vatNumber = current.info("AccountingDataBase","VatNumber"); 
    var phoneNumber = current.info("AccountingDataBase","Phone");
    var email = current.info("AccountingDataBase","Email");
-   var invoicesSuppliers = current.invoicesSuppliers();
+   
    var month = Banana.Converter.toDate(currentEndDate).getMonth() + 1;
    var currentMonth = getMonthString(month);
    var today = new Date(); // The day the report will be generated
@@ -526,8 +526,10 @@ function createVATDeductionDetailsReport(current, startDate, endDate, report) {
 
    table = styleTable(report, "tableNoBorder");
 
+   var invoicesSuppliers = getSuppliers(current, startDate, endDate);
+
    tableRow = table.addRow();
-   tableRow.addCell(invoicesSuppliers.length, "", 20);
+   tableRow.addCell(invoicesSuppliers[0].tableorigin, "", 20);
    Banana.console.debug("test");
 
    tableRow = table.addRow();
@@ -662,7 +664,7 @@ function getMonthString(month) {
  /* Function that returns the lines from the journal as an array */
 function VatGetJournal(banDoc, startDate, endDate) {
 
-	var journal = banDoc.journal(banDoc.ORIGINTYPE_CURRENT, banDoc.ACCOUNTTYPE_NORMAL);
+	var journal = banDoc.journal(banDoc.ORIGINTYPE_CURRENT, banDoc.ACCOUNTTYPE_NORMAL); // Get all transactions
 	var len = journal.rowCount;
 	var transactions = []; //Array that will contain all the lines of the transactions
 
@@ -690,6 +692,7 @@ function VatGetJournal(banDoc, startDate, endDate) {
 				line.amount = tRow.value("JAmount");
             line.vatextrainfo = tRow.value("VatExtraInfo");
             line.docinvoice = tRow.value('DocInvoice'); // Not displaying in .sbaa file
+            line.roworigin = tRow.value("JRowOrigin");
             //line.customer = tRow.value('AccountCredit');
 
 				transactions.push(line);
@@ -734,21 +737,45 @@ function getImportTransactionDetails(banDoc, startDate, endDate) {
    return importDetails;
 }
 
-function getSuppliers(banDoc) {
+function getSuppliers(banDoc, startDate, endDate) {
    var invoicesSuppliers = banDoc.invoicesSuppliers();
-   if (invoicesSuppliers) {
-      for (var i = 0; i < invoicesSuppliers.rowCount; i++) {
-         var tRow = invoicesSuppliers.row(i);
-         var jsonString = tRow.toJSON();
-         if (jsonString.length > 0) {
-            var jsonRow = JSON.parse(jsonString);
-            for (key in jsonRow) {
-               if (jsonRow[key])
-                  Banana.console.debug(key + ": " + jsonRow[key].toString());
-            }
-         }
+   var len = invoicesSuppliers.rowCount;
+   var suppliers = [];
+
+   for (var i = 0; i < len; i++) {
+      var line = {};
+      var row = invoicesSuppliers.row(i);
+
+      if (row.value("Date") >= startDate && row.value("Date") <= endDate) {
+         line.date = row.value("Date");
+         line.description = row.value("Description");
+         line.invoice = row.value("Invoice");
+         line.roworigin = row.value("JRowOrigin");
+         line.objecttype = row.value("ObjectType");
+         line.tableorigin = row.value("JTableOrigin");
+
+         // We only take rows from the transactions table
+         if (line.tableorigin === 'Transactions')
+            suppliers.push(line);
       }
    }
+   // var value = {};
+   // if (invoicesSuppliers.length > 0) {
+   //    for (var i = 0; i < invoicesSuppliers.rowCount; i++) {
+   //       var tRow = invoicesSuppliers.row(i);
+   //       var jsonString = tRow.toJSON();
+   //       if (jsonString.length > 0) {
+   //          var jsonRow = JSON.parse(jsonString);
+   //          for (key in jsonRow) {
+   //             if (jsonRow[key]) {
+   //                // value.tor = key + ": " +jsonRow[key].toString();
+   //                // Banana.console.debug(key + ": " + jsonRow[key].toString());
+   //             }                  
+   //          }
+   //       }
+   //    }
+   // }
+   return suppliers;
 }
 
 /* Return and array with all the VAT Codes 
