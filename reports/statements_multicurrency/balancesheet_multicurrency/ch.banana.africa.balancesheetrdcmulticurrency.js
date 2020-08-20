@@ -155,10 +155,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("AD","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("IMMOBILISATIONS INCORPORELLES","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("3","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AD1_exerciceN),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(Banana.SDecimal.invert(AD2_exerciceN)),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AD_exerciceN),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AD_exerciceN1),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AD1_exerciceN,userParam.decimals),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(Banana.SDecimal.invert(AD2_exerciceN),userParam.decimals),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AD_exerciceN,userParam.decimals),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AD_exerciceN1,userParam.decimals),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 2: AE */
   var AE1_exerciceN = getAmount(current,'Gr=AE-1','balance',currentStartDate,currentEndDate,userParam);
@@ -169,10 +169,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("AE","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Frais de développement et de prospection","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AE1_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(Banana.SDecimal.invert(AE2_exerciceN)),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AE_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AE_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AE1_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(Banana.SDecimal.invert(AE2_exerciceN),userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AE_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AE_exerciceN1,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 3: AF */
   var AF1_exerciceN = getAmount(current,'Gr=AF-1','balance',currentStartDate,currentEndDate,userParam);
@@ -183,10 +183,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("AF","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Brevets, licences, logiciels, et  droits similaires","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AF1_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(Banana.SDecimal.invert(AF2_exerciceN)),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AF_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AF_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AF1_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(Banana.SDecimal.invert(AF2_exerciceN),userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AF_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AF_exerciceN1,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 4: AG */
   var AG1_exerciceN = getAmount(current,'Gr=AG-1','balance',currentStartDate,currentEndDate,userParam);
@@ -197,10 +197,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("AG","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Fonds commercial et droit au bail","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AG1_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(Banana.SDecimal.invert(AG2_exerciceN)),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AG_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AG_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AG1_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(Banana.SDecimal.invert(AG2_exerciceN),userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AG_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AG_exerciceN1,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 5: AH */
   var AH1_exerciceN = getAmount(current,'Gr=AH-1','balance',currentStartDate,currentEndDate,userParam);
@@ -211,10 +211,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("AH","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Autres immobilisations incorporelles","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AH1_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(Banana.SDecimal.invert(AH2_exerciceN)),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AH_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AH_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AH1_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(Banana.SDecimal.invert(AH2_exerciceN),userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AH_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AH_exerciceN1,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 6: AI */
   var AI1_exerciceN = getAmount(current,'Gr=AJ-1|AK-1|AL-1|AM-1|AN-1|AP-1','balance',currentStartDate,currentEndDate,userParam);
@@ -225,10 +225,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("AI","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("IMMOBILISATIONS CORPORELLES","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("3","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AI1_exerciceN),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(Banana.SDecimal.invert(AI2_exerciceN)),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AI_exerciceN),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AI_exerciceN1),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AI1_exerciceN,userParam.decimals),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(Banana.SDecimal.invert(AI2_exerciceN),userParam.decimals),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AI_exerciceN,userParam.decimals),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AI_exerciceN1,userParam.decimals),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   
   /* Row 7: AJ */
   var AJ1_exerciceN = getAmount(current,'Gr=AJ-1','balance',currentStartDate,currentEndDate,userParam);
@@ -239,10 +239,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("AJ","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Terrains (1) dont Placement en  Net......./.......","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AJ1_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(Banana.SDecimal.invert(AJ2_exerciceN)),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AJ_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AJ_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AJ1_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(Banana.SDecimal.invert(AJ2_exerciceN),userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AJ_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AJ_exerciceN1,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 8: AK */
   var AK1_exerciceN = getAmount(current,'Gr=AK-1','balance',currentStartDate,currentEndDate,userParam);
@@ -253,10 +253,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("AK","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Bâtiments (1) dont Placement en  Net......./.......","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AK1_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(Banana.SDecimal.invert(AK2_exerciceN)),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AK_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AK_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AK1_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(Banana.SDecimal.invert(AK2_exerciceN),userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AK_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AK_exerciceN1,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 9: AL */
   var AL1_exerciceN = getAmount(current,'Gr=AL-1','balance',currentStartDate,currentEndDate,userParam);
@@ -267,10 +267,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("AL","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Aménagements, agencements et installations","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AL1_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(Banana.SDecimal.invert(AL2_exerciceN)),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AL_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AL_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AL1_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(Banana.SDecimal.invert(AL2_exerciceN),userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AL_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AL_exerciceN1,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 10: AM */
   var AM1_exerciceN = getAmount(current,'Gr=AM-1','balance',currentStartDate,currentEndDate,userParam);
@@ -281,10 +281,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("AM","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Matériel, mobilier et actifs biologiques","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AM1_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(Banana.SDecimal.invert(AM2_exerciceN)),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AM_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AM_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AM1_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(Banana.SDecimal.invert(AM2_exerciceN),userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AM_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AM_exerciceN1,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 11: AN */
   var AN1_exerciceN = getAmount(current,'Gr=AN-1','balance',currentStartDate,currentEndDate,userParam);
@@ -295,10 +295,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("AN","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Matériel de transport","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AN1_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(Banana.SDecimal.invert(AN2_exerciceN)),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AN_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AN_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AN1_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(Banana.SDecimal.invert(AN2_exerciceN),userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AN_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AN_exerciceN1,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 12: AP */
   var AP1_exerciceN = getAmount(current,'Gr=AP-1','balance',currentStartDate,currentEndDate,userParam);
@@ -309,10 +309,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("AP","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Avances et acomptes versés sur immobilisations","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("3","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AP1_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(Banana.SDecimal.invert(AP2_exerciceN)),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AP_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AP_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AP1_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(Banana.SDecimal.invert(AP2_exerciceN),userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AP_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AP_exerciceN1,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 13: AQ */
   var AQ1_exerciceN = getAmount(current,'Gr=AR-1|AS-1','balance',currentStartDate,currentEndDate,userParam);
@@ -323,10 +323,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("AQ","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("IMMOBILISATIONS FINANCIERES","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("4","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AQ1_exerciceN),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(Banana.SDecimal.invert(AQ2_exerciceN)),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AQ_exerciceN),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AQ_exerciceN1),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AQ1_exerciceN,userParam.decimals),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(Banana.SDecimal.invert(AQ2_exerciceN),userParam.decimals),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AQ_exerciceN,userParam.decimals),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AQ_exerciceN1,userParam.decimals),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   
   /* Row 14: AR */
   var AR1_exerciceN = getAmount(current,'Gr=AR-1','balance',currentStartDate,currentEndDate,userParam);
@@ -337,10 +337,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("AR","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Titres de participation","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AR1_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(Banana.SDecimal.invert(AR2_exerciceN)),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AR_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AR_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AR1_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(Banana.SDecimal.invert(AR2_exerciceN),userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AR_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AR_exerciceN1,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 15: AS */
   var AS1_exerciceN = getAmount(current,'Gr=AS-1','balance',currentStartDate,currentEndDate,userParam);
@@ -351,10 +351,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("AS","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Autres immobilisations financières","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AS1_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(Banana.SDecimal.invert(AS2_exerciceN)),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AS_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AS_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AS1_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(Banana.SDecimal.invert(AS2_exerciceN),userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AS_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AS_exerciceN1,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 16: AZ */
   var AZ1_exerciceN = getAmount(current,'Gr=AE-1|AF-1|AG-1|AH-1|AJ-1|AK-1|AL-1|AM-1|AN-1|AP-1|AR-1|AS-1','balance',currentStartDate,currentEndDate,userParam);
@@ -367,10 +367,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("AZ","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("TOTAL ACTIF IMMOBILISE","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AZ1_exerciceN),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(Banana.SDecimal.invert(AZ2_exerciceN)),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AZ_exerciceN),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(AZ_exerciceN1),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AZ1_exerciceN,userParam.decimals),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(Banana.SDecimal.invert(AZ2_exerciceN),userParam.decimals),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AZ_exerciceN,userParam.decimals),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(AZ_exerciceN1,userParam.decimals),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 17: BA */
   var BA1_exerciceN = getAmount(current,'Gr=BA-1','balance',currentStartDate,currentEndDate,userParam);
@@ -381,10 +381,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("BA","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("ACTIF CIRCULANT HAO","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("5","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BA1_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BA2_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BA_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BA_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BA1_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BA2_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BA_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BA_exerciceN1,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 18: BB */
   var BB1_exerciceN = getAmount(current,'Gr=BB-1','balance',currentStartDate,currentEndDate,userParam);
@@ -395,10 +395,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("BB","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("STOCKS ET ENCOURS","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("6","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BB1_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BB2_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BB_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BB_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BB1_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BB2_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BB_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BB_exerciceN1,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 19: BG */
   tableRow = table.addRow();
@@ -419,10 +419,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("BH","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Fournisseurs avances versées ","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("17","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BH1_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BH2_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BH_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BH_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BH1_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BH2_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BH_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BH_exerciceN1,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 21: BI */
   var BI1_exerciceN = getAmount(current,'Gr=BI-1','balance',currentStartDate,currentEndDate,userParam);
@@ -433,10 +433,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("BI","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Clients ","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("7","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BI1_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BI2_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BI_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BI_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BI1_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BI2_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BI_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BI_exerciceN1,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 22: BJ */
   var BJ1_exerciceN = getAmount(current,'Gr=BJ-1','balance',currentStartDate,currentEndDate,userParam);
@@ -447,10 +447,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("BJ","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Autres créances","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("8","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BJ1_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BJ2_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BJ_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BJ_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BJ1_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BJ2_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BJ_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BJ_exerciceN1,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 23: BK */
   var BK1_exerciceN = getAmount(current,'Gr=BA-1|BB-1|BH-1|BI-1|BJ-1','balance',currentStartDate,currentEndDate,userParam);
@@ -461,10 +461,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("BK","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("TOTAL ACTIF CIRCULANT","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BK1_exerciceN),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BK2_exerciceN),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BK_exerciceN),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BK_exerciceN1),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BK1_exerciceN,userParam.decimals),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BK2_exerciceN,userParam.decimals),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BK_exerciceN,userParam.decimals),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BK_exerciceN1,userParam.decimals),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 24: BQ */
   var BQ1_exerciceN = getAmount(current,'Gr=BQ-1','balance',currentStartDate,currentEndDate,userParam);
@@ -475,10 +475,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("BQ","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Titres de placement","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("9","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BQ1_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BQ2_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BQ_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BQ_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BQ1_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BQ2_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BQ_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BQ_exerciceN1,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 25: BR */
   var BR1_exerciceN = getAmount(current,'Gr=BR-1','balance',currentStartDate,currentEndDate,userParam);
@@ -489,10 +489,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("BR","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Valeurs à encaisser","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("10","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BR1_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BR2_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BR_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BR_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BR1_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BR2_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BR_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BR_exerciceN1,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 26: BS */
   var BS1_exerciceN = getAmount(current,'Gr=BS-1','balance',currentStartDate,currentEndDate,userParam);
@@ -503,10 +503,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("BS","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Banques, chèques postaux, caisse et assimilés","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("11","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BS1_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BS2_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BS_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BS_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BS1_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BS2_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BS_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BS_exerciceN1,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 27: BT */
   var BT1_exerciceN = getAmount(current,'Gr=BQ-1|BR-1|BS-1','balance',currentStartDate,currentEndDate,userParam);
@@ -517,10 +517,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("BT","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("TOTAL TRESORERIE-ACTIF","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BT1_exerciceN),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BT2_exerciceN),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BT_exerciceN),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BT_exerciceN1),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BT1_exerciceN,userParam.decimals),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BT2_exerciceN,userParam.decimals),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BT_exerciceN,userParam.decimals),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BT_exerciceN1,userParam.decimals),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 28: BU */
   var BU_exerciceN = getAmount(current,'Gr=BU','balance',currentStartDate,currentEndDate,userParam);
@@ -529,10 +529,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("BU","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Ecart de conversion-Actif","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("12","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BU_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BU_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("","right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BU_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BU_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BU_exerciceN,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BU_exerciceN1,userParam.decimals),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 29: BZ */
   var BZ1_exerciceN = calculate_BZ(AZ1_exerciceN,BK1_exerciceN,BT1_exerciceN,BU_exerciceN);
@@ -543,10 +543,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("BZ","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("TOTAL GENERAL","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BZ1_exerciceN),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(Banana.SDecimal.invert(BZ2_exerciceN)),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BZ_exerciceN),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-  tableRow.addCell(formatValues(BZ_exerciceN1),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BZ1_exerciceN,userParam.decimals),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(Banana.SDecimal.invert(BZ2_exerciceN),userParam.decimals),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BZ_exerciceN,userParam.decimals),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+  tableRow.addCell(formatValues(BZ_exerciceN1,userParam.decimals),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
 
 
@@ -572,6 +572,7 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   report.addParagraph(" ", "");
   report.addParagraph(" ", "");
   report.addParagraph("BILAN PASSIF AU 31 DECEMBRE " + currentYear,"bold center");
+  report.addParagraph("Devise: " + userParam.currency, "heading2 center");
   report.addParagraph(" ", "");
 
   // Table with cash flow data
@@ -606,8 +607,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("CA","",1);
   tableRow.addCell("Capital","",1);
   tableRow.addCell("13","",1);
-  tableRow.addCell(formatValues(CA_exerciceN),"right",1);
-  tableRow.addCell(formatValues(CA_exerciceN1),"right",1);
+  tableRow.addCell(formatValues(CA_exerciceN,userParam.decimals),"right",1);
+  tableRow.addCell(formatValues(CA_exerciceN1,userParam.decimals),"right",1);
 
   /* Row 2: CB */
   var CB_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=CB','balance',currentStartDate,currentEndDate,userParam));
@@ -616,8 +617,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("CB","",1);
   tableRow.addCell("Apporteurs capital non appelé (-)","",1);
   tableRow.addCell("13","",1);
-  tableRow.addCell(formatValues(CB_exerciceN),"right",1);
-  tableRow.addCell(formatValues(CB_exerciceN1),"right",1);
+  tableRow.addCell(formatValues(CB_exerciceN,userParam.decimals),"right",1);
+  tableRow.addCell(formatValues(CB_exerciceN1,userParam.decimals),"right",1);
 
   /* Row 3: CD */
   var CD_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=CD','balance',currentStartDate,currentEndDate,userParam));
@@ -626,8 +627,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("CD","",1);
   tableRow.addCell("Primes liées au capital social","",1);
   tableRow.addCell("14","",1);
-  tableRow.addCell(formatValues(CD_exerciceN),"right",1);
-  tableRow.addCell(formatValues(CD_exerciceN1),"right",1);
+  tableRow.addCell(formatValues(CD_exerciceN,userParam.decimals),"right",1);
+  tableRow.addCell(formatValues(CD_exerciceN1,userParam.decimals),"right",1);
 
   /* Row 4: CE */
   var CE_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=CE','balance',currentStartDate,currentEndDate,userParam));
@@ -636,8 +637,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("CE","",1);
   tableRow.addCell("Ecarts de réévaluation","",1);
   tableRow.addCell("3e","",1);
-  tableRow.addCell(formatValues(CE_exerciceN),"right",1);
-  tableRow.addCell(formatValues(CE_exerciceN1),"right",1);
+  tableRow.addCell(formatValues(CE_exerciceN,userParam.decimals),"right",1);
+  tableRow.addCell(formatValues(CE_exerciceN1,userParam.decimals),"right",1);
 
   /* Row 5: CF */
   var CF_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=CF','balance',currentStartDate,currentEndDate,userParam));
@@ -646,8 +647,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("CF","",1);
   tableRow.addCell("Réserves indisponibles","",1);
   tableRow.addCell("14","",1);
-  tableRow.addCell(formatValues(CF_exerciceN),"right",1);
-  tableRow.addCell(formatValues(CF_exerciceN1),"right",1);
+  tableRow.addCell(formatValues(CF_exerciceN,userParam.decimals),"right",1);
+  tableRow.addCell(formatValues(CF_exerciceN1,userParam.decimals),"right",1);
 
   /* Row 6: CG */
   var CG_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=CG','balance',currentStartDate,currentEndDate,userParam));
@@ -656,8 +657,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("CG","",1);
   tableRow.addCell("Réserves libres","",1);
   tableRow.addCell("14","",1);
-  tableRow.addCell(formatValues(CG_exerciceN),"right",1);
-  tableRow.addCell(formatValues(CG_exerciceN1),"right",1);
+  tableRow.addCell(formatValues(CG_exerciceN,userParam.decimals),"right",1);
+  tableRow.addCell(formatValues(CG_exerciceN1,userParam.decimals),"right",1);
 
   /* Row 7: CH */
   var CH_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=CH','balance',currentStartDate,currentEndDate,userParam));
@@ -666,8 +667,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("CH","",1);
   tableRow.addCell("Report à nouveau (+ ou -)","",1);
   tableRow.addCell("14","",1);
-  tableRow.addCell(formatValues(CH_exerciceN),"right",1);
-  tableRow.addCell(formatValues(CH_exerciceN1),"right",1);
+  tableRow.addCell(formatValues(CH_exerciceN,userParam.decimals),"right",1);
+  tableRow.addCell(formatValues(CH_exerciceN1,userParam.decimals),"right",1);
 
   /* Row 8: CJ */
   var CJ_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=CJ','balance',currentStartDate,currentEndDate,userParam));
@@ -676,8 +677,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("CJ","",1);
   tableRow.addCell("Résultat net de l'exercice (bénéfice + ou perte -)","",1);
   tableRow.addCell("","",1);
-  tableRow.addCell(formatValues(CJ_exerciceN),"right",1);
-  tableRow.addCell(formatValues(CJ_exerciceN1),"right",1);
+  tableRow.addCell(formatValues(CJ_exerciceN,userParam.decimals),"right",1);
+  tableRow.addCell(formatValues(CJ_exerciceN1,userParam.decimals),"right",1);
 
   /* Row 9: CL */
   var CL_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=CL','balance',currentStartDate,currentEndDate,userParam));
@@ -686,8 +687,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("CL","",1);
   tableRow.addCell("Subventions d'investissement","",1);
   tableRow.addCell("15","",1);
-  tableRow.addCell(formatValues(CL_exerciceN),"right",1);
-  tableRow.addCell(formatValues(CL_exerciceN1),"right",1);
+  tableRow.addCell(formatValues(CL_exerciceN,userParam.decimals),"right",1);
+  tableRow.addCell(formatValues(CL_exerciceN1,userParam.decimals),"right",1);
 
   /* Row 10: CM */
   var CM_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=CM','balance',currentStartDate,currentEndDate,userParam));
@@ -696,8 +697,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("CM","",1);
   tableRow.addCell("Provisions réglementées","",1);
   tableRow.addCell("15","",1);
-  tableRow.addCell(formatValues(CM_exerciceN),"right",1);
-  tableRow.addCell(formatValues(CM_exerciceN1),"right",1);
+  tableRow.addCell(formatValues(CM_exerciceN,userParam.decimals),"right",1);
+  tableRow.addCell(formatValues(CM_exerciceN1,userParam.decimals),"right",1);
 
   /* Row 11: CP */
   var CP_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=CP','balance',currentStartDate,currentEndDate,userParam));
@@ -706,8 +707,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("CP","greyCell bold",1);
   tableRow.addCell("TOTAL CAPITAUX PROPRES ET RESSOURCES ASSIMILEES","greyCell bold",1);
   tableRow.addCell("","greyCell bold",1);
-  tableRow.addCell(formatValues(CP_exerciceN),"right greyCell bold",1);
-  tableRow.addCell(formatValues(CP_exerciceN1),"right greyCell bold",1);
+  tableRow.addCell(formatValues(CP_exerciceN,userParam.decimals),"right greyCell bold",1);
+  tableRow.addCell(formatValues(CP_exerciceN1,userParam.decimals),"right greyCell bold",1);
 
   /* Row 12: DA */
   var DA_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DA','balance',currentStartDate,currentEndDate,userParam));
@@ -716,8 +717,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("DA","",1);
   tableRow.addCell("Emprunts et dettes financières diverses","",1);
   tableRow.addCell("16","",1);
-  tableRow.addCell(formatValues(DA_exerciceN),"right",1);
-  tableRow.addCell(formatValues(DA_exerciceN1),"right",1);
+  tableRow.addCell(formatValues(DA_exerciceN,userParam.decimals),"right",1);
+  tableRow.addCell(formatValues(DA_exerciceN1,userParam.decimals),"right",1);
 
   /* Row 13: DB */
   var DB_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DB','balance',currentStartDate,currentEndDate,userParam));
@@ -726,8 +727,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("DB","",1);
   tableRow.addCell("Dettes de location acquisition","",1);
   tableRow.addCell("16","",1);
-  tableRow.addCell(formatValues(DB_exerciceN),"right",1);
-  tableRow.addCell(formatValues(DB_exerciceN1),"right",1);
+  tableRow.addCell(formatValues(DB_exerciceN,userParam.decimals),"right",1);
+  tableRow.addCell(formatValues(DB_exerciceN1,userParam.decimals),"right",1);
 
   /* Row 14: DC */
   var DC_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DC','balance',currentStartDate,currentEndDate,userParam));
@@ -736,8 +737,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("DC","",1);
   tableRow.addCell("Provisions pour risques et charges","",1);
   tableRow.addCell("16","",1);
-  tableRow.addCell(formatValues(DC_exerciceN),"right",1);
-  tableRow.addCell(formatValues(DC_exerciceN1),"right",1);
+  tableRow.addCell(formatValues(DC_exerciceN,userParam.decimals),"right",1);
+  tableRow.addCell(formatValues(DC_exerciceN1,userParam.decimals),"right",1);
 
   /* Row 15: DD */
   var DD_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DD','balance',currentStartDate,currentEndDate,userParam));
@@ -746,8 +747,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("DD","greyCell bold",1);
   tableRow.addCell("TOTAL DETTES FINANCIERES ET RESSOURCES ASSIMILEES","greyCell bold",1);
   tableRow.addCell("","greyCell bold",1);
-  tableRow.addCell(formatValues(DD_exerciceN),"right greyCell bold",1);
-  tableRow.addCell(formatValues(DD_exerciceN1),"right greyCell bold",1);
+  tableRow.addCell(formatValues(DD_exerciceN,userParam.decimals),"right greyCell bold",1);
+  tableRow.addCell(formatValues(DD_exerciceN1,userParam.decimals),"right greyCell bold",1);
 
   /* Row 16: DF */
   var DF_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DF','balance',currentStartDate,currentEndDate,userParam));
@@ -756,8 +757,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("DF","greyCell bold",1);
   tableRow.addCell("TOTAL RESSOURCES STABLES","greyCell bold",1);
   tableRow.addCell("","greyCell bold",1);
-  tableRow.addCell(formatValues(DF_exerciceN),"right greyCell bold",1);
-  tableRow.addCell(formatValues(DF_exerciceN1),"right greyCell bold",1);
+  tableRow.addCell(formatValues(DF_exerciceN,userParam.decimals),"right greyCell bold",1);
+  tableRow.addCell(formatValues(DF_exerciceN1,userParam.decimals),"right greyCell bold",1);
 
   /* Row 17: DH */
   var DH_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DH','balance',currentStartDate,currentEndDate,userParam));
@@ -766,8 +767,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("DH","",1);
   tableRow.addCell("Dettes circulantes HAO","",1);
   tableRow.addCell("5","",1);
-  tableRow.addCell(formatValues(DH_exerciceN),"right",1);
-  tableRow.addCell(formatValues(DH_exerciceN1),"right",1);
+  tableRow.addCell(formatValues(DH_exerciceN,userParam.decimals),"right",1);
+  tableRow.addCell(formatValues(DH_exerciceN1,userParam.decimals),"right",1);
 
   /* Row 18: DI */
   var DI_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DI','balance',currentStartDate,currentEndDate,userParam));
@@ -776,8 +777,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("DI","",1);
   tableRow.addCell("Clients, avances reçues","",1);
   tableRow.addCell("7","",1);
-  tableRow.addCell(formatValues(DI_exerciceN),"right",1);
-  tableRow.addCell(formatValues(DI_exerciceN1),"right",1);
+  tableRow.addCell(formatValues(DI_exerciceN,userParam.decimals),"right",1);
+  tableRow.addCell(formatValues(DI_exerciceN1,userParam.decimals),"right",1);
 
   /* Row 19: DJ */
   var DJ_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DJ','balance',currentStartDate,currentEndDate,userParam));
@@ -786,8 +787,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("DJ","",1);
   tableRow.addCell("Fournisseurs d'exploitation","",1);
   tableRow.addCell("17","",1);
-  tableRow.addCell(formatValues(DJ_exerciceN),"right",1);
-  tableRow.addCell(formatValues(DJ_exerciceN1),"right",1);
+  tableRow.addCell(formatValues(DJ_exerciceN,userParam.decimals),"right",1);
+  tableRow.addCell(formatValues(DJ_exerciceN1,userParam.decimals),"right",1);
 
   /* Row 20: DK */
   var DK_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DK','balance',currentStartDate,currentEndDate,userParam));
@@ -796,8 +797,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("DK","",1);
   tableRow.addCell("Dettes fiscales et sociales","",1);
   tableRow.addCell("18","",1);
-  tableRow.addCell(formatValues(DK_exerciceN),"right",1);
-  tableRow.addCell(formatValues(DK_exerciceN1),"right",1);
+  tableRow.addCell(formatValues(DK_exerciceN,userParam.decimals),"right",1);
+  tableRow.addCell(formatValues(DK_exerciceN1,userParam.decimals),"right",1);
 
   /* Row 21: DM */
   var DM_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DM','balance',currentStartDate,currentEndDate,userParam));
@@ -806,8 +807,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("DM","",1);
   tableRow.addCell("Autres dettes","",1);
   tableRow.addCell("19","",1);
-  tableRow.addCell(formatValues(DM_exerciceN),"right",1);
-  tableRow.addCell(formatValues(DM_exerciceN1),"right",1);
+  tableRow.addCell(formatValues(DM_exerciceN,userParam.decimals),"right",1);
+  tableRow.addCell(formatValues(DM_exerciceN1,userParam.decimals),"right",1);
 
   /* Row 22: DN */
   var DN_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DN','balance',currentStartDate,currentEndDate,userParam));
@@ -816,8 +817,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("DN","",1);
   tableRow.addCell("Provisions pour risques à court terme","",1);
   tableRow.addCell("19","",1);
-  tableRow.addCell(formatValues(DN_exerciceN),"right",1);
-  tableRow.addCell(formatValues(DN_exerciceN1),"right",1);
+  tableRow.addCell(formatValues(DN_exerciceN,userParam.decimals),"right",1);
+  tableRow.addCell(formatValues(DN_exerciceN1,userParam.decimals),"right",1);
 
   /* Row 23: DP */
   var DP_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DP','balance',currentStartDate,currentEndDate,userParam));
@@ -826,8 +827,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("DP","greyCell bold",1);
   tableRow.addCell("TOTAL PASSIF CIRCULANT","greyCell bold",1);
   tableRow.addCell("","greyCell bold",1);
-  tableRow.addCell(formatValues(DP_exerciceN),"right greyCell bold",1);
-  tableRow.addCell(formatValues(DP_exerciceN1),"right greyCell bold",1);
+  tableRow.addCell(formatValues(DP_exerciceN,userParam.decimals),"right greyCell bold",1);
+  tableRow.addCell(formatValues(DP_exerciceN1,userParam.decimals),"right greyCell bold",1);
 
   /* Row 24: DQ */
   var DQ_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DQ','balance',currentStartDate,currentEndDate,userParam));
@@ -836,8 +837,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("DQ","",1);
   tableRow.addCell("Banques, crédits d'escompte","",1);
   tableRow.addCell("20","",1);
-  tableRow.addCell(formatValues(DQ_exerciceN),"right",1);
-  tableRow.addCell(formatValues(DQ_exerciceN1),"right",1);
+  tableRow.addCell(formatValues(DQ_exerciceN,userParam.decimals),"right",1);
+  tableRow.addCell(formatValues(DQ_exerciceN1,userParam.decimals),"right",1);
 
   /* Row 25: DR */
   var DR_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DR','balance',currentStartDate,currentEndDate,userParam));
@@ -846,8 +847,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("DR","",1);
   tableRow.addCell("Banques, établissements financiers et crédits de trésorerie","",1);
   tableRow.addCell("20","",1);
-  tableRow.addCell(formatValues(DR_exerciceN),"right",1);
-  tableRow.addCell(formatValues(DR_exerciceN1),"right",1);
+  tableRow.addCell(formatValues(DR_exerciceN,userParam.decimals),"right",1);
+  tableRow.addCell(formatValues(DR_exerciceN1,userParam.decimals),"right",1);
 
   /* Row 26: DT */
   var DT_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DT','balance',currentStartDate,currentEndDate,userParam));
@@ -856,8 +857,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("DT","greyCell bold",1);
   tableRow.addCell("TOTAL TRESORERIE-PASSIF","greyCell bold",1);
   tableRow.addCell("","greyCell bold",1);
-  tableRow.addCell(formatValues(DT_exerciceN),"right greyCell bold",1);
-  tableRow.addCell(formatValues(DT_exerciceN1),"right greyCell bold",1);
+  tableRow.addCell(formatValues(DT_exerciceN,userParam.decimals),"right greyCell bold",1);
+  tableRow.addCell(formatValues(DT_exerciceN1,userParam.decimals),"right greyCell bold",1);
 
   /* Row 27: DV */
   var DV_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DV','balance',currentStartDate,currentEndDate,userParam));
@@ -866,8 +867,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("DV","",1);
   tableRow.addCell("Ecart de conversion-Passif","",1);
   tableRow.addCell("12","",1);
-  tableRow.addCell(formatValues(DV_exerciceN),"right",1);
-  tableRow.addCell(formatValues(DV_exerciceN1),"right",1);
+  tableRow.addCell(formatValues(DV_exerciceN,userParam.decimals),"right",1);
+  tableRow.addCell(formatValues(DV_exerciceN1,userParam.decimals),"right",1);
 
   /* Row 28: DZ */
   var DZ_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DZ','balance',currentStartDate,currentEndDate,userParam));
@@ -876,8 +877,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("DZ","greyCell bold",1);
   tableRow.addCell("TOTAL GENERAL","greyCell bold",1);
   tableRow.addCell("","greyCell bold",1);
-  tableRow.addCell(formatValues(DZ_exerciceN),"right greyCell bold",1);
-  tableRow.addCell(formatValues(DZ_exerciceN1),"right greyCell bold",1);
+  tableRow.addCell(formatValues(DZ_exerciceN,userParam.decimals),"right greyCell bold",1);
+  tableRow.addCell(formatValues(DZ_exerciceN1,userParam.decimals),"right greyCell bold",1);
 
   /* Check active and passive net balance at 31.12 */
   if (BZ_exerciceN !== DZ_exerciceN) {
