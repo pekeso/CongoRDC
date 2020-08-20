@@ -175,10 +175,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(AE_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 3: AF */
-  var AF1_exerciceN = getAmount(current,'Gr=AF-1','balance',currentStartDate,currentEndDate);
-  var AF2_exerciceN = getAmount(current,'Gr=AF-2','balance',currentStartDate,currentEndDate);
-  var AF_exerciceN = getAmount(current,'Gr=AF','balance',currentStartDate,currentEndDate);
-  var AF_exerciceN1 = getAmount(current,'Gr=AF','opening',currentStartDate,currentEndDate);
+  var AF1_exerciceN = getAmount(current,'Gr=AF-1','balance',currentStartDate,currentEndDate,userParam);
+  var AF2_exerciceN = getAmount(current,'Gr=AF-2','balance',currentStartDate,currentEndDate,userParam);
+  var AF_exerciceN = getAmount(current,'Gr=AF','balance',currentStartDate,currentEndDate,userParam);
+  var AF_exerciceN1 = getAmount(current,'Gr=AF','opening',currentStartDate,currentEndDate,userParam);
   tableRow = table.addRow();
   tableRow.addCell("AF","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Brevets, licences, logiciels, et  droits similaires","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -189,10 +189,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(AF_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 4: AG */
-  var AG1_exerciceN = getAmount(current,'Gr=AG-1','balance',currentStartDate,currentEndDate);
-  var AG2_exerciceN = getAmount(current,'Gr=AG-2','balance',currentStartDate,currentEndDate);
-  var AG_exerciceN = getAmount(current,'Gr=AG','balance',currentStartDate,currentEndDate);
-  var AG_exerciceN1 = getAmount(current,'Gr=AG','opening',currentStartDate,currentEndDate);
+  var AG1_exerciceN = getAmount(current,'Gr=AG-1','balance',currentStartDate,currentEndDate,userParam);
+  var AG2_exerciceN = getAmount(current,'Gr=AG-2','balance',currentStartDate,currentEndDate,userParam);
+  var AG_exerciceN = getAmount(current,'Gr=AG','balance',currentStartDate,currentEndDate,userParam);
+  var AG_exerciceN1 = getAmount(current,'Gr=AG','opening',currentStartDate,currentEndDate,userParam);
   tableRow = table.addRow();
   tableRow.addCell("AG","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Fonds commercial et droit au bail","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -203,10 +203,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(AG_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 5: AH */
-  var AH1_exerciceN = getAmount(current,'Gr=AH-1','balance',currentStartDate,currentEndDate);
-  var AH2_exerciceN = getAmount(current,'Gr=AH-2','balance',currentStartDate,currentEndDate);
-  var AH_exerciceN = getAmount(current,'Gr=AH','balance',currentStartDate,currentEndDate);
-  var AH_exerciceN1 = getAmount(current,'Gr=AH','opening',currentStartDate,currentEndDate);
+  var AH1_exerciceN = getAmount(current,'Gr=AH-1','balance',currentStartDate,currentEndDate,userParam);
+  var AH2_exerciceN = getAmount(current,'Gr=AH-2','balance',currentStartDate,currentEndDate,userParam);
+  var AH_exerciceN = getAmount(current,'Gr=AH','balance',currentStartDate,currentEndDate,userParam);
+  var AH_exerciceN1 = getAmount(current,'Gr=AH','opening',currentStartDate,currentEndDate,userParam);
   tableRow = table.addRow();
   tableRow.addCell("AH","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Autres immobilisations incorporelles","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -217,10 +217,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(AH_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 6: AI */
-  var AI1_exerciceN = getAmount(current,'Gr=AJ-1|AK-1|AL-1|AM-1|AN-1|AP-1','balance',currentStartDate,currentEndDate);
-  var AI2_exerciceN = getAmount(current,'Gr=AJ-2|AK-2|AL-2|AM-2|AN-2|AP-2','balance',currentStartDate,currentEndDate);
-  var AI_exerciceN = getAmount(current,'Gr=AJ|AK|AL|AM|AN|AP','balance',currentStartDate,currentEndDate);
-  var AI_exerciceN1 = getAmount(current,'Gr=AJ|AK|AL|AM|AN|AP','opening',currentStartDate,currentEndDate);
+  var AI1_exerciceN = getAmount(current,'Gr=AJ-1|AK-1|AL-1|AM-1|AN-1|AP-1','balance',currentStartDate,currentEndDate,userParam);
+  var AI2_exerciceN = getAmount(current,'Gr=AJ-2|AK-2|AL-2|AM-2|AN-2|AP-2','balance',currentStartDate,currentEndDate,userParam);
+  var AI_exerciceN = getAmount(current,'Gr=AJ|AK|AL|AM|AN|AP','balance',currentStartDate,currentEndDate,userParam);
+  var AI_exerciceN1 = getAmount(current,'Gr=AJ|AK|AL|AM|AN|AP','opening',currentStartDate,currentEndDate,userParam);
   tableRow = table.addRow();
   tableRow.addCell("AI","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("IMMOBILISATIONS CORPORELLES","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -231,10 +231,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(AI_exerciceN1),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   
   /* Row 7: AJ */
-  var AJ1_exerciceN = getAmount(current,'Gr=AJ-1','balance',currentStartDate,currentEndDate);
-  var AJ2_exerciceN = getAmount(current,'Gr=AJ-2','balance',currentStartDate,currentEndDate);
-  var AJ_exerciceN = getAmount(current,'Gr=AJ','balance',currentStartDate,currentEndDate);
-  var AJ_exerciceN1 = getAmount(current,'Gr=AJ','opening',currentStartDate,currentEndDate);
+  var AJ1_exerciceN = getAmount(current,'Gr=AJ-1','balance',currentStartDate,currentEndDate,userParam);
+  var AJ2_exerciceN = getAmount(current,'Gr=AJ-2','balance',currentStartDate,currentEndDate,userParam);
+  var AJ_exerciceN = getAmount(current,'Gr=AJ','balance',currentStartDate,currentEndDate,userParam);
+  var AJ_exerciceN1 = getAmount(current,'Gr=AJ','opening',currentStartDate,currentEndDate,userParam);
   tableRow = table.addRow();
   tableRow.addCell("AJ","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Terrains (1) dont Placement en  Net......./.......","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -245,10 +245,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(AJ_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 8: AK */
-  var AK1_exerciceN = getAmount(current,'Gr=AK-1','balance',currentStartDate,currentEndDate);
-  var AK2_exerciceN = getAmount(current,'Gr=AK-2','balance',currentStartDate,currentEndDate);
-  var AK_exerciceN = getAmount(current,'Gr=AK','balance',currentStartDate,currentEndDate);
-  var AK_exerciceN1 = getAmount(current,'Gr=AK','opening',currentStartDate,currentEndDate);
+  var AK1_exerciceN = getAmount(current,'Gr=AK-1','balance',currentStartDate,currentEndDate,userParam);
+  var AK2_exerciceN = getAmount(current,'Gr=AK-2','balance',currentStartDate,currentEndDate,userParam);
+  var AK_exerciceN = getAmount(current,'Gr=AK','balance',currentStartDate,currentEndDate,userParam);
+  var AK_exerciceN1 = getAmount(current,'Gr=AK','opening',currentStartDate,currentEndDate,userParam);
   tableRow = table.addRow();
   tableRow.addCell("AK","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Bâtiments (1) dont Placement en  Net......./.......","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -259,10 +259,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(AK_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 9: AL */
-  var AL1_exerciceN = getAmount(current,'Gr=AL-1','balance',currentStartDate,currentEndDate);
-  var AL2_exerciceN = getAmount(current,'Gr=AL-2','balance',currentStartDate,currentEndDate);
-  var AL_exerciceN = getAmount(current,'Gr=AL','balance',currentStartDate,currentEndDate);
-  var AL_exerciceN1 = getAmount(current,'Gr=AL','opening',currentStartDate,currentEndDate);
+  var AL1_exerciceN = getAmount(current,'Gr=AL-1','balance',currentStartDate,currentEndDate,userParam);
+  var AL2_exerciceN = getAmount(current,'Gr=AL-2','balance',currentStartDate,currentEndDate,userParam);
+  var AL_exerciceN = getAmount(current,'Gr=AL','balance',currentStartDate,currentEndDate,userParam);
+  var AL_exerciceN1 = getAmount(current,'Gr=AL','opening',currentStartDate,currentEndDate,userParam);
   tableRow = table.addRow();
   tableRow.addCell("AL","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Aménagements, agencements et installations","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -273,10 +273,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(AL_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 10: AM */
-  var AM1_exerciceN = getAmount(current,'Gr=AM-1','balance',currentStartDate,currentEndDate);
-  var AM2_exerciceN = getAmount(current,'Gr=AM-2','balance',currentStartDate,currentEndDate);
-  var AM_exerciceN = getAmount(current,'Gr=AM','balance',currentStartDate,currentEndDate);
-  var AM_exerciceN1 = getAmount(current,'Gr=AM','opening',currentStartDate,currentEndDate);
+  var AM1_exerciceN = getAmount(current,'Gr=AM-1','balance',currentStartDate,currentEndDate,userParam);
+  var AM2_exerciceN = getAmount(current,'Gr=AM-2','balance',currentStartDate,currentEndDate,userParam);
+  var AM_exerciceN = getAmount(current,'Gr=AM','balance',currentStartDate,currentEndDate,userParam);
+  var AM_exerciceN1 = getAmount(current,'Gr=AM','opening',currentStartDate,currentEndDate,userParam);
   tableRow = table.addRow();
   tableRow.addCell("AM","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Matériel, mobilier et actifs biologiques","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -287,10 +287,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(AM_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 11: AN */
-  var AN1_exerciceN = getAmount(current,'Gr=AN-1','balance',currentStartDate,currentEndDate);
-  var AN2_exerciceN = getAmount(current,'Gr=AN-2','balance',currentStartDate,currentEndDate);
-  var AN_exerciceN = getAmount(current,'Gr=AN','balance',currentStartDate,currentEndDate);
-  var AN_exerciceN1 = getAmount(current,'Gr=AN','opening',currentStartDate,currentEndDate);
+  var AN1_exerciceN = getAmount(current,'Gr=AN-1','balance',currentStartDate,currentEndDate,userParam);
+  var AN2_exerciceN = getAmount(current,'Gr=AN-2','balance',currentStartDate,currentEndDate,userParam);
+  var AN_exerciceN = getAmount(current,'Gr=AN','balance',currentStartDate,currentEndDate,userParam);
+  var AN_exerciceN1 = getAmount(current,'Gr=AN','opening',currentStartDate,currentEndDate,userParam);
   tableRow = table.addRow();
   tableRow.addCell("AN","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Matériel de transport","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -301,10 +301,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(AN_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 12: AP */
-  var AP1_exerciceN = getAmount(current,'Gr=AP-1','balance',currentStartDate,currentEndDate);
-  var AP2_exerciceN = getAmount(current,'Gr=AP-2','balance',currentStartDate,currentEndDate);
-  var AP_exerciceN = getAmount(current,'Gr=AP','balance',currentStartDate,currentEndDate);
-  var AP_exerciceN1 = getAmount(current,'Gr=AP','opening',currentStartDate,currentEndDate);
+  var AP1_exerciceN = getAmount(current,'Gr=AP-1','balance',currentStartDate,currentEndDate,userParam);
+  var AP2_exerciceN = getAmount(current,'Gr=AP-2','balance',currentStartDate,currentEndDate,userParam);
+  var AP_exerciceN = getAmount(current,'Gr=AP','balance',currentStartDate,currentEndDate,userParam);
+  var AP_exerciceN1 = getAmount(current,'Gr=AP','opening',currentStartDate,currentEndDate,userParam);
   tableRow = table.addRow();
   tableRow.addCell("AP","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Avances et acomptes versés sur immobilisations","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -315,10 +315,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(AP_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 13: AQ */
-  var AQ1_exerciceN = getAmount(current,'Gr=AR-1|AS-1','balance',currentStartDate,currentEndDate);
-  var AQ2_exerciceN = getAmount(current,'Gr=AR-2|AS-2','balance',currentStartDate,currentEndDate);
-  var AQ_exerciceN = getAmount(current,'Gr=AR|AS','balance',currentStartDate,currentEndDate);
-  var AQ_exerciceN1 = getAmount(current,'Gr=AR|AS','opening',currentStartDate,currentEndDate);
+  var AQ1_exerciceN = getAmount(current,'Gr=AR-1|AS-1','balance',currentStartDate,currentEndDate,userParam);
+  var AQ2_exerciceN = getAmount(current,'Gr=AR-2|AS-2','balance',currentStartDate,currentEndDate,userParam);
+  var AQ_exerciceN = getAmount(current,'Gr=AR|AS','balance',currentStartDate,currentEndDate,userParam);
+  var AQ_exerciceN1 = getAmount(current,'Gr=AR|AS','opening',currentStartDate,currentEndDate,userParam);
   tableRow = table.addRow();
   tableRow.addCell("AQ","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("IMMOBILISATIONS FINANCIERES","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -329,10 +329,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(AQ_exerciceN1),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   
   /* Row 14: AR */
-  var AR1_exerciceN = getAmount(current,'Gr=AR-1','balance',currentStartDate,currentEndDate);
-  var AR2_exerciceN = getAmount(current,'Gr=AR-2','balance',currentStartDate,currentEndDate);
-  var AR_exerciceN = getAmount(current,'Gr=AR','balance',currentStartDate,currentEndDate);
-  var AR_exerciceN1 = getAmount(current,'Gr=AR','opening',currentStartDate,currentEndDate);
+  var AR1_exerciceN = getAmount(current,'Gr=AR-1','balance',currentStartDate,currentEndDate,userParam);
+  var AR2_exerciceN = getAmount(current,'Gr=AR-2','balance',currentStartDate,currentEndDate,userParam);
+  var AR_exerciceN = getAmount(current,'Gr=AR','balance',currentStartDate,currentEndDate,userParam);
+  var AR_exerciceN1 = getAmount(current,'Gr=AR','opening',currentStartDate,currentEndDate,userParam);
   tableRow = table.addRow();
   tableRow.addCell("AR","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Titres de participation","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -343,10 +343,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(AR_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 15: AS */
-  var AS1_exerciceN = getAmount(current,'Gr=AS-1','balance',currentStartDate,currentEndDate);
-  var AS2_exerciceN = getAmount(current,'Gr=AS-2','balance',currentStartDate,currentEndDate);
-  var AS_exerciceN = getAmount(current,'Gr=AS','balance',currentStartDate,currentEndDate);
-  var AS_exerciceN1 = getAmount(current,'Gr=AS','opening',currentStartDate,currentEndDate);
+  var AS1_exerciceN = getAmount(current,'Gr=AS-1','balance',currentStartDate,currentEndDate,userParam);
+  var AS2_exerciceN = getAmount(current,'Gr=AS-2','balance',currentStartDate,currentEndDate,userParam);
+  var AS_exerciceN = getAmount(current,'Gr=AS','balance',currentStartDate,currentEndDate,userParam);
+  var AS_exerciceN1 = getAmount(current,'Gr=AS','opening',currentStartDate,currentEndDate,userParam);
   tableRow = table.addRow();
   tableRow.addCell("AS","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Autres immobilisations financières","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -357,12 +357,12 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(AS_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 16: AZ */
-  var AZ1_exerciceN = getAmount(current,'Gr=AE-1|AF-1|AG-1|AH-1|AJ-1|AK-1|AL-1|AM-1|AN-1|AP-1|AR-1|AS-1','balance',currentStartDate,currentEndDate);
-  var AZ2_exerciceN = getAmount(current,'Gr=AE-2|AF-2|AG-2|AH-2|AJ-2|AK-2|AL-2|AM-2|AN-2|AP-2|AR-2|AS-2','balance',currentStartDate,currentEndDate);
+  var AZ1_exerciceN = getAmount(current,'Gr=AE-1|AF-1|AG-1|AH-1|AJ-1|AK-1|AL-1|AM-1|AN-1|AP-1|AR-1|AS-1','balance',currentStartDate,currentEndDate,userParam);
+  var AZ2_exerciceN = getAmount(current,'Gr=AE-2|AF-2|AG-2|AH-2|AJ-2|AK-2|AL-2|AM-2|AN-2|AP-2|AR-2|AS-2','balance',currentStartDate,currentEndDate,userParam);
   //var AZ1_exerciceN = calculate_AZ(AE1_exerciceN,AF1_exerciceN,AG1_exerciceN,AH1_exerciceN,AJ1_exerciceN,AK1_exerciceN,AL1_exerciceN,AM1_exerciceN,AN1_exerciceN,AP1_exerciceN,AR1_exerciceN,AS1_exerciceN);
   //var AZ2_exerciceN = calculate_AZ(AE2_exerciceN,AF2_exerciceN,AG2_exerciceN,AH2_exerciceN,AJ2_exerciceN,AK2_exerciceN,AL2_exerciceN,AM2_exerciceN,AN2_exerciceN,AP2_exerciceN,AR2_exerciceN,AS2_exerciceN);
-  var AZ_exerciceN = getAmount(current,'Gr=AZ','balance',currentStartDate,currentEndDate);
-  var AZ_exerciceN1 = getAmount(current,'Gr=AZ','opening',currentStartDate,currentEndDate);
+  var AZ_exerciceN = getAmount(current,'Gr=AZ','balance',currentStartDate,currentEndDate,userParam);
+  var AZ_exerciceN1 = getAmount(current,'Gr=AZ','opening',currentStartDate,currentEndDate,userParam);
   tableRow = table.addRow();
   tableRow.addCell("AZ","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("TOTAL ACTIF IMMOBILISE","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -373,10 +373,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(AZ_exerciceN1),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 17: BA */
-  var BA1_exerciceN = getAmount(current,'Gr=BA-1','balance',currentStartDate,currentEndDate);
-  var BA2_exerciceN = getAmount(current,'Gr=BA-2','balance',currentStartDate,currentEndDate);
-  var BA_exerciceN = getAmount(current,'Gr=BA','balance',currentStartDate,currentEndDate);
-  var BA_exerciceN1 = getAmount(current,'Gr=BA','opening',currentStartDate,currentEndDate);
+  var BA1_exerciceN = getAmount(current,'Gr=BA-1','balance',currentStartDate,currentEndDate,userParam);
+  var BA2_exerciceN = getAmount(current,'Gr=BA-2','balance',currentStartDate,currentEndDate,userParam);
+  var BA_exerciceN = getAmount(current,'Gr=BA','balance',currentStartDate,currentEndDate,userParam);
+  var BA_exerciceN1 = getAmount(current,'Gr=BA','opening',currentStartDate,currentEndDate,userParam);
   tableRow = table.addRow();
   tableRow.addCell("BA","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("ACTIF CIRCULANT HAO","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -387,10 +387,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(BA_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 18: BB */
-  var BB1_exerciceN = getAmount(current,'Gr=BB-1','balance',currentStartDate,currentEndDate);
-  var BB2_exerciceN = getAmount(current,'Gr=BB-2','balance',currentStartDate,currentEndDate);
-  var BB_exerciceN = getAmount(current,'Gr=BB','balance',currentStartDate,currentEndDate);
-  var BB_exerciceN1 = getAmount(current,'Gr=BB','opening',currentStartDate,currentEndDate);
+  var BB1_exerciceN = getAmount(current,'Gr=BB-1','balance',currentStartDate,currentEndDate,userParam);
+  var BB2_exerciceN = getAmount(current,'Gr=BB-2','balance',currentStartDate,currentEndDate,userParam);
+  var BB_exerciceN = getAmount(current,'Gr=BB','balance',currentStartDate,currentEndDate,userParam);
+  var BB_exerciceN1 = getAmount(current,'Gr=BB','opening',currentStartDate,currentEndDate,userParam);
   tableRow = table.addRow();
   tableRow.addCell("BB","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("STOCKS ET ENCOURS","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -411,10 +411,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell("","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 20: BH */
-  var BH1_exerciceN = getAmount(current,'Gr=BH-1','balance',currentStartDate,currentEndDate);
-  var BH2_exerciceN = getAmount(current,'Gr=BH-2','balance',currentStartDate,currentEndDate);
-  var BH_exerciceN = getAmount(current,'Gr=BH','balance',currentStartDate,currentEndDate);
-  var BH_exerciceN1 = getAmount(current,'Gr=BH','opening',currentStartDate,currentEndDate);
+  var BH1_exerciceN = getAmount(current,'Gr=BH-1','balance',currentStartDate,currentEndDate,userParam);
+  var BH2_exerciceN = getAmount(current,'Gr=BH-2','balance',currentStartDate,currentEndDate,userParam);
+  var BH_exerciceN = getAmount(current,'Gr=BH','balance',currentStartDate,currentEndDate,userParam);
+  var BH_exerciceN1 = getAmount(current,'Gr=BH','opening',currentStartDate,currentEndDate,userParam);
   tableRow = table.addRow();
   tableRow.addCell("BH","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Fournisseurs avances versées ","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -425,10 +425,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(BH_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 21: BI */
-  var BI1_exerciceN = getAmount(current,'Gr=BI-1','balance',currentStartDate,currentEndDate);
-  var BI2_exerciceN = getAmount(current,'Gr=BI-2','balance',currentStartDate,currentEndDate);
-  var BI_exerciceN = getAmount(current,'Gr=BI','balance',currentStartDate,currentEndDate);
-  var BI_exerciceN1 = getAmount(current,'Gr=BI','opening',currentStartDate,currentEndDate);
+  var BI1_exerciceN = getAmount(current,'Gr=BI-1','balance',currentStartDate,currentEndDate,userParam);
+  var BI2_exerciceN = getAmount(current,'Gr=BI-2','balance',currentStartDate,currentEndDate,userParam);
+  var BI_exerciceN = getAmount(current,'Gr=BI','balance',currentStartDate,currentEndDate,userParam);
+  var BI_exerciceN1 = getAmount(current,'Gr=BI','opening',currentStartDate,currentEndDate,userParam);
   tableRow = table.addRow();
   tableRow.addCell("BI","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Clients ","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -439,10 +439,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(BI_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 22: BJ */
-  var BJ1_exerciceN = getAmount(current,'Gr=BJ-1','balance',currentStartDate,currentEndDate);
-  var BJ2_exerciceN = getAmount(current,'Gr=BJ-2','balance',currentStartDate,currentEndDate);
-  var BJ_exerciceN = getAmount(current,'Gr=BJ','balance',currentStartDate,currentEndDate);
-  var BJ_exerciceN1 = getAmount(current,'Gr=BJ','opening',currentStartDate,currentEndDate);
+  var BJ1_exerciceN = getAmount(current,'Gr=BJ-1','balance',currentStartDate,currentEndDate,userParam);
+  var BJ2_exerciceN = getAmount(current,'Gr=BJ-2','balance',currentStartDate,currentEndDate,userParam);
+  var BJ_exerciceN = getAmount(current,'Gr=BJ','balance',currentStartDate,currentEndDate,userParam);
+  var BJ_exerciceN1 = getAmount(current,'Gr=BJ','opening',currentStartDate,currentEndDate,userParam);
   tableRow = table.addRow();
   tableRow.addCell("BJ","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Autres créances","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -453,10 +453,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(BJ_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 23: BK */
-  var BK1_exerciceN = getAmount(current,'Gr=BA-1|BB-1|BH-1|BI-1|BJ-1','balance',currentStartDate,currentEndDate);
-  var BK2_exerciceN = getAmount(current,'Gr=BA-2|BB-2|BH-2|BI-2|BJ-2','balance',currentStartDate,currentEndDate);
-  var BK_exerciceN = getAmount(current,'Gr=BK','balance',currentStartDate,currentEndDate);
-  var BK_exerciceN1 = getAmount(current,'Gr=BK','opening',currentStartDate,currentEndDate);
+  var BK1_exerciceN = getAmount(current,'Gr=BA-1|BB-1|BH-1|BI-1|BJ-1','balance',currentStartDate,currentEndDate,userParam);
+  var BK2_exerciceN = getAmount(current,'Gr=BA-2|BB-2|BH-2|BI-2|BJ-2','balance',currentStartDate,currentEndDate,userParam);
+  var BK_exerciceN = getAmount(current,'Gr=BK','balance',currentStartDate,currentEndDate,userParam);
+  var BK_exerciceN1 = getAmount(current,'Gr=BK','opening',currentStartDate,currentEndDate,userParam);
   tableRow = table.addRow();
   tableRow.addCell("BK","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("TOTAL ACTIF CIRCULANT","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -467,10 +467,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(BK_exerciceN1),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 24: BQ */
-  var BQ1_exerciceN = getAmount(current,'Gr=BQ-1','balance',currentStartDate,currentEndDate);
-  var BQ2_exerciceN = getAmount(current,'Gr=BQ-2','balance',currentStartDate,currentEndDate);
-  var BQ_exerciceN = getAmount(current,'Gr=BQ','balance',currentStartDate,currentEndDate);
-  var BQ_exerciceN1 = getAmount(current,'Gr=BQ','opening',currentStartDate,currentEndDate);
+  var BQ1_exerciceN = getAmount(current,'Gr=BQ-1','balance',currentStartDate,currentEndDate,userParam);
+  var BQ2_exerciceN = getAmount(current,'Gr=BQ-2','balance',currentStartDate,currentEndDate,userParam);
+  var BQ_exerciceN = getAmount(current,'Gr=BQ','balance',currentStartDate,currentEndDate,userParam);
+  var BQ_exerciceN1 = getAmount(current,'Gr=BQ','opening',currentStartDate,currentEndDate,userParam);
   tableRow = table.addRow();
   tableRow.addCell("BQ","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Titres de placement","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -481,10 +481,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(BQ_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 25: BR */
-  var BR1_exerciceN = getAmount(current,'Gr=BR-1','balance',currentStartDate,currentEndDate);
-  var BR2_exerciceN = getAmount(current,'Gr=BR-2','balance',currentStartDate,currentEndDate);
-  var BR_exerciceN = getAmount(current,'Gr=BR','balance',currentStartDate,currentEndDate);
-  var BR_exerciceN1 = getAmount(current,'Gr=BR','opening',currentStartDate,currentEndDate);
+  var BR1_exerciceN = getAmount(current,'Gr=BR-1','balance',currentStartDate,currentEndDate,userParam);
+  var BR2_exerciceN = getAmount(current,'Gr=BR-2','balance',currentStartDate,currentEndDate,userParam);
+  var BR_exerciceN = getAmount(current,'Gr=BR','balance',currentStartDate,currentEndDate,userParam);
+  var BR_exerciceN1 = getAmount(current,'Gr=BR','opening',currentStartDate,currentEndDate,userParam);
   tableRow = table.addRow();
   tableRow.addCell("BR","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Valeurs à encaisser","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -495,10 +495,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(BR_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 26: BS */
-  var BS1_exerciceN = getAmount(current,'Gr=BS-1','balance',currentStartDate,currentEndDate);
-  var BS2_exerciceN = getAmount(current,'Gr=BS-2','balance',currentStartDate,currentEndDate);
-  var BS_exerciceN = getAmount(current,'Gr=BS','balance',currentStartDate,currentEndDate);
-  var BS_exerciceN1 = getAmount(current,'Gr=BS','opening',currentStartDate,currentEndDate);
+  var BS1_exerciceN = getAmount(current,'Gr=BS-1','balance',currentStartDate,currentEndDate,userParam);
+  var BS2_exerciceN = getAmount(current,'Gr=BS-2','balance',currentStartDate,currentEndDate,userParam);
+  var BS_exerciceN = getAmount(current,'Gr=BS','balance',currentStartDate,currentEndDate,userParam);
+  var BS_exerciceN1 = getAmount(current,'Gr=BS','opening',currentStartDate,currentEndDate,userParam);
   tableRow = table.addRow();
   tableRow.addCell("BS","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Banques, chèques postaux, caisse et assimilés","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -509,10 +509,10 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(BS_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 27: BT */
-  var BT1_exerciceN = getAmount(current,'Gr=BQ-1|BR-1|BS-1','balance',currentStartDate,currentEndDate);
-  var BT2_exerciceN = getAmount(current,'Gr=BQ-2|BR-2|BS-2','balance',currentStartDate,currentEndDate);
-  var BT_exerciceN = getAmount(current,'Gr=BT','balance',currentStartDate,currentEndDate);
-  var BT_exerciceN1 = getAmount(current,'Gr=BT','opening',currentStartDate,currentEndDate);
+  var BT1_exerciceN = getAmount(current,'Gr=BQ-1|BR-1|BS-1','balance',currentStartDate,currentEndDate,userParam);
+  var BT2_exerciceN = getAmount(current,'Gr=BQ-2|BR-2|BS-2','balance',currentStartDate,currentEndDate,userParam);
+  var BT_exerciceN = getAmount(current,'Gr=BT','balance',currentStartDate,currentEndDate,userParam);
+  var BT_exerciceN1 = getAmount(current,'Gr=BT','opening',currentStartDate,currentEndDate,userParam);
   tableRow = table.addRow();
   tableRow.addCell("BT","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("TOTAL TRESORERIE-ACTIF","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -523,8 +523,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(BT_exerciceN1),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
   /* Row 28: BU */
-  var BU_exerciceN = getAmount(current,'Gr=BU','balance',currentStartDate,currentEndDate);
-  var BU_exerciceN1 = getAmount(current,'Gr=BU','opening',currentStartDate,currentEndDate);
+  var BU_exerciceN = getAmount(current,'Gr=BU','balance',currentStartDate,currentEndDate,userParam);
+  var BU_exerciceN1 = getAmount(current,'Gr=BU','opening',currentStartDate,currentEndDate,userParam);
   tableRow = table.addRow();
   tableRow.addCell("BU","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
   tableRow.addCell("Ecart de conversion-Actif","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -600,8 +600,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   //tableRow.addCell("EXERCICE AU 31/12/" + previousYear,"greyCell bold",1);
 
   /* Row 1: CA */
-  var CA_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=CA','balance',currentStartDate,currentEndDate));
-  var CA_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=CA','opening',currentStartDate,currentEndDate));
+  var CA_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=CA','balance',currentStartDate,currentEndDate,userParam));
+  var CA_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=CA','opening',currentStartDate,currentEndDate,userParam));
   tableRow = table.addRow();
   tableRow.addCell("CA","",1);
   tableRow.addCell("Capital","",1);
@@ -610,8 +610,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(CA_exerciceN1),"right",1);
 
   /* Row 2: CB */
-  var CB_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=CB','balance',currentStartDate,currentEndDate));
-  var CB_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=CB','opening',currentStartDate,currentEndDate));
+  var CB_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=CB','balance',currentStartDate,currentEndDate,userParam));
+  var CB_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=CB','opening',currentStartDate,currentEndDate,userParam));
   tableRow = table.addRow();
   tableRow.addCell("CB","",1);
   tableRow.addCell("Apporteurs capital non appelé (-)","",1);
@@ -620,8 +620,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(CB_exerciceN1),"right",1);
 
   /* Row 3: CD */
-  var CD_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=CD','balance',currentStartDate,currentEndDate));
-  var CD_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=CD','opening',currentStartDate,currentEndDate));
+  var CD_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=CD','balance',currentStartDate,currentEndDate,userParam));
+  var CD_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=CD','opening',currentStartDate,currentEndDate,userParam));
   tableRow = table.addRow();
   tableRow.addCell("CD","",1);
   tableRow.addCell("Primes liées au capital social","",1);
@@ -630,8 +630,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(CD_exerciceN1),"right",1);
 
   /* Row 4: CE */
-  var CE_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=CE','balance',currentStartDate,currentEndDate));
-  var CE_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=CE','opening',currentStartDate,currentEndDate));
+  var CE_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=CE','balance',currentStartDate,currentEndDate,userParam));
+  var CE_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=CE','opening',currentStartDate,currentEndDate,userParam));
   tableRow = table.addRow();
   tableRow.addCell("CE","",1);
   tableRow.addCell("Ecarts de réévaluation","",1);
@@ -640,8 +640,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(CE_exerciceN1),"right",1);
 
   /* Row 5: CF */
-  var CF_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=CF','balance',currentStartDate,currentEndDate));
-  var CF_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=CF','opening',currentStartDate,currentEndDate));
+  var CF_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=CF','balance',currentStartDate,currentEndDate,userParam));
+  var CF_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=CF','opening',currentStartDate,currentEndDate,userParam));
   tableRow = table.addRow();
   tableRow.addCell("CF","",1);
   tableRow.addCell("Réserves indisponibles","",1);
@@ -650,8 +650,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(CF_exerciceN1),"right",1);
 
   /* Row 6: CG */
-  var CG_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=CG','balance',currentStartDate,currentEndDate));
-  var CG_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=CG','opening',currentStartDate,currentEndDate));
+  var CG_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=CG','balance',currentStartDate,currentEndDate,userParam));
+  var CG_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=CG','opening',currentStartDate,currentEndDate,userParam));
   tableRow = table.addRow();
   tableRow.addCell("CG","",1);
   tableRow.addCell("Réserves libres","",1);
@@ -660,8 +660,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(CG_exerciceN1),"right",1);
 
   /* Row 7: CH */
-  var CH_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=CH','balance',currentStartDate,currentEndDate));
-  var CH_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=CH','opening',currentStartDate,currentEndDate));
+  var CH_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=CH','balance',currentStartDate,currentEndDate,userParam));
+  var CH_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=CH','opening',currentStartDate,currentEndDate,userParam));
   tableRow = table.addRow();
   tableRow.addCell("CH","",1);
   tableRow.addCell("Report à nouveau (+ ou -)","",1);
@@ -670,8 +670,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(CH_exerciceN1),"right",1);
 
   /* Row 8: CJ */
-  var CJ_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=CJ','balance',currentStartDate,currentEndDate));
-  var CJ_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=CJ','opening',currentStartDate,currentEndDate));
+  var CJ_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=CJ','balance',currentStartDate,currentEndDate,userParam));
+  var CJ_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=CJ','opening',currentStartDate,currentEndDate,userParam));
   tableRow = table.addRow();
   tableRow.addCell("CJ","",1);
   tableRow.addCell("Résultat net de l'exercice (bénéfice + ou perte -)","",1);
@@ -680,8 +680,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(CJ_exerciceN1),"right",1);
 
   /* Row 9: CL */
-  var CL_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=CL','balance',currentStartDate,currentEndDate));
-  var CL_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=CL','opening',currentStartDate,currentEndDate));
+  var CL_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=CL','balance',currentStartDate,currentEndDate,userParam));
+  var CL_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=CL','opening',currentStartDate,currentEndDate,userParam));
   tableRow = table.addRow();
   tableRow.addCell("CL","",1);
   tableRow.addCell("Subventions d'investissement","",1);
@@ -690,8 +690,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(CL_exerciceN1),"right",1);
 
   /* Row 10: CM */
-  var CM_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=CM','balance',currentStartDate,currentEndDate));
-  var CM_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=CM','opening',currentStartDate,currentEndDate));
+  var CM_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=CM','balance',currentStartDate,currentEndDate,userParam));
+  var CM_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=CM','opening',currentStartDate,currentEndDate,userParam));
   tableRow = table.addRow();
   tableRow.addCell("CM","",1);
   tableRow.addCell("Provisions réglementées","",1);
@@ -700,8 +700,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(CM_exerciceN1),"right",1);
 
   /* Row 11: CP */
-  var CP_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=CP','balance',currentStartDate,currentEndDate));
-  var CP_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=CP','opening',currentStartDate,currentEndDate));
+  var CP_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=CP','balance',currentStartDate,currentEndDate,userParam));
+  var CP_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=CP','opening',currentStartDate,currentEndDate,userParam));
   tableRow = table.addRow();
   tableRow.addCell("CP","greyCell bold",1);
   tableRow.addCell("TOTAL CAPITAUX PROPRES ET RESSOURCES ASSIMILEES","greyCell bold",1);
@@ -710,8 +710,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(CP_exerciceN1),"right greyCell bold",1);
 
   /* Row 12: DA */
-  var DA_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DA','balance',currentStartDate,currentEndDate));
-  var DA_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=DA','opening',currentStartDate,currentEndDate));
+  var DA_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DA','balance',currentStartDate,currentEndDate,userParam));
+  var DA_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=DA','opening',currentStartDate,currentEndDate,userParam));
   tableRow = table.addRow();
   tableRow.addCell("DA","",1);
   tableRow.addCell("Emprunts et dettes financières diverses","",1);
@@ -720,8 +720,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(DA_exerciceN1),"right",1);
 
   /* Row 13: DB */
-  var DB_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DB','balance',currentStartDate,currentEndDate));
-  var DB_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=DB','opening',currentStartDate,currentEndDate));
+  var DB_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DB','balance',currentStartDate,currentEndDate,userParam));
+  var DB_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=DB','opening',currentStartDate,currentEndDate,userParam));
   tableRow = table.addRow();
   tableRow.addCell("DB","",1);
   tableRow.addCell("Dettes de location acquisition","",1);
@@ -730,8 +730,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(DB_exerciceN1),"right",1);
 
   /* Row 14: DC */
-  var DC_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DC','balance',currentStartDate,currentEndDate));
-  var DC_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=DC','opening',currentStartDate,currentEndDate));
+  var DC_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DC','balance',currentStartDate,currentEndDate,userParam));
+  var DC_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=DC','opening',currentStartDate,currentEndDate,userParam));
   tableRow = table.addRow();
   tableRow.addCell("DC","",1);
   tableRow.addCell("Provisions pour risques et charges","",1);
@@ -740,8 +740,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(DC_exerciceN1),"right",1);
 
   /* Row 15: DD */
-  var DD_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DD','balance',currentStartDate,currentEndDate));
-  var DD_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=DD','opening',currentStartDate,currentEndDate));
+  var DD_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DD','balance',currentStartDate,currentEndDate,userParam));
+  var DD_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=DD','opening',currentStartDate,currentEndDate,userParam));
   tableRow = table.addRow();
   tableRow.addCell("DD","greyCell bold",1);
   tableRow.addCell("TOTAL DETTES FINANCIERES ET RESSOURCES ASSIMILEES","greyCell bold",1);
@@ -750,8 +750,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(DD_exerciceN1),"right greyCell bold",1);
 
   /* Row 16: DF */
-  var DF_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DF','balance',currentStartDate,currentEndDate));
-  var DF_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=DF','opening',currentStartDate,currentEndDate));
+  var DF_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DF','balance',currentStartDate,currentEndDate,userParam));
+  var DF_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=DF','opening',currentStartDate,currentEndDate,userParam));
   tableRow = table.addRow();
   tableRow.addCell("DF","greyCell bold",1);
   tableRow.addCell("TOTAL RESSOURCES STABLES","greyCell bold",1);
@@ -760,8 +760,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(DF_exerciceN1),"right greyCell bold",1);
 
   /* Row 17: DH */
-  var DH_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DH','balance',currentStartDate,currentEndDate));
-  var DH_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=DH','opening',currentStartDate,currentEndDate));
+  var DH_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DH','balance',currentStartDate,currentEndDate,userParam));
+  var DH_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=DH','opening',currentStartDate,currentEndDate,userParam));
   tableRow = table.addRow();
   tableRow.addCell("DH","",1);
   tableRow.addCell("Dettes circulantes HAO","",1);
@@ -770,8 +770,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(DH_exerciceN1),"right",1);
 
   /* Row 18: DI */
-  var DI_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DI','balance',currentStartDate,currentEndDate));
-  var DI_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=DI','opening',currentStartDate,currentEndDate));
+  var DI_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DI','balance',currentStartDate,currentEndDate,userParam));
+  var DI_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=DI','opening',currentStartDate,currentEndDate,userParam));
   tableRow = table.addRow();
   tableRow.addCell("DI","",1);
   tableRow.addCell("Clients, avances reçues","",1);
@@ -780,8 +780,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(DI_exerciceN1),"right",1);
 
   /* Row 19: DJ */
-  var DJ_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DJ','balance',currentStartDate,currentEndDate));
-  var DJ_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=DJ','opening',currentStartDate,currentEndDate));
+  var DJ_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DJ','balance',currentStartDate,currentEndDate,userParam));
+  var DJ_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=DJ','opening',currentStartDate,currentEndDate,userParam));
   tableRow = table.addRow();
   tableRow.addCell("DJ","",1);
   tableRow.addCell("Fournisseurs d'exploitation","",1);
@@ -790,8 +790,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(DJ_exerciceN1),"right",1);
 
   /* Row 20: DK */
-  var DK_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DK','balance',currentStartDate,currentEndDate));
-  var DK_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=DK','opening',currentStartDate,currentEndDate));
+  var DK_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DK','balance',currentStartDate,currentEndDate,userParam));
+  var DK_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=DK','opening',currentStartDate,currentEndDate,userParam));
   tableRow = table.addRow();
   tableRow.addCell("DK","",1);
   tableRow.addCell("Dettes fiscales et sociales","",1);
@@ -800,8 +800,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(DK_exerciceN1),"right",1);
 
   /* Row 21: DM */
-  var DM_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DM','balance',currentStartDate,currentEndDate));
-  var DM_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=DM','opening',currentStartDate,currentEndDate));
+  var DM_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DM','balance',currentStartDate,currentEndDate,userParam));
+  var DM_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=DM','opening',currentStartDate,currentEndDate,userParam));
   tableRow = table.addRow();
   tableRow.addCell("DM","",1);
   tableRow.addCell("Autres dettes","",1);
@@ -810,8 +810,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(DM_exerciceN1),"right",1);
 
   /* Row 22: DN */
-  var DN_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DN','balance',currentStartDate,currentEndDate));
-  var DN_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=DN','opening',currentStartDate,currentEndDate));
+  var DN_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DN','balance',currentStartDate,currentEndDate,userParam));
+  var DN_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=DN','opening',currentStartDate,currentEndDate,userParam));
   tableRow = table.addRow();
   tableRow.addCell("DN","",1);
   tableRow.addCell("Provisions pour risques à court terme","",1);
@@ -820,8 +820,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(DN_exerciceN1),"right",1);
 
   /* Row 23: DP */
-  var DP_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DP','balance',currentStartDate,currentEndDate));
-  var DP_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=DP','opening',currentStartDate,currentEndDate));
+  var DP_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DP','balance',currentStartDate,currentEndDate,userParam));
+  var DP_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=DP','opening',currentStartDate,currentEndDate,userParam));
   tableRow = table.addRow();
   tableRow.addCell("DP","greyCell bold",1);
   tableRow.addCell("TOTAL PASSIF CIRCULANT","greyCell bold",1);
@@ -830,8 +830,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(DP_exerciceN1),"right greyCell bold",1);
 
   /* Row 24: DQ */
-  var DQ_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DQ','balance',currentStartDate,currentEndDate));
-  var DQ_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=DQ','opening',currentStartDate,currentEndDate));
+  var DQ_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DQ','balance',currentStartDate,currentEndDate,userParam));
+  var DQ_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=DQ','opening',currentStartDate,currentEndDate,userParam));
   tableRow = table.addRow();
   tableRow.addCell("DQ","",1);
   tableRow.addCell("Banques, crédits d'escompte","",1);
@@ -840,8 +840,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(DQ_exerciceN1),"right",1);
 
   /* Row 25: DR */
-  var DR_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DR','balance',currentStartDate,currentEndDate));
-  var DR_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=DR','opening',currentStartDate,currentEndDate));
+  var DR_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DR','balance',currentStartDate,currentEndDate,userParam));
+  var DR_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=DR','opening',currentStartDate,currentEndDate,userParam));
   tableRow = table.addRow();
   tableRow.addCell("DR","",1);
   tableRow.addCell("Banques, établissements financiers et crédits de trésorerie","",1);
@@ -850,8 +850,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(DR_exerciceN1),"right",1);
 
   /* Row 26: DT */
-  var DT_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DT','balance',currentStartDate,currentEndDate));
-  var DT_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=DT','opening',currentStartDate,currentEndDate));
+  var DT_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DT','balance',currentStartDate,currentEndDate,userParam));
+  var DT_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=DT','opening',currentStartDate,currentEndDate,userParam));
   tableRow = table.addRow();
   tableRow.addCell("DT","greyCell bold",1);
   tableRow.addCell("TOTAL TRESORERIE-PASSIF","greyCell bold",1);
@@ -860,8 +860,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(DT_exerciceN1),"right greyCell bold",1);
 
   /* Row 27: DV */
-  var DV_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DV','balance',currentStartDate,currentEndDate));
-  var DV_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=DV','opening',currentStartDate,currentEndDate));
+  var DV_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DV','balance',currentStartDate,currentEndDate,userParam));
+  var DV_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=DV','opening',currentStartDate,currentEndDate,userParam));
   tableRow = table.addRow();
   tableRow.addCell("DV","",1);
   tableRow.addCell("Ecart de conversion-Passif","",1);
@@ -870,8 +870,8 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   tableRow.addCell(formatValues(DV_exerciceN1),"right",1);
 
   /* Row 28: DZ */
-  var DZ_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DZ','balance',currentStartDate,currentEndDate));
-  var DZ_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=DZ','opening',currentStartDate,currentEndDate));
+  var DZ_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=DZ','balance',currentStartDate,currentEndDate,userParam));
+  var DZ_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=DZ','opening',currentStartDate,currentEndDate,userParam));
   tableRow = table.addRow();
   tableRow.addCell("DZ","greyCell bold",1);
   tableRow.addCell("TOTAL GENERAL","greyCell bold",1);
@@ -926,7 +926,6 @@ function getAmount(banDoc,account,property,startDate,endDate,userParam) {
   
     var currentBal = banDoc.currentBalance(account,startDate,endDate)
     var amount = currentBal[property];
-    // userParam = initUserParam();
   
     // base currency CDF, currency2 = USD
     if (userParam.currency.toUpperCase() !== 'CDF') {
@@ -1005,7 +1004,7 @@ function convertParam(userParam) {
   currentParam.title = 'Titre';
   currentParam.type = 'string';
   currentParam.value = userParam.title ? userParam.title : '';
-  currentParam.defaultvalue = 'Bilan actif/passif';
+  currentParam.defaultvalue = 'Bilan actif/passif multi-devise';
   currentParam.readValue = function() {
       userParam.title = this.value;
   }
@@ -1044,38 +1043,15 @@ function convertParam(userParam) {
   }
   convertedParam.data.push(currentParam);
 
-  // var currentParam = {};
-  // currentParam.name = 'amount_columns_width';
-  // currentParam.title = 'Largeur des colonnes montants (défaut 15%)';
-  // currentParam.type = 'string';
-  // currentParam.value = userParam.amount_columns_width ? userParam.amount_columns_width : '15%';
-  // currentParam.defaultvalue = '15%';
-  // currentParam.readValue = function() {
-  //     userParam.amount_columns_width = this.value;
-  // }
-  // convertedParam.data.push(currentParam);
-
-  // var currentParam = {};
-  // currentParam.name = 'margins';
-  // currentParam.title = 'Marges (haut, droite, bas, gauche)';
-  // currentParam.type = 'string';
-  // currentParam.value = userParam.margins ? userParam.margins : '10mm 10mm 10mm 10mm';
-  // currentParam.defaultvalue = '10mm 10mm 10mm 10mm';
-  // currentParam.readValue = function() {
-  //     userParam.margins = this.value;
-  // }
-  // convertedParam.data.push(currentParam);
-
   return convertedParam;
 }
 
 function initUserParam() {
   var userParam = {};
-  userParam.title = "Bilan actif/passif";
+  userParam.title = "Bilan actif/passif multi-devise";
   userParam.currency = 'CDF';
   userParam.exchangerate = "";
-  // userParam.amount_columns_width = "15%";
-  // userParam.margins = "10mm 10mm 10mm 10mm";
+  
   return userParam;
 }
 
@@ -1089,12 +1065,6 @@ function verifyUserParam(userParam) {
   if (!userParam.exchangerate) {
     userParam.exchangerate = '';
   }
-  // if (!userParam.amount_columns_width) {
-  //   userParam.amount_columns_width = '15';
-  // }
-  // if (!userParam.margins) {
-  //   userParam.margins = '10mm 10mm 10mm 10mm';
-  // }
   return userParam;
 }
 
