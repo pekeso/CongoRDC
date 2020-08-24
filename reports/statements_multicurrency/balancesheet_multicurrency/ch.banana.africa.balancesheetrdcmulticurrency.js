@@ -73,7 +73,7 @@ function exec() {
 * Function that create the report
 *
 **************************************************************************************/
-function createBalanceSheetMulticurrencyReport(current, startDate, endDate, userParam) {
+function createBalanceSheetMulticurrencyReport(current, startDate, endDate, userParam, report) {
 
   // Accounting period for the current year file
   var currentStartDate = startDate;
