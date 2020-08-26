@@ -2,7 +2,7 @@
 	<qresource>
 		<file>ch.banana.africa.reportsohadardcmulticurrency.js</file>
 		<file alias="balancesheetmulticurrency.inc">balancesheet_multicurrency/ch.banana.africa.balancesheetrdcmulticurrency.js</file>
-		<file alias="profitlossstatementmulticurrency.inc">profitlossstatement_multicurrency/ch.banana.africa.profitlossstatementrdcmulticurrency.js</file>
+		<file alias="profitlossmulticurrency.inc">profitloss_multicurrency/ch.banana.africa.profitlossmulticurrency.js</file>
         <file alias="cashflowmulticurrency.inc">cashflow_multicurrency/ch.banana.africa.cashflowrdcmulticurrency.js</file>
 	</qresource>
 </RCC>

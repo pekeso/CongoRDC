@@ -25,12 +25,12 @@
 // @inputdataform = none
 // @timeout = -1
 // @includejs = balancesheetmulticurrency.inc
-// @includejs = profitlossstatementmulticurrency.inc
+// @includejs = profitlossmulticurrency.inc
 // @includejs = cashflowmulticurrency.inc
 
 
 //balancesheet_multicurrency/ch.banana.africa.balancesheetrdcmulticurrency.js
-//profitlossstatement_multicurrency/ch.banana.africa.profitlossstatementrdcmulticurrency.js
+//profitloss_multicurrency/ch.banana.africa.profitlossmulticurrency.js
 //cashflow_multicurrency/ch.banana.africa.cashflowrdcmulticurrency.js
 
 function exec() {
