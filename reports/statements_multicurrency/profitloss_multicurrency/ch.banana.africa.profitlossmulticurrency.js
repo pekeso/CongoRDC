@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-// @id = ch.banana.africa.prifitlossstatementrdcmulticurrency
+// @id = ch.banana.africa.profitlossmulticurrency
 // @api = 1.0
 // @pubdate = 2020-08-21
 // @publisher = Banana.ch SA

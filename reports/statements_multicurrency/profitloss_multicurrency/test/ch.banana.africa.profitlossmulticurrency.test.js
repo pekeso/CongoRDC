@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-// @id = ch.banana.africa.profitlossstatementrdcmulticurrency.test
+// @id = ch.banana.africa.profitlossmulticurrency.test
 // @api = 1.0
 // @pubdate = 2020-08-23
 // @publisher = Banana.ch SA
@@ -23,7 +23,7 @@
 // @outputformat = none
 // @inputdataform = none
 // @timeout = -1
-// @includejs = ../ch.banana.africa.profitlossstatementrdcmulticurrency.js
+// @includejs = ../ch.banana.africa.profitlossmulticurrency.js
 
 // Register this test case to be executed
 Test.registerTestCase(new TestProfitLossStatementRDCMulticurrency());
