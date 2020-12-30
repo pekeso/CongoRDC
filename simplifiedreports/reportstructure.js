@@ -92,7 +92,5 @@ function createReportStructureBalanceSheet() {
     reportStructure.push({"id":"DV", "type":"group", "note":"12", "bclass":"2", "description":"Ecart de conversion-Passif"});
     reportStructure.push({"id":"DZ", "type":"total", "note":"", "bclass":"2", "description":"TOTAL GENERAL", "sum":"DF;DP;DT;DV"});
 
-    /* PROFIT & LOSS */
-
     return reportStructure;
 }

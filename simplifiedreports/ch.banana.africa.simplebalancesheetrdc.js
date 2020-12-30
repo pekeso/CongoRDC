@@ -388,7 +388,6 @@ function printBalanceSheet(banDoc, userParam, bReport, stylesheet) {
    /* DZ */
    printRow(userParam, bReport, table, "DZ", "description-groups", "amount-groups-totals");
 
-
    //checkResults(banDoc, startDate, endDate);
 
 
