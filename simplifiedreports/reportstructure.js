@@ -13,7 +13,7 @@
 // limitations under the License.
 
 
-/* Update: 2020-11-11 */
+/* Update: 2020-12-13 */
 
 
 /**
@@ -27,7 +27,7 @@
  */
 
 
-// Balance sheet
+// Balance sheet 
 function createReportStructureBalanceSheet() {
     var reportStructure = [];
 
@@ -91,6 +91,16 @@ function createReportStructureBalanceSheet() {
     reportStructure.push({"id":"DT", "type":"total", "note":"", "bclass":"2", "description":"TOTAL TRESORERIE-PASSIF", "sum":"DQ;DR"});
     reportStructure.push({"id":"DV", "type":"group", "note":"12", "bclass":"2", "description":"Ecart de conversion-Passif"});
     reportStructure.push({"id":"DZ", "type":"total", "note":"", "bclass":"2", "description":"TOTAL GENERAL", "sum":"DF;DP;DT;DV"});
+
+    return reportStructure;
+}
+
+
+// Profit & Loss statement
+function createReportStructureProfitLoss() {
+    var reportStructure = [];
+
+    reportStructure.push({"id":"TA", "type":"group", "indent":"", "bclass":"3", "description":"Ventes de marchandises"});
 
     return reportStructure;
 }
