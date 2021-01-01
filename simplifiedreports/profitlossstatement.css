@@ -22,7 +22,7 @@ td {
   }
 
   .column1 {
-    width: 73%;
+    width: 74%;
   }
   
   .column2 {
@@ -75,7 +75,8 @@ td {
     font-weight: bold;
   }
   
-  table.table-profit-loss-data td {
+  table.table-profit-loss td {
+    font-size: 9px;
     border-top-style: solid;
     border-top-color: black;
     border-top-width: thin;
@@ -91,23 +92,6 @@ td {
   }
   
   table-profit-loss {
-    font-size: 9px;
-    width: 100%;
-    border-top-style: solid;
-    border-top-color: black;
-    border-top-width: thin;
-    border-bottom-style: solid;
-    border-bottom-color: black;
-    border-bottom-width: thin;
-    border-left-style: solid;
-    border-left-color: black;
-    border-left-width: thin;
-    border-right-style: solid;
-    border-right-color: black;
-    border-right-width: thin;
-  }
-
-  table-profit-loss-data {
     font-size: 9px;
     width: 100%;
     border-top-style: solid;
