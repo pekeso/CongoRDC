@@ -121,7 +121,7 @@ function createReportStructureProfitLoss() {
     reportStructure.push({"id":"RH", "type":"group", "note":"24", "bclass":"3", "description":"Services extérieurs"});
     reportStructure.push({"id":"RI", "type":"group", "note":"25", "bclass":"3", "description":"Impôts et taxes"});
     reportStructure.push({"id":"RJ", "type":"group", "note":"26", "bclass":"3", "description":"Autres charges"});
-    reportStructure.push({"id":"XC", "type":"total", "note":"", "bclass":"3", "description":"VALEUR AJOUTEE (XB+RA+RB) + (somme TE à RJ)", "sum":""});
+    reportStructure.push({"id":"XC", "type":"total", "note":"", "bclass":"3", "description":"VALEUR AJOUTEE (XB+RA+RB) + (somme TE à RJ)", "sum":"TE;TF;TG;TH;TI;RC;RD;RE;RF"});
     reportStructure.push({"id":"RK", "type":"group", "note":"27", "bclass":"3", "description":"Charges de personnel"});
     reportStructure.push({"id":"XD", "type":"total", "note":"28", "bclass":"3", "description":"EXCEDENT BRUT D'EXPLOITATION (XC+RK)", "sum":""});
     reportStructure.push({"id":"TJ", "type":"group", "note":"28", "bclass":"3", "description":"Reprises d’amortissements, provisions et dépréciations"});

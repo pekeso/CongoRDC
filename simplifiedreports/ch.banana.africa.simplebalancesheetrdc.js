@@ -392,7 +392,7 @@ function printBalanceSheet(banDoc, userParam, bReport, stylesheet) {
 
 
 
-   addFooter(report);
+   // addFooter(report);
    return report;
 }
 
