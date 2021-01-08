@@ -121,27 +121,27 @@ function createReportStructureProfitLoss() {
     reportStructure.push({"id":"RH", "type":"group", "note":"24", "bclass":"3", "description":"Services extérieurs"});
     reportStructure.push({"id":"RI", "type":"group", "note":"25", "bclass":"3", "description":"Impôts et taxes"});
     reportStructure.push({"id":"RJ", "type":"group", "note":"26", "bclass":"3", "description":"Autres charges"});
-    reportStructure.push({"id":"XC", "type":"total", "note":"", "bclass":"3", "description":"VALEUR AJOUTEE (XB+RA+RB) + (somme TE à RJ)", "sum":"TE;TF;TG;TH;TI;RC;RD;RE;RF"});
+    reportStructure.push({"id":"XC", "type":"total", "note":"", "bclass":"3", "description":"VALEUR AJOUTEE (XB+RA+RB) + (somme TE à RJ)", "sum":"TE;TF;TG;TH;TI;RC;RD;RE;RF;RG;RH;RI;RJ"});
     reportStructure.push({"id":"RK", "type":"group", "note":"27", "bclass":"3", "description":"Charges de personnel"});
-    reportStructure.push({"id":"XD", "type":"total", "note":"28", "bclass":"3", "description":"EXCEDENT BRUT D'EXPLOITATION (XC+RK)", "sum":""});
+    reportStructure.push({"id":"XD", "type":"total", "note":"28", "bclass":"3", "description":"EXCEDENT BRUT D'EXPLOITATION (XC+RK)", "sum":"XC;RK"});
     reportStructure.push({"id":"TJ", "type":"group", "note":"28", "bclass":"3", "description":"Reprises d’amortissements, provisions et dépréciations"});
     reportStructure.push({"id":"RL", "type":"group", "note":"3C&28", "bclass":"3", "description":"Dotations aux amortissements, aux provisions et dépréciations"});
-    reportStructure.push({"id":"XE", "type":"total", "note":"", "bclass":"3", "description":"RESULTAT D'EXPLOITATION (XD+TJ+RL)", "sum":""});
+    reportStructure.push({"id":"XE", "type":"total", "note":"", "bclass":"3", "description":"RESULTAT D'EXPLOITATION (XD+TJ+RL)", "sum":"XD;TJ;RL"});
     reportStructure.push({"id":"TK", "type":"group", "note":"29", "bclass":"3", "description":"Revenus financiers et assimilés"});
     reportStructure.push({"id":"TL", "type":"group", "note":"28", "bclass":"3", "description":"Reprises de provisions  et dépréciations financières"});
     reportStructure.push({"id":"TM", "type":"group", "note":"12", "bclass":"3", "description":"Transferts de charges financières"});
     reportStructure.push({"id":"RM", "type":"group", "note":"29", "bclass":"3", "description":"Frais financiers et charges assimilées"});
     reportStructure.push({"id":"RN", "type":"group", "note":"3C&28", "bclass":"3", "description":"Dotations aux provisions et aux dépréciations financières"});
-    reportStructure.push({"id":"XF", "type":"total", "note":"", "bclass":"3", "description":"RESULTAT FINANCIER (somme TK à RN)", "sum":""});
-    reportStructure.push({"id":"XG", "type":"total", "note":"", "bclass":"3", "description":"RESULTAT DES ACTIVITES ORDINAIRES (XE+XF)", "sum":""});
+    reportStructure.push({"id":"XF", "type":"total", "note":"", "bclass":"3", "description":"RESULTAT FINANCIER (somme TK à RN)", "sum":"TK;TL;TM;RM;RN"});
+    reportStructure.push({"id":"XG", "type":"total", "note":"", "bclass":"3", "description":"RESULTAT DES ACTIVITES ORDINAIRES (XE+XF)", "sum":"XE;XF"});
     reportStructure.push({"id":"TN", "type":"group", "note":"3D", "bclass":"3", "description":"Produits des cessions d'immobilisations"});
     reportStructure.push({"id":"TO", "type":"group", "note":"30", "bclass":"3", "description":"Autres Produits HAO"});
     reportStructure.push({"id":"RO", "type":"group", "note":"3D", "bclass":"3", "description":"Valeurs comptables des cessions d'immobilisations"});
     reportStructure.push({"id":"RP", "type":"group", "note":"30", "bclass":"3", "description":"Autres Charges HAO"});
-    reportStructure.push({"id":"XH", "type":"total", "note":"", "bclass":"3", "description":"RESULTAT HORS ACTIVITES ORDINAIRES (somme TN à RP)", "sum":""});
+    reportStructure.push({"id":"XH", "type":"total", "note":"", "bclass":"3", "description":"RESULTAT HORS ACTIVITES ORDINAIRES (somme TN à RP)", "sum":"TN;TO;RO;RP"});
     reportStructure.push({"id":"RQ", "type":"group", "note":"30", "bclass":"3", "description":"Participation des travailleurs"});
     reportStructure.push({"id":"RS", "type":"group", "note":"", "bclass":"3", "description":"Impôts sur le résultat"});
-    reportStructure.push({"id":"XI", "type":"total", "note":"", "bclass":"3", "description":"RESULTAT NET (XG+XH+RQ+RS)", "sum":""});
+    reportStructure.push({"id":"XI", "type":"total", "note":"", "bclass":"3", "description":"RESULTAT NET (XG+XH+RQ+RS)", "sum":"XG;XH;RQ;RS"});
 
     return reportStructure;
 }
