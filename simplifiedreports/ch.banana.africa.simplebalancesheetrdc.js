@@ -126,26 +126,6 @@ function printRow(userParam, bReport, table, gr, styleColumnDescription, styleCo
    } 
 }
 
-function printSubRow(userParam, bReport, table, gr, styleColumnDescription, styleColumnAmount) {
-   var styleIndentLevel = "";
-   var indentLevel = "lvl"+bReport.getObjectIndent(gr);
-   if (indentLevel) {
-      styleIndentLevel = indentLevel;
-   }
-   if (userParam.compattastampa) {
-      // Prints only elements cannot be excluded
-      if (!bReport.getObjectValue(gr, "exclude")) { // false = cannot be excluded
-         tableRow = table.addRow();
-         tableRow.addCell("("+bReport.getObjectDescription(gr) + ": " + bReport.getObjectCurrentAmountFormatted(gr) + " ; anno precedente " + bReport.getObjectPreviousAmountFormatted(gr) + ")", styleColumnDescription + " " + styleIndentLevel, 1);  
-      }
-   }
-   else {
-      // Prints all elements
-      tableRow = table.addRow();
-      tableRow.addCell("("+bReport.getObjectDescription(gr) + ": " + bReport.getObjectCurrentAmountFormatted(gr) + " ; anno precedente " + bReport.getObjectPreviousAmountFormatted(gr) + ")", styleColumnDescription + " " + styleIndentLevel, 1);
-   }
-}
-
 function printBalanceSheet(banDoc, userParam, bReport, stylesheet) {
 
    var report = Banana.Report.newReport("Bilan");
@@ -534,24 +514,13 @@ function convertParam(userParam) {
    convertedParam.data.push(currentParam);
 
    var currentParam = {};
-   currentParam.name = 'compactprint';
-   currentParam.title = 'Exclure les éléments avec des montants nuls pendant deux années consécutives';
+   currentParam.name = 'decimals';
+   currentParam.title = 'Enlever les décimales';
    currentParam.type = 'bool';
-   currentParam.value = userParam.compactprint ? true : false;
+   currentParam.value = userParam.decimals ? userParam.decimals : false;
    currentParam.defaultvalue = false;
    currentParam.readValue = function() {
-      userParam.compactprint = this.value;
-   }
-   convertedParam.data.push(currentParam);
-
-   var currentParam = {};
-   currentParam.name = 'printing';
-   currentParam.title = 'Impression active et passive sur des pages séparées';
-   currentParam.type = 'bool';
-   currentParam.value = userParam.stampa ? true : false;
-   currentParam.defaultvalue = true;
-   currentParam.readValue = function() {
-      userParam.stampa = this.value;
+      userParam.decimals = this.value;
    }
    convertedParam.data.push(currentParam);
 
@@ -569,6 +538,15 @@ function initUserParam() {
    userParam.compactprint = false;
    userParam.stampa = true;
    return userParam;
+}
+
+function formatValuesDecimals(value,decimals) {
+   if (decimals) {
+     return Banana.Converter.toLocaleNumberFormat(value,0,true);
+   }
+   else {
+     return Banana.Converter.toLocaleNumberFormat(value,2,true);
+   }
 }
 
 function parametersDialog(userParam) {
