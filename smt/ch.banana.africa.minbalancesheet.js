@@ -413,7 +413,7 @@ function convertParam(userParam) {
    currentParam.name = 'column';
    currentParam.title = "Colonne de regroupement (Nom XML de la colonne)";
    currentParam.type = 'string';
-   currentParam.value = userParam.column ? userParam.column : 'Gr';
+   currentParam.value = userParam.column ? userParam.column : 'Gr1';
    currentParam.defaultvalue = 'Gr1';
    currentParam.readValue = function() {
       userParam.column = this.value;

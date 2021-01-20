@@ -37,14 +37,14 @@ function createReportStructureBalanceSheet() {
     reportStructure.push({"id":"3", "type":"group", "note":"3", "bclass":"1", "description":"Clients et débiteurs divers"});
     reportStructure.push({"id":"4", "type":"group", "note":"", "bclass":"1", "description":"Caisse"});
     reportStructure.push({"id":"5", "type":"group", "note":"", "bclass":"1", "description":"Banque (en + ou en -)"});
-    reportStructure.push({"id":"A", "type":"total", "note":"", "bclass":"1", "description":"Total actif", "sum":"1;2;3;4;5"});
+    reportStructure.push({"id":"A", "type":"total", "note":"", "description":"Total actif", "sum":"1;2;3;4;5"});
 
     /* PASSIVE */
     reportStructure.push({"id":"6", "type":"group", "note":"", "bclass":"2", "description":"Compte exploitant"});
     reportStructure.push({"id":"7", "type":"group", "note":"", "bclass":"2", "description":"Résultat exercice"});
     reportStructure.push({"id":"8", "type":"group", "note":"", "bclass":"2", "description":"Emprunt"});
     reportStructure.push({"id":"9", "type":"group", "note":"3", "bclass":"2", "description":"Fournisseurs et créditeurs divers"});
-    reportStructure.push({"id":"P", "type":"total", "note":"", "bclass":"2", "description":"Total passif", "sum":"6;7;8;9"});
+    reportStructure.push({"id":"P", "type":"total", "note":"", "description":"Total passif", "sum":"6;7;8;9"});
     
     return reportStructure;
 }
