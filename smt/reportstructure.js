@@ -48,3 +48,14 @@ function createReportStructureBalanceSheet() {
     
     return reportStructure;
 }
+
+// Profit & Loss Statement
+function createReportStructureProfitLoss() {
+    var reportStructure = [];
+
+    reportStructure.push({"id":"10", "type":"group", "note":"4", "bclass":"3", "description":"Recettes sur ventes ou prestations de services"});
+    reportStructure.push({"id":"11", "type":"group", "note":"4", "bclass":"3", "description":"Autres recettes sur activités"});
+    reportStructure.push({"id":"11", "type":"group", "note":"4", "bclass":"3", "description":"Autres recettes sur activités"});
+
+    return reportStructure;
+}
