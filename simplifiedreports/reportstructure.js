@@ -142,6 +142,6 @@ function createReportStructureProfitLoss() {
     reportStructure.push({"id":"RQ", "type":"group", "note":"30", "bclass":"3", "description":"Participation des travailleurs"});
     reportStructure.push({"id":"RS", "type":"group", "note":"", "bclass":"3", "description":"Impôts sur le résultat"});
     reportStructure.push({"id":"XI", "type":"total", "note":"", "bclass":"3", "description":"RESULTAT NET (XG+XH+RQ+RS)", "sum":""});
-
+    
     return reportStructure;
 }
