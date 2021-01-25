@@ -55,15 +55,16 @@ function createReportStructureProfitLoss() {
 
     reportStructure.push({"id":"10", "type":"group", "note":"4", "bclass":"3", "description":"Recettes sur ventes ou prestations de services"});
     reportStructure.push({"id":"11", "type":"group", "note":"4", "bclass":"3", "description":"Autres recettes sur activités"});
-    reportStructure.push({"id":"4", "type":"total", "note":"A", "description":"TOTAL DES RECETTES SUR PRODUITS"});
+    reportStructure.push({"id":"4", "type":"total", "note":"A", "description":"TOTAL DES RECETTES SUR PRODUITS", "sum":"10;11"});
     reportStructure.push({"id":"12", "type":"group", "note":"4", "bclass":"3", "description":"Dépenses sur achats"});
     reportStructure.push({"id":"13", "type":"group", "note":"4", "bclass":"3", "description":"Dépenses sur loyers"});
     reportStructure.push({"id":"14", "type":"group", "note":"4", "bclass":"3", "description":"Dépenses sur salaires"});
     reportStructure.push({"id":"15", "type":"group", "note":"4", "bclass":"3", "description":"Dépenses sur impôts et taxes"});
     reportStructure.push({"id":"16", "type":"group", "note":"", "bclass":"3", "description":"Charges d'intérêts"});
     reportStructure.push({"id":"17", "type":"group", "note":"4", "bclass":"3", "description":"Autres dépenses sur activités"});
-    reportStructure.push({"id":"3", "type":"total", "note":"B", "description":"TOTAL DÉPENSES SUR CHARGES"});
+    reportStructure.push({"id":"3", "type":"total", "note":"B", "description":"TOTAL DÉPENSES SUR CHARGES", "sum":"12;13;14;15;16;17"});
     reportStructure.push({"id":"00", "type":"total", "note":"C", "description":"SOLDE: Excédent (+) ou insuffisance (-) de recettes (C=A-B)", "sum":"4;3"});
+    reportStructure.push({"id":"18", "type":"total", "note":"F", "description":"DOTATIONS AMORTISSEMENTS", "sum":""});
 
     return reportStructure;
 }

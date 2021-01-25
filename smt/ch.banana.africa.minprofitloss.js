@@ -167,7 +167,7 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
    tableRow = table.addRow();
    tableRow.addCell("10", "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectDescription("10"), "align-left", 1).setStyleAttributes("padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectNote("10"), "align-left", 1).setStyleAttributes("padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectNote("10"), "align-center", 1).setStyleAttributes("padding-bottom:2px;padding-top:5px");
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("10"), "align-right", 1).setStyleAttributes("padding-bottom:2px;padding-top:5px");
    tableRow.addCell(bReport.getObjectPreviousAmountFormatted("10"), "align-right", 1).setStyleAttributes("padding-bottom:2px;padding-top:5px");
 
@@ -175,7 +175,7 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
    tableRow = table.addRow();
    tableRow.addCell("11", "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectDescription("11"), "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectNote("11"), "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectNote("11"), "align-center", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("11"), "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectPreviousAmountFormatted("11"), "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
 
@@ -183,7 +183,7 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
    tableRow = table.addRow();
    tableRow.addCell("", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectDescription("4"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectNote("4"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectNote("4"), "align-center", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("4"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectPreviousAmountFormatted("4"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
 
@@ -191,7 +191,7 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
    tableRow = table.addRow();
    tableRow.addCell("12", "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectDescription("12"), "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectNote("12"), "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectNote("12"), "align-center", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("12"), "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectPreviousAmountFormatted("12"), "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
 
@@ -199,7 +199,7 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
    tableRow = table.addRow();
    tableRow.addCell("13", "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectDescription("13"), "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectNote("13"), "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectNote("13"), "align-center", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("13"), "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectPreviousAmountFormatted("13"), "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    
@@ -207,7 +207,7 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
    tableRow = table.addRow();
    tableRow.addCell("14", "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectDescription("14"), "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectNote("14"), "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectNote("14"), "align-center", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("14"), "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectPreviousAmountFormatted("14"), "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    
@@ -215,7 +215,7 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
    tableRow = table.addRow();
    tableRow.addCell("15", "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectDescription("15"), "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectNote("15"), "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectNote("15"), "align-center", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("15"), "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectPreviousAmountFormatted("15"), "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
 
@@ -223,7 +223,7 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
    tableRow = table.addRow();
    tableRow.addCell("16", "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectDescription("16"), "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectNote("16"), "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectNote("16"), "align-center", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("16"), "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectPreviousAmountFormatted("16"), "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
 
@@ -231,7 +231,7 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
    tableRow = table.addRow();
    tableRow.addCell("17", "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectDescription("17"), "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectNote("17"), "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectNote("17"), "align-center", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("17"), "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectPreviousAmountFormatted("17"), "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
 
@@ -239,7 +239,7 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
    tableRow = table.addRow();
    tableRow.addCell("", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectDescription("3"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectNote("3"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectNote("3"), "align-center", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("3"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectPreviousAmountFormatted("3"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
 
@@ -247,10 +247,58 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
    tableRow = table.addRow();
    tableRow.addCell("", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectDescription("00"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectNote("00"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectNote("00"), "align-center", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("00"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectPreviousAmountFormatted("00"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
-   
+
+   /* */
+   tableRow = table.addRow();
+   tableRow.addCell("", "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell("- Variation des stocks N / N-1", "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell("2", "align-center", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell("", "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell("", "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+
+   /* */
+   tableRow = table.addRow();
+   tableRow.addCell("", "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell("- Variation des créances N / N-1", "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell("3", "align-center", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell("", "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell("", "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+
+   /* */
+   tableRow = table.addRow();
+   tableRow.addCell("", "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell("+ Variation des dettes d'exploitation N / N-1", "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell("3", "align-center", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell("", "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell("", "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+
+   /* 18 */
+   tableRow = table.addRow();
+   tableRow.addCell("18", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectDescription("18"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectNote("18"), "align-center", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("18"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("18"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
+
+   /* */
+   tableRow = table.addRow();
+   tableRow.addCell(" ", "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(" ", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(" ", "align-center", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(" ", "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(" ", "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+
+   /* */
+   tableRow = table.addRow();
+   tableRow.addCell("", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
+   tableRow.addCell("RÉSULTAT EXERCICE (G = C-D+E-F)", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
+   tableRow.addCell("G", "align-center", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
+   tableRow.addCell("", "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
+   tableRow.addCell("", "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
+
    
    //checkResults(banDoc, startDate, endDate);
 
