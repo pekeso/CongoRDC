@@ -607,7 +607,7 @@ function convertParam(userParam) {
 
    var currentParam = {};
    currentParam.name = 'logo';
-   currentParam.title = 'Stampa logo intestazione pagina';
+   currentParam.title = "Imprimer le logo de l'en-tête";
    currentParam.type = 'bool';
    currentParam.value = userParam.logo ? true : false;
    currentParam.defaultvalue = false;
@@ -618,7 +618,7 @@ function convertParam(userParam) {
 
    var currentParam = {};
    currentParam.name = 'logoname';
-   currentParam.title = 'Nome logo (Imposta Logo -> Personalizzazione)';
+   currentParam.title = 'Nom du logo (Logo Imposé -> Personnalisation)';
    currentParam.type = 'string';
    currentParam.value = userParam.logoname ? userParam.logoname : 'Logo';
    currentParam.defaultvalue = 'Logo';
@@ -629,7 +629,7 @@ function convertParam(userParam) {
 
    currentParam = {};
    currentParam.name = 'printheader';
-   currentParam.title = 'Stampa testo intestazione pagina (Proprietà file -> Indirizzo)';
+   currentParam.title = "Imprimer le texte de l'en-tête de la page (Proprieté fichier -> Adresse)";
    currentParam.type = 'bool';
    currentParam.value = userParam.printheader ? true : false;
    currentParam.defaultvalue = false;
@@ -640,7 +640,7 @@ function convertParam(userParam) {
 
    currentParam = {};
    currentParam.name = 'printtitle';
-   currentParam.title = 'Stampa titolo';
+   currentParam.title = 'Imprimer le titre';
    currentParam.type = 'bool';
    currentParam.value = userParam.printtitle ? true : false;
    currentParam.defaultvalue = true;
@@ -649,27 +649,38 @@ function convertParam(userParam) {
    }
    convertedParam.data.push(currentParam);
 
-   var currentParam = {};
-   currentParam.name = 'title';
-   currentParam.title = 'Testo titolo (vuoto = testo predefinito)';
-   currentParam.type = 'string';
-   currentParam.value = userParam.title ? userParam.title : '';
-   currentParam.defaultvalue = '';
-   currentParam.readValue = function() {
-      userParam.title = this.value;
-   }
-   convertedParam.data.push(currentParam);
+   // var currentParam = {};
+   // currentParam.name = 'title';
+   // currentParam.title = 'Testo titolo (vuoto = testo predefinito)';
+   // currentParam.type = 'string';
+   // currentParam.value = userParam.title ? userParam.title : '';
+   // currentParam.defaultvalue = '';
+   // currentParam.readValue = function() {
+   //    userParam.title = this.value;
+   // }
+   // convertedParam.data.push(currentParam);
 
    var currentParam = {};
    currentParam.name = 'column';
-   currentParam.title = "Colonna raggruppamento (nome XML colonna)";
+   currentParam.title = "Colonne de regroupement (Nom XML de la colonne)";
    currentParam.type = 'string';
-   currentParam.value = userParam.column ? userParam.column : 'Gr';
-   currentParam.defaultvalue = 'Gr';
+   currentParam.value = userParam.column ? userParam.column : 'Gr1';
+   currentParam.defaultvalue = 'Gr1';
    currentParam.readValue = function() {
       userParam.column = this.value;
    }
    convertedParam.data.push(currentParam);
+
+   var currentParam = {};
+    currentParam.name = 'decimals';
+    currentParam.title = 'Enlever les décimales';
+    currentParam.type = 'bool';
+    currentParam.value = userParam.decimals ? userParam.decimals : false;
+    currentParam.defaultvalue = false;
+    currentParam.readValue = function() {
+        userParam.decimals = this.value;
+    }
+    convertedParam.data.push(currentParam);
 
    return convertedParam;
 }
