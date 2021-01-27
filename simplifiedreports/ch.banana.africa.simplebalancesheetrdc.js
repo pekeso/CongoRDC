@@ -534,26 +534,15 @@ function convertParam(userParam) {
    convertedParam.data.push(currentParam);
 
    var currentParam = {};
-   currentParam.name = 'compactprint';
-   currentParam.title = 'Exclure les éléments avec des montants nuls pendant deux années consécutives';
-   currentParam.type = 'bool';
-   currentParam.value = userParam.compactprint ? true : false;
-   currentParam.defaultvalue = false;
-   currentParam.readValue = function() {
-      userParam.compactprint = this.value;
-   }
-   convertedParam.data.push(currentParam);
-
-   var currentParam = {};
-   currentParam.name = 'printing';
-   currentParam.title = 'Impression active et passive sur des pages séparées';
-   currentParam.type = 'bool';
-   currentParam.value = userParam.stampa ? true : false;
-   currentParam.defaultvalue = true;
-   currentParam.readValue = function() {
-      userParam.stampa = this.value;
-   }
-   convertedParam.data.push(currentParam);
+    currentParam.name = 'decimals';
+    currentParam.title = 'Enlever les décimales';
+    currentParam.type = 'bool';
+    currentParam.value = userParam.decimals ? userParam.decimals : false;
+    currentParam.defaultvalue = false;
+    currentParam.readValue = function() {
+        userParam.decimals = this.value;
+    }
+    convertedParam.data.push(currentParam);
 
    return convertedParam;
 }
@@ -566,8 +555,7 @@ function initUserParam() {
    userParam.printtitle = true;
    userParam.title = '';
    userParam.column = 'Gr1';
-   userParam.compactprint = false;
-   userParam.stampa = true;
+   userParam.decimals = false;
    return userParam;
 }
 
