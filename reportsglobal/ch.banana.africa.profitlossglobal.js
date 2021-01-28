@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-// @id = ch.banana.it.extension.rendicontogestionale.mod.b
+// @id = ch.banana.africa.profitlossglobal
 // @api = 1.0
 // @pubdate = 2020-12-30
 // @publisher = Banana.ch SA

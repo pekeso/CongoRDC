@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-// @id = ch.banana.africa.simplifiedreport
+// @id = ch.banana.africa.balancesheetglobal
 // @api = 1.0
 // @pubdate = 2020-12-13
 // @publisher = Banana.ch SA
