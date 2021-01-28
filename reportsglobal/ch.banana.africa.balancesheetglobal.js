@@ -271,18 +271,10 @@ function printBalanceSheet(banDoc, userParam, bReport, stylesheet) {
    printRow(userParam, bReport, table, "BZ", "description-groups", "amount-groups-totals");
    
 
-   if (userParam.stampa) {
-      report.addPageBreak();
+   
+   report.addPageBreak();
 
-      if (userParam.printtitle) {
-         report.addParagraph(" ", "");
-         // report.addParagraph(title, "heading2");
-         report.addParagraph(" ", "");
-      }
-   } else {
-      report.addParagraph(" ", "");
-      report.addParagraph(" ", "");      
-   }
+      
 
    /**************************************************************************************
    * PASSIVE
