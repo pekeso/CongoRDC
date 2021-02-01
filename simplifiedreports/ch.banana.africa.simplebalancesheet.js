@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-// @id = ch.banana.africa.simplifiedreport
+// @id = ch.banana.africa.simplebalancesheet
 // @api = 1.0
 // @pubdate = 2020-12-13
 // @publisher = Banana.ch SA
@@ -250,19 +250,7 @@ function printBalanceSheet(banDoc, userParam, bReport, stylesheet) {
    /* BZ */
    printRow(userParam, bReport, table, "BZ", "description-groups", "amount-groups-totals");
    
-
-   if (userParam.stampa) {
-      report.addPageBreak();
-
-      if (userParam.printtitle) {
-         report.addParagraph(" ", "");
-         // report.addParagraph(title, "heading2");
-         report.addParagraph(" ", "");
-      }
-   } else {
-      report.addParagraph(" ", "");
-      report.addParagraph(" ", "");      
-   }
+   report.addPageBreak();
 
    /**************************************************************************************
    * PASSIVE

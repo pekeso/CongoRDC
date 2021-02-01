@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-// @id = ch.banana.it.extension.rendicontogestionale.mod.b
+// @id = ch.banana.africa.simpleprofitloss
 // @api = 1.0
 // @pubdate = 2020-12-30
 // @publisher = Banana.ch SA
@@ -664,8 +664,8 @@ function convertParam(userParam) {
    currentParam.name = 'column';
    currentParam.title = "Colonne de regroupement (Nom XML de la colonne)";
    currentParam.type = 'string';
-   currentParam.value = userParam.column ? userParam.column : 'Gr';
-   currentParam.defaultvalue = 'Gr';
+   currentParam.value = userParam.column ? userParam.column : 'Gr1';
+   currentParam.defaultvalue = 'Gr1';
    currentParam.readValue = function() {
       userParam.column = this.value;
    }
@@ -692,7 +692,7 @@ function initUserParam() {
    userParam.printheader = false;
    userParam.printtitle = true;
    userParam.title = '';
-   userParam.column = 'Gr';
+   userParam.column = 'Gr1';
    return userParam;
 }
 
