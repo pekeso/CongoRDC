@@ -38,23 +38,19 @@ td {
   }
   
   .column-profit-loss2 {
-    width: 52%;
+    width: 50%;
   }
   
   .column-profit-loss3 {
-    width: 5%;
-  }
-  
-  .column-profit-loss4 {
     width: 9%;
   }
   
-  .column-profit-loss5 {
-    width: 14%;
+  .column-profit-loss4 {
+    width: 18%;
   }
   
-  .column-profit-loss6 {
-    width: 15%;
+  .column-profit-loss5 {
+    width: 18%;
   }
   
   .address-header {

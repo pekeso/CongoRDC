@@ -1,0 +1,12 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource>
+        <file>ch.banana.africa.smereportsohadardc.manifest.json</file>
+        <file>reportstructure.js</file>
+        <file>breport.js</file>
+        <file>errors.js</file>
+        <file>ch.banana.africa.simplebalancesheet.js</file>
+        <file>balancesheetstyle.css</file>
+        <file>ch.banana.africa.simpleprofitloss.js</file>
+        <file>profitlossstatement.css</file>
+    </qresource>
+</RCC>
