@@ -682,6 +682,17 @@ function convertParam(userParam) {
    }
    convertedParam.data.push(currentParam);
 
+   var currentParam = {};
+   currentParam.name = 'import';
+   currentParam.title = 'Importer les soldes';
+   currentParam.type = 'string';
+   currentParam.value = userParam.import ? userParam.import : '';
+   currentParam.defaultvalue = '';
+   currentParam.readValue = function() {
+      userParam.import = this.value;
+   }
+   convertedParam.data.push(currentParam);
+
    return convertedParam;
 }
 
