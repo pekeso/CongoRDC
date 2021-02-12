@@ -66,6 +66,7 @@ var BReport = class JsClass {
             if (this.reportStructure[i]["id"]) {
                this.reportStructure[i]["currentAmount"] = this.calculateCurrentBalances(this.reportStructure[i]["id"], this.reportStructure[i]["bclass"], this.userParam.column, this.userParam.selectionStartDate, this.userParam.selectionEndDate);
                this.reportStructure[i]["previousAmount"] = this.calculatePreviousBalances(this.reportStructure[i]["id"], this.reportStructure[i]["bclass"], this.userParam.column);
+               this.reportStructure[i]["solde_20210228"] = this.calculatePreviousBalances(this.reportStructure[i]["id"], this.reportStructure[i]["bclass"], this.userParam.column, "balance_20210228");
             }
          }
       }
@@ -119,7 +120,7 @@ var BReport = class JsClass {
    /**
     * Calculate all the previous balances of the accounts belonging to the same group (grText)
     */ 
-   calculatePreviousBalances(grText, bClass, grColumn) {
+   calculatePreviousBalances(grText, bClass, grColumn, balanceColumn) {
       if (!grColumn) {
       grColumn = "Gr";
       }
@@ -128,10 +129,13 @@ var BReport = class JsClass {
       if (this.banDoc.table("Categories") && (bClass === "3" || bClass === "4")) {
       for (var i = 0; i < this.banDoc.table('Categories').rowCount; i++) {
          var tRow = this.banDoc.table('Categories').row(i);
+         if (!balanceColumn) {
+            balanceColumn = "Prior";
+         }
          var gr = tRow.value(grColumn);
-         var prior = tRow.value("Prior");
+         var amount = tRow.value(balanceColumn);
          if (gr && gr === grText) {
-            balance = Banana.SDecimal.add(balance, prior);
+            balance = Banana.SDecimal.add(balance, amount);
          }
       }
       //The bClass decides which value to use
