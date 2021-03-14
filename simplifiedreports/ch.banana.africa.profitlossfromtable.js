@@ -12,11 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-// @id = ch.banana.africa.simpleprofitloss
+// @id = ch.banana.africa.profitlossfromtable
 // @api = 1.0
-// @pubdate = 2020-12-30
+// @pubdate = 2021-3-1
 // @publisher = Banana.ch SA
-// @description = 3. Compte de résultat
+// @description = 4. Compte de résultat (à partir du tableau)
 // @task = app.command
 // @doctype = 100.100;110.100;130.100
 // @docproperties = 
@@ -69,7 +69,8 @@ function exec(string) {
    /**
     * 1. Loads the report structure
     */
-   var reportStructure = createReportStructureProfitLoss();
+   let file;
+   var reportStructure = createReportStructureProfitLossFromTable(file);
 
    /**
     * 2. Calls methods to load balances, calculate totals, format amounts
