@@ -263,17 +263,19 @@ function printBalanceSheet(banDoc, userParam, bReport, stylesheet) {
    tableRow.addCell("EXERCICE " + currentYear,"bold align-center",1).setStyleAttributes("background-color:#94B8E3;border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell("EXERCICE " + previousYear,"bold align-center",1).setStyleAttributes("background-color:#94B8E3;border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
 
-   /* 1 */
-  printRow(userParam, bReport, table, "6", "description-groups", "amount-groups");
-  /* 2 */
-  printRow(userParam, bReport, table, "7", "description-groups", "amount-groups");
-  /* 3 */
-  printRow(userParam, bReport, table, "8", "description-groups", "amount-groups");
-  /* 4 */
-  printRow(userParam, bReport, table, "9", "description-groups", "amount-groups");
-  /* Total */
-  printRow(userParam, bReport, table, "P", "description-groups", "amount-groups-totals");   
-   
+   /* 6 */
+   printRow(userParam, bReport, table, "6", "description-groups", "amount-groups");
+   /* 7 */
+   printRow(userParam, bReport, table, "7", "description-groups", "amount-groups");
+   /* 8 */
+   printRow(userParam, bReport, table, "8", "description-groups", "amount-groups");
+   /* 9 */
+   printRow(userParam, bReport, table, "9", "description-groups", "amount-groups");
+   /* 10 */
+   printRow(userParam, bReport, table, "10", "description-groups", "amount-groups");
+   /* Total */
+   printRow(userParam, bReport, table, "P", "description-groups", "amount-groups-totals");   
+      
    
    //checkResults(banDoc, startDate, endDate);
 
