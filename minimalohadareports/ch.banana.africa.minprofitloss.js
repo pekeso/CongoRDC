@@ -69,14 +69,14 @@ function exec(string) {
    /**
     * 1. Loads the report structure
     */
-   var reportStructure = createReportStructureProfitLoss();
+   var reportStructure = createReportStructure();
 
    /**
     * 2. Calls methods to load balances, calculate totals, format amounts
     * and check entries that can be excluded
     */
    const bReport = new BReport(Banana.document, userParam, reportStructure);
-   bReport.validateGroups(userParam.column);
+   bReport.validateGroupsProfitAndLoss(userParam.column);
    bReport.loadBalances();
    bReport.calculateTotals(["currentAmount", "previousAmount"]);
    bReport.formatValues(["currentAmount", "previousAmount"]);
@@ -246,10 +246,10 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
    /* 00 */
    tableRow = table.addRow();
    tableRow.addCell("", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectDescription("00"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectNote("00"), "align-center", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("00"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("00"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectDescription("AP"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectNote("AP"), "align-center", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AP"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("AP"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
 
    /* */
    tableRow = table.addRow();
@@ -296,8 +296,8 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
    tableRow.addCell("", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
    tableRow.addCell("RÉSULTAT EXERCICE (G = C-D+E-F)", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
    tableRow.addCell("G", "align-center", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
-   tableRow.addCell("", "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
-   tableRow.addCell("", "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("G"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("G"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
 
    
    //checkResults(banDoc, startDate, endDate);

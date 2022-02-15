@@ -69,6 +69,7 @@ var BReport = class JsClass {
              }
           }
        }
+       //Banana.Ui.showText(JSON.stringify(this.reportStructure));
     }
   
     /**
@@ -251,32 +252,17 @@ var BReport = class JsClass {
      * Checks that user defined groups in the given grColumn are valid.
      * User can olny use groups ID defined in the data structure.
      */
-    validateGroups(grColumn) {
+    validateGroupsProfitAndLoss(grColumn) {
        
        var dataGroups = [];
        var columnList = new Set();
  
-       //Get valid groups from each data structure type
-       var groupsModA = createReportStructureBalanceSheet();
-       for (var i in groupsModA) {
-          if (groupsModA[i]["id"] && !groupsModA[i]["id"].startsWith('d')) {
-             columnList.add(groupsModA[i]["id"]);
-          }
-       }
- 
-     var groupsModB = createReportStructureProfitLoss();
+     var groupsModB = createReportStructure();
      for (var i in groupsModB) {
-        if (groupsModB[i]["id"] && !groupsModB[i]["id"].startsWith('d')) {
+        if (groupsModB[i]["id"] && groupsModB[i]["type"]==="group" ) {
            columnList.add(groupsModB[i]["id"]);
         }
      }
- 
-    //  var groupsModD = createReportStructureRendicontoCassa();
-    //  for (var i in groupsModD) {
-    //     if (groupsModD[i]["id"] && !groupsModD[i]["id"].startsWith('d')) {
-    //        columnList.add(groupsModD[i]["id"]);
-    //     }
-    //  }
  
        //Convert Set object to array
        for (var i of columnList) {
@@ -288,24 +274,51 @@ var BReport = class JsClass {
        //Check if groups in Accounts table are valid
        for (var i = 0; i < this.banDoc.table('Accounts').rowCount; i++) {
           var tRow = this.banDoc.table('Accounts').row(i);
+          var bClass=tRow.value('BClass');
           var account = tRow.value('Account');
           var group = tRow.value(grColumn);
  
-          if (grColumn === "Gr") {
-             if (group && group !== "00" && account.indexOf(":") < 0 && account.indexOf(".") < 0 && account.indexOf(";") < 0) {
+          if(group && group !=="00" && account && bClass && (bClass==="3" || bClass==="4") && account.indexOf(":")<0 && account.indexOf(".") < 0 && account.indexOf(";") < 0){
                 if (!dataGroups.includes(group)) {
                    tRow.addMessage(getErrorMessage(ID_ERR_GROUP_ERROR, grColumn, group));
                 }
-             }
-          } else {
-             if (group) {
-                if (!dataGroups.includes(group)) {
-                   tRow.addMessage(getErrorMessage(ID_ERR_GROUP_ERROR, grColumn, group));
-                }
-             }
           }
        }
     }
+    validateGroupsBalance(grColumn) {
+       
+      var dataGroups = [];
+      var columnList = new Set();
+
+      //Get valid groups from each data structure type
+      var groupsModA = createReportStructure();
+      for (var i in groupsModA) {
+         if (groupsModA[i]["id"]) {
+            columnList.add(groupsModA[i]["id"]);
+         }
+      }
+
+      //Convert Set object to array
+      for (var i of columnList) {
+         dataGroups.push(i);
+      }
+
+      //Banana.console.log(dataGroups);
+
+      //Check if groups in Accounts table are valid
+      for (var i = 0; i < this.banDoc.table('Accounts').rowCount; i++) {
+         var tRow = this.banDoc.table('Accounts').row(i);
+         var bClass=tRow.value('BClass');
+         var account = tRow.value('Account');
+         var group = tRow.value(grColumn);
+
+         if(group && group !=="00" && account && bClass && (bClass==="1" || bClass==="2" || bClass==="3" || bClass==="4" ) && account.indexOf(":")<0 && account.indexOf(".") < 0 && account.indexOf(";") < 0){
+               if (!dataGroups.includes(group)) {
+                  tRow.addMessage(getErrorMessage(ID_ERR_GROUP_ERROR, grColumn, group));
+               }
+         }
+      }
+   }
   
     /**
      * Entries preceded by Arabic numbers or lower case letters
@@ -464,7 +477,7 @@ var BReport = class JsClass {
  
        var valueObj = this.getObject(id);
        
-       if (valueObj[fields[0]]) { //first field is present
+       if (valueObj[fields[0]] || valueObj[fields[1]] ) { //first field is present
           return; //calc already done, return
        }
        

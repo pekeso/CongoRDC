@@ -67,14 +67,14 @@ function exec(string) {
    /**
     * 1. Loads the report structure
     */
-   var reportStructure = createReportStructureBalanceSheet();
+   var reportStructure = createReportStructure();
 
    /**
     * 2. Calls methods to load balances, calculate totals, format amounts
     * and check entries that can be excluded
     */
    const bReport = new BReport(Banana.document, userParam, reportStructure);
-   bReport.validateGroups(userParam.column);
+   bReport.validateGroupsBalance(userParam.column);
    bReport.loadBalances();
    bReport.calculateTotals(["currentAmount", "previousAmount"]);
    bReport.formatValues(["currentAmount", "previousAmount"]);
