@@ -79,7 +79,7 @@ function createReportStructure() {
 
     /* PASSIVE */
     reportStructure.push({"id":"6", "type":"group", "note":"", "bclass":"2", "description":"Compte d'exploitant"});
-    reportStructure.push({"id":"7", "type":"total", "note":"", "description":"Résultat exercice","sum": "-11;-12;13;14;15;16;17;18;19;30"});
+    reportStructure.push({"id":"7", "type":"total", "note":"", "description":"Résultat exercice","sum": "11;12;-13;-14;-15;-16;-17;-18;-19;-30"});
     reportStructure.push({"id":"8", "type":"group", "note":"", "bclass":"2", "description":"Emprunt"});
     reportStructure.push({"id":"9", "type":"group", "note":"3", "bclass":"2", "description":"Fournisseurs et créditeurs divers"});
     reportStructure.push({"id":"10", "type":"group", "note":"", "bclass":"2", "description":"Impôt dû"});
