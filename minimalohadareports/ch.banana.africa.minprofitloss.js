@@ -275,7 +275,7 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("21"), "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectPreviousAmountFormatted("21"), "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
 
-   /* */
+   /* VARIATION A COURT TERME */
    tableRow = table.addRow();
    tableRow.addCell("", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectDescription("V"), 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
@@ -285,13 +285,13 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
 
    /* 22 */
    var sumOpening = Number(Banana.document.currentBalance("2300").opening) + Number(Banana.document.currentBalance("2400").opening);
-   var sumClosing = Number(Banana.document.currentBalance("2300").closing) + Number(Banana.document.currentBalance("2400").closing);
+   var sumClosing = Number(Banana.document.currentBalance("2300").balance) + Number(Banana.document.currentBalance("2400").balance);
    var realEstateAcquisitions = sumClosing - sumOpening;
    tableRow = table.addRow();
    tableRow.addCell("22", "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectDescription("22"), "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectNote("22"), "align-center", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
-   tableRow.addCell(sumClosing, "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(realEstateAcquisitions, "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectPreviousAmountFormatted("22"), "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
 
    /* 23 */
