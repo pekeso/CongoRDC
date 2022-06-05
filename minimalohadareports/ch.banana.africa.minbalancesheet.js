@@ -297,7 +297,7 @@ function checkResults(banDoc, startDate, endDate) {
 
    var res0 = Banana.SDecimal.add(currentA, currentP);
    if (res0 !== "0") {
-      Banana.document.addMessage("Differenza Attivo e Passivo.");
+      Banana.document.addMessage("Difference entre Actif et Passif.");
    }
 }
 

@@ -26,46 +26,9 @@
  * - "sum" used to define how to calculate the total
  */
 
-/*
-// Balance sheet 
-function createReportStructureBalanceSheet() {
-    var reportStructure = [];
 
-    // ACTIVE 
-    reportStructure.push({"id":"1", "type":"group", "note":"1", "bclass":"1", "description":"Immobilisations"});
-    reportStructure.push({"id":"2", "type":"group", "note":"2", "bclass":"1", "description":"Stocks"});
-    reportStructure.push({"id":"3", "type":"group", "note":"3", "bclass":"1", "description":"Clients et débiteurs divers"});
-    reportStructure.push({"id":"4", "type":"group", "note":"", "bclass":"1", "description":"Caisse"});
-    reportStructure.push({"id":"5", "type":"group", "note":"", "bclass":"1", "description":"Banque (en + ou en -)"});
-    reportStructure.push({"id":"A", "type":"total", "note":"", "description":"Total actif", "sum":"1;2;3;4;5"});
 
-    //PASSIVE
-    reportStructure.push({"id":"6", "type":"group", "note":"", "bclass":"2", "description":"Compte d'exploitant"});
-    reportStructure.push({"id":"7", "type":"total", "note":"", "description":"Résultat exercice","sum": "-11;-12;13;14;15;16;17;18;19;30"});
-    reportStructure.push({"id":"8", "type":"group", "note":"", "bclass":"2", "description":"Emprunt"});
-    reportStructure.push({"id":"9", "type":"group", "note":"3", "bclass":"2", "description":"Fournisseurs et créditeurs divers"});
-    reportStructure.push({"id":"10", "type":"group", "note":"", "bclass":"2", "description":"Impôt dû"});
-    reportStructure.push({"id":"P", "type":"total", "note":"", "description":"Total passif", "sum":"6;7;8;9;10"});
-
-    //Result
-    reportStructure.push({"id":"AP", "type":"total", "note":"", "description":"Difference Active-Passive", "sum":"A;P"});
-
-    reportStructure.push({"id":"11", "type":"group", "note":"4", "bclass":"4", "description":"Recettes sur ventes ou prestations de services"});
-    reportStructure.push({"id":"12", "type":"group", "note":"4", "bclass":"4", "description":"Autres recettes sur activités"});
-    reportStructure.push({"id":"13", "type":"group", "note":"4", "bclass":"3", "description":"Dépenses sur achats"});
-    reportStructure.push({"id":"14", "type":"group", "note":"4", "bclass":"3", "description":"Dépenses sur loyers"});
-    reportStructure.push({"id":"15", "type":"group", "note":"4", "bclass":"3", "description":"Dépenses sur salaires"});
-    reportStructure.push({"id":"16", "type":"group", "note":"4", "bclass":"3", "description":"Dépenses sur impôts et taxes"});
-    reportStructure.push({"id":"17", "type":"group", "note":"", "bclass":"3", "description":"Charges d'intérêts"});
-    reportStructure.push({"id":"18", "type":"group", "note":"4", "bclass":"3", "description":"Autres dépenses sur activités"});
-    reportStructure.push({"id":"19", "type":"group", "note":"2", "bclass":"3", "description":"- Variations des stocks N / N-1"});
-    reportStructure.push({"id":"20", "type":"group", "note":"3", "bclass":"3", "description":"- Variations des créances N / N-1"});
-    reportStructure.push({"id":"30", "type":"group", "note":"F", "bclass":"3", "description":"DOTATIONS AMORTISSEMENTS"});
-    
-    return reportStructure;
-}*/
-
-// Profit & Loss Statement
+// Balance Sheet
 function createReportStructure() {
     var reportStructure = [];
 
@@ -85,9 +48,9 @@ function createReportStructure() {
     reportStructure.push({"id":"10", "type":"group", "note":"", "bclass":"2", "description":"Impôt dû"});
     reportStructure.push({"id":"P", "type":"total", "note":"", "description":"Total passif", "sum":"6;7;8;9;10"});
 
-    //Result
-    // reportStructure.push({"id":"AP", "type":"total", "note":"", "description":"SOLDE: Excédent (+) ou insuffisance (-) de recettes (C = A-B)", "sum":"A;P"});
+    reportStructure.push({"id":"AP", "type":"total", "note":"", "description":"Difference Active-Passive", "sum":"A;P"});
 
+    /* PROFIT & LOSS */
     reportStructure.push({"id":"11", "type":"group", "note":"4", "bclass":"4", "description":"Recettes sur ventes ou prestations de services"});
     reportStructure.push({"id":"12", "type":"group", "note":"4", "bclass":"4", "description":"Autres recettes sur activités"});
     reportStructure.push({"id":"RP", "type":"total", "note":"A", "description":"TOTAL DES RECETTES SUR PRODUITS", "sum":"11;12"});
@@ -112,7 +75,6 @@ function createReportStructure() {
     reportStructure.push({"id":"30", "type":"group", "note":"F", "bclass":"3", "description":"DOTATIONS AMORTISSEMENTS"});
     reportStructure.push({"id":"G", "type":"group", "note":"G", "description":"RESULTAT EXERCICE (G=C-D+E-F)", "sum":"C;-D;E;-30"});
 
-    reportStructure.push({"id":"AP", "type":"total", "note":"", "description":"Difference Active-Passive", "sum":"A;P"});
 
 
     return reportStructure;
