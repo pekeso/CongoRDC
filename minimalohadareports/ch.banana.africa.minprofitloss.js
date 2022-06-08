@@ -85,21 +85,31 @@ function exec(string) {
    /**
     * 3. Creates the report
     */
+   var previous = Banana.document.previousYear();
    var stylesheet = Banana.Report.newStyleSheet();
-   var report = printprofitlossstatement(Banana.document, userParam, bReport, stylesheet);
+   var report = printprofitlossstatement(Banana.document, previous, userParam, bReport, stylesheet);
    setCss(Banana.document, stylesheet, userParam);
 
    Banana.Report.preview(report, stylesheet);
 }
 
-function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
+function printprofitlossstatement(banDoc, previous, userParam, bReport, stylesheet) {
 
    var report = Banana.Report.newReport("Compte de résultat");
    var startDate = userParam.selectionStartDate;
    var endDate = userParam.selectionEndDate;
+   var currentStartDate = startDate;
+   var currentEndDate = endDate;
    var currentYear = Banana.Converter.toDate(banDoc.info("AccountingDataBase", "OpeningDate")).getFullYear();
    var previousYear = currentYear - 1;
    var months = monthDiff(Banana.Converter.toDate(endDate), Banana.Converter.toDate(startDate));
+   var currentStartMonth = Banana.Converter.toDate(startDate).getMonth();
+   var currentEndMonth = Banana.Converter.toDate(endDate).getMonth();
+
+   if (previous) {
+      var previousStartDate = previous.info("AccountingDataBase","OpeningDate");
+      var previousEndDate = previous.info("AccountingDataBase","ClosureDate");
+   }
 
    var company = banDoc.info("AccountingDataBase","Company");
    var address1 = banDoc.info("AccountingDataBase","Address1");
@@ -107,6 +117,8 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
    var city = banDoc.info("AccountingDataBase","City");
    var state = banDoc.info("AccountingDataBase","State");
    var email = banDoc.info("AccountingDataBase","Email");
+
+   
 
    
    /**************************************************************************************
@@ -173,11 +185,13 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
 
    /* 12 */
    tableRow = table.addRow();
+   var currentBal = Banana.document.currentBalance("4110");
+   var previousYearBalance = Banana.document.currentBalance("4110", previousStartDate, previousEndDate);
    tableRow.addCell("12", "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectDescription("12"), "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectNote("12"), "align-center", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
-   tableRow.addCell(Banana.document.currentBalance("4110").credit, "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("12"), "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(currentBal['credit'], "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(previousYearBalance['credit'], "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
 
    /* 4 */
    tableRow = table.addRow();
@@ -229,11 +243,13 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
 
    /* 18 */
    tableRow = table.addRow();
+   var currentBal = Banana.document.currentBalance("4011");
+   var previousYearBalance = Banana.document.currentBalance("4011", previousStartDate, previousEndDate);
    tableRow.addCell("18", "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectDescription("18"), "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectNote("18"), "align-center", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
-   tableRow.addCell(Banana.document.currentBalance("4011").debit, "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("18"), "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(currentBal['debit'], "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(previousYearBalance['debit'], "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
 
    /* TOTAL DEPENSES SUR CHARGES */
    tableRow = table.addRow();
@@ -284,8 +300,8 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
    tableRow.addCell(bReport.getObjectPreviousAmountFormatted("D"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
 
    /* 22 */
-   var sumOpening = Number(Banana.document.currentBalance("2300").opening) + Number(Banana.document.currentBalance("2400").opening);
-   var sumClosing = Number(Banana.document.currentBalance("2300").balance) + Number(Banana.document.currentBalance("2400").balance);
+   var sumOpening = Number(Banana.document.currentBalance("2300")['opening']) + Number(Banana.document.currentBalance("2400")['opening']);
+   var sumClosing = Number(Banana.document.currentBalance("2300")['balance']) + Number(Banana.document.currentBalance("2400")['balance']);
    var realEstateAcquisitions = sumClosing - sumOpening;
    tableRow = table.addRow();
    tableRow.addCell("22", "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
@@ -295,38 +311,40 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
    tableRow.addCell(bReport.getObjectPreviousAmountFormatted("22"), "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
 
    /* 23 */
-   var cashContribution = Number(Banana.document.currentBalance("1040").credit) - Number(Banana.document.currentBalance("1030").debit);
+   var cashContribution = Number(Banana.document.currentBalance("1040")['credit']) - Number(Banana.document.currentBalance("1030")['debit']);
+   var previousCashContribution = Number(Banana.document.currentBalance("1040", previousStartDate, previousEndDate)['credit']) - Number(Banana.document.currentBalance("1030")['opening']);
    tableRow = table.addRow();
    tableRow.addCell("23", "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectDescription("23"), "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectNote("23"), "align-center", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(cashContribution, "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("23"), "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(previousCashContribution, "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
 
    /* 24 */
-   var sample = Number(Banana.document.currentBalance("1040").debit) - Number(Banana.document.currentBalance("1030").credit)
+   var sample = Number(Banana.document.currentBalance("1040")['debit']) - Number(Banana.document.currentBalance("1030")['credit']);
+   var previousSample = Number(Banana.document.currentBalance("1040")['opening']) - Number(Banana.document.currentBalance("1030")['opening']);
    tableRow = table.addRow();
    tableRow.addCell("24", "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectDescription("24"), "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectNote("24"), "align-center", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(sample, "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("24"), "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(previousSample, "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
 
    /* 28 */
    tableRow = table.addRow();
    tableRow.addCell("28", "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectDescription("28"), "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectNote("28"), "align-center", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
-   tableRow.addCell(Banana.document.currentBalance("1620").credit, "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("28"), "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(Banana.document.currentBalance("1620")['credit'], "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(Banana.document.currentBalance("1620")['opening'], "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
 
    /* 29 */
    tableRow = table.addRow();
    tableRow.addCell("29", "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectDescription("29"), "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectNote("29"), "align-center", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
-   tableRow.addCell(Banana.document.currentBalance("1620").debit, "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("29"), "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(Banana.document.currentBalance("1620")['debit'], "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(Banana.document.currentBalance("1620")['opening'], "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
 
    /* E (VARIATION A LONG TERME) */
    tableRow = table.addRow();
@@ -341,8 +359,8 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
    tableRow.addCell("30", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectDescription("30"), 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectNote("30"), "align-center", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
-   tableRow.addCell(Banana.document.currentBalance("6813").debit, "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("30"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(Banana.document.currentBalance("6813")['debit'], "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(Banana.document.currentBalance("6813")['opening'], "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
 
    /* G (RESULTAT EXERCICE) */
    tableRow = table.addRow();
