@@ -73,7 +73,7 @@ function createReportStructure() {
     reportStructure.push({"id":"29", "type":"group", "note":"", "bclass":"3", "description":"Remboursement des Emprunts"});
     reportStructure.push({"id":"E", "type":"total", "note":"E", "description":"VARIATION A LONG TERME", "sum":"22;23;24;28;29"});
     reportStructure.push({"id":"30", "type":"group", "note":"F", "bclass":"3", "description":"DOTATIONS AMORTISSEMENTS"});
-    reportStructure.push({"id":"G", "type":"group", "note":"G", "description":"RESULTAT EXERCICE (G=C-D+E-F)", "sum":"C;-D;E;-30"});
+    reportStructure.push({"id":"G", "type":"group", "note":"G", "description":"RESULTAT EXERCICE (G=C-D+E-F)", "sum":"C;D;E;30"});
 
 
 
