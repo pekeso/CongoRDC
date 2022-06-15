@@ -61,7 +61,7 @@ function createReportStructure() {
     reportStructure.push({"id":"17", "type":"group", "note":"", "bclass":"3", "description":"Charges d'intérêts"});
     reportStructure.push({"id":"18", "type":"group", "note":"4", "bclass":"3", "description":"Autres dépenses sur activités"});
     reportStructure.push({"id":"B", "type":"total", "note":"B", "description":"TOTAL DÉPENSES SUR CHARGES", "sum":"13;14;15;16;17;18"});
-    reportStructure.push({"id":"C", "type":"total", "note":"C", "description":"SOLDE: Excédent (+) ou insuffisance (-) de recettes (C=A-B)", "sum":"-RP;B"});
+    reportStructure.push({"id":"C", "type":"total", "note":"C", "description":"SOLDE: Excédent (+) ou insuffisance (-) de recettes (C=A-B)", "sum":"RP;B"});
     reportStructure.push({"id":"19", "type":"group", "note":"2", "bclass":"3", "description":"- Variations des stocks N / N-1"});
     reportStructure.push({"id":"20", "type":"group", "note":"3", "bclass":"3", "description":"- Variations des créances N / N-1"});
     reportStructure.push({"id":"21", "type":"group", "note":"3", "bclass":"3", "description":"+ Variations des dettes d'exploitation N / N-1"});
