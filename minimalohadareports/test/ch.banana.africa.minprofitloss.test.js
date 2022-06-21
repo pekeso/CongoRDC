@@ -14,61 +14,63 @@
 //
 
 
-// @id = ch.banana.africa.minbalancesheet.test
+// @id = ch.banana.africa.minprofitloss.test
 // @api = 1.0
-// @pubdate = 2022-06-05
+// @pubdate = 2022-06-21
 // @publisher = Banana.ch SA
-// @description = <TEST ch.banana.africa.minbalancesheet.test.js>
+// @description = <TEST ch.banana.africa.minprofitloss.test.js>
 // @task = app.command
 // @doctype = *.*
 // @docproperties = 
 // @outputformat = none
 // @inputdataform = none
-// @includejs = ../ch.banana.africa.minbalancesheet.js
+// @includejs = ../ch.banana.africa.minprofitloss.js
 // @timeout = -1
 
 
 
 // Register test case to be executed
-Test.registerTestCase(new MinimalBalanceSheetReport());
+Test.registerTestCase(new MinimalProfitLossReport());
 
 // Here we define the class, the name of the class is not important
-function MinimalBalanceSheetReport() {
+function MinimalProfitLossReport() {
 
 }
 
 // This method will be called at the beginning of the test case
-MinimalBalanceSheetReport.prototype.initTestCase = function() {
+MinimalProfitLossReport.prototype.initTestCase = function() {
 
 }
 
 // This method will be called at the end of the test case
-MinimalBalanceSheetReport.prototype.cleanupTestCase = function() {
+MinimalProfitLossReport.prototype.cleanupTestCase = function() {
 
 }
 
 // This method will be called before every test method is executed
-MinimalBalanceSheetReport.prototype.init = function() {
+MinimalProfitLossReport.prototype.init = function() {
 
 }
 
 // This method will be called after every test method is executed
-MinimalBalanceSheetReport.prototype.cleanup = function() {
+MinimalProfitLossReport.prototype.cleanup = function() {
 
 }
 
-MinimalBalanceSheetReport.prototype.testBananaExtension = function() {
+MinimalProfitLossReport.prototype.testBananaExtension = function() {
 
 	/**
 	 * Test 1: column Gr
 	 */
 	var banDoc = Banana.application.openDocument("file:script/../test/testcases/ETS_DIENA_2022.ac2");
+    var previousDoc = Banana.application.openDocument("file:script/../test/testcases/ETS_DIENA_2021.ac2");
 	Test.assert(banDoc);
+    Test.assert(previousDoc);
 
 	var userParam = {};
   	userParam.selectionStartDate = "2022-01-01";
   	userParam.selectionEndDate = "2022-12-31";
-  	userParam.title = "BILAN 2022";
+  	userParam.title = "COMPTE DE RESULTAT 2022";
 	userParam.logo = false;
 	userParam.logoname = 'Logo';
 	userParam.printheader = false;
@@ -80,14 +82,14 @@ MinimalBalanceSheetReport.prototype.testBananaExtension = function() {
 	var reportStructure = createReportStructure();
 
 	const bReport = new BReport(banDoc, userParam, reportStructure);
-	bReport.validateGroupsBalance(userParam.column);
+	bReport.validateGroupsProfitAndLoss(userParam.column);
 	bReport.loadBalances();
 	bReport.calculateTotals(["currentAmount", "previousAmount"]);
 	bReport.formatValues(["currentAmount", "previousAmount"]);
 	bReport.excludeEntries();
 
-	var report = printBalanceSheet(banDoc, userParam, bReport, "");
-	Test.logger.addReport("Test 'Bilan'", report);
+	var report = printprofitlossstatement(banDoc, previousDoc, userParam, bReport, "");
+	Test.logger.addReport("Test 'Compte de résultat'", report);
 
 
 }
