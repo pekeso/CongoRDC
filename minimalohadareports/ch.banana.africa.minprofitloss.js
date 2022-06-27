@@ -298,14 +298,15 @@ function printprofitlossstatement(banDoc, previous, userParam, bReport, styleshe
    tableRow.addCell(bReport.getObjectPreviousAmountFormatted("D"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
 
    /* 22 */
-   var sumOpening = Number(banDoc.currentBalance("2300")['opening']) + Number(banDoc.currentBalance("2400")['opening']);
-   var sumClosing = Number(banDoc.currentBalance("2300")['balance']) + Number(banDoc.currentBalance("2400")['balance']);
-   var realEstateAcquisitions = sumClosing - sumOpening;
-   var previousYearSumOpening = Number(banDoc.currentBalance("2300", previousStartDate, previousEndDate)['opening']) + 
-                                 Number(banDoc.currentBalance("2400", previousStartDate, previousEndDate)['opening']);
-   var previousYearSumClosing = Number(banDoc.currentBalance("2300", previousStartDate, previousEndDate)['balance']) +
-                                 Number(banDoc.currentBalance("2400", previousStartDate, previousEndDate)['balance']);
-   var previousRealEstateAcquisitions = previousYearSumClosing - previousYearSumOpening;
+   var realEstateAcquisitions = Number(banDoc.currentBalance("2300")['credit']) + Number(banDoc.currentBalance("2400")['credit']);
+   var previousRealEstateAcquisitions = Number(banDoc.currentBalance("2300", previousStartDate, previousEndDate)['credit']) 
+                     + Number(banDoc.currentBalance("2400", previousStartDate, previousEndDate)['credit']);
+   // var realEstateAcquisitions = sumClosing - sumOpening;
+   // var previousYearSumOpening = Number(banDoc.currentBalance("2300", previousStartDate, previousEndDate)['opening']) + 
+   //                               Number(banDoc.currentBalance("2400", previousStartDate, previousEndDate)['opening']);
+   // var previousYearSumClosing = Number(banDoc.currentBalance("2300", previousStartDate, previousEndDate)['balance']) +
+   //                               Number(banDoc.currentBalance("2400", previousStartDate, previousEndDate)['balance']);
+   // var previousRealEstateAcquisitions = previousYearSumClosing - previousYearSumOpening;
    tableRow = table.addRow();
    tableRow.addCell("22", "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectDescription("22"), "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");

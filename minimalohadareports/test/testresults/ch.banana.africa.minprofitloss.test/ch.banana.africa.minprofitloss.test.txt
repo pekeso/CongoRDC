@@ -47,19 +47,19 @@ Nº  & RUBRIQUES  & NOTE  & MONTANT  & \\
 17  & Charges d'intérêts  &  & 0.00  & 0.00 \\
 18  & Autres dépenses sur activités  & 4  & 0.00  & -650'000.00 \\
  & TOTAL DÉPENSES SUR CHARGES  & B  & 1'480'000.00  & 0.00 \\
- & SOLDE: Excédent (+) ou insuffisance (-) de recettes (C=A-B)  & C  & -2'125'000.00  & 0.00 \\
+ & SOLDE: Excédent (+) ou insuffisance (-) de recettes (C=A-B)  & C  & 2'125'000.00  & 0.00 \\
 19  & - Variations des stocks N / N-1  & 2  & 1'050'000.00  & 0.00 \\
 20  & + Variations des dettes d'exploitation N / N-1  & 3  & 0.00  & 0.00 \\
 21  & + Variations des dettes d'exploitation N / N-1  & 3  & 0.00  & 0.00 \\
  & VARIATION A COURT TERME  & D  & 1'050'000.00  & 0.00 \\
-22  & Acquisition des Immobilisations  &  & -140'000.00  & 0.00 \\
+22  & Acquisition des Immobilisations  &  & 140'000.00  & 0.00 \\
 23  & Apport en Numéraire  &  & 0.00  & 0.00 \\
 24  & Prélèvement  &  & 0.00  & 0.00 \\
 28  & Emprunt  &  &  & \\
 29  & Remboursement des Emprunts  &  & 0.00  & -1'500'000.00 \\
  & VARIATION A LONG TERME  & E  & 0.00  & 0.00 \\
 30  & DOTATIONS AMORTISSEMENTS  & F  & 140'000.00  & 0.00 \\
- & RÉSULTAT EXERCICE (G = C-D+E-F)  & G  & -935'000.00  & 0.00 \\
+ & RÉSULTAT EXERCICE (G = C-D+E-F)  & G  & 935'000.00  & 0.00 \\
 \end{longtable}
 \end{reportvalue}
 \keyvalue{Result}{Passed}
