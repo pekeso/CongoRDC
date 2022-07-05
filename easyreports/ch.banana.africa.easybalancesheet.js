@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-// @id = ch.banana.africa.simplifiedreport
+// @id = ch.banana.africa.easybalancesheet
 // @api = 1.0
-// @pubdate = 2020-12-13
+// @pubdate = 2022-07-05
 // @publisher = Banana.ch SA
 // @description = 1. Bilan
 // @task = app.command
