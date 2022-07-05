@@ -188,7 +188,7 @@ function printprofitlossstatement(banDoc, previous, userParam, bReport, styleshe
    tableRow.addCell("12", "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectDescription("12"), "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectNote("12"), "align-center", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
-   tableRow.addCell(formatValues(Number(banDoc.currentBalance("4111")['credit'])), "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(formatValues(Number(banDoc.currentBalance("4111")['debit'])), "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(formatValues(Number(banDoc.currentBalance("4111")['opening'])), "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
 
    /* 4 */
