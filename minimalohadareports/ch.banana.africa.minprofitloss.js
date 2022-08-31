@@ -245,22 +245,24 @@ function printprofitlossstatement(banDoc, previous, userParam, bReport, styleshe
 
    /* 18 */
    tableRow = table.addRow();
-   var currentBal = formatValues(Number(banDoc.currentBalance("4011")['debit']));
-   var previousYearBalance = formatValues(Number(banDoc.currentBalance("4011")['opening']));
+   var currentBal = Number(banDoc.currentBalance("6580")['debit']) + Number(banDoc.currentBalance("4011")['debit']);
+   var previousYearBalance = Number(banDoc.currentBalance("6580")['opening']) + Number(banDoc.currentBalance("4011")['opening']);
    tableRow.addCell("18", "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectDescription("18"), "align-left", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
    tableRow.addCell(bReport.getObjectNote("18"), "align-center", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
-   tableRow.addCell(currentBal, "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
-   tableRow.addCell(previousYearBalance, "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(formatValues(currentBal), "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
+   tableRow.addCell(formatValues(previousYearBalance), "align-right", 1).setStyleAttributes("padding-bottom:4px;padding-top:5px");
 
    /* TOTAL DEPENSES SUR CHARGES */
    tableRow = table.addRow();
    var accounts = [Number(banDoc.currentBalance("6010")['debit']), Number(banDoc.currentBalance("6228")['debit']), 
                Number(banDoc.currentBalance("6611")['debit']), Number(banDoc.currentBalance("6480")['debit']),
-               Number(banDoc.currentBalance("6712")['debit']), Number(banDoc.currentBalance("4011")['debit'])];
+               Number(banDoc.currentBalance("6712")['debit']), Number(banDoc.currentBalance("6580")['debit']), 
+               Number(banDoc.currentBalance("4011")['debit'])];
    var previousAccounts = [Number(banDoc.currentBalance("6010")['opening']), Number(banDoc.currentBalance("6228")['opening']), 
                         Number(banDoc.currentBalance("6611")['opening']), Number(banDoc.currentBalance("6480")['opening']),
-                        Number(banDoc.currentBalance("6712")['opening']), Number(banDoc.currentBalance("4011")['opening'])];
+                        Number(banDoc.currentBalance("6712")['opening']), Number(banDoc.currentBalance("6580")['opening']), 
+                        Number(banDoc.currentBalance("4011")['opening'])];
    var totalExpenses = sumAccounts(accounts);
    var previousTotalExpenses = sumAccounts(previousAccounts);
    tableRow.addCell("", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
@@ -395,7 +397,7 @@ function printprofitlossstatement(banDoc, previous, userParam, bReport, styleshe
 
    /* G (RESULTAT EXERCICE) */
    tableRow = table.addRow();
-   result = solde  - shortTermVariation + longTermVariation - Banana.SDecimal.invert(Number(banDoc.currentBalance("6813")['debit']));
+   result = solde  - shortTermVariation - longTermVariation - Banana.SDecimal.invert(Number(banDoc.currentBalance("6813")['debit']));
    tableRow.addCell("", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
    tableRow.addCell("RÉSULTAT EXERCICE (G = C-D+E-F)", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
    tableRow.addCell("G", "align-center", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold;padding-bottom:4px;padding-top:5px");
