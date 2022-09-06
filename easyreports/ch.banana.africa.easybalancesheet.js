@@ -97,7 +97,7 @@ function printRow(userParam, bReport, table, gr, styleColumnDescription, styleCo
    
    tableRow = table.addRow();
    // tableRow.addCell(bReport.getObjectDescription(gr), styleColumnDescription + " " + styleIndentLevel, 1);
-   if(bReport.getObjectType(gr) === 'total') {
+   if(bReport.getObjectType(gr) === 'total') { 
       tableRow.addCell(gr, styleColumnDescription + " bold", 1).setStyleAttributes("background-color: #C0C0C0");
       tableRow.addCell(bReport.getObjectDescription(gr), styleColumnDescription + " bold", 1).setStyleAttributes("background-color: #C0C0C0");
       if (note) {
