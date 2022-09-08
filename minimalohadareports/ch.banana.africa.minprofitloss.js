@@ -585,7 +585,7 @@ function parametersDialog(userParam) {
    if (typeof(Banana.Ui.openPropertyEditor) !== 'undefined') {
       var dialogTitle = "Parametri";
       var convertedParam = convertParam(userParam);
-      var pageAnchor = 'dlgSettings';
+      var pageAnchor = 'ch.banana.africa.smereportsohadardc';
       if (!Banana.Ui.openPropertyEditor(dialogTitle, convertedParam, pageAnchor)) {
          return null;
       }
