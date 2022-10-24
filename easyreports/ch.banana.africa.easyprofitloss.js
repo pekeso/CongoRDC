@@ -14,11 +14,11 @@
 //
 // @id = ch.banana.africa.easyprofitloss
 // @api = 1.0
-// @pubdate = 2022-07-25
+// @pubdate = 2022-10-05
 // @publisher = Banana.ch SA
 // @description = 2. Compte de résultat
 // @task = app.command
-// @doctype = 100.100;110.100;130.100
+// @doctype = 100.100;100.110;130.100
 // @docproperties = 
 // @outputformat = none
 // @inputdatasource = none
