@@ -38,7 +38,7 @@ ETS DIENA  & \multicolumn{2}{l}{Exercice clos le 31.12.2022 }\\
 Nº  & RUBRIQUES  & NOTE  & MONTANT  & \\
  &  &  & EXERCICE 2022  & EXERCICE 2021 \\
 11  & Recettes sur ventes ou prestations de services  & 4  & 3'605'000.00  & 0.00 \\
-12  & Autres recettes sur activités  & 4  & 1'800'000.00  & 1'800'000.00 \\
+12  & Autres recettes sur activités  & 4  & 600'000.00  & 1'800'000.00 \\
  & TOTAL DES RECETTES SUR PRODUITS  & A  & 3'605'000.00  & 0.00 \\
 13  & Dépenses sur achats  & 4  & 1'000'000.00  & 0.00 \\
 14  & Dépenses sur loyers  & 4  & 150'000.00  & 0.00 \\
