@@ -1,22 +1,57 @@
 Test Banana Apps
 ----------------
 
-Date:        2022-10-27 23:08:01.707
-Duration:    00:00:00.376
+Date:        2022-11-23 16:06:34.572
+Duration:    00:00:00.695
 Application: BananaPlus 10.0.13.22257
-OS:          macOS 12.6
+OS:          macOS 13.0
 Qt:          5.15.10
 
 Test summary
 ------------
 
-Test succesfully completed
+Test failed
 
 > Fatal errors:  0
-> Differences:   0
+> Differences:   12
 > Added:         0
 > Deleted:       0
-> Identical:     93
+> Identical:     81
 > Total results: 93
 > Total files:   1
+
+Differences Summary
+-------------------
+
+> Files with differences
+>> testresults/ch.banana.africa.easybalancesheet.test/ch.banana.africa.easybalancesheet.test.txt
+
+Differences Details
+-------------------
+
+>> testresults/ch.banana.africa.easybalancesheet.test/ch.banana.africa.easybalancesheet.test.txt
+			21  + AI  & IMMOBILISATIONS CORPORELLES  & 3  & 250'337'000.00  & -6'401'600.00  & 243'935'400.00  & 46'020'000.00 \\
+			 21 - AI  & IMMOBILISATIONS CORPORELLES  & 3  & 249'297'000.00  & -6'401'600.00  & 255'698'600.00  & 44'980'000.00 \\
+			23  + AK  & Bâtiments (1) dont Placement en  Net......./.......  &  & 27'150'000.00  & -120'000.00  & 27'030'000.00  & 6'000'000.00 \\
+			 23 - AK  & Bâtiments (1) dont Placement en  Net......./.......  &  & 27'150'000.00  & -120'000.00  & 27'270'000.00  & 6'000'000.00 \\
+			25  + AM  & Matériel, mobilier et actifs biologiques  &  & 164'587'000.00  & -1'245'600.00  & 163'341'400.00  & 10'600'000.00 \\
+			26  + AN  & Matériel de transport  &  & 57'560'000.00  & -5'036'000.00  & 52'524'000.00  & 28'380'000.00 \\
+			 25 - AM  & Matériel, mobilier et actifs biologiques  &  & 164'587'000.00  & -1'245'600.00  & 165'832'600.00  & 10'600'000.00 \\
+			 26 - AN  & Matériel de transport  &  & 57'560'000.00  & -5'036'000.00  & 62'596'000.00  & 28'380'000.00 \\
+			31  + AZ  & TOTAL ACTIF IMMOBILISE  &  & 296'268'000.00  & -6'401'600.00  & 289'866'400.00  & 61'696'000.00 \\
+			 31 - AZ  & TOTAL ACTIF IMMOBILISE  &  & 295'228'000.00  & -6'401'600.00  & 301'629'600.00  & 60'656'000.00 \\
+			36  + BI  & Clients  & 7  &  & 0.00  &  & 0.00 \\
+			 36 - BI-A  & Clients  & 7  &  & 0.00  &  & 0.00 \\
+			38  + BK  & TOTAL ACTIF CIRCULANT  &  & 757'666'040.00  & 0.00  & 757'666'040.00  & 356'125'200.00 \\
+			 38 - BK  & TOTAL ACTIF CIRCULANT  &  & 66'024'040.00  & 0.00  & 66'024'040.00  & 15'789'200.00 \\
+			44  + BZ  & TOTAL GENERAL  &  & 1'348'861'128.00  & -6'401'600.00  & 1'342'459'528.00  & 690'183'600.00 \\
+			 44 - BZ  & TOTAL GENERAL  &  & 656'179'128.00  & -6'401'600.00  & 662'580'728.00  & 348'807'600.00 \\
+			66  + CJ  & Résultat net de l'exercice (bénéfice + ou perte -)  &    & 118'783'200.00  & 120'790'000.00 \\
+			 66 - CJ  & Résultat net de l'exercice (bénéfice + ou perte -)  &    & 0.00  & 120'790'000.00 \\
+			69  + CP  & TOTAL CAPITAUX PROPRES ET RESSOURCES ASSIMILEES  &    & 355'557'600.00  & 271'240'000.00 \\
+			 69 - CP  & TOTAL CAPITAUX PROPRES ET RESSOURCES ASSIMILEES  &    & 236'774'400.00  & 271'240'000.00 \\
+			74  + DF  & TOTAL RESSOURCES STABLES  &    & 695'902'600.00  & 394'240'000.00 \\
+			 74 - DF  & TOTAL RESSOURCES STABLES  &    & 577'119'400.00  & 394'240'000.00 \\
+			86  + DZ  & TOTAL GENERAL  &    & 1'342'459'528.00  & 938'083'600.00 \\
+			 86 - DZ  & TOTAL GENERAL  &    & 1'223'676'328.00  & 938'083'600.00 \\
 

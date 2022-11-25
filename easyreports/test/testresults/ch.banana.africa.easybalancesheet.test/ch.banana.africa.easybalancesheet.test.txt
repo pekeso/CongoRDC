@@ -39,30 +39,30 @@ AE  & Frais de développement et de prospection  &  &  &  &  & \\
 AF  & Brevets, licences, logiciels, et  droits similaires  & 3  & 5'931'000.00  & 0.00  & 5'931'000.00  & 5'676'000.00 \\
 AG  & Fonds commercial et droit au bail  &  &  &  &  & \\
 AH  & Autres immobilisation incorporelles  &  &  &  &  & \\
-AI  & IMMOBILISATIONS CORPORELLES  & 3  & 249'297'000.00  & -6'401'600.00  & 255'698'600.00  & 44'980'000.00 \\
+AI  & IMMOBILISATIONS CORPORELLES  & 3  & 250'337'000.00  & -6'401'600.00  & 243'935'400.00  & 46'020'000.00 \\
 AJ  & Terrains (1) dont Placement en  Net......./.......  &  & 1'040'000.00  &  & 1'040'000.00  & 1'040'000.00 \\
-AK  & Bâtiments (1) dont Placement en  Net......./.......  &  & 27'150'000.00  & -120'000.00  & 27'270'000.00  & 6'000'000.00 \\
+AK  & Bâtiments (1) dont Placement en  Net......./.......  &  & 27'150'000.00  & -120'000.00  & 27'030'000.00  & 6'000'000.00 \\
 AL  & Aménagements, agencements et installations  &  &  &  &  & \\
-AM  & Matériel, mobilier et actifs biologiques  &  & 164'587'000.00  & -1'245'600.00  & 165'832'600.00  & 10'600'000.00 \\
-AN  & Matériel de transport  &  & 57'560'000.00  & -5'036'000.00  & 62'596'000.00  & 28'380'000.00 \\
+AM  & Matériel, mobilier et actifs biologiques  &  & 164'587'000.00  & -1'245'600.00  & 163'341'400.00  & 10'600'000.00 \\
+AN  & Matériel de transport  &  & 57'560'000.00  & -5'036'000.00  & 52'524'000.00  & 28'380'000.00 \\
 AP  & Avances et acomptes versés sur immobilisations  & 3  & 0.00  & 0.00  & 0.00  & 0.00 \\
 AQ  & IMMOBILISATIONS FINANCIERES  & 4  & 40'000'000.00  &  & 40'000'000.00  & 10'000'000.00 \\
 AR  & Titres de participation  &  & 20'000'000.00  &  & 20'000'000.00  & 0.00 \\
 AS  & Autres immobilisations financières  &  & 20'000'000.00  &  & 20'000'000.00  & 10'000'000.00 \\
-AZ  & TOTAL ACTIF IMMOBILISE  &  & 295'228'000.00  & -6'401'600.00  & 301'629'600.00  & 60'656'000.00 \\
+AZ  & TOTAL ACTIF IMMOBILISE  &  & 296'268'000.00  & -6'401'600.00  & 289'866'400.00  & 61'696'000.00 \\
 BA  & ACTIF CIRCULANT HAO  & 5  & 3'000'000.00  &  & 3'000'000.00  & 3'000'000.00 \\
 BB  & STOCKS ET ENCOURS  & 6  & 24'325'000.00  & 0.00  & 24'325'000.00  & 12'570'000.00 \\
 BG  & CREANCES ET EMPLOIS ASSIMILES  &  & 730'341'040.00  & 0.00  & 730'341'040.00  & 340'555'200.00 \\
 BH  & Fournisseurs avances versées  & 17  & 0.00  & 0.00  & 0.00  & 0.00 \\
-BI-A  & Clients  & 7  &  & 0.00  &  & 0.00 \\
+BI  & Clients  & 7  &  & 0.00  &  & 0.00 \\
 BJ  & Autres créances  & 8  & 38'699'040.00  & 0.00  & 38'699'040.00  & 219'200.00 \\
-BK  & TOTAL ACTIF CIRCULANT  &  & 66'024'040.00  & 0.00  & 66'024'040.00  & 15'789'200.00 \\
+BK  & TOTAL ACTIF CIRCULANT  &  & 757'666'040.00  & 0.00  & 757'666'040.00  & 356'125'200.00 \\
 BQ  & Titres de placement  & 9  &  &  &  & \\
 BR  & Valeurs à encaisser  & 10  &  &  &  & \\
 BS  & Banques, chèques postaux, caisse et assimilés  & 11  & 288'677'088.00  & 0.00  & 288'677'088.00  & 267'862'400.00 \\
 BT  & TOTAL TRESORERIE-ACTIF  &  & 288'677'088.00  & 0.00  & 288'677'088.00  & 267'862'400.00 \\
 BU  & Ecart de conversion-Actif  & 12  & 6'250'000.00  &  & 6'250'000.00  & 4'500'000.00 \\
-BZ  & TOTAL GENERAL  &  & 656'179'128.00  & -6'401'600.00  & 662'580'728.00  & 348'807'600.00 \\
+BZ  & TOTAL GENERAL  &  & 1'348'861'128.00  & -6'401'600.00  & 1'342'459'528.00  & 690'183'600.00 \\
 \end{longtable}
   \\
   \\
@@ -84,15 +84,15 @@ CE  & Ecarts de réévaluation  & 3e  & 2'484'400.00  & 450'000.00 \\
 CF  & Réserves indisponibles  & 14  & 11'929'000.00  & 0.00 \\
 CG  & Réserves libres  & 14  & 0.00  & 0.00 \\
 CH  & Report à nouveau (+ ou -)  & 14  & 7'361'000.00  & 0.00 \\
-CJ  & Résultat net de l'exercice (bénéfice + ou perte -)  &    & 0.00  & 120'790'000.00 \\
+CJ  & Résultat net de l'exercice (bénéfice + ou perte -)  &    & 118'783'200.00  & 120'790'000.00 \\
 CL  & Subventions d'investissement  & 15  & 30'000'000.00  & 15'000'000.00 \\
 CM  & Provisions réglementées  & 15  & 0.00  & 0.00 \\
-CP  & TOTAL CAPITAUX PROPRES ET RESSOURCES ASSIMILEES  &    & 236'774'400.00  & 271'240'000.00 \\
+CP  & TOTAL CAPITAUX PROPRES ET RESSOURCES ASSIMILEES  &    & 355'557'600.00  & 271'240'000.00 \\
 DA  & Emprunts et dettes financières diverses  & 16  & 185'345'000.00  & 118'000'000.00 \\
 DB  & Dettes de location acquisition  & 16  & 155'000'000.00  & 5'000'000.00 \\
 DC  & Provisions pour risques et charges  & 16  & 0.00  & 0.00 \\
 DD  & TOTAL DETTES FINANCIERES ET RESSOURCES ASSIMILEES  &    & 340'345'000.00  & 123'000'000.00 \\
-DF  & TOTAL RESSOURCES STABLES  &    & 577'119'400.00  & 394'240'000.00 \\
+DF  & TOTAL RESSOURCES STABLES  &    & 695'902'600.00  & 394'240'000.00 \\
 DH  & Dettes circulantes HAO  & 5  & 75'284'000.00  & 36'888'000.00 \\
 DI  & Clients, avances reçues  & 7  & 0.00  & 0.00 \\
 DJ  & Fournisseurs d'exploitation  & 17  & 499'626'400.00  & 505'952'000.00 \\
@@ -104,7 +104,7 @@ DQ  & Banques, crédits d'escompte  & 20  & 0.00  & 0.00 \\
 DR  & Banques, établissements financiers et crédits de trésorerie  & 20  & 0.00  & 0.00 \\
 DT  & TOTAL TRESORERIE-PASSIF  &    & 0.00  & 0.00 \\
 DV  & Ecart de conversion-Passif  & 12  & 1'000'000.00  & 1'000'000.00 \\
-DZ  & TOTAL GENERAL  &    & 1'223'676'328.00  & 938'083'600.00 \\
+DZ  & TOTAL GENERAL  &    & 1'342'459'528.00  & 938'083'600.00 \\
 \end{longtable}
 -  \#page-nr  - \\
 \end{reportvalue}
