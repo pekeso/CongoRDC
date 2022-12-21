@@ -167,6 +167,7 @@ function createReportStructureBalanceSheet() {
     reportStructure.push({"id":"CH", "type":"group", "note":"14", "bclass":"2", "description":"Report à nouveau (+ ou -)"});
     reportStructure.push({"id":"CJ", "type":"group", "note":"", "description":"Résultat net de l'exercice (bénéfice + ou perte -)", 
                             "sum":"-TA;-TB;-TC;-TD;-TE;-TF;-TG;-TH;-TI;-TJ;-TL;-TM;-TN;-TO;-RA;-RB;-RC;-RD;-RE;-RF;-RG;-RH;-RI;-RJ;-RK;-RL;-RM;-RN;-RO;-RP;-RQ;-RS"});
+    // reportStructure.push({"id":"CJ", "type":"group", "note":"", "bclass":"2", "description":"Résultat net de l'exercice (bénéfice + ou perte -)"});
     reportStructure.push({"id":"CL", "type":"group", "note":"15", "bclass":"2", "description":"Subventions d'investissement"});
     reportStructure.push({"id":"CM", "type":"group", "note":"15", "bclass":"2", "description":"Provisions réglementées"});
     reportStructure.push({"id":"CP", "type":"total", "note":"", "description":"TOTAL CAPITAUX PROPRES ET RESSOURCES ASSIMILEES", "sum":"CA;CB;CD;CE;CF;CG;CH;CJ;CL;CM"});
