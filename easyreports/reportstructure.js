@@ -124,38 +124,38 @@ function createReportStructureBalanceSheet() {
     reportStructure.push({"id":"BZ-(BZ-A)", "type":"total", "note":"", "description":"TOTAL GENERAL", "sum":"BZ;BZ-A"});
 
     // To get CJ, we sum up products and subtract by charges
-    // reportStructure.push({"id":"TA", "type":"group", "note":"21", "bclass":"4", "description":"Ventes de marchandises"});
-    // reportStructure.push({"id":"TB", "type":"group", "note":"21", "bclass":"4", "description":"Ventes de produits fabriqués"});
-    // reportStructure.push({"id":"TC", "type":"group", "note":"21", "bclass":"4", "description":"Travaux, services vendus"});
-    // reportStructure.push({"id":"TD", "type":"group", "note":"21", "bclass":"4", "description":"Produits accessoires"});
-    // reportStructure.push({"id":"TE", "type":"group", "note":"6", "bclass":"4", "description":"Production stockée (ou déstockage)"});
-    // reportStructure.push({"id":"TF", "type":"group", "note":"21", "bclass":"4", "description":"Production immobilisée"});
-    // reportStructure.push({"id":"TG", "type":"group", "note":"21", "bclass":"4", "description":"Subventions d’exploitation"});
-    // reportStructure.push({"id":"TH", "type":"group", "note":"21", "bclass":"4", "description":"Autres produits"});
-    // reportStructure.push({"id":"TI", "type":"group", "note":"12", "bclass":"4", "description":"Transferts de charges d'exploitation"});
-    // reportStructure.push({"id":"TJ", "type":"group", "note":"28", "bclass":"4", "description":"Reprises d’amortissements, provisions et dépréciations"});
-    // reportStructure.push({"id":"TL", "type":"group", "note":"28", "bclass":"4", "description":"Reprises de provisions  et dépréciations financières"});
-    // reportStructure.push({"id":"TM", "type":"group", "note":"12", "bclass":"4", "description":"Transferts de charges financières"});
-    // reportStructure.push({"id":"TN", "type":"group", "note":"3D", "bclass":"4", "description":"Produits des cessions d'immobilisations"});
-    // reportStructure.push({"id":"TO", "type":"group", "note":"30", "bclass":"4", "description":"Autres Produits HAO"});
-    // reportStructure.push({"id":"RA", "type":"group", "note":"22", "bclass":"3", "description":"Achats de marchandises"});
-    // reportStructure.push({"id":"RB", "type":"group", "note":"6", "bclass":"3", "description":"Variation de stocks de marchandises"});
-    // reportStructure.push({"id":"RC", "type":"group", "note":"22", "bclass":"3", "description":"Achats de matières premières et fournitures liées"});
-    // reportStructure.push({"id":"RD", "type":"group", "note":"6", "bclass":"3", "description":"Variation de stocks de matières premières et fournitures liées"});
-    // reportStructure.push({"id":"RE", "type":"group", "note":"22", "bclass":"3", "description":"Autres achats"});
-    // reportStructure.push({"id":"RF", "type":"group", "note":"6", "bclass":"3", "description":"Variation de stocks d’autres approvisionnements"});
-    // reportStructure.push({"id":"RG", "type":"group", "note":"23", "bclass":"3", "description":"Transports"});
-    // reportStructure.push({"id":"RH", "type":"group", "note":"24", "bclass":"3", "description":"Services extérieurs"});
-    // reportStructure.push({"id":"RI", "type":"group", "note":"25", "bclass":"3", "description":"Impôts et taxes"});
-    // reportStructure.push({"id":"RJ", "type":"group", "note":"26", "bclass":"3", "description":"Autres charges"});
-    // reportStructure.push({"id":"RK", "type":"group", "note":"27", "bclass":"3", "description":"Charges de personnel"});
-    // reportStructure.push({"id":"RL", "type":"group", "note":"3C&28", "bclass":"3", "description":"Dotations aux amortissements, aux provisions et dépréciations"});
-    // reportStructure.push({"id":"RM", "type":"group", "note":"29", "bclass":"3", "description":"Frais financiers et charges assimilées"});
-    // reportStructure.push({"id":"RN", "type":"group", "note":"3C&28", "bclass":"3", "description":"Dotations aux provisions et aux dépréciations financières"});
-    // reportStructure.push({"id":"RO", "type":"group", "note":"3D", "bclass":"3", "description":"Valeurs comptables des cessions d'immobilisations"});
-    // reportStructure.push({"id":"RP", "type":"group", "note":"30", "bclass":"3", "description":"Autres Charges HAO"});
-    // reportStructure.push({"id":"RQ", "type":"group", "note":"30", "bclass":"3", "description":"Participation des travailleurs"});
-    // reportStructure.push({"id":"RS", "type":"group", "note":"", "bclass":"3", "description":"Impôts sur le résultat"});
+    reportStructure.push({"id":"TA", "type":"group", "note":"21", "bclass":"4", "description":"Ventes de marchandises"});
+    reportStructure.push({"id":"TB", "type":"group", "note":"21", "bclass":"4", "description":"Ventes de produits fabriqués"});
+    reportStructure.push({"id":"TC", "type":"group", "note":"21", "bclass":"4", "description":"Travaux, services vendus"});
+    reportStructure.push({"id":"TD", "type":"group", "note":"21", "bclass":"4", "description":"Produits accessoires"});
+    reportStructure.push({"id":"TE", "type":"group", "note":"6", "bclass":"4", "description":"Production stockée (ou déstockage)"});
+    reportStructure.push({"id":"TF", "type":"group", "note":"21", "bclass":"4", "description":"Production immobilisée"});
+    reportStructure.push({"id":"TG", "type":"group", "note":"21", "bclass":"4", "description":"Subventions d’exploitation"});
+    reportStructure.push({"id":"TH", "type":"group", "note":"21", "bclass":"4", "description":"Autres produits"});
+    reportStructure.push({"id":"TI", "type":"group", "note":"12", "bclass":"4", "description":"Transferts de charges d'exploitation"});
+    reportStructure.push({"id":"TJ", "type":"group", "note":"28", "bclass":"4", "description":"Reprises d’amortissements, provisions et dépréciations"});
+    reportStructure.push({"id":"TL", "type":"group", "note":"28", "bclass":"4", "description":"Reprises de provisions  et dépréciations financières"});
+    reportStructure.push({"id":"TM", "type":"group", "note":"12", "bclass":"4", "description":"Transferts de charges financières"});
+    reportStructure.push({"id":"TN", "type":"group", "note":"3D", "bclass":"4", "description":"Produits des cessions d'immobilisations"});
+    reportStructure.push({"id":"TO", "type":"group", "note":"30", "bclass":"4", "description":"Autres Produits HAO"});
+    reportStructure.push({"id":"RA", "type":"group", "note":"22", "bclass":"3", "description":"Achats de marchandises"});
+    reportStructure.push({"id":"RB", "type":"group", "note":"6", "bclass":"3", "description":"Variation de stocks de marchandises"});
+    reportStructure.push({"id":"RC", "type":"group", "note":"22", "bclass":"3", "description":"Achats de matières premières et fournitures liées"});
+    reportStructure.push({"id":"RD", "type":"group", "note":"6", "bclass":"3", "description":"Variation de stocks de matières premières et fournitures liées"});
+    reportStructure.push({"id":"RE", "type":"group", "note":"22", "bclass":"3", "description":"Autres achats"});
+    reportStructure.push({"id":"RF", "type":"group", "note":"6", "bclass":"3", "description":"Variation de stocks d’autres approvisionnements"});
+    reportStructure.push({"id":"RG", "type":"group", "note":"23", "bclass":"3", "description":"Transports"});
+    reportStructure.push({"id":"RH", "type":"group", "note":"24", "bclass":"3", "description":"Services extérieurs"});
+    reportStructure.push({"id":"RI", "type":"group", "note":"25", "bclass":"3", "description":"Impôts et taxes"});
+    reportStructure.push({"id":"RJ", "type":"group", "note":"26", "bclass":"3", "description":"Autres charges"});
+    reportStructure.push({"id":"RK", "type":"group", "note":"27", "bclass":"3", "description":"Charges de personnel"});
+    reportStructure.push({"id":"RL", "type":"group", "note":"3C&28", "bclass":"3", "description":"Dotations aux amortissements, aux provisions et dépréciations"});
+    reportStructure.push({"id":"RM", "type":"group", "note":"29", "bclass":"3", "description":"Frais financiers et charges assimilées"});
+    reportStructure.push({"id":"RN", "type":"group", "note":"3C&28", "bclass":"3", "description":"Dotations aux provisions et aux dépréciations financières"});
+    reportStructure.push({"id":"RO", "type":"group", "note":"3D", "bclass":"3", "description":"Valeurs comptables des cessions d'immobilisations"});
+    reportStructure.push({"id":"RP", "type":"group", "note":"30", "bclass":"3", "description":"Autres Charges HAO"});
+    reportStructure.push({"id":"RQ", "type":"group", "note":"30", "bclass":"3", "description":"Participation des travailleurs"});
+    reportStructure.push({"id":"RS", "type":"group", "note":"", "bclass":"3", "description":"Impôts sur le résultat"});
 
     /* PASSIVE */
     reportStructure.push({"id":"CA", "type":"group", "note":"13", "bclass":"2", "description":"Capital"});
@@ -165,9 +165,9 @@ function createReportStructureBalanceSheet() {
     reportStructure.push({"id":"CF", "type":"group", "note":"14", "bclass":"2", "description":"Réserves indisponibles"});
     reportStructure.push({"id":"CG", "type":"group", "note":"14", "bclass":"2", "description":"Réserves libres"});
     reportStructure.push({"id":"CH", "type":"group", "note":"14", "bclass":"2", "description":"Report à nouveau (+ ou -)"});
-    // reportStructure.push({"id":"CJ", "type":"group", "note":"", "description":"Résultat net de l'exercice (bénéfice + ou perte -)", 
-    //                         "sum":"TA;TB;TC;TD;TE;TF;TG;TH;TI;TJ;TL;TM;TN;TO;-RA;-RB;-RC;-RD;-RE;-RF;-RG;-RH;-RI;-RJ;-RK;-RL;-RM;-RN;-RO;-RP;-RQ;-RS"});
-    reportStructure.push({"id":"CJ", "type":"group", "note":"", "bclass":"2", "description":"Résultat net de l'exercice (bénéfice + ou perte -)"});
+    reportStructure.push({"id":"CJ", "type":"group", "note":"", "description":"Résultat net de l'exercice (bénéfice + ou perte -)", 
+                            "sum":"TA;TB;TC;TD;TE;TF;TG;TH;TI;TJ;TL;TM;TN;TO;-RA;-RB;-RC;-RD;-RE;-RF;-RG;-RH;-RI;-RJ;-RK;-RL;-RM;-RN;-RO;-RP;-RQ;-RS"});
+    // reportStructure.push({"id":"CJ", "type":"group", "note":"", "bclass":"2", "description":"Résultat net de l'exercice (bénéfice + ou perte -)"});
     reportStructure.push({"id":"CL", "type":"group", "note":"15", "bclass":"2", "description":"Subventions d'investissement"});
     reportStructure.push({"id":"CM", "type":"group", "note":"15", "bclass":"2", "description":"Provisions réglementées"});
     reportStructure.push({"id":"CP", "type":"total", "note":"", "description":"TOTAL CAPITAUX PROPRES ET RESSOURCES ASSIMILEES", "sum":"CA;CB;CD;CE;CF;CG;CH;CJ;CL;CM"});
