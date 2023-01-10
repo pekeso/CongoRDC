@@ -58,12 +58,23 @@ Nº  & RUBRIQUES  & NOTE  & MONTANT  & \\
 21  & + Variations des dettes d'exploitation N / N-1  & 3  & -450'000.00  & 650'000.00 \\
  & VARIATION A COURT TERME  & D  & 1'800'000.00  & 2'450'000.00 \\
 22  & Acquisition des Immobilisations  &  & 0.00  & 0.00 \\
+18  & Autres dépenses sur activités  & 4  & 660'000.00  & -650'000.00 \\
+ & TOTAL DÉPENSES SUR CHARGES  & B  & 1'930'000.00  & -650'000.00 \\
+ & SOLDE: Excédent (+) ou insuffisance (-) de recettes (C=A-B)  & C  & 3'475'000.00  & 2'450'000.00 \\
+19  & - Variations des stocks N / N-1  & 2  & -1'050'000.00  & 0.00 \\
+20  & - Variations des créances N / N-1  & 3  & -1'200'000.00  & 1'800'000.00 \\
+21  & + Variations des dettes d'exploitation N / N-1  & 3  & -450'000.00  & 650'000.00 \\
+ & VARIATION A COURT TERME  & D  & 1'800'000.00  & 2'450'000.00 \\
+22  & Acquisition des Immobilisations  &  & 0.00  & 0.00 \\
 23  & Apport en Numéraire  &  & 0.00  & 0.00 \\
 24  & Prélèvement  &  & 0.00  & 0.00 \\
 28  & Emprunt  &  & 0.00  & -1'500'000.00 \\
+28  & Emprunt  &  & 0.00  & -1'500'000.00 \\
 29  & Remboursement des Emprunts  &  & 0.00  & -1'500'000.00 \\
  & VARIATION A LONG TERME  & E  & 0.00  & -3'000'000.00 \\
+ & VARIATION A LONG TERME  & E  & 0.00  & -3'000'000.00 \\
 30  & DOTATIONS AMORTISSEMENTS  & F  & 140'000.00  & 0.00 \\
+ & RÉSULTAT EXERCICE (G = C-D+E-F)  & G  & 1'815'000.00  & -2'450'000.00 \\
  & RÉSULTAT EXERCICE (G = C-D+E-F)  & G  & 1'815'000.00  & -2'450'000.00 \\
 \end{longtable}
 \end{reportvalue}
