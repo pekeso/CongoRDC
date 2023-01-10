@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-// @id = ch.banana.africa.minbalancesheet
+// @id = ch.banana.africa.smereportsohadardc
 // @api = 1.0
 // @pubdate = 2021-01-14
 // @publisher = Banana.ch SA
@@ -453,7 +453,7 @@ function parametersDialog(userParam) {
    if (typeof(Banana.Ui.openPropertyEditor) !== 'undefined') {
       var dialogTitle = "Parametri";
       var convertedParam = convertParam(userParam);
-      var pageAnchor = 'dlgSettings';
+      var pageAnchor = 'ch.banana.africa.smereportsohadardc';
       if (!Banana.Ui.openPropertyEditor(dialogTitle, convertedParam, pageAnchor)) {
          return null;
       }
