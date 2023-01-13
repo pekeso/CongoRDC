@@ -1,0 +1,22 @@
+Test Banana Apps
+----------------
+
+Date:        2023-01-05 12:06:58.905
+Duration:    00:00:00.145
+Application: BananaPlus 10.1.0.22349
+OS:          macOS 13.0
+Qt:          6.4.0
+
+Test summary
+------------
+
+Test succesfully completed
+
+> Fatal errors:  0
+> Differences:   0
+> Added:         0
+> Deleted:       0
+> Identical:     84
+> Total results: 84
+> Total files:   1
+

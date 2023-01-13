@@ -264,12 +264,12 @@ var BReport = class JsClass {
          }
       }
 
-   //  var groupsModB = createReportStructureRendicontoGestionale();
-   //  for (var i in groupsModB) {
-   //     if (groupsModB[i]["id"] && !groupsModB[i]["id"].startsWith('d')) {
-   //        columnList.add(groupsModB[i]["id"]);
-   //     }
-   //  }
+      var groupsModB = createReportStructureProfitLoss();
+      for (var i in groupsModB) {
+         if (groupsModB[i]["id"] && !groupsModB[i]["id"].startsWith('d')) {
+            columnList.add(groupsModB[i]["id"]);
+         }
+      }
 
    //  var groupsModD = createReportStructureRendicontoCassa();
    //  for (var i in groupsModD) {

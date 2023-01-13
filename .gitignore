@@ -3,4 +3,5 @@
 *.autosave
 ~$*
 debug.log
+build-*
 

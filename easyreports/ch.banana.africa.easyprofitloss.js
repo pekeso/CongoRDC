@@ -12,13 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-// @id = ch.banana.it.extension.rendicontogestionale.mod.b
+// @id = ch.banana.africa.easyprofitloss
 // @api = 1.0
-// @pubdate = 2020-12-30
+// @pubdate = 2022-10-05
 // @publisher = Banana.ch SA
 // @description = 2. Compte de résultat
 // @task = app.command
-// @doctype = 100.100;110.100;130.100
+// @doctype = 100.100;100.110;130.100
 // @docproperties = 
 // @outputformat = none
 // @inputdatasource = none
