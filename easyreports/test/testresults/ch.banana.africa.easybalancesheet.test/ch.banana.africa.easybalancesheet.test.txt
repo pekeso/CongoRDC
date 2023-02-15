@@ -40,17 +40,17 @@ AF  & Brevets, licences, logiciels, et  droits similaires  & 3  & 5'931'000.00  
 AG  & Fonds commercial et droit au bail  &  & 0.00  & 0.00  & 0.00  & 0.00 \\
 AH  & Autres immobilisation incorporelles  &  & 0.00  & 0.00  & 0.00  & 0.00 \\
 AI  & IMMOBILISATIONS CORPORELLES  & 3  & 250'337'000.00  & -6'401'600.00  & 243'935'400.00  & 39'444'000.00 \\
-AJ  & Terrains (1) dont Placement en  Net......./.......  &  & 1'040'000.00  & 1'040'000.00  & 1'040'000.00  & 1'040'000.00 \\
+AJ  & Terrains (1) dont Placement en  Net......./.......  &  & 1'040'000.00  & 0,00  & 1'040'000.00  & 1'040'000.00 \\
 AK  & Bâtiments (1) dont Placement en  Net......./.......  &  & 27'150'000.00  & -120'000.00  & 27'030'000.00  & 6'000'000.00 \\
 AL  & Aménagements, agencements et installations  &  & 0.00  & 0.00  & 0.00  & 0.00 \\
 AM  & Matériel, mobilier et actifs biologiques  &  & 164'587'000.00  & -1'245'600.00  & 163'341'400.00  & 9'700'000.00 \\
 AN  & Matériel de transport  &  & 57'560'000.00  & -5'036'000.00  & 52'524'000.00  & 22'704'000.00 \\
 AP  & Avances et acomptes versés sur immobilisations  & 3  & 0.00  & 0.00  & 0.00  & 0.00 \\
 AQ  & IMMOBILISATIONS FINANCIERES  & 4  & 40'000'000.00  & 0.00  & 40'000'000.00  & 10'000'000.00 \\
-AR  & Titres de participation  &  & 20'000'000.00  & 20'000'000.00  & 20'000'000.00  & 0.00 \\
-AS  & Autres immobilisations financières  &  & 20'000'000.00  & 20'000'000.00  & 20'000'000.00  & 10'000'000.00 \\
+AR  & Titres de participation  &  & 20'000'000.00  & 0,00  & 20'000'000.00  & 0.00 \\
+AS  & Autres immobilisations financières  &  & 20'000'000.00  & 0,00  & 20'000'000.00  & 10'000'000.00 \\
 AZ  & TOTAL ACTIF IMMOBILISE  &  & 296'268'000.00  & -6'401'600.00  & 289'866'400.00  & 55'120'000.00 \\
-BA  & ACTIF CIRCULANT HAO  & 5  & 3'000'000.00  & 3'000'000.00  & 3'000'000.00  & 3'000'000.00 \\
+BA  & ACTIF CIRCULANT HAO  & 5  & 3'000'000.00  & 0,00  & 3'000'000.00  & 3'000'000.00 \\
 BB  & STOCKS ET ENCOURS  & 6  & 24'325'000.00  & 0.00  & 24'325'000.00  & 12'570'000.00 \\
 BG  & CREANCES ET EMPLOIS ASSIMILES  &  & 730'341'040.00  & 0.00  & 730'341'040.00  & 340'555'200.00 \\
 BH  & Fournisseurs avances versées  & 17  & 0.00  & 0.00  & 0.00  & 0.00 \\
@@ -61,7 +61,7 @@ BQ  & Titres de placement  & 9  & 0.00  & 0.00  & 0.00  & 0.00 \\
 BR  & Valeurs à encaisser  & 10  & 0.00  & 0.00  & 0.00  & 0.00 \\
 BS  & Banques, chèques postaux, caisse et assimilés  & 11  & 288'677'088.00  & 0.00  & 288'677'088.00  & 267'862'400.00 \\
 BT  & TOTAL TRESORERIE-ACTIF  &  & 288'677'088.00  & 0.00  & 288'677'088.00  & 267'862'400.00 \\
-BU  & Ecart de conversion-Actif  & 12  & 6'250'000.00  & 6'250'000.00  & 6'250'000.00  & 4'500'000.00 \\
+BU  & Ecart de conversion-Actif  & 12  & 6'250'000.00  & 0,00  & 6'250'000.00  & 4'500'000.00 \\
 BZ  & TOTAL GENERAL  &  & 1'348'861'128.00  & -6'401'600.00  & 1'342'459'528.00  & 683'607'600.00 \\
 \end{longtable}
   \\
