@@ -33,7 +33,7 @@ function createReportStructureBalanceSheet() {
 
     /* ACTIVE */
     reportStructure.push({"id":"AD", "type":"total", "note":"3", "description":"IMMOBILISATIONS INCORPORELLES", "sum":"AF"});
-    reportStructure.push({"id":"AD-A", "type":"total", "note":"3", "description":"IMMOBILISATIONS INCORPORELLES", "sum":"AF-A;"});
+    reportStructure.push({"id":"AD-A", "type":"total", "note":"3", "description":"IMMOBILISATIONS INCORPORELLES", "sum":"AF-A"});
     reportStructure.push({"id":"AD-(AD-A)", "type":"total", "note":"3", "description":"IMMOBILISATIONS INCORPORELLES", "sum":"AD;AD-A"});
 
     reportStructure.push({"id":"AE", "type":"group", "note":"", "bclass":"1", "description":"Frais de développement et de prospection"});
@@ -165,9 +165,9 @@ function createReportStructureBalanceSheet() {
     reportStructure.push({"id":"CF", "type":"group", "note":"14", "bclass":"2", "description":"Réserves indisponibles"});
     reportStructure.push({"id":"CG", "type":"group", "note":"14", "bclass":"2", "description":"Réserves libres"});
     reportStructure.push({"id":"CH", "type":"group", "note":"14", "bclass":"2", "description":"Report à nouveau (+ ou -)"});
+    reportStructure.push({"id":"CJT", "type":"group", "note":"", "bclass":"2", "description":"Résultat net de l'exercice (bénéfice + ou perte -)"});
     reportStructure.push({"id":"CJ", "type":"group", "note":"", "description":"Résultat net de l'exercice (bénéfice + ou perte -)", 
-                            "sum":"TA;TB;TC;TD;TE;TF;TG;TH;TI;TJ;TL;TM;TN;TO;-RA;-RB;-RC;-RD;-RE;-RF;-RG;-RH;-RI;-RJ;-RK;-RL;-RM;-RN;-RO;-RP;-RQ;-RS"});
-    // reportStructure.push({"id":"CJ", "type":"group", "note":"", "bclass":"2", "description":"Résultat net de l'exercice (bénéfice + ou perte -)"});
+                            "sum":"CJT;TA;TB;TC;TD;TE;TF;TG;TH;TI;TJ;TL;TM;TN;TO;-RA;-RB;-RC;-RD;-RE;-RF;-RG;-RH;-RI;-RJ;-RK;-RL;-RM;-RN;-RO;-RP;-RQ;-RS"});
     reportStructure.push({"id":"CL", "type":"group", "note":"15", "bclass":"2", "description":"Subventions d'investissement"});
     reportStructure.push({"id":"CM", "type":"group", "note":"15", "bclass":"2", "description":"Provisions réglementées"});
     reportStructure.push({"id":"CP", "type":"total", "note":"", "description":"TOTAL CAPITAUX PROPRES ET RESSOURCES ASSIMILEES", "sum":"CA;CB;CD;CE;CF;CG;CH;CJ;CL;CM"});
