@@ -241,4 +241,7 @@ function createReportStructureProfitLoss() {
     reportStructure.push({"id":"XI", "type":"total", "note":"", "description":"RESULTAT NET (XG+XH+RQ+RS)", "sum":"XG;XH;-RQ;-RS"});
     
     return reportStructure;
+
+
+    // CJ = CJ + Total Products - Total Charges
 }
