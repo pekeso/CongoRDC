@@ -62,7 +62,7 @@ EasyBalanceSheetReport.prototype.testBananaExtension = function() {
 	/**
 	 * Test 1: column Gr
 	 */
-	var banDoc = Banana.application.openDocument("file:script/../test/testcases/test_file_2020.ac2");
+	var banDoc = Banana.application.openDocument("file:script/../test/testcases/easy_reports_2020_test.ac2");
 	Test.assert(banDoc);
     // Test.assert(previousDoc);
 
