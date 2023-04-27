@@ -97,6 +97,15 @@ function createAccountsBalancesReport(current, currentStartDate, currentEndDate,
   var months = monthDiff(Banana.Converter.toDate(currentEndDate), Banana.Converter.toDate(currentStartDate));
   var fiscalNumber = current.info("AccountingDataBase","FiscalNumber");
   var vatNumber = current.info("AccountingDataBase","VatNumber");
+  var fileNumber = current.info("Base","FileTypeNumber");
+
+  // Check if the file is multicurrency
+  if (Number(fileNumber) === 120 || Number(fileNumber) === 130) {
+       
+  } else {
+    current.addMessage("Cette extension ne fonctionne qu'en mode multi-devise. \nVeuillez vous assurer que votre fichier est multi-devise.");
+    return;
+  }
 
   // Header of the report
   var table = report.addTable("table");
@@ -253,7 +262,13 @@ function getAmount(banDoc,account,property,startDate,endDate,userParam) {
   var amount = currentBal[property];
 
   // base currency CDF, currency2 = USD
-  if (userParam.currency.toUpperCase() !== 'CDF') {
+  if (userParam.currency.toUpperCase() !== 'CDF' || userParam.currency.toUpperCase() !== 'USD' || 
+  userParam.currency.toUpperCase() !== 'XAF' || userParam.currency.toUpperCase() !== 'EUR' ||
+  userParam.currency.toUpperCase() !== 'AOA' || userParam.currency.toUpperCase() !== 'BIF' ||
+  userParam.currency.toUpperCase() !== 'XOF' || userParam.currency.toUpperCase() !== 'KES' ||
+  userParam.currency.toUpperCase() !== 'NGN' || userParam.currency.toUpperCase() !== 'RWF' ||
+  userParam.currency.toUpperCase() !== 'ZAR' || userParam.currency.toUpperCase() !== 'TZS' ||
+  userParam.currency.toUpperCase() !== 'UGX' || userParam.currency.toUpperCase() !== 'ZMW') {
 
     if (userParam.exchangerate) {
       exchangerate = userParam.exchangerate;

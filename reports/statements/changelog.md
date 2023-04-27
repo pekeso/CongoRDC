@@ -21,3 +21,18 @@
 2019-10-09: Update Cash Flow app; Changed formula (FO)
 
 2019-10-14: Update Cash Flow app; Changed formulas (FA,FB,FG)
+
+2020-10-07: Update reportsohadardc app; Updated profitlossstatement to allow monthly statements
+
+2020-10-15: Update reportsohadardc app; Updated cashflow multicurrency to allow monthly statements
+
+2020-10-27: Update reportsohadardc app; Updated profilossmulticurrency to allow monthly statements;
+            Added file type checking for all multicurrency extensions
+
+2020-10-30: Update tutorial 2, 3 & 4
+
+2020-11-08: Update Reports README.md
+
+2020-11-23: Udpate *.ac2 templates; Integrated OHADA extensions to the templates
+
+2020-12-10: Update reportsohadardc app; Updated reportsohadardc by removing multicurrency file check on the mono extension

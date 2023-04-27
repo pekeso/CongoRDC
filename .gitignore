@@ -2,3 +2,6 @@
 *.bak
 *.autosave
 ~$*
+debug.log
+build-*
+
