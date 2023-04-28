@@ -18,7 +18,7 @@
 \newenvironment{testcase}[1]{\section*{Test: #1}}{\newpage}
 \newenvironment{test}[1]{\section*{Test case: #1}}{}
 %Begin test data
-%%SCRIPT{C:/Users/joemb/BananaApps/CongoRDC/reports/tva/tva-2020/tvareportrdc/./test/ch.banana.africa.tvareportrdc.test.js}
+%%SCRIPT{C:/P/CongoRDC/reports/tva/tva-2020/tvareportrdc/test/ch.banana.africa.tvareportrdc.test.js}
 %
 \begin{testcase}{TestVatReportRDC}
 \begin{test}{testBananaApp}
@@ -49,11 +49,11 @@ Mois de (2): DÉCEMBRE \\
 1  & \multicolumn{7}{l}{Livraisons de biens } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{304'410'000.00 } & \multicolumn{4}{l}{48'705'600.00 }\\
 2  & \multicolumn{7}{l}{Prestations de services } & \multicolumn{4}{l}{1'500'000.00 } & \multicolumn{4}{l}{1'500'000.00 } & \multicolumn{4}{l}{240'000.00 }\\
 3  & \multicolumn{7}{l}{Livraisons de biens à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{187'000.00 } & \multicolumn{4}{l}{29'920.00 }\\
-4  & \multicolumn{7}{l}{Prestations de services à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-5  & \multicolumn{7}{l}{Opérations afférentes aux marchés publics à financement extérieur } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+4  & \multicolumn{7}{l}{Prestations de services à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
+5  & \multicolumn{7}{l}{Opérations afférentes aux marchés publics à financement extérieur } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
 6  & \multicolumn{7}{l}{Exportations et opérations assimilées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{8'750'000.00 } & \multicolumn{4}{l}{}\\
 7  & \multicolumn{7}{l}{Opérations exonérées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{20'000'000.00 } & \multicolumn{4}{l}{}\\
-8  & \multicolumn{7}{l}{Opérations non imposables } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+8  & \multicolumn{7}{l}{Opérations non imposables } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{}\\
 9  & \multicolumn{7}{l}{Total } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{334'847'000.00 } & \multicolumn{4}{l}{48'975'520.00 }\\
 \multicolumn{20}{l}{  }\\
 \multicolumn{12}{l}{III. PRESTATIONS REÇUES DES PRESTATAIRES NON ÉTABLIS EN RDC } & \multicolumn{4}{l}{Montant des factures (c) } & \multicolumn{4}{l}{TVA Collectée(d)=c * 16\% }\\
@@ -63,23 +63,23 @@ Mois de (2): DÉCEMBRE \\
 \multicolumn{7}{l}{IV. DÉDUCTIONS/Taxe déductible sur:(6) } & \multicolumn{5}{l}{Importations (e) } & \multicolumn{4}{l}{Local (f) } & \multicolumn{4}{l}{Total(g)=e + f }\\
 11  & \multicolumn{6}{l}{Immobilisations } & \multicolumn{5}{l}{4'540'800.00 } & \multicolumn{4}{l}{1'878'720.00 } & \multicolumn{4}{l}{6'419'520.00 }\\
 12  & \multicolumn{6}{l}{Marchandises } & \multicolumn{5}{l}{3'027'200.00 } & \multicolumn{4}{l}{28'150'400.00 } & \multicolumn{4}{l}{31'177'600.00 }\\
-13  & \multicolumn{6}{l}{Matières premières } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{22'400.00 } & \multicolumn{4}{l}{22'400.00 }\\
-14  & \multicolumn{6}{l}{Autres biens et services } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{613'920.00 } & \multicolumn{4}{l}{613'920.00 }\\
+13  & \multicolumn{6}{l}{Matières premières } & \multicolumn{5}{l}{0.00 } & \multicolumn{4}{l}{22'400.00 } & \multicolumn{4}{l}{22'400.00 }\\
+14  & \multicolumn{6}{l}{Autres biens et services } & \multicolumn{5}{l}{0.00 } & \multicolumn{4}{l}{613'920.00 } & \multicolumn{4}{l}{613'920.00 }\\
 15  & \multicolumn{6}{l}{Total TVA déductible (g11+g12+g13+g14) } & \multicolumn{5}{l}{7'568'000.00 } & \multicolumn{4}{l}{30'665'440.00 } & \multicolumn{4}{l}{38'233'440.00 }\\
 16  & \multicolumn{6}{l}{Report de crédit du mois précédent (déclaration précédente, ligne 24) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{219'200.00 }\\
 17  & \multicolumn{6}{l}{Montant de la TVA déductible (g15+g16) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{38'452'640.00 }\\
 \multicolumn{7}{l}{V. RÉGULARISATIONS (7) } & \multicolumn{10}{l}{h } & \multicolumn{3}{l}{}\\
 18  & \multicolumn{6}{l}{Reversement de TVA } & \multicolumn{5}{l}{409'600.00 } & \multicolumn{5}{l}{}\\
 19  & \multicolumn{6}{l}{Complément de déduction } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{6'400.00 }\\
-20  & \multicolumn{6}{l}{TVA retenue à la source par les entreprises minières } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
-21  & \multicolumn{6}{l}{Récupération de la TVA déductible sur marchés publics à financement extérieur } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+20  & \multicolumn{6}{l}{TVA retenue à la source par les entreprises minières } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{0.00 }\\
+21  & \multicolumn{6}{l}{Récupération de la TVA déductible sur marchés publics à financement extérieur } & \multicolumn{5}{l}{0.00 } & \multicolumn{5}{l}{}\\
 \multicolumn{20}{l}{  }\\
 \multicolumn{7}{l}{VI. CALCUL DE L'IMPÔT (8) } & \multicolumn{10}{l}{i }\\
 22  & \multicolumn{6}{l}{TVA nette à verser (b9+d10+h18-g17-h19-h20-b5) } & \multicolumn{5}{l}{10'926'080.00 } & \multicolumn{5}{l}{}\\
-23  & \multicolumn{6}{l}{Crédit de TVA (g17+h19+h20+b5-b9-d10-h18) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+23  & \multicolumn{6}{l}{Crédit de TVA (g17+h19+h20+b5-b9-d10-h18) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{0.00 }\\
 24  & \multicolumn{6}{l}{Remboursement de crédit de TVA demandé (montant figurant sur la demande de remboursement) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 25  & \multicolumn{6}{l}{Crédit de TVA reportable (i23-i24) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
-26  & \multicolumn{6}{l}{TVA sur marchés publics à financement extérieur (case b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+26  & \multicolumn{6}{l}{TVA sur marchés publics à financement extérieur (case b5) } & \multicolumn{5}{l}{0.00 } & \multicolumn{5}{l}{}\\
 27  & \multicolumn{6}{l}{TVA POUR COMPTE DES TIERS } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 28  & \multicolumn{6}{l}{MONTANT À PAYER (i22+i26+i27) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 \multicolumn{7}{l}{MODE DE PAIEMENT (9) } & \multicolumn{13}{l}{  }\\
@@ -87,7 +87,7 @@ Mois de (2): DÉCEMBRE \\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l }
 \multicolumn{4}{l}{}\\
-\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 24/07/2020 \\
+\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 28/04/2023 \\
 \multicolumn{4}{l}{Déclaré conforme à nos écritures, }\\
 Sceau de l'entreprise  & \multicolumn{2}{l}{Nom et qualité du signataire (10) } & Signature \\
 \multicolumn{4}{l}{}\\
@@ -130,11 +130,11 @@ Mois de (2): JUIN \\
 1  & \multicolumn{7}{l}{Livraisons de biens } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{303'610'000.00 } & \multicolumn{4}{l}{48'577'600.00 }\\
 2  & \multicolumn{7}{l}{Prestations de services } & \multicolumn{4}{l}{1'500'000.00 } & \multicolumn{4}{l}{1'500'000.00 } & \multicolumn{4}{l}{240'000.00 }\\
 3  & \multicolumn{7}{l}{Livraisons de biens à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{187'000.00 } & \multicolumn{4}{l}{29'920.00 }\\
-4  & \multicolumn{7}{l}{Prestations de services à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-5  & \multicolumn{7}{l}{Opérations afférentes aux marchés publics à financement extérieur } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+4  & \multicolumn{7}{l}{Prestations de services à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
+5  & \multicolumn{7}{l}{Opérations afférentes aux marchés publics à financement extérieur } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
 6  & \multicolumn{7}{l}{Exportations et opérations assimilées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{8'750'000.00 } & \multicolumn{4}{l}{}\\
 7  & \multicolumn{7}{l}{Opérations exonérées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{20'000'000.00 } & \multicolumn{4}{l}{}\\
-8  & \multicolumn{7}{l}{Opérations non imposables } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+8  & \multicolumn{7}{l}{Opérations non imposables } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{}\\
 9  & \multicolumn{7}{l}{Total } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{334'047'000.00 } & \multicolumn{4}{l}{48'847'520.00 }\\
 \multicolumn{20}{l}{  }\\
 \multicolumn{12}{l}{III. PRESTATIONS REÇUES DES PRESTATAIRES NON ÉTABLIS EN RDC } & \multicolumn{4}{l}{Montant des factures (c) } & \multicolumn{4}{l}{TVA Collectée(d)=c * 16\% }\\
@@ -144,23 +144,23 @@ Mois de (2): JUIN \\
 \multicolumn{7}{l}{IV. DÉDUCTIONS/Taxe déductible sur:(6) } & \multicolumn{5}{l}{Importations (e) } & \multicolumn{4}{l}{Local (f) } & \multicolumn{4}{l}{Total(g)=e + f }\\
 11  & \multicolumn{6}{l}{Immobilisations } & \multicolumn{5}{l}{4'540'800.00 } & \multicolumn{4}{l}{1'878'720.00 } & \multicolumn{4}{l}{6'419'520.00 }\\
 12  & \multicolumn{6}{l}{Marchandises } & \multicolumn{5}{l}{3'027'200.00 } & \multicolumn{4}{l}{28'070'400.00 } & \multicolumn{4}{l}{31'097'600.00 }\\
-13  & \multicolumn{6}{l}{Matières premières } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{22'400.00 } & \multicolumn{4}{l}{22'400.00 }\\
-14  & \multicolumn{6}{l}{Autres biens et services } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{556'320.00 } & \multicolumn{4}{l}{556'320.00 }\\
+13  & \multicolumn{6}{l}{Matières premières } & \multicolumn{5}{l}{0.00 } & \multicolumn{4}{l}{22'400.00 } & \multicolumn{4}{l}{22'400.00 }\\
+14  & \multicolumn{6}{l}{Autres biens et services } & \multicolumn{5}{l}{0.00 } & \multicolumn{4}{l}{556'320.00 } & \multicolumn{4}{l}{556'320.00 }\\
 15  & \multicolumn{6}{l}{Total TVA déductible (g11+g12+g13+g14) } & \multicolumn{5}{l}{7'568'000.00 } & \multicolumn{4}{l}{30'527'840.00 } & \multicolumn{4}{l}{38'095'840.00 }\\
 16  & \multicolumn{6}{l}{Report de crédit du mois précédent (déclaration précédente, ligne 24) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{219'200.00 }\\
 17  & \multicolumn{6}{l}{Montant de la TVA déductible (g15+g16) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{38'315'040.00 }\\
 \multicolumn{7}{l}{V. RÉGULARISATIONS (7) } & \multicolumn{10}{l}{h } & \multicolumn{3}{l}{}\\
 18  & \multicolumn{6}{l}{Reversement de TVA } & \multicolumn{5}{l}{409'600.00 } & \multicolumn{5}{l}{}\\
 19  & \multicolumn{6}{l}{Complément de déduction } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{6'400.00 }\\
-20  & \multicolumn{6}{l}{TVA retenue à la source par les entreprises minières } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
-21  & \multicolumn{6}{l}{Récupération de la TVA déductible sur marchés publics à financement extérieur } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+20  & \multicolumn{6}{l}{TVA retenue à la source par les entreprises minières } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{0.00 }\\
+21  & \multicolumn{6}{l}{Récupération de la TVA déductible sur marchés publics à financement extérieur } & \multicolumn{5}{l}{0.00 } & \multicolumn{5}{l}{}\\
 \multicolumn{20}{l}{  }\\
 \multicolumn{7}{l}{VI. CALCUL DE L'IMPÔT (8) } & \multicolumn{10}{l}{i }\\
 22  & \multicolumn{6}{l}{TVA nette à verser (b9+d10+h18-g17-h19-h20-b5) } & \multicolumn{5}{l}{10'935'680.00 } & \multicolumn{5}{l}{}\\
-23  & \multicolumn{6}{l}{Crédit de TVA (g17+h19+h20+b5-b9-d10-h18) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+23  & \multicolumn{6}{l}{Crédit de TVA (g17+h19+h20+b5-b9-d10-h18) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{0.00 }\\
 24  & \multicolumn{6}{l}{Remboursement de crédit de TVA demandé (montant figurant sur la demande de remboursement) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 25  & \multicolumn{6}{l}{Crédit de TVA reportable (i23-i24) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
-26  & \multicolumn{6}{l}{TVA sur marchés publics à financement extérieur (case b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+26  & \multicolumn{6}{l}{TVA sur marchés publics à financement extérieur (case b5) } & \multicolumn{5}{l}{0.00 } & \multicolumn{5}{l}{}\\
 27  & \multicolumn{6}{l}{TVA POUR COMPTE DES TIERS } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 28  & \multicolumn{6}{l}{MONTANT À PAYER (i22+i26+i27) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 \multicolumn{7}{l}{MODE DE PAIEMENT (9) } & \multicolumn{13}{l}{  }\\
@@ -168,7 +168,7 @@ Mois de (2): JUIN \\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l }
 \multicolumn{4}{l}{}\\
-\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 24/07/2020 \\
+\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 28/04/2023 \\
 \multicolumn{4}{l}{Déclaré conforme à nos écritures, }\\
 Sceau de l'entreprise  & \multicolumn{2}{l}{Nom et qualité du signataire (10) } & Signature \\
 \multicolumn{4}{l}{}\\
@@ -209,13 +209,13 @@ Mois de (2): DÉCEMBRE \\
 \multicolumn{20}{l}{  }\\
 \multicolumn{8}{l}{II. OPÉRATIONS RÉALISÉES (4) } & \multicolumn{4}{l}{Chiffre d'affaires réalisé du mois* } & \multicolumn{4}{l}{Chiffre d'affaires imposable du mois (a) } & \multicolumn{4}{l}{TVA Collectée(b)=a * 16\% }\\
 1  & \multicolumn{7}{l}{Livraisons de biens } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{800'000.00 } & \multicolumn{4}{l}{128'000.00 }\\
-2  & \multicolumn{7}{l}{Prestations de services } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-3  & \multicolumn{7}{l}{Livraisons de biens à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-4  & \multicolumn{7}{l}{Prestations de services à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-5  & \multicolumn{7}{l}{Opérations afférentes aux marchés publics à financement extérieur } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-6  & \multicolumn{7}{l}{Exportations et opérations assimilées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-7  & \multicolumn{7}{l}{Opérations exonérées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-8  & \multicolumn{7}{l}{Opérations non imposables } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+2  & \multicolumn{7}{l}{Prestations de services } & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
+3  & \multicolumn{7}{l}{Livraisons de biens à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
+4  & \multicolumn{7}{l}{Prestations de services à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
+5  & \multicolumn{7}{l}{Opérations afférentes aux marchés publics à financement extérieur } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
+6  & \multicolumn{7}{l}{Exportations et opérations assimilées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{}\\
+7  & \multicolumn{7}{l}{Opérations exonérées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{}\\
+8  & \multicolumn{7}{l}{Opérations non imposables } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{}\\
 9  & \multicolumn{7}{l}{Total } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{800'000.00 } & \multicolumn{4}{l}{128'000.00 }\\
 \multicolumn{20}{l}{  }\\
 \multicolumn{12}{l}{III. PRESTATIONS REÇUES DES PRESTATAIRES NON ÉTABLIS EN RDC } & \multicolumn{4}{l}{Montant des factures (c) } & \multicolumn{4}{l}{TVA Collectée(d)=c * 16\% }\\
@@ -223,25 +223,25 @@ Mois de (2): DÉCEMBRE \\
 \multicolumn{20}{l}{  }\\
 \multicolumn{7}{l}{Prorata(5)      :    \% } & \multicolumn{13}{l}{  }\\
 \multicolumn{7}{l}{IV. DÉDUCTIONS/Taxe déductible sur:(6) } & \multicolumn{5}{l}{Importations (e) } & \multicolumn{4}{l}{Local (f) } & \multicolumn{4}{l}{Total(g)=e + f }\\
-11  & \multicolumn{6}{l}{Immobilisations } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-12  & \multicolumn{6}{l}{Marchandises } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{80'000.00 } & \multicolumn{4}{l}{80'000.00 }\\
-13  & \multicolumn{6}{l}{Matières premières } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-14  & \multicolumn{6}{l}{Autres biens et services } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{57'600.00 } & \multicolumn{4}{l}{57'600.00 }\\
-15  & \multicolumn{6}{l}{Total TVA déductible (g11+g12+g13+g14) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{137'600.00 } & \multicolumn{4}{l}{137'600.00 }\\
+11  & \multicolumn{6}{l}{Immobilisations } & \multicolumn{5}{l}{0.00 } & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
+12  & \multicolumn{6}{l}{Marchandises } & \multicolumn{5}{l}{0.00 } & \multicolumn{4}{l}{80'000.00 } & \multicolumn{4}{l}{80'000.00 }\\
+13  & \multicolumn{6}{l}{Matières premières } & \multicolumn{5}{l}{0.00 } & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
+14  & \multicolumn{6}{l}{Autres biens et services } & \multicolumn{5}{l}{0.00 } & \multicolumn{4}{l}{57'600.00 } & \multicolumn{4}{l}{57'600.00 }\\
+15  & \multicolumn{6}{l}{Total TVA déductible (g11+g12+g13+g14) } & \multicolumn{5}{l}{0.00 } & \multicolumn{4}{l}{137'600.00 } & \multicolumn{4}{l}{137'600.00 }\\
 16  & \multicolumn{6}{l}{Report de crédit du mois précédent (déclaration précédente, ligne 24) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{219'200.00 }\\
 17  & \multicolumn{6}{l}{Montant de la TVA déductible (g15+g16) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{356'800.00 }\\
 \multicolumn{7}{l}{V. RÉGULARISATIONS (7) } & \multicolumn{10}{l}{h } & \multicolumn{3}{l}{}\\
-18  & \multicolumn{6}{l}{Reversement de TVA } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
-19  & \multicolumn{6}{l}{Complément de déduction } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
-20  & \multicolumn{6}{l}{TVA retenue à la source par les entreprises minières } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
-21  & \multicolumn{6}{l}{Récupération de la TVA déductible sur marchés publics à financement extérieur } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+18  & \multicolumn{6}{l}{Reversement de TVA } & \multicolumn{5}{l}{0.00 } & \multicolumn{5}{l}{}\\
+19  & \multicolumn{6}{l}{Complément de déduction } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{0.00 }\\
+20  & \multicolumn{6}{l}{TVA retenue à la source par les entreprises minières } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{0.00 }\\
+21  & \multicolumn{6}{l}{Récupération de la TVA déductible sur marchés publics à financement extérieur } & \multicolumn{5}{l}{0.00 } & \multicolumn{5}{l}{}\\
 \multicolumn{20}{l}{  }\\
 \multicolumn{7}{l}{VI. CALCUL DE L'IMPÔT (8) } & \multicolumn{10}{l}{i }\\
-22  & \multicolumn{6}{l}{TVA nette à verser (b9+d10+h18-g17-h19-h20-b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+22  & \multicolumn{6}{l}{TVA nette à verser (b9+d10+h18-g17-h19-h20-b5) } & \multicolumn{5}{l}{0.00 } & \multicolumn{5}{l}{}\\
 23  & \multicolumn{6}{l}{Crédit de TVA (g17+h19+h20+b5-b9-d10-h18) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{228'800.00 }\\
 24  & \multicolumn{6}{l}{Remboursement de crédit de TVA demandé (montant figurant sur la demande de remboursement) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 25  & \multicolumn{6}{l}{Crédit de TVA reportable (i23-i24) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
-26  & \multicolumn{6}{l}{TVA sur marchés publics à financement extérieur (case b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+26  & \multicolumn{6}{l}{TVA sur marchés publics à financement extérieur (case b5) } & \multicolumn{5}{l}{0.00 } & \multicolumn{5}{l}{}\\
 27  & \multicolumn{6}{l}{TVA POUR COMPTE DES TIERS } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 28  & \multicolumn{6}{l}{MONTANT À PAYER (i22+i26+i27) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 \multicolumn{7}{l}{MODE DE PAIEMENT (9) } & \multicolumn{13}{l}{  }\\
@@ -249,7 +249,7 @@ Mois de (2): DÉCEMBRE \\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l }
 \multicolumn{4}{l}{}\\
-\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 24/07/2020 \\
+\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 28/04/2023 \\
 \multicolumn{4}{l}{Déclaré conforme à nos écritures, }\\
 Sceau de l'entreprise  & \multicolumn{2}{l}{Nom et qualité du signataire (10) } & Signature \\
 \multicolumn{4}{l}{}\\
@@ -292,11 +292,11 @@ Mois de (2): MARS \\
 1  & \multicolumn{7}{l}{Livraisons de biens } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{303'610'000.00 } & \multicolumn{4}{l}{48'577'600.00 }\\
 2  & \multicolumn{7}{l}{Prestations de services } & \multicolumn{4}{l}{1'500'000.00 } & \multicolumn{4}{l}{1'500'000.00 } & \multicolumn{4}{l}{240'000.00 }\\
 3  & \multicolumn{7}{l}{Livraisons de biens à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{187'000.00 } & \multicolumn{4}{l}{29'920.00 }\\
-4  & \multicolumn{7}{l}{Prestations de services à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-5  & \multicolumn{7}{l}{Opérations afférentes aux marchés publics à financement extérieur } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+4  & \multicolumn{7}{l}{Prestations de services à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
+5  & \multicolumn{7}{l}{Opérations afférentes aux marchés publics à financement extérieur } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
 6  & \multicolumn{7}{l}{Exportations et opérations assimilées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{8'750'000.00 } & \multicolumn{4}{l}{}\\
 7  & \multicolumn{7}{l}{Opérations exonérées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{20'000'000.00 } & \multicolumn{4}{l}{}\\
-8  & \multicolumn{7}{l}{Opérations non imposables } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+8  & \multicolumn{7}{l}{Opérations non imposables } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{}\\
 9  & \multicolumn{7}{l}{Total } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{334'047'000.00 } & \multicolumn{4}{l}{48'847'520.00 }\\
 \multicolumn{20}{l}{  }\\
 \multicolumn{12}{l}{III. PRESTATIONS REÇUES DES PRESTATAIRES NON ÉTABLIS EN RDC } & \multicolumn{4}{l}{Montant des factures (c) } & \multicolumn{4}{l}{TVA Collectée(d)=c * 16\% }\\
@@ -306,23 +306,23 @@ Mois de (2): MARS \\
 \multicolumn{7}{l}{IV. DÉDUCTIONS/Taxe déductible sur:(6) } & \multicolumn{5}{l}{Importations (e) } & \multicolumn{4}{l}{Local (f) } & \multicolumn{4}{l}{Total(g)=e + f }\\
 11  & \multicolumn{6}{l}{Immobilisations } & \multicolumn{5}{l}{4'540'800.00 } & \multicolumn{4}{l}{1'878'720.00 } & \multicolumn{4}{l}{6'419'520.00 }\\
 12  & \multicolumn{6}{l}{Marchandises } & \multicolumn{5}{l}{3'027'200.00 } & \multicolumn{4}{l}{27'926'400.00 } & \multicolumn{4}{l}{30'953'600.00 }\\
-13  & \multicolumn{6}{l}{Matières premières } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{16'000.00 } & \multicolumn{4}{l}{16'000.00 }\\
-14  & \multicolumn{6}{l}{Autres biens et services } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{501'920.00 } & \multicolumn{4}{l}{501'920.00 }\\
+13  & \multicolumn{6}{l}{Matières premières } & \multicolumn{5}{l}{0.00 } & \multicolumn{4}{l}{16'000.00 } & \multicolumn{4}{l}{16'000.00 }\\
+14  & \multicolumn{6}{l}{Autres biens et services } & \multicolumn{5}{l}{0.00 } & \multicolumn{4}{l}{501'920.00 } & \multicolumn{4}{l}{501'920.00 }\\
 15  & \multicolumn{6}{l}{Total TVA déductible (g11+g12+g13+g14) } & \multicolumn{5}{l}{7'568'000.00 } & \multicolumn{4}{l}{30'323'040.00 } & \multicolumn{4}{l}{37'891'040.00 }\\
 16  & \multicolumn{6}{l}{Report de crédit du mois précédent (déclaration précédente, ligne 24) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{219'200.00 }\\
 17  & \multicolumn{6}{l}{Montant de la TVA déductible (g15+g16) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{38'110'240.00 }\\
 \multicolumn{7}{l}{V. RÉGULARISATIONS (7) } & \multicolumn{10}{l}{h } & \multicolumn{3}{l}{}\\
 18  & \multicolumn{6}{l}{Reversement de TVA } & \multicolumn{5}{l}{409'600.00 } & \multicolumn{5}{l}{}\\
 19  & \multicolumn{6}{l}{Complément de déduction } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{6'400.00 }\\
-20  & \multicolumn{6}{l}{TVA retenue à la source par les entreprises minières } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
-21  & \multicolumn{6}{l}{Récupération de la TVA déductible sur marchés publics à financement extérieur } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+20  & \multicolumn{6}{l}{TVA retenue à la source par les entreprises minières } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{0.00 }\\
+21  & \multicolumn{6}{l}{Récupération de la TVA déductible sur marchés publics à financement extérieur } & \multicolumn{5}{l}{0.00 } & \multicolumn{5}{l}{}\\
 \multicolumn{20}{l}{  }\\
 \multicolumn{7}{l}{VI. CALCUL DE L'IMPÔT (8) } & \multicolumn{10}{l}{i }\\
 22  & \multicolumn{6}{l}{TVA nette à verser (b9+d10+h18-g17-h19-h20-b5) } & \multicolumn{5}{l}{11'140'480.00 } & \multicolumn{5}{l}{}\\
-23  & \multicolumn{6}{l}{Crédit de TVA (g17+h19+h20+b5-b9-d10-h18) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+23  & \multicolumn{6}{l}{Crédit de TVA (g17+h19+h20+b5-b9-d10-h18) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{0.00 }\\
 24  & \multicolumn{6}{l}{Remboursement de crédit de TVA demandé (montant figurant sur la demande de remboursement) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 25  & \multicolumn{6}{l}{Crédit de TVA reportable (i23-i24) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
-26  & \multicolumn{6}{l}{TVA sur marchés publics à financement extérieur (case b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+26  & \multicolumn{6}{l}{TVA sur marchés publics à financement extérieur (case b5) } & \multicolumn{5}{l}{0.00 } & \multicolumn{5}{l}{}\\
 27  & \multicolumn{6}{l}{TVA POUR COMPTE DES TIERS } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 28  & \multicolumn{6}{l}{MONTANT À PAYER (i22+i26+i27) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 \multicolumn{7}{l}{MODE DE PAIEMENT (9) } & \multicolumn{13}{l}{  }\\
@@ -330,7 +330,7 @@ Mois de (2): MARS \\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l }
 \multicolumn{4}{l}{}\\
-\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 24/07/2020 \\
+\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 28/04/2023 \\
 \multicolumn{4}{l}{Déclaré conforme à nos écritures, }\\
 Sceau de l'entreprise  & \multicolumn{2}{l}{Nom et qualité du signataire (10) } & Signature \\
 \multicolumn{4}{l}{}\\
@@ -370,40 +370,40 @@ Mois de (2): JUIN \\
 \multicolumn{8}{l}{RD Congo } & \multicolumn{3}{l}{E-mail: } & \multicolumn{9}{l}{ddrkinano1@gmail.com }\\
 \multicolumn{20}{l}{  }\\
 \multicolumn{8}{l}{II. OPÉRATIONS RÉALISÉES (4) } & \multicolumn{4}{l}{Chiffre d'affaires réalisé du mois* } & \multicolumn{4}{l}{Chiffre d'affaires imposable du mois (a) } & \multicolumn{4}{l}{TVA Collectée(b)=a * 16\% }\\
-1  & \multicolumn{7}{l}{Livraisons de biens } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-2  & \multicolumn{7}{l}{Prestations de services } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-3  & \multicolumn{7}{l}{Livraisons de biens à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-4  & \multicolumn{7}{l}{Prestations de services à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-5  & \multicolumn{7}{l}{Opérations afférentes aux marchés publics à financement extérieur } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-6  & \multicolumn{7}{l}{Exportations et opérations assimilées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-7  & \multicolumn{7}{l}{Opérations exonérées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-8  & \multicolumn{7}{l}{Opérations non imposables } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-9  & \multicolumn{7}{l}{Total } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+1  & \multicolumn{7}{l}{Livraisons de biens } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
+2  & \multicolumn{7}{l}{Prestations de services } & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
+3  & \multicolumn{7}{l}{Livraisons de biens à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
+4  & \multicolumn{7}{l}{Prestations de services à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
+5  & \multicolumn{7}{l}{Opérations afférentes aux marchés publics à financement extérieur } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
+6  & \multicolumn{7}{l}{Exportations et opérations assimilées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{}\\
+7  & \multicolumn{7}{l}{Opérations exonérées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{}\\
+8  & \multicolumn{7}{l}{Opérations non imposables } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{}\\
+9  & \multicolumn{7}{l}{Total } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
 \multicolumn{20}{l}{  }\\
 \multicolumn{12}{l}{III. PRESTATIONS REÇUES DES PRESTATAIRES NON ÉTABLIS EN RDC } & \multicolumn{4}{l}{Montant des factures (c) } & \multicolumn{4}{l}{TVA Collectée(d)=c * 16\% }\\
 10  & \multicolumn{11}{l}{Prestations reçues des prestataires non établis en RDC } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
 \multicolumn{20}{l}{  }\\
 \multicolumn{7}{l}{Prorata(5)      :    \% } & \multicolumn{13}{l}{  }\\
 \multicolumn{7}{l}{IV. DÉDUCTIONS/Taxe déductible sur:(6) } & \multicolumn{5}{l}{Importations (e) } & \multicolumn{4}{l}{Local (f) } & \multicolumn{4}{l}{Total(g)=e + f }\\
-11  & \multicolumn{6}{l}{Immobilisations } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-12  & \multicolumn{6}{l}{Marchandises } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{144'000.00 } & \multicolumn{4}{l}{144'000.00 }\\
-13  & \multicolumn{6}{l}{Matières premières } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{6'400.00 } & \multicolumn{4}{l}{6'400.00 }\\
-14  & \multicolumn{6}{l}{Autres biens et services } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{54'400.00 } & \multicolumn{4}{l}{54'400.00 }\\
-15  & \multicolumn{6}{l}{Total TVA déductible (g11+g12+g13+g14) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{204'800.00 } & \multicolumn{4}{l}{204'800.00 }\\
+11  & \multicolumn{6}{l}{Immobilisations } & \multicolumn{5}{l}{0.00 } & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
+12  & \multicolumn{6}{l}{Marchandises } & \multicolumn{5}{l}{0.00 } & \multicolumn{4}{l}{144'000.00 } & \multicolumn{4}{l}{144'000.00 }\\
+13  & \multicolumn{6}{l}{Matières premières } & \multicolumn{5}{l}{0.00 } & \multicolumn{4}{l}{6'400.00 } & \multicolumn{4}{l}{6'400.00 }\\
+14  & \multicolumn{6}{l}{Autres biens et services } & \multicolumn{5}{l}{0.00 } & \multicolumn{4}{l}{54'400.00 } & \multicolumn{4}{l}{54'400.00 }\\
+15  & \multicolumn{6}{l}{Total TVA déductible (g11+g12+g13+g14) } & \multicolumn{5}{l}{0.00 } & \multicolumn{4}{l}{204'800.00 } & \multicolumn{4}{l}{204'800.00 }\\
 16  & \multicolumn{6}{l}{Report de crédit du mois précédent (déclaration précédente, ligne 24) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{219'200.00 }\\
 17  & \multicolumn{6}{l}{Montant de la TVA déductible (g15+g16) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{424'000.00 }\\
 \multicolumn{7}{l}{V. RÉGULARISATIONS (7) } & \multicolumn{10}{l}{h } & \multicolumn{3}{l}{}\\
-18  & \multicolumn{6}{l}{Reversement de TVA } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
-19  & \multicolumn{6}{l}{Complément de déduction } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
-20  & \multicolumn{6}{l}{TVA retenue à la source par les entreprises minières } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
-21  & \multicolumn{6}{l}{Récupération de la TVA déductible sur marchés publics à financement extérieur } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+18  & \multicolumn{6}{l}{Reversement de TVA } & \multicolumn{5}{l}{0.00 } & \multicolumn{5}{l}{}\\
+19  & \multicolumn{6}{l}{Complément de déduction } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{0.00 }\\
+20  & \multicolumn{6}{l}{TVA retenue à la source par les entreprises minières } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{0.00 }\\
+21  & \multicolumn{6}{l}{Récupération de la TVA déductible sur marchés publics à financement extérieur } & \multicolumn{5}{l}{0.00 } & \multicolumn{5}{l}{}\\
 \multicolumn{20}{l}{  }\\
 \multicolumn{7}{l}{VI. CALCUL DE L'IMPÔT (8) } & \multicolumn{10}{l}{i }\\
-22  & \multicolumn{6}{l}{TVA nette à verser (b9+d10+h18-g17-h19-h20-b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+22  & \multicolumn{6}{l}{TVA nette à verser (b9+d10+h18-g17-h19-h20-b5) } & \multicolumn{5}{l}{0.00 } & \multicolumn{5}{l}{}\\
 23  & \multicolumn{6}{l}{Crédit de TVA (g17+h19+h20+b5-b9-d10-h18) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{424'000.00 }\\
 24  & \multicolumn{6}{l}{Remboursement de crédit de TVA demandé (montant figurant sur la demande de remboursement) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 25  & \multicolumn{6}{l}{Crédit de TVA reportable (i23-i24) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
-26  & \multicolumn{6}{l}{TVA sur marchés publics à financement extérieur (case b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+26  & \multicolumn{6}{l}{TVA sur marchés publics à financement extérieur (case b5) } & \multicolumn{5}{l}{0.00 } & \multicolumn{5}{l}{}\\
 27  & \multicolumn{6}{l}{TVA POUR COMPTE DES TIERS } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 28  & \multicolumn{6}{l}{MONTANT À PAYER (i22+i26+i27) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 \multicolumn{7}{l}{MODE DE PAIEMENT (9) } & \multicolumn{13}{l}{  }\\
@@ -411,7 +411,7 @@ Mois de (2): JUIN \\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l }
 \multicolumn{4}{l}{}\\
-\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 24/07/2020 \\
+\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 28/04/2023 \\
 \multicolumn{4}{l}{Déclaré conforme à nos écritures, }\\
 Sceau de l'entreprise  & \multicolumn{2}{l}{Nom et qualité du signataire (10) } & Signature \\
 \multicolumn{4}{l}{}\\
@@ -452,13 +452,13 @@ Mois de (2): SEPTEMBRE \\
 \multicolumn{20}{l}{  }\\
 \multicolumn{8}{l}{II. OPÉRATIONS RÉALISÉES (4) } & \multicolumn{4}{l}{Chiffre d'affaires réalisé du mois* } & \multicolumn{4}{l}{Chiffre d'affaires imposable du mois (a) } & \multicolumn{4}{l}{TVA Collectée(b)=a * 16\% }\\
 1  & \multicolumn{7}{l}{Livraisons de biens } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{800'000.00 } & \multicolumn{4}{l}{128'000.00 }\\
-2  & \multicolumn{7}{l}{Prestations de services } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-3  & \multicolumn{7}{l}{Livraisons de biens à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-4  & \multicolumn{7}{l}{Prestations de services à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-5  & \multicolumn{7}{l}{Opérations afférentes aux marchés publics à financement extérieur } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-6  & \multicolumn{7}{l}{Exportations et opérations assimilées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-7  & \multicolumn{7}{l}{Opérations exonérées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-8  & \multicolumn{7}{l}{Opérations non imposables } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+2  & \multicolumn{7}{l}{Prestations de services } & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
+3  & \multicolumn{7}{l}{Livraisons de biens à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
+4  & \multicolumn{7}{l}{Prestations de services à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
+5  & \multicolumn{7}{l}{Opérations afférentes aux marchés publics à financement extérieur } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
+6  & \multicolumn{7}{l}{Exportations et opérations assimilées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{}\\
+7  & \multicolumn{7}{l}{Opérations exonérées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{}\\
+8  & \multicolumn{7}{l}{Opérations non imposables } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{}\\
 9  & \multicolumn{7}{l}{Total } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{800'000.00 } & \multicolumn{4}{l}{128'000.00 }\\
 \multicolumn{20}{l}{  }\\
 \multicolumn{12}{l}{III. PRESTATIONS REÇUES DES PRESTATAIRES NON ÉTABLIS EN RDC } & \multicolumn{4}{l}{Montant des factures (c) } & \multicolumn{4}{l}{TVA Collectée(d)=c * 16\% }\\
@@ -466,25 +466,25 @@ Mois de (2): SEPTEMBRE \\
 \multicolumn{20}{l}{  }\\
 \multicolumn{7}{l}{Prorata(5)      :    \% } & \multicolumn{13}{l}{  }\\
 \multicolumn{7}{l}{IV. DÉDUCTIONS/Taxe déductible sur:(6) } & \multicolumn{5}{l}{Importations (e) } & \multicolumn{4}{l}{Local (f) } & \multicolumn{4}{l}{Total(g)=e + f }\\
-11  & \multicolumn{6}{l}{Immobilisations } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-12  & \multicolumn{6}{l}{Marchandises } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{80'000.00 } & \multicolumn{4}{l}{80'000.00 }\\
-13  & \multicolumn{6}{l}{Matières premières } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-14  & \multicolumn{6}{l}{Autres biens et services } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-15  & \multicolumn{6}{l}{Total TVA déductible (g11+g12+g13+g14) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{80'000.00 } & \multicolumn{4}{l}{80'000.00 }\\
+11  & \multicolumn{6}{l}{Immobilisations } & \multicolumn{5}{l}{0.00 } & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
+12  & \multicolumn{6}{l}{Marchandises } & \multicolumn{5}{l}{0.00 } & \multicolumn{4}{l}{80'000.00 } & \multicolumn{4}{l}{80'000.00 }\\
+13  & \multicolumn{6}{l}{Matières premières } & \multicolumn{5}{l}{0.00 } & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
+14  & \multicolumn{6}{l}{Autres biens et services } & \multicolumn{5}{l}{0.00 } & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
+15  & \multicolumn{6}{l}{Total TVA déductible (g11+g12+g13+g14) } & \multicolumn{5}{l}{0.00 } & \multicolumn{4}{l}{80'000.00 } & \multicolumn{4}{l}{80'000.00 }\\
 16  & \multicolumn{6}{l}{Report de crédit du mois précédent (déclaration précédente, ligne 24) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{219'200.00 }\\
 17  & \multicolumn{6}{l}{Montant de la TVA déductible (g15+g16) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{299'200.00 }\\
 \multicolumn{7}{l}{V. RÉGULARISATIONS (7) } & \multicolumn{10}{l}{h } & \multicolumn{3}{l}{}\\
-18  & \multicolumn{6}{l}{Reversement de TVA } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
-19  & \multicolumn{6}{l}{Complément de déduction } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
-20  & \multicolumn{6}{l}{TVA retenue à la source par les entreprises minières } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
-21  & \multicolumn{6}{l}{Récupération de la TVA déductible sur marchés publics à financement extérieur } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+18  & \multicolumn{6}{l}{Reversement de TVA } & \multicolumn{5}{l}{0.00 } & \multicolumn{5}{l}{}\\
+19  & \multicolumn{6}{l}{Complément de déduction } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{0.00 }\\
+20  & \multicolumn{6}{l}{TVA retenue à la source par les entreprises minières } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{0.00 }\\
+21  & \multicolumn{6}{l}{Récupération de la TVA déductible sur marchés publics à financement extérieur } & \multicolumn{5}{l}{0.00 } & \multicolumn{5}{l}{}\\
 \multicolumn{20}{l}{  }\\
 \multicolumn{7}{l}{VI. CALCUL DE L'IMPÔT (8) } & \multicolumn{10}{l}{i }\\
-22  & \multicolumn{6}{l}{TVA nette à verser (b9+d10+h18-g17-h19-h20-b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+22  & \multicolumn{6}{l}{TVA nette à verser (b9+d10+h18-g17-h19-h20-b5) } & \multicolumn{5}{l}{0.00 } & \multicolumn{5}{l}{}\\
 23  & \multicolumn{6}{l}{Crédit de TVA (g17+h19+h20+b5-b9-d10-h18) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{171'200.00 }\\
 24  & \multicolumn{6}{l}{Remboursement de crédit de TVA demandé (montant figurant sur la demande de remboursement) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 25  & \multicolumn{6}{l}{Crédit de TVA reportable (i23-i24) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
-26  & \multicolumn{6}{l}{TVA sur marchés publics à financement extérieur (case b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+26  & \multicolumn{6}{l}{TVA sur marchés publics à financement extérieur (case b5) } & \multicolumn{5}{l}{0.00 } & \multicolumn{5}{l}{}\\
 27  & \multicolumn{6}{l}{TVA POUR COMPTE DES TIERS } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 28  & \multicolumn{6}{l}{MONTANT À PAYER (i22+i26+i27) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 \multicolumn{7}{l}{MODE DE PAIEMENT (9) } & \multicolumn{13}{l}{  }\\
@@ -492,7 +492,7 @@ Mois de (2): SEPTEMBRE \\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l }
 \multicolumn{4}{l}{}\\
-\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 24/07/2020 \\
+\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 28/04/2023 \\
 \multicolumn{4}{l}{Déclaré conforme à nos écritures, }\\
 Sceau de l'entreprise  & \multicolumn{2}{l}{Nom et qualité du signataire (10) } & Signature \\
 \multicolumn{4}{l}{}\\
@@ -532,40 +532,40 @@ Mois de (2): DÉCEMBRE \\
 \multicolumn{8}{l}{RD Congo } & \multicolumn{3}{l}{E-mail: } & \multicolumn{9}{l}{ddrkinano1@gmail.com }\\
 \multicolumn{20}{l}{  }\\
 \multicolumn{8}{l}{II. OPÉRATIONS RÉALISÉES (4) } & \multicolumn{4}{l}{Chiffre d'affaires réalisé du mois* } & \multicolumn{4}{l}{Chiffre d'affaires imposable du mois (a) } & \multicolumn{4}{l}{TVA Collectée(b)=a * 16\% }\\
-1  & \multicolumn{7}{l}{Livraisons de biens } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-2  & \multicolumn{7}{l}{Prestations de services } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-3  & \multicolumn{7}{l}{Livraisons de biens à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-4  & \multicolumn{7}{l}{Prestations de services à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-5  & \multicolumn{7}{l}{Opérations afférentes aux marchés publics à financement extérieur } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-6  & \multicolumn{7}{l}{Exportations et opérations assimilées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-7  & \multicolumn{7}{l}{Opérations exonérées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-8  & \multicolumn{7}{l}{Opérations non imposables } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-9  & \multicolumn{7}{l}{Total } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+1  & \multicolumn{7}{l}{Livraisons de biens } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
+2  & \multicolumn{7}{l}{Prestations de services } & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
+3  & \multicolumn{7}{l}{Livraisons de biens à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
+4  & \multicolumn{7}{l}{Prestations de services à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
+5  & \multicolumn{7}{l}{Opérations afférentes aux marchés publics à financement extérieur } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
+6  & \multicolumn{7}{l}{Exportations et opérations assimilées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{}\\
+7  & \multicolumn{7}{l}{Opérations exonérées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{}\\
+8  & \multicolumn{7}{l}{Opérations non imposables } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{}\\
+9  & \multicolumn{7}{l}{Total } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
 \multicolumn{20}{l}{  }\\
 \multicolumn{12}{l}{III. PRESTATIONS REÇUES DES PRESTATAIRES NON ÉTABLIS EN RDC } & \multicolumn{4}{l}{Montant des factures (c) } & \multicolumn{4}{l}{TVA Collectée(d)=c * 16\% }\\
 10  & \multicolumn{11}{l}{Prestations reçues des prestataires non établis en RDC } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
 \multicolumn{20}{l}{  }\\
 \multicolumn{7}{l}{Prorata(5)      :    \% } & \multicolumn{13}{l}{  }\\
 \multicolumn{7}{l}{IV. DÉDUCTIONS/Taxe déductible sur:(6) } & \multicolumn{5}{l}{Importations (e) } & \multicolumn{4}{l}{Local (f) } & \multicolumn{4}{l}{Total(g)=e + f }\\
-11  & \multicolumn{6}{l}{Immobilisations } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-12  & \multicolumn{6}{l}{Marchandises } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-13  & \multicolumn{6}{l}{Matières premières } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
-14  & \multicolumn{6}{l}{Autres biens et services } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{57'600.00 } & \multicolumn{4}{l}{57'600.00 }\\
-15  & \multicolumn{6}{l}{Total TVA déductible (g11+g12+g13+g14) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{57'600.00 } & \multicolumn{4}{l}{57'600.00 }\\
+11  & \multicolumn{6}{l}{Immobilisations } & \multicolumn{5}{l}{0.00 } & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
+12  & \multicolumn{6}{l}{Marchandises } & \multicolumn{5}{l}{0.00 } & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
+13  & \multicolumn{6}{l}{Matières premières } & \multicolumn{5}{l}{0.00 } & \multicolumn{4}{l}{0.00 } & \multicolumn{4}{l}{0.00 }\\
+14  & \multicolumn{6}{l}{Autres biens et services } & \multicolumn{5}{l}{0.00 } & \multicolumn{4}{l}{57'600.00 } & \multicolumn{4}{l}{57'600.00 }\\
+15  & \multicolumn{6}{l}{Total TVA déductible (g11+g12+g13+g14) } & \multicolumn{5}{l}{0.00 } & \multicolumn{4}{l}{57'600.00 } & \multicolumn{4}{l}{57'600.00 }\\
 16  & \multicolumn{6}{l}{Report de crédit du mois précédent (déclaration précédente, ligne 24) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{219'200.00 }\\
 17  & \multicolumn{6}{l}{Montant de la TVA déductible (g15+g16) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{276'800.00 }\\
 \multicolumn{7}{l}{V. RÉGULARISATIONS (7) } & \multicolumn{10}{l}{h } & \multicolumn{3}{l}{}\\
-18  & \multicolumn{6}{l}{Reversement de TVA } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
-19  & \multicolumn{6}{l}{Complément de déduction } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
-20  & \multicolumn{6}{l}{TVA retenue à la source par les entreprises minières } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
-21  & \multicolumn{6}{l}{Récupération de la TVA déductible sur marchés publics à financement extérieur } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+18  & \multicolumn{6}{l}{Reversement de TVA } & \multicolumn{5}{l}{0.00 } & \multicolumn{5}{l}{}\\
+19  & \multicolumn{6}{l}{Complément de déduction } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{0.00 }\\
+20  & \multicolumn{6}{l}{TVA retenue à la source par les entreprises minières } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{0.00 }\\
+21  & \multicolumn{6}{l}{Récupération de la TVA déductible sur marchés publics à financement extérieur } & \multicolumn{5}{l}{0.00 } & \multicolumn{5}{l}{}\\
 \multicolumn{20}{l}{  }\\
 \multicolumn{7}{l}{VI. CALCUL DE L'IMPÔT (8) } & \multicolumn{10}{l}{i }\\
-22  & \multicolumn{6}{l}{TVA nette à verser (b9+d10+h18-g17-h19-h20-b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+22  & \multicolumn{6}{l}{TVA nette à verser (b9+d10+h18-g17-h19-h20-b5) } & \multicolumn{5}{l}{0.00 } & \multicolumn{5}{l}{}\\
 23  & \multicolumn{6}{l}{Crédit de TVA (g17+h19+h20+b5-b9-d10-h18) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{276'800.00 }\\
 24  & \multicolumn{6}{l}{Remboursement de crédit de TVA demandé (montant figurant sur la demande de remboursement) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 25  & \multicolumn{6}{l}{Crédit de TVA reportable (i23-i24) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
-26  & \multicolumn{6}{l}{TVA sur marchés publics à financement extérieur (case b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+26  & \multicolumn{6}{l}{TVA sur marchés publics à financement extérieur (case b5) } & \multicolumn{5}{l}{0.00 } & \multicolumn{5}{l}{}\\
 27  & \multicolumn{6}{l}{TVA POUR COMPTE DES TIERS } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 28  & \multicolumn{6}{l}{MONTANT À PAYER (i22+i26+i27) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
 \multicolumn{7}{l}{MODE DE PAIEMENT (9) } & \multicolumn{13}{l}{  }\\
@@ -573,7 +573,7 @@ Mois de (2): DÉCEMBRE \\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l }
 \multicolumn{4}{l}{}\\
-\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 24/07/2020 \\
+\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 28/04/2023 \\
 \multicolumn{4}{l}{Déclaré conforme à nos écritures, }\\
 Sceau de l'entreprise  & \multicolumn{2}{l}{Nom et qualité du signataire (10) } & Signature \\
 \multicolumn{4}{l}{}\\
