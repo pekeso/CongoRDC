@@ -538,10 +538,11 @@ function createVATDeductionDetailsReport(current, startDate, endDate, report) {
 
    table = styleTable(report, "tableNoBorder");
 
-   tableRow = table.addRow();
-   tableRow.addCell("", "", 7);
-   tableRow.addCell("Fait à " + city, "bold", 6).setStyleAttributes("font-size:11px");
-   tableRow.addCell(", le " + formatDate(today), "bold", 5).setStyleAttributes("font-size:11px");
+   tableRowDate = table.addRow();
+   tableRowDate.excludeFromTest()
+   tableRowDate.addCell("", "", 7);
+   tableRowDate.addCell("Fait à " + city, "bold", 6).setStyleAttributes("font-size:11px");
+   tableRowDate.addCell(", le " + formatDate(today), "bold", 5).setStyleAttributes("font-size:11px");
 
    tableRow = table.addRow();
    tableRow.addCell("Sceau de l'Entreprise", "bold", 20).setStyleAttributes("padding-left:5px;font-size:11px");
