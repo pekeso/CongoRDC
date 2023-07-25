@@ -83,7 +83,7 @@ function createVATDeclaration(current, startDate, endDate, report) {
    var email = current.info("AccountingDataBase","Email");
    var month = Banana.Converter.toDate(currentEndDate).getMonth() + 1;
    var currentMonth = getMonthString(month);
-   var today = new Date(); // The day the report will be generated
+   var currentDate = new Date(); // The day the report will be generated
 
    // Extract data from journal and calculate balances
    var transactions = VatGetJournal(current, currentStartDate, currentEndDate);
@@ -636,7 +636,7 @@ function createVATDeclaration(current, startDate, endDate, report) {
    tableRow.addCell("VIREMENT", "center", 3);
    tableRow.addCell("", "", 2);
 
-   // Signature and others
+   // Signature and others (Footer of the report)
 
    var table = report.addTable("table");
 
@@ -652,10 +652,11 @@ function createVATDeclaration(current, startDate, endDate, report) {
    var tableRow = table.addRow();
    tableRow.addCell("", "", 4);
 
-   tableRow = table.addRow();
-   tableRow.addCell("", "", 2);
-   tableRow.addCell("Fait à       " + city, "", 1).setStyleAttributes("font-size:6.5px;font-weight:bold");  
-   tableRow.addCell(",le " + formatDate(today), "", 1).setStyleAttributes("font-size:6.5px;font-weight:bold"); 
+   tableRowDate = table.addRow();
+   tableRowDate.excludeFromTest();
+   tableRowDate.addCell("", "", 2);
+   tableRowDate.addCell("Fait à       " + city, "", 1).setStyleAttributes("font-size:6.5px;font-weight:bold");  
+   tableRowDate.addCell(",le " + formatDate(currentDate), "", 1).setStyleAttributes("font-size:6.5px;font-weight:bold");
 
    tableRow = table.addRow();
    tableRow.addCell("Déclaré conforme à nos écritures,", "", 4).setStyleAttributes("padding-left:40px;font-size:6.5px;font-weight:bold");
