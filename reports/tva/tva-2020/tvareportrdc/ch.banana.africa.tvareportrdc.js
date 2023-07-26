@@ -112,7 +112,7 @@ function createVATDeclaration(current, startDate, endDate, report) {
    tableRow.addCell("MINISTÈRE DES FINANCES", "", 4);
 
    tableRow = table.addRow();
-   tableRow.addImage("tvareportrdc/images/logo.jpg", "1.9cm", "1.9cm", "logostyle");
+   tableRow.addImage("images/logo.jpg", "1.9cm", "1.9cm", "logostyle");
    cell_in = tableRow.addCell("", "", 2);
 
    var insideTable = cell_in.addTable("inTable");

@@ -87,7 +87,7 @@ Mois de (2): DÉCEMBRE \\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l }
 \multicolumn{4}{l}{}\\
-\multicolumn{2}{l}{} & \excltest{Fait à       KINSHASA I}  & \excltest{,le 25/07/2023} \\
+\multicolumn{2}{l}{} & \excltest{Fait à       KINSHASA I}  & \excltest{,le 26/07/2023} \\
 \multicolumn{4}{l}{Déclaré conforme à nos écritures, }\\
 Sceau de l'entreprise  & \multicolumn{2}{l}{Nom et qualité du signataire (10) } & Signature \\
 \multicolumn{4}{l}{}\\
@@ -168,7 +168,7 @@ Mois de (2): JUIN \\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l }
 \multicolumn{4}{l}{}\\
-\multicolumn{2}{l}{} & \excltest{Fait à       KINSHASA I}  & \excltest{,le 25/07/2023} \\
+\multicolumn{2}{l}{} & \excltest{Fait à       KINSHASA I}  & \excltest{,le 26/07/2023} \\
 \multicolumn{4}{l}{Déclaré conforme à nos écritures, }\\
 Sceau de l'entreprise  & \multicolumn{2}{l}{Nom et qualité du signataire (10) } & Signature \\
 \multicolumn{4}{l}{}\\
@@ -249,7 +249,7 @@ Mois de (2): DÉCEMBRE \\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l }
 \multicolumn{4}{l}{}\\
-\multicolumn{2}{l}{} & \excltest{Fait à       KINSHASA I}  & \excltest{,le 25/07/2023} \\
+\multicolumn{2}{l}{} & \excltest{Fait à       KINSHASA I}  & \excltest{,le 26/07/2023} \\
 \multicolumn{4}{l}{Déclaré conforme à nos écritures, }\\
 Sceau de l'entreprise  & \multicolumn{2}{l}{Nom et qualité du signataire (10) } & Signature \\
 \multicolumn{4}{l}{}\\
@@ -330,7 +330,7 @@ Mois de (2): MARS \\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l }
 \multicolumn{4}{l}{}\\
-\multicolumn{2}{l}{} & \excltest{Fait à       KINSHASA I}  & \excltest{,le 25/07/2023} \\
+\multicolumn{2}{l}{} & \excltest{Fait à       KINSHASA I}  & \excltest{,le 26/07/2023} \\
 \multicolumn{4}{l}{Déclaré conforme à nos écritures, }\\
 Sceau de l'entreprise  & \multicolumn{2}{l}{Nom et qualité du signataire (10) } & Signature \\
 \multicolumn{4}{l}{}\\
@@ -411,7 +411,7 @@ Mois de (2): JUIN \\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l }
 \multicolumn{4}{l}{}\\
-\multicolumn{2}{l}{} & \excltest{Fait à       KINSHASA I}  & \excltest{,le 25/07/2023} \\
+\multicolumn{2}{l}{} & \excltest{Fait à       KINSHASA I}  & \excltest{,le 26/07/2023} \\
 \multicolumn{4}{l}{Déclaré conforme à nos écritures, }\\
 Sceau de l'entreprise  & \multicolumn{2}{l}{Nom et qualité du signataire (10) } & Signature \\
 \multicolumn{4}{l}{}\\
@@ -492,7 +492,7 @@ Mois de (2): SEPTEMBRE \\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l }
 \multicolumn{4}{l}{}\\
-\multicolumn{2}{l}{} & \excltest{Fait à       KINSHASA I}  & \excltest{,le 25/07/2023} \\
+\multicolumn{2}{l}{} & \excltest{Fait à       KINSHASA I}  & \excltest{,le 26/07/2023} \\
 \multicolumn{4}{l}{Déclaré conforme à nos écritures, }\\
 Sceau de l'entreprise  & \multicolumn{2}{l}{Nom et qualité du signataire (10) } & Signature \\
 \multicolumn{4}{l}{}\\
@@ -573,7 +573,7 @@ Mois de (2): DÉCEMBRE \\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l }
 \multicolumn{4}{l}{}\\
-\multicolumn{2}{l}{} & \excltest{Fait à       KINSHASA I}  & \excltest{,le 25/07/2023} \\
+\multicolumn{2}{l}{} & \excltest{Fait à       KINSHASA I}  & \excltest{,le 26/07/2023} \\
 \multicolumn{4}{l}{Déclaré conforme à nos écritures, }\\
 Sceau de l'entreprise  & \multicolumn{2}{l}{Nom et qualité du signataire (10) } & Signature \\
 \multicolumn{4}{l}{}\\

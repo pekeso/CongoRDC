@@ -1,8 +1,8 @@
 Test Banana Apps
 ----------------
 
-Date:        2023-07-25 10:04:43.736
-Duration:    00:00:00.557
+Date:        2023-07-26 09:17:14.199
+Duration:    00:00:00.565
 Application: BananaPlus 10.1.4.23110
 OS:          Windows 11 Version 22H2
 Qt:          6.4.3
