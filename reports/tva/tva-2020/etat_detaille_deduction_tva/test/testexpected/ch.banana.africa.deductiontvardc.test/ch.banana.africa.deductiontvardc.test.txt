@@ -18,7 +18,7 @@
 \newenvironment{testcase}[1]{\section*{Test: #1}}{\newpage}
 \newenvironment{test}[1]{\section*{Test case: #1}}{}
 %Begin test data
-%%SCRIPT{C:/P/CongoRDC/reports/tva/tva-2020/etat_detaille_deduction_tva/test/ch.banana.africa.deductiontvardc.test.js}
+%%SCRIPT{C:/Users/joemb/Banana/CongoRDC/reports/tva/tva-2020/etat_detaille_deduction_tva/test/ch.banana.africa.deductiontvardc.test.js}
 %
 \begin{testcase}{TestVATDeductionReportRDC}
 \begin{test}{testBananaApp}
@@ -103,7 +103,7 @@
 \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
-\multicolumn{7}{l}{} & \multicolumn{6}{l}{Fait à KINSHASA I } & \multicolumn{5}{l}{, le 28/04/2023 }\\
+\multicolumn{7}{l}{} & \multicolumn{6}{l}{\excltest{Fait à KINSHASA I} } & \multicolumn{5}{l}{\excltest{, le 25/07/2023} }\\
 \multicolumn{20}{l}{Sceau de l'Entreprise }\\
 \multicolumn{20}{l}{}\\
 \multicolumn{8}{l}{} & \multicolumn{13}{l}{Nom et qualité du signataire }\\
@@ -188,7 +188,7 @@
 \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
-\multicolumn{7}{l}{} & \multicolumn{6}{l}{Fait à KINSHASA I } & \multicolumn{5}{l}{, le 28/04/2023 }\\
+\multicolumn{7}{l}{} & \multicolumn{6}{l}{\excltest{Fait à KINSHASA I} } & \multicolumn{5}{l}{\excltest{, le 25/07/2023} }\\
 \multicolumn{20}{l}{Sceau de l'Entreprise }\\
 \multicolumn{20}{l}{}\\
 \multicolumn{8}{l}{} & \multicolumn{13}{l}{Nom et qualité du signataire }\\
@@ -267,7 +267,7 @@
 \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
-\multicolumn{7}{l}{} & \multicolumn{6}{l}{Fait à KINSHASA I } & \multicolumn{5}{l}{, le 28/04/2023 }\\
+\multicolumn{7}{l}{} & \multicolumn{6}{l}{\excltest{Fait à KINSHASA I} } & \multicolumn{5}{l}{\excltest{, le 25/07/2023} }\\
 \multicolumn{20}{l}{Sceau de l'Entreprise }\\
 \multicolumn{20}{l}{}\\
 \multicolumn{8}{l}{} & \multicolumn{13}{l}{Nom et qualité du signataire }\\
@@ -348,7 +348,7 @@
 \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
-\multicolumn{7}{l}{} & \multicolumn{6}{l}{Fait à KINSHASA I } & \multicolumn{5}{l}{, le 28/04/2023 }\\
+\multicolumn{7}{l}{} & \multicolumn{6}{l}{\excltest{Fait à KINSHASA I} } & \multicolumn{5}{l}{\excltest{, le 25/07/2023} }\\
 \multicolumn{20}{l}{Sceau de l'Entreprise }\\
 \multicolumn{20}{l}{}\\
 \multicolumn{8}{l}{} & \multicolumn{13}{l}{Nom et qualité du signataire }\\
@@ -427,7 +427,7 @@
 \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
-\multicolumn{7}{l}{} & \multicolumn{6}{l}{Fait à KINSHASA I } & \multicolumn{5}{l}{, le 28/04/2023 }\\
+\multicolumn{7}{l}{} & \multicolumn{6}{l}{\excltest{Fait à KINSHASA I} } & \multicolumn{5}{l}{\excltest{, le 25/07/2023} }\\
 \multicolumn{20}{l}{Sceau de l'Entreprise }\\
 \multicolumn{20}{l}{}\\
 \multicolumn{8}{l}{} & \multicolumn{13}{l}{Nom et qualité du signataire }\\
@@ -506,7 +506,7 @@
 \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
-\multicolumn{7}{l}{} & \multicolumn{6}{l}{Fait à KINSHASA I } & \multicolumn{5}{l}{, le 28/04/2023 }\\
+\multicolumn{7}{l}{} & \multicolumn{6}{l}{\excltest{Fait à KINSHASA I} } & \multicolumn{5}{l}{\excltest{, le 25/07/2023} }\\
 \multicolumn{20}{l}{Sceau de l'Entreprise }\\
 \multicolumn{20}{l}{}\\
 \multicolumn{8}{l}{} & \multicolumn{13}{l}{Nom et qualité du signataire }\\
@@ -585,7 +585,7 @@
 \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
-\multicolumn{7}{l}{} & \multicolumn{6}{l}{Fait à KINSHASA I } & \multicolumn{5}{l}{, le 28/04/2023 }\\
+\multicolumn{7}{l}{} & \multicolumn{6}{l}{\excltest{Fait à KINSHASA I} } & \multicolumn{5}{l}{\excltest{, le 25/07/2023} }\\
 \multicolumn{20}{l}{Sceau de l'Entreprise }\\
 \multicolumn{20}{l}{}\\
 \multicolumn{8}{l}{} & \multicolumn{13}{l}{Nom et qualité du signataire }\\
