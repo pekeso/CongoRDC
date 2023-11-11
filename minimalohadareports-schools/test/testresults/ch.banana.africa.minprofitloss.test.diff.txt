@@ -1,0 +1,42 @@
+Test Banana Apps
+----------------
+
+<<<<<<< HEAD
+Date:        2022-10-27 22:31:44.806
+Duration:    00:00:00.080
+Application: BananaPlus 10.0.13.22257
+OS:          macOS 12.6
+=======
+Date:        2022-09-07 19:28:47.778
+Duration:    00:00:00.097
+Application: BananaPlus 10.0.13.22215
+OS:          macOS 12.4
+>>>>>>> 4470b1d4dd572e44765b1ad6ed9a2f32353a8259
+Qt:          5.15.10
+
+Test summary
+------------
+
+Test failed
+
+> Fatal errors:  0
+> Differences:   1
+> Added:         0
+> Deleted:       0
+> Identical:     46
+> Total results: 47
+> Total files:   1
+
+Differences Summary
+-------------------
+
+> Files with differences
+>> testresults/ch.banana.africa.minprofitloss.test/ch.banana.africa.minprofitloss.test.txt
+
+Differences Details
+-------------------
+
+>> testresults/ch.banana.africa.minprofitloss.test/ch.banana.africa.minprofitloss.test.txt
+			20  + 12  & Autres recettes sur activités  & 4  & 600'000.00  & 1'800'000.00 \\
+			 20 - 12  & Autres recettes sur activités  & 4  & 1'800'000.00  & 1'800'000.00 \\
+
