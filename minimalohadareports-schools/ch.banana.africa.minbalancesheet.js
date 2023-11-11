@@ -12,11 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-// @id = ch.banana.africa.smereportsohadardc
+// @id = ch.banana.africa.minreportsohadardcschool
 // @api = 1.0
-// @pubdate = 2021-01-14
+// @pubdate = 2023-11-11
 // @publisher = Banana.ch SA
-// @description = 1. Bilan (SMT)
+// @description = 1. Bilan (SMT - Ecole - RDC) [BETA]
 // @task = app.command
 // @doctype = 100.100;110.100;130.100
 // @docproperties = 

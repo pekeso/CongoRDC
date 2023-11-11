@@ -4,4 +4,6 @@
 ~$*
 debug.log
 build-*
+.vscode/
+build/
 
