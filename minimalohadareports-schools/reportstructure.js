@@ -67,9 +67,7 @@ function createReportStructure() {
     reportStructure.push({"id":"21", "type":"group", "note":"3", "bclass":"3", "description":"+ Variations des dettes d'exploitation N / N-1"});
     reportStructure.push({"id":"D", "type":"total", "note":"D", "description":"VARIATION A COURT TERME", "sum":"19;20;21"});
     reportStructure.push({"id":"22", "type":"group", "note":"E", "bclass":"3", "description":"DOTATIONS AMORTISSEMENTS"});
-    reportStructure.push({"id":"F", "type":"group", "note":"F", "description":"RESULTAT EXERCICE (G=C-D-E-F)", "sum":"C;-D;-22"});
-
-
+    reportStructure.push({"id":"F", "type":"group", "note":"F", "description":"RESULTAT EXERCICE (G=C-D-E)", "sum":"C;-D;-22"});
 
     return reportStructure;
 }
