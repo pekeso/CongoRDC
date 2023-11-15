@@ -66,6 +66,7 @@ var BReport = class JsClass {
             if (this.reportStructure[i]["id"]) {
                this.reportStructure[i]["currentAmount"] = this.calculateCurrentBalances(this.reportStructure[i]["id"], this.reportStructure[i]["bclass"], this.userParam.column, this.userParam.selectionStartDate, this.userParam.selectionEndDate);
                this.reportStructure[i]["previousAmount"] = this.calculatePreviousBalances(this.reportStructure[i]["id"], this.reportStructure[i]["bclass"], this.userParam.column);
+               this.reportStructure[i]["openingAmount"] = this.calculateOpeningBalances(this.reportStructure[i]["id"], this.reportStructure[i]["bclass"], this.userParam.column);
             }
          }
       }
@@ -149,6 +150,51 @@ var BReport = class JsClass {
          var prior = tRow.value("Prior");
          if (gr && gr === grText) {
             balance = Banana.SDecimal.add(balance, prior);
+         }
+      }
+      //The bClass decides which value to use
+      if (bClass === "1" || bClass === "3") {
+         return balance;
+      }
+      else if (bClass === "2" || bClass === "4") {
+         return Banana.SDecimal.invert(balance);
+      }
+      }
+   }
+
+   /**
+     * Calculate all the opening balances of the accounts belonging to the same group (grText)
+     */ 
+   calculateOpeningBalances(grText, bClass, grColumn) {
+      if (!grColumn) {
+      grColumn = "Gr";
+      }
+      var balance = "";
+
+      if (this.banDoc.table("Categories") && (bClass === "3" || bClass === "4")) {
+      for (var i = 0; i < this.banDoc.table('Categories').rowCount; i++) {
+         var tRow = this.banDoc.table('Categories').row(i);
+         var gr = tRow.value(grColumn);
+         var opening = tRow.value("Opening");
+         if (gr && gr === grText) {
+            balance = Banana.SDecimal.add(balance, opening);
+         }
+      }
+      //The bClass decides which value to use
+      if (bClass === "3") {
+         return Banana.SDecimal.invert(balance);
+      }
+      else if (bClass === "4") {
+         return balance;
+      }
+      }
+      else {
+      for (var i = 0; i < this.banDoc.table('Accounts').rowCount; i++) {
+         var tRow = this.banDoc.table('Accounts').row(i);
+         var gr = tRow.value(grColumn);
+         var opening = tRow.value("Opening");
+         if (gr && gr === grText) {
+            balance = Banana.SDecimal.add(balance, opening);
          }
       }
       //The bClass decides which value to use
@@ -426,6 +472,19 @@ var BReport = class JsClass {
       for (var i = 0; i < this.reportStructure.length; i++) {
          if (this.reportStructure[i]["id"] === searchId) {
             return this.reportStructure[i]["previousAmountFormatted"];
+         }
+      }
+      this.banDoc.addMessage("Couldn't find object with id: " + id);
+   }
+
+   /**
+     * Gets the opening formatted balance from the object for the given id value
+     */
+   getObjectOpeningAmountFormatted(id) {
+      var searchId = id.trim();
+      for (var i = 0; i < this.reportStructure.length; i++) {
+         if (this.reportStructure[i]["id"] === searchId) {
+            return this.reportStructure[i]["openingAmountFormatted"];
          }
       }
       this.banDoc.addMessage("Couldn't find object with id: " + id);
