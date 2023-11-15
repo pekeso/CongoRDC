@@ -51,8 +51,8 @@ function createReportStructure() {
     reportStructure.push({"id":"AP", "type":"total", "note":"", "description":"Difference Active-Passive", "sum":"A;P"});
 
     /* PROFIT & LOSS */
-    reportStructure.push({"id":"11", "type":"group", "note":"4", "bclass":"4", "description":"Recettes sur ventes ou prestations de services"});
-    reportStructure.push({"id":"12", "type":"group", "note":"4", "bclass":"4", "description":"Autres recettes sur activités"});
+    reportStructure.push({"id":"11", "type":"group", "note":"4", "bclass":"3", "description":"Recettes sur ventes ou prestations de services"});
+    reportStructure.push({"id":"12", "type":"group", "note":"4", "bclass":"3", "description":"Autres recettes sur activités"});
     reportStructure.push({"id":"RP", "type":"total", "note":"A", "description":"TOTAL DES RECETTES SUR PRODUITS", "sum":"11;12"});
     reportStructure.push({"id":"13", "type":"group", "note":"4", "bclass":"3", "description":"Dépenses sur achats"});
     reportStructure.push({"id":"14", "type":"group", "note":"4", "bclass":"3", "description":"Dépenses sur loyers"});
