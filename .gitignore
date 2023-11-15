@@ -3,5 +3,7 @@
 *.autosave
 ~$*
 debug.log
+build
 build-*
+.vscode
 
