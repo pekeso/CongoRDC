@@ -373,6 +373,9 @@ function createReportStructureCashFlow() {
     reportStructure.push({"id":"ZA", "type":"group", "note":"A", "bclass":"1", "description":"ZA= Trésorerie nette au 1er janvier (Trésorerie actif N-1 - trésorerie passif N-1)", "sum":"BQ;BR;BS;-DQ;-DR"});
     reportStructure.push({"id":"FA", "type":"group", "note":"", "bclass":"1", "description":"Capacité d'Autofinancement Globale (CAFG)", "sum":"-XD;RJ1;TH1;-TK;-TL;-TM;-RM;-RN;-TO;-RP;-RQ;-RS"});
     reportStructure.push({"id":"FB", "type":"group", "note":"", "bclass":"1", "description":"(-) Variation actif circulant HAO"});
+    reportStructure.push({"id":"FC", "type":"group", "note":"", "bclass":"1", "description":"(-) Variation des stocks"});
+    reportStructure.push({"id":"FD", "type":"group", "note":"", "bclass":"1", "description":"(-) Variation des créances"});
+    reportStructure.push({"id":"FE", "type":"group", "note":"", "bclass":"1", "description":"(+) Variation du passif circulant"});
 
     return reportStructure;
 }
