@@ -6,4 +6,6 @@ debug.log
 build
 build-*
 .vscode
+CMakeLists.txt.*
+
 
