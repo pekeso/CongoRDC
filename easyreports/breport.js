@@ -67,6 +67,8 @@ var BReport = class JsClass {
                this.reportStructure[i]["currentAmount"] = this.calculateCurrentBalances(this.reportStructure[i]["id"], this.reportStructure[i]["bclass"], this.userParam.column, this.userParam.selectionStartDate, this.userParam.selectionEndDate);
                this.reportStructure[i]["previousAmount"] = this.calculatePreviousBalances(this.reportStructure[i]["id"], this.reportStructure[i]["bclass"], this.userParam.column);
                this.reportStructure[i]["openingAmount"] = this.calculateOpeningBalances(this.reportStructure[i]["id"], this.reportStructure[i]["bclass"], this.userParam.column);
+               this.reportStructure[i]["debitAmount"] = this.calculateDebitBalances(this.reportStructure[i]["id"], this.reportStructure[i]["bclass"], this.userParam.column);
+               this.reportStructure[i]["creditAmount"] = this.calculateCreditBalances(this.reportStructure[i]["id"], this.reportStructure[i]["bclass"], this.userParam.column);
             }
          }
       }
@@ -206,6 +208,96 @@ var BReport = class JsClass {
       }
       }
    }
+
+   /**
+     * Calculate all the Debit balances of the accounts belonging to the same group (grText)
+     */ 
+   calculateDebitBalances(grText, bClass, grColumn) {
+      if (!grColumn) {
+      grColumn = "Gr";
+      }
+      var balance = "";
+
+      if (this.banDoc.table("Categories") && (bClass === "3" || bClass === "4")) {
+      for (var i = 0; i < this.banDoc.table('Categories').rowCount; i++) {
+         var tRow = this.banDoc.table('Categories').row(i);
+         var gr = tRow.value(grColumn);
+         var debit = tRow.value("Debit");
+         if (gr && gr === grText) {
+            balance = Banana.SDecimal.add(balance, debit);
+         }
+      }
+      //The bClass decides which value to use
+      if (bClass === "3") {
+         return Banana.SDecimal.invert(balance);
+      }
+      else if (bClass === "4") {
+         return balance;
+      }
+      }
+      else {
+      for (var i = 0; i < this.banDoc.table('Accounts').rowCount; i++) {
+         var tRow = this.banDoc.table('Accounts').row(i);
+         var gr = tRow.value(grColumn);
+         var debit = tRow.value("Debit");
+         if (gr && gr === grText) {
+            balance = Banana.SDecimal.add(balance, debit);
+         }
+      }
+      //The bClass decides which value to use
+      if (bClass === "1" || bClass === "3") {
+         return balance;
+      }
+      else if (bClass === "2" || bClass === "4") {
+         return Banana.SDecimal.invert(balance);
+      }
+      }
+   }
+
+   /**
+     * Calculate all the Credit balances of the accounts belonging to the same group (grText)
+     */ 
+   calculateCreditBalances(grText, bClass, grColumn) {
+      if (!grColumn) {
+      grColumn = "Gr";
+      }
+      var balance = "";
+
+      if (this.banDoc.table("Categories") && (bClass === "3" || bClass === "4")) {
+      for (var i = 0; i < this.banDoc.table('Categories').rowCount; i++) {
+         var tRow = this.banDoc.table('Categories').row(i);
+         var gr = tRow.value(grColumn);
+         var credit = tRow.value("Credit");
+         if (gr && gr === grText) {
+            balance = Banana.SDecimal.add(balance, credit);
+         }
+      }
+      //The bClass decides which value to use
+      if (bClass === "3") {
+         return Banana.SDecimal.invert(balance);
+      }
+      else if (bClass === "4") {
+         return balance;
+      }
+      }
+      else {
+      for (var i = 0; i < this.banDoc.table('Accounts').rowCount; i++) {
+         var tRow = this.banDoc.table('Accounts').row(i);
+         var gr = tRow.value(grColumn);
+         var credit = tRow.value("Credit");
+         if (gr && gr === grText) {
+            balance = Banana.SDecimal.add(balance, credit);
+         }
+      }
+      //The bClass decides which value to use
+      if (bClass === "1" || bClass === "3") {
+         return balance;
+      }
+      else if (bClass === "2" || bClass === "4") {
+         return Banana.SDecimal.invert(balance);
+      }
+      }
+   }
  
    /**
     * Calculate the balances for the given column (column) of the accounts belonging to the same group (grText)
@@ -317,12 +409,12 @@ var BReport = class JsClass {
          }
       }
 
-   //  var groupsModD = createReportStructureRendicontoCassa();
-   //  for (var i in groupsModD) {
-   //     if (groupsModD[i]["id"] && !groupsModD[i]["id"].startsWith('d')) {
-   //        columnList.add(groupsModD[i]["id"]);
-   //     }
-   //  }
+      var groupsModD = createReportStructureCashFlow();
+      for (var i in groupsModD) {
+         if (groupsModD[i]["id"] && !groupsModD[i]["id"].startsWith('d')) {
+            columnList.add(groupsModD[i]["id"]);
+         }
+      }
 
       //Convert Set object to array
       for (var i of columnList) {
@@ -485,6 +577,32 @@ var BReport = class JsClass {
       for (var i = 0; i < this.reportStructure.length; i++) {
          if (this.reportStructure[i]["id"] === searchId) {
             return this.reportStructure[i]["openingAmountFormatted"];
+         }
+      }
+      this.banDoc.addMessage("Couldn't find object with id: " + id);
+   }
+
+   /**
+     * Gets the debit formatted balance from the object for the given id value
+     */
+   getObjectDebitAmountFormatted(id) {
+      var searchId = id.trim();
+      for (var i = 0; i < this.reportStructure.length; i++) {
+         if (this.reportStructure[i]["id"] === searchId) {
+            return this.reportStructure[i]["debitAmountFormatted"];
+         }
+      }
+      this.banDoc.addMessage("Couldn't find object with id: " + id);
+   }
+
+   /**
+     * Gets the credit formatted balance from the object for the given id value
+     */
+   getObjectCreditAmountFormatted(id) {
+      var searchId = id.trim();
+      for (var i = 0; i < this.reportStructure.length; i++) {
+         if (this.reportStructure[i]["id"] === searchId) {
+            return this.reportStructure[i]["creditAmountFormatted"];
          }
       }
       this.banDoc.addMessage("Couldn't find object with id: " + id);
