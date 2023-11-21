@@ -8,5 +8,7 @@
         <file>balancesheetstyle.css</file>
         <file>ch.banana.africa.easyprofitloss.js</file>
         <file>profitlossstatement.css</file>
+        <file>ch.banana.africa.easycashflow.js</file>
+        <file>cashflowstyle.css</file>
     </qresource>
 </RCC>
