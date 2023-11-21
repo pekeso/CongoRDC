@@ -7,5 +7,6 @@ build
 build-*
 .vscode
 CMakeLists.txt.*
+CMakeLists.txt.user
 
 
