@@ -16,7 +16,8 @@
 // @api = 1.0
 // @pubdate = 2022-10-05
 // @publisher = Banana.ch SA
-// @description = 1. Bilan
+// @description = 1. Balance Sheet Report (OHADA) [BETA]
+// @description.fr = 1. Bilan (OHADA) [BETA]
 // @task = app.command
 // @doctype = 100.100;100.110;130.100
 // @docproperties = 

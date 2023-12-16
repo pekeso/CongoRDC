@@ -16,7 +16,8 @@
 // @api = 1.0
 // @pubdate = 2022-10-05
 // @publisher = Banana.ch SA
-// @description = 2. Compte de résultat
+// @description = 2. Profit & Loss Statement (OHADA) [BETA]
+// @description.fr = 2. Compte de résultat (OHADA) [BETA]
 // @task = app.command
 // @doctype = 100.100;100.110;130.100
 // @docproperties = 
