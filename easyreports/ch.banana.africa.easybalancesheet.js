@@ -16,7 +16,8 @@
 // @api = 1.0
 // @pubdate = 2022-10-05
 // @publisher = Banana.ch SA
-// @description = 1. Bilan
+// @description = 1. Balance Sheet Report (OHADA) [BETA]
+// @description.fr = 1. Bilan (OHADA) [BETA]
 // @task = app.command
 // @doctype = 100.100;100.110;130.100
 // @docproperties = 
@@ -199,9 +200,9 @@ function printBalanceSheet(banDoc, userParam, bReport, stylesheet) {
    tableRow.addCell(bReport.getObjectDescription("AD"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
    tableRow.addCell(bReport.getObjectNote("AD"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5p;background-color: #C0C0C0;font-weight: bold");
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AD"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AD-A"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AD-(AD-A)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("AD-(AD-A)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("ADA"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AD-(ADA)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("AD-(ADA)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
    /* Row AE */
    tableRow = table.addRow();
    tableRow.addCell("AE", "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -217,9 +218,9 @@ function printBalanceSheet(banDoc, userParam, bReport, stylesheet) {
    tableRow.addCell(bReport.getObjectDescription("AF"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(bReport.getObjectNote("AF"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AF"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AF-A"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AF-(AF-A)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("AF-(AF-A)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AFA"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AF-(AFA)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("AF-(AFA)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
    /* AG */
    tableRow = table.addRow();
    tableRow.addCell("AG", "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -244,9 +245,9 @@ function printBalanceSheet(banDoc, userParam, bReport, stylesheet) {
    tableRow.addCell(bReport.getObjectDescription("AI"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
    tableRow.addCell(bReport.getObjectNote("AI"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AI"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AI-A"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AI-(AI-A)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("AI-(AI-A)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AIA"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AI-(AIA)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("AI-(AIA)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
    /* AJ */
    tableRow = table.addRow();
    tableRow.addCell("AJ", "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -262,9 +263,9 @@ function printBalanceSheet(banDoc, userParam, bReport, stylesheet) {
    tableRow.addCell(bReport.getObjectDescription("AK"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(bReport.getObjectNote("AK"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AK"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AK-A"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AK-(AK-A)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("AK-(AK-A)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AKA"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AK-(AKA)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("AK-(AKA)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
    /* AL */
    tableRow = table.addRow();
    tableRow.addCell("AL", "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -280,36 +281,36 @@ function printBalanceSheet(banDoc, userParam, bReport, stylesheet) {
    tableRow.addCell(bReport.getObjectDescription("AM"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(bReport.getObjectNote("AM"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AM"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AM-A"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AM-(AM-A)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("AM-(AM-A)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AMA"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AM-(AMA)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("AM-(AMA)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
    /* AN */
    tableRow = table.addRow();
    tableRow.addCell("AN", "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(bReport.getObjectDescription("AN"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(bReport.getObjectNote("AN"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AN"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AN-A"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AN-(AN-A)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("AN-(AN-A)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("ANA"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AN-(ANA)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("AN-(ANA)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
    /* AP */
    tableRow = table.addRow();
    tableRow.addCell("AP", "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(bReport.getObjectDescription("AP"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(bReport.getObjectNote("AP"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AP"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AP-A"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AP-(AP-A)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("AP-(AP-A)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("APA"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AP-(APA)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("AP-(APA)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
    /* AQ */
    tableRow = table.addRow();
    tableRow.addCell("AQ", "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
    tableRow.addCell(bReport.getObjectDescription("AQ"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
    tableRow.addCell(bReport.getObjectNote("AQ"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AQ"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AQ-A"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AQ-(AQ-A)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("AQ-(AQ-A)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AQA"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AQ-(AQA)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("AQ-(AQA)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
    /* AR */
    tableRow = table.addRow();
    tableRow.addCell("AR", "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -334,9 +335,9 @@ function printBalanceSheet(banDoc, userParam, bReport, stylesheet) {
    tableRow.addCell(bReport.getObjectDescription("AZ"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
    tableRow.addCell(bReport.getObjectNote("AZ"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AZ"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AZ-A"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AZ-(AZ-A)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("AZ-(AZ-A)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AZA"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("AZ-(AZA)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("AZ-(AZA)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
    /* BA */
    tableRow = table.addRow();
    tableRow.addCell("BA", "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -352,54 +353,54 @@ function printBalanceSheet(banDoc, userParam, bReport, stylesheet) {
    tableRow.addCell(bReport.getObjectDescription("BB"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(bReport.getObjectNote("BB"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BB"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BB-A"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BB-(BB-A)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("BB-(BB-A)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BBA"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BB-(BBA)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("BB-(BBA)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
    /* BG */
    tableRow = table.addRow();
    tableRow.addCell("BG", "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
    tableRow.addCell(bReport.getObjectDescription("BG"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
    tableRow.addCell(bReport.getObjectNote("BG"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BG"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BG-A"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BG-(BG-A)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("BG-(BG-A)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BGA"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BG-(BGA)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("BG-(BGA)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
    /* BH */
    tableRow = table.addRow();
    tableRow.addCell("BH", "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(bReport.getObjectDescription("BH"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(bReport.getObjectNote("BH"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BH"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BH-A"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BH-(BH-A)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("BH-(BH-A)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BHA"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BH-(BHA)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("BH-(BHA)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
    /* BI */
    tableRow = table.addRow();
    tableRow.addCell("BI", "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectDescription("BI-A"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectNote("BI-A"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BI-A"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BI-A"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BI-A"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("BI-A"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectDescription("BIA"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectNote("BIA"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BIA"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BIA"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BIA"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("BIA"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
    /* BJ */
    tableRow = table.addRow();
    tableRow.addCell("BJ", "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(bReport.getObjectDescription("BJ"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(bReport.getObjectNote("BJ"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BJ"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BJ-A"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BJ-(BJ-A)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("BJ-(BJ-A)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BJA"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BJ-(BJA)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("BJ-(BJA)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
    /* BK */
    tableRow = table.addRow();
    tableRow.addCell("BK", "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
    tableRow.addCell(bReport.getObjectDescription("BK"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
    tableRow.addCell(bReport.getObjectNote("BK"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BK"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BK-A"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BK-(BK-A)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("BK-(BK-A)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BKA"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BK-(BKA)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("BK-(BKA)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
    /* BQ */
    tableRow = table.addRow();
    tableRow.addCell("BQ", "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -424,18 +425,18 @@ function printBalanceSheet(banDoc, userParam, bReport, stylesheet) {
    tableRow.addCell(bReport.getObjectDescription("BS"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(bReport.getObjectNote("BS"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BS"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BS-A"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BS-(BS-A)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("BS-(BS-A)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BSA"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BS-(BSA)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("BS-(BSA)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
    /* BT */
    tableRow = table.addRow();
    tableRow.addCell("BT", "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
    tableRow.addCell(bReport.getObjectDescription("BT"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
    tableRow.addCell(bReport.getObjectNote("BT"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BT"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BT-A"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BT-(BT-A)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("BT-(BT-A)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BTA"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BT-(BTA)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("BT-(BTA)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
    /* BU */
    tableRow = table.addRow();
    tableRow.addCell("BU", "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
@@ -451,9 +452,9 @@ function printBalanceSheet(banDoc, userParam, bReport, stylesheet) {
    tableRow.addCell(bReport.getObjectDescription("BZ"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
    tableRow.addCell(bReport.getObjectNote("BZ"), "align-left", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BZ"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BZ-A"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BZ-(BZ-A)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("BZ-(BZ-A)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BZA"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("BZ-(BZA)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("BZ-(BZA)"), "align-right", 1).setStyleAttributes("border-top:thin solid black;border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px;background-color: #C0C0C0;font-weight: bold");
 
    if (userParam.stampa) {
       report.addPageBreak();

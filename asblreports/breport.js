@@ -13,7 +13,7 @@
 // limitations under the License.
 
 
-/* Update: 2020-12-18 */
+/* Update: 2023-12-16 */
 
 
 
@@ -409,12 +409,12 @@ var BReport = class JsClass {
          }
       }
 
-      var groupsModD = createReportStructureCashFlow();
-      for (var i in groupsModD) {
-         if (groupsModD[i]["id"] && !groupsModD[i]["id"].startsWith('d')) {
-            columnList.add(groupsModD[i]["id"]);
-         }
-      }
+      // var groupsModD = createReportStructureCashFlow();
+      // for (var i in groupsModD) {
+      //    if (groupsModD[i]["id"] && !groupsModD[i]["id"].startsWith('d')) {
+      //       columnList.add(groupsModD[i]["id"]);
+      //    }
+      // }
 
       //Convert Set object to array
       for (var i of columnList) {

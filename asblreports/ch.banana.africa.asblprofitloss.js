@@ -14,7 +14,7 @@
 //
 // @id = ch.banana.africa.easyprofitloss
 // @api = 1.0
-// @pubdate = 2022-10-05
+// @pubdate = 2023-12-16
 // @publisher = Banana.ch SA
 // @description = 2. Profit & Loss Statement (OHADA) [BETA]
 // @description.fr = 2. Compte de résultat (OHADA) [BETA]
@@ -79,8 +79,8 @@ function exec(string) {
    const bReport = new BReport(Banana.document, userParam, reportStructure);
    bReport.validateGroups(userParam.column);
    bReport.loadBalances();
-   bReport.calculateTotals(["currentAmount", "previousAmount"]);
-   bReport.formatValues(["currentAmount", "previousAmount"]);
+   bReport.calculateTotals(["currentAmount", "previousAmount", "openingAmount"]);
+   bReport.formatValues(["currentAmount", "previousAmount", "openingAmount"]);
    //Banana.console.log(JSON.stringify(reportStructure, "", " "));
 
    /**
@@ -143,12 +143,10 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
    var columnProfitLoss3 = table.addColumn("column-profit-loss3");
    var columnProfitLoss4 = table.addColumn("column-profit-loss4");
    var columnProfitLoss5 = table.addColumn("column-profit-loss5");
-   var columnProfitLoss6 = table.addColumn("column-profit-loss6");
 
    tableRow = table.addRow();
    tableRow.addCell("REF","bold align-center",1).setStyleAttributes("border-bottom:thin solid white;padding-bottom:2px;padding-top:5px");
    tableRow.addCell("LIBELLÉS","bold align-center",1).setStyleAttributes("border-bottom:thin solid white;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell("","bold align-center",1).setStyleAttributes("border-bottom:thin solid white;padding-bottom:2px;padding-top:5px");
    tableRow.addCell("Note","bold align-center",1).setStyleAttributes("border-bottom:thin solid white;padding-bottom:2px;padding-top:5px");
    tableRow.addCell("EXERCICE AU 31/12/" + currentYear,"bold align-center",1).setStyleAttributes("border-bottom:thin solid white;padding-bottom:2px;padding-top:5px");
    tableRow.addCell("EXERCICE AU 31/12/" + previousYear,"bold align-center",1).setStyleAttributes("border-bottom:thin solid white;padding-bottom:2px;padding-top:5px");
@@ -156,24 +154,13 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
    tableRow.addCell("","bold align-center",1).setStyleAttributes("padding-bottom:2px;padding-top:5px");
    tableRow.addCell("","bold align-center",1).setStyleAttributes("padding-bottom:2px;padding-top:5px");
    tableRow.addCell("","bold align-center",1).setStyleAttributes("padding-bottom:2px;padding-top:5px");
-   tableRow.addCell("","bold align-center",1).setStyleAttributes("padding-bottom:2px;padding-top:5px");
    tableRow.addCell("NET","bold align-center",1).setStyleAttributes("padding-bottom:2px;padding-top:5px");
    tableRow.addCell("NET","bold align-center",1).setStyleAttributes("padding-bottom:2px;padding-top:5px");
-
-   /* TA */   
-   tableRow = table.addRow();
-   tableRow.addCell("TA", "align-left", 1);
-   tableRow.addCell(bReport.getObjectDescription("TA"), "align-left", 1);
-   tableRow.addCell("+", "align-left", 1);
-   tableRow.addCell(bReport.getObjectNote("TA"), "align-left", 1);
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("TA"), "align-right", 1);
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("TA"), "align-right", 1);
 
    /* RA */
    tableRow = table.addRow();
    tableRow.addCell("RA", "align-left", 1);
    tableRow.addCell(bReport.getObjectDescription("RA"), "align-left", 1);
-   tableRow.addCell("-", "align-left", 1);
    tableRow.addCell(bReport.getObjectNote("RA"), "align-left", 1);
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("RA"), "align-right", 1);
    tableRow.addCell(bReport.getObjectPreviousAmountFormatted("RA"), "align-right", 1);
@@ -182,106 +169,14 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
    tableRow = table.addRow();
    tableRow.addCell("RB", "align-left", 1);
    tableRow.addCell(bReport.getObjectDescription("RB"), "align-left", 1);
-   tableRow.addCell("-", "align-left", 1);
    tableRow.addCell(bReport.getObjectNote("RB"), "align-left", 1);
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("RB"), "align-right", 1);
    tableRow.addCell(bReport.getObjectPreviousAmountFormatted("RB"), "align-right", 1);
-
-   /* XA */
-   tableRow = table.addRow();
-   tableRow.addCell("XA", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectDescription("XA"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell("", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectNote("XA"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("XA"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("XA"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-
-   /* TB */
-   tableRow = table.addRow();
-   tableRow.addCell("TB", "align-left", 1);
-   tableRow.addCell(bReport.getObjectDescription("TB"), "align-left", 1);
-   tableRow.addCell("+", "align-left", 1);
-   tableRow.addCell(bReport.getObjectNote("TB"), "align-left", 1);
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("TB"), "align-right", 1);
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("TB"), "align-right", 1);
-
-   /* TC */
-   tableRow = table.addRow();
-   tableRow.addCell("TC", "align-left", 1);
-   tableRow.addCell(bReport.getObjectDescription("TC"), "align-left", 1);
-   tableRow.addCell("+", "align-left", 1);
-   tableRow.addCell(bReport.getObjectNote("TC"), "align-left", 1);
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("TC"), "align-right", 1);
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("TC"), "align-right", 1);
-
-   /* TD */
-   tableRow = table.addRow();
-   tableRow.addCell("TD", "align-left", 1);
-   tableRow.addCell(bReport.getObjectDescription("TD"), "align-left", 1);
-   tableRow.addCell("+", "align-left", 1);
-   tableRow.addCell(bReport.getObjectNote("TD"), "align-left", 1);
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("TD"), "align-right", 1);
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("TD"), "align-right", 1);
-
-   /* XB */
-   tableRow = table.addRow();
-   tableRow.addCell("XB", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectDescription("XB"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell("", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectNote("XB"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("XB"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("XB"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold"); 
-
-   /* TE */
-   tableRow = table.addRow();
-   tableRow.addCell("TE", "align-left", 1);
-   tableRow.addCell(bReport.getObjectDescription("TE"), "align-left", 1);
-   tableRow.addCell("+", "align-left", 1);
-   tableRow.addCell(bReport.getObjectNote("TE"), "align-left", 1);
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("TE"), "align-right", 1);
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("TE"), "align-right", 1);
-
-   /* TF */
-   tableRow = table.addRow();
-   tableRow.addCell("TF", "align-left", 1);
-   tableRow.addCell(bReport.getObjectDescription("TF"), "align-left", 1);
-   tableRow.addCell("", "align-left", 1);
-   tableRow.addCell(bReport.getObjectNote("TF"), "align-left", 1);
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("TF"), "align-right", 1);
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("TF"), "align-right", 1);
-
-   /* TG */
-   tableRow = table.addRow();
-   tableRow.addCell("TG", "align-left", 1);
-   tableRow.addCell(bReport.getObjectDescription("TG"), "align-left", 1);
-   tableRow.addCell("", "align-left", 1);
-   tableRow.addCell(bReport.getObjectNote("TG"), "align-left", 1);
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("TG"), "align-right", 1);
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("TG"), "align-right", 1);
-
-   /* TH */
-   tableRow = table.addRow();
-   tableRow.addCell("TH", "align-left", 1);
-   tableRow.addCell(bReport.getObjectDescription("TH"), "align-left", 1);
-   tableRow.addCell("+", "align-left", 1);
-   tableRow.addCell(bReport.getObjectNote("TH"), "align-left", 1);
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("TH"), "align-right", 1);
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("TH"), "align-right", 1);
-
-   /* TI */
-   tableRow = table.addRow();
-   tableRow.addCell("TI", "align-left", 1);
-   tableRow.addCell(bReport.getObjectDescription("TI"), "align-left", 1);
-   tableRow.addCell("+", "align-left", 1);
-   tableRow.addCell(bReport.getObjectNote("TI"), "align-left", 1);
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("TI"), "align-right", 1);
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("TI"), "align-right", 1);
 
    /* RC */
    tableRow = table.addRow();
    tableRow.addCell("RC", "align-left", 1);
    tableRow.addCell(bReport.getObjectDescription("RC"), "align-left", 1);
-   tableRow.addCell("-", "align-left", 1);
    tableRow.addCell(bReport.getObjectNote("RC"), "align-left", 1);
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("RC"), "align-right", 1);
    tableRow.addCell(bReport.getObjectPreviousAmountFormatted("RC"), "align-right", 1);
@@ -290,7 +185,6 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
    tableRow = table.addRow();
    tableRow.addCell("RD", "align-left", 1);
    tableRow.addCell(bReport.getObjectDescription("RD"), "align-left", 1);
-   tableRow.addCell("-", "align-left", 1);
    tableRow.addCell(bReport.getObjectNote("RD"), "align-left", 1);
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("RD"), "align-right", 1);
    tableRow.addCell(bReport.getObjectPreviousAmountFormatted("RD"), "align-right", 1);
@@ -299,7 +193,6 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
    tableRow = table.addRow();
    tableRow.addCell("RE", "align-left", 1);
    tableRow.addCell(bReport.getObjectDescription("RE"), "align-left", 1);
-   tableRow.addCell("-", "align-left", 1);
    tableRow.addCell(bReport.getObjectNote("RE"), "align-left", 1);
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("RE"), "align-right", 1);
    tableRow.addCell(bReport.getObjectPreviousAmountFormatted("RE"), "align-right", 1);
@@ -308,7 +201,6 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
    tableRow = table.addRow();
    tableRow.addCell("RF", "align-left", 1);
    tableRow.addCell(bReport.getObjectDescription("RF"), "align-left", 1);
-   tableRow.addCell("-", "align-left", 1);
    tableRow.addCell(bReport.getObjectNote("RF"), "align-left", 1);
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("RF"), "align-right", 1);
    tableRow.addCell(bReport.getObjectPreviousAmountFormatted("RF"), "align-right", 1);
@@ -317,7 +209,6 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
    tableRow = table.addRow();
    tableRow.addCell("RG", "align-left", 1);
    tableRow.addCell(bReport.getObjectDescription("RG"), "align-left", 1);
-   tableRow.addCell("-", "align-left", 1);
    tableRow.addCell(bReport.getObjectNote("RG"), "align-left", 1);
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("RG"), "align-right", 1);
    tableRow.addCell(bReport.getObjectPreviousAmountFormatted("RG"), "align-right", 1);
@@ -326,88 +217,102 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
    tableRow = table.addRow();
    tableRow.addCell("RH", "align-left", 1);
    tableRow.addCell(bReport.getObjectDescription("RH"), "align-left", 1);
-   tableRow.addCell("-", "align-left", 1);
    tableRow.addCell(bReport.getObjectNote("RH"), "align-left", 1);
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("RH"), "align-right", 1);
    tableRow.addCell(bReport.getObjectPreviousAmountFormatted("RH"), "align-right", 1);
 
-   /* RI */
+   /* XA */
    tableRow = table.addRow();
-   tableRow.addCell("RI", "align-left", 1);
-   tableRow.addCell(bReport.getObjectDescription("RI"), "align-left", 1);
-   tableRow.addCell("-", "align-left", 1);
-   tableRow.addCell(bReport.getObjectNote("RI"), "align-left", 1);
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("RI"), "align-right", 1);
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("RI"), "align-right", 1);   
+   tableRow.addCell("XA", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
+   tableRow.addCell(bReport.getObjectDescription("XA"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
+   tableRow.addCell(bReport.getObjectNote("XA"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("XA"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("XA"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
 
-   /* RJ */
+   /* TA */   
    tableRow = table.addRow();
-   tableRow.addCell("RJ", "align-left", 1);
-   tableRow.addCell(bReport.getObjectDescription("RJ"), "align-left", 1);
-   tableRow.addCell("-", "align-left", 1);
-   tableRow.addCell(bReport.getObjectNote("RJ"), "align-left", 1);
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("RJ"), "align-right", 1);
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("RJ"), "align-right", 1);
+   tableRow.addCell("TA", "align-left", 1);
+   tableRow.addCell(bReport.getObjectDescription("TA"), "align-left", 1);
+   tableRow.addCell(bReport.getObjectNote("TA"), "align-left", 1);
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("TA"), "align-right", 1);
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("TA"), "align-right", 1);
 
-   /* XC */
+   /* TB */
    tableRow = table.addRow();
-   tableRow.addCell("XC", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectDescription("XC"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell("", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectNote("XC"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("XC"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("XC"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold"); 
+   tableRow.addCell("TB", "align-left", 1);
+   tableRow.addCell(bReport.getObjectDescription("TB"), "align-left", 1);
+   tableRow.addCell(bReport.getObjectNote("TB"), "align-left", 1);
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("TB"), "align-right", 1);
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("TB"), "align-right", 1);
 
-   /* RK */
+   /* TC */
    tableRow = table.addRow();
-   tableRow.addCell("RK", "align-left", 1);
-   tableRow.addCell(bReport.getObjectDescription("RK"), "align-left", 1);
-   tableRow.addCell("-", "align-left", 1);
-   tableRow.addCell(bReport.getObjectNote("RK"), "align-left", 1);
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("RK"), "align-right", 1);
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("RK"), "align-right", 1);
+   tableRow.addCell("TC", "align-left", 1);
+   tableRow.addCell(bReport.getObjectDescription("TC"), "align-left", 1);
+   tableRow.addCell(bReport.getObjectNote("TC"), "align-left", 1);
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("TC"), "align-right", 1);
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("TC"), "align-right", 1);
 
-   /* XD */
+   /* TD */
    tableRow = table.addRow();
-   tableRow.addCell("XD", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectDescription("XD"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell("", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectNote("XD"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("XD"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("XD"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold"); 
+   tableRow.addCell("TD", "align-left", 1);
+   tableRow.addCell(bReport.getObjectDescription("TD"), "align-left", 1);
+   tableRow.addCell(bReport.getObjectNote("TD"), "align-left", 1);
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("TD"), "align-right", 1);
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("TD"), "align-right", 1);
+
+   /* TE */
+   tableRow = table.addRow();
+   tableRow.addCell("TE", "align-left", 1);
+   tableRow.addCell(bReport.getObjectDescription("TE"), "align-left", 1);
+   tableRow.addCell(bReport.getObjectNote("TE"), "align-left", 1);
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("TE"), "align-right", 1);
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("TE"), "align-right", 1);
+
+   /* TF */
+   tableRow = table.addRow();
+   tableRow.addCell("TF", "align-left", 1);
+   tableRow.addCell(bReport.getObjectDescription("TF"), "align-left", 1);
+   tableRow.addCell(bReport.getObjectNote("TF"), "align-left", 1);
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("TF"), "align-right", 1);
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("TF"), "align-right", 1);
+
+   /* TG */
+   tableRow = table.addRow();
+   tableRow.addCell("TG", "align-left", 1);
+   tableRow.addCell(bReport.getObjectDescription("TG"), "align-left", 1);
+   tableRow.addCell(bReport.getObjectNote("TG"), "align-left", 1);
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("TG"), "align-right", 1);
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("TG"), "align-right", 1);
+
+   /* TH */
+   tableRow = table.addRow();
+   tableRow.addCell("TH", "align-left", 1);
+   tableRow.addCell(bReport.getObjectDescription("TH"), "align-left", 1);
+   tableRow.addCell(bReport.getObjectNote("TH"), "align-left", 1);
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("TH"), "align-right", 1);
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("TH"), "align-right", 1);
+
+   /* TI */
+   tableRow = table.addRow();
+   tableRow.addCell("TI", "align-left", 1);
+   tableRow.addCell(bReport.getObjectDescription("TI"), "align-left", 1);
+   tableRow.addCell(bReport.getObjectNote("TI"), "align-left", 1);
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("TI"), "align-right", 1);
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("TI"), "align-right", 1);
 
    /* TJ */
    tableRow = table.addRow();
    tableRow.addCell("TJ", "align-left", 1);
    tableRow.addCell(bReport.getObjectDescription("TJ"), "align-left", 1);
-   tableRow.addCell("+", "align-left", 1);
    tableRow.addCell(bReport.getObjectNote("TJ"), "align-left", 1);
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("TJ"), "align-right", 1);
    tableRow.addCell(bReport.getObjectPreviousAmountFormatted("TJ"), "align-right", 1);
-
-   /* RL */
-   tableRow = table.addRow();
-   tableRow.addCell("RL", "align-left", 1);
-   tableRow.addCell(bReport.getObjectDescription("RL"), "align-left", 1);
-   tableRow.addCell("-", "align-left", 1);
-   tableRow.addCell(bReport.getObjectNote("RL"), "align-left", 1);
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("RL"), "align-right", 1);
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("RL"), "align-right", 1);
-
-   /* XE */
-   tableRow = table.addRow();
-   tableRow.addCell("XE", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectDescription("XE"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell("", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectNote("XE"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("XE"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("XE"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold"); 
 
    /* TK */
    tableRow = table.addRow();
    tableRow.addCell("TK", "align-left", 1);
    tableRow.addCell(bReport.getObjectDescription("TK"), "align-left", 1);
-   tableRow.addCell("+", "align-left", 1);
    tableRow.addCell(bReport.getObjectNote("TK"), "align-left", 1);
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("TK"), "align-right", 1);
    tableRow.addCell(bReport.getObjectPreviousAmountFormatted("TK"), "align-right", 1);
@@ -416,127 +321,57 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
    tableRow = table.addRow();
    tableRow.addCell("TL", "align-left", 1);
    tableRow.addCell(bReport.getObjectDescription("TL"), "align-left", 1);
-   tableRow.addCell("+", "align-left", 1);
    tableRow.addCell(bReport.getObjectNote("TL"), "align-left", 1);
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("TL"), "align-right", 1);
    tableRow.addCell(bReport.getObjectPreviousAmountFormatted("TL"), "align-right", 1);
+
+   /* XB */
+   tableRow = table.addRow();
+   tableRow.addCell("XB", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
+   tableRow.addCell(bReport.getObjectDescription("XB"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
+   tableRow.addCell(bReport.getObjectNote("XB"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("XB"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("XB"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold"); 
+
+   /* XC */
+   tableRow = table.addRow();
+   tableRow.addCell("XC", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
+   tableRow.addCell(bReport.getObjectDescription("XC"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
+   tableRow.addCell(bReport.getObjectNote("XC"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("XC"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("XC"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
 
    /* TM */
    tableRow = table.addRow();
    tableRow.addCell("TM", "align-left", 1);
    tableRow.addCell(bReport.getObjectDescription("TM"), "align-left", 1);
-   tableRow.addCell("+", "align-left", 1);
    tableRow.addCell(bReport.getObjectNote("TM"), "align-left", 1);
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("TM"), "align-right", 1);
    tableRow.addCell(bReport.getObjectPreviousAmountFormatted("TM"), "align-right", 1);
-
-   /* RM */
-   tableRow = table.addRow();
-   tableRow.addCell("RM", "align-left", 1);
-   tableRow.addCell(bReport.getObjectDescription("RM"), "align-left", 1);
-   tableRow.addCell("-", "align-left", 1);
-   tableRow.addCell(bReport.getObjectNote("RM"), "align-left", 1);
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("RM"), "align-right", 1);
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("RM"), "align-right", 1);
-
-   /* RN */
-   tableRow = table.addRow();
-   tableRow.addCell("RN", "align-left", 1);
-   tableRow.addCell(bReport.getObjectDescription("RN"), "align-left", 1);
-   tableRow.addCell("-", "align-left", 1);
-   tableRow.addCell(bReport.getObjectNote("RN"), "align-left", 1);
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("RN"), "align-right", 1);
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("RN"), "align-right", 1);
-
-   /* XF */
-   tableRow = table.addRow();
-   tableRow.addCell("XF", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectDescription("XF"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell("", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectNote("XF"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("XF"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("XF"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold"); 
-
-   /* XG */
-   tableRow = table.addRow();
-   tableRow.addCell("XG", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectDescription("XG"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell("", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectNote("XG"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("XG"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("XG"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold"); 
 
    /* TN */
    tableRow = table.addRow();
    tableRow.addCell("TN", "align-left", 1);
    tableRow.addCell(bReport.getObjectDescription("TN"), "align-left", 1);
-   tableRow.addCell("+", "align-left", 1);
    tableRow.addCell(bReport.getObjectNote("TN"), "align-left", 1);
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("TN"), "align-right", 1);
    tableRow.addCell(bReport.getObjectPreviousAmountFormatted("TN"), "align-right", 1);
 
-   /* TO */
+   /* XD */
    tableRow = table.addRow();
-   tableRow.addCell("TO", "align-left", 1);
-   tableRow.addCell(bReport.getObjectDescription("TO"), "align-left", 1);
-   tableRow.addCell("+", "align-left", 1);
-   tableRow.addCell(bReport.getObjectNote("TO"), "align-left", 1);
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("TO"), "align-right", 1);
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("TO"), "align-right", 1);
+   tableRow.addCell("XD", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
+   tableRow.addCell(bReport.getObjectDescription("XD"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
+   tableRow.addCell(bReport.getObjectNote("XD"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("XD"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("XD"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold"); 
 
-   /* RO */
+   /* XE */
    tableRow = table.addRow();
-   tableRow.addCell("RO", "align-left", 1);
-   tableRow.addCell(bReport.getObjectDescription("RO"), "align-left", 1);
-   tableRow.addCell("-", "align-left", 1);
-   tableRow.addCell(bReport.getObjectNote("RO"), "align-left", 1);
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("RO"), "align-right", 1);
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("RO"), "align-right", 1);
-
-   /* RP */
-   tableRow = table.addRow();
-   tableRow.addCell("RP", "align-left", 1);
-   tableRow.addCell(bReport.getObjectDescription("RP"), "align-left", 1);
-   tableRow.addCell("-", "align-left", 1);
-   tableRow.addCell(bReport.getObjectNote("RP"), "align-left", 1);
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("RP"), "align-right", 1);
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("RP"), "align-right", 1);
-
-   /* XH */
-   tableRow = table.addRow();
-   tableRow.addCell("XH", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectDescription("XH"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell("", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectNote("XH"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("XH"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("XH"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold"); 
-
-   /* RQ */
-   tableRow = table.addRow();
-   tableRow.addCell("RQ", "align-left", 1);
-   tableRow.addCell(bReport.getObjectDescription("RQ"), "align-left", 1);
-   tableRow.addCell("-", "align-left", 1);
-   tableRow.addCell(bReport.getObjectNote("RQ"), "align-left", 1);
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("RQ"), "align-right", 1);
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("RQ"), "align-right", 1);
-
-   /* RS */
-   tableRow = table.addRow();
-   tableRow.addCell("RS", "align-left", 1);
-   tableRow.addCell(bReport.getObjectDescription("RS"), "align-left", 1);
-   tableRow.addCell("-", "align-left", 1);
-   tableRow.addCell(bReport.getObjectNote("RS"), "align-left", 1);
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("RS"), "align-right", 1);
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("RS"), "align-right", 1);
-
-   /* XI */
-   tableRow = table.addRow();
-   tableRow.addCell("XI", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectDescription("XI"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell("", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectNote("XI"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("XI"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("XI"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold"); 
+   tableRow.addCell("XE", "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
+   tableRow.addCell(bReport.getObjectDescription("XE"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
+   tableRow.addCell(bReport.getObjectNote("XE"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
+   tableRow.addCell(bReport.getObjectCurrentAmountFormatted("XE"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("XE"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold"); 
 
    //checkResults(banDoc, startDate, endDate);
 
