@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-// @id = ch.banana.africa.easyprofitloss
+// @id = ch.banana.africa.asblreportsohadardc
 // @api = 1.0
 // @pubdate = 2023-12-16
 // @publisher = Banana.ch SA
