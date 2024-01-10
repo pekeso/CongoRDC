@@ -102,41 +102,41 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
    var previousYear = currentYear - 1;
    var months = monthDiff(Banana.Converter.toDate(endDate), Banana.Converter.toDate(startDate));
 
-   var company = banDoc.info("AccountingDataBase","Company");
-   var address1 = banDoc.info("AccountingDataBase","Address1");
-   var zip = banDoc.info("AccountingDataBase","Zip");
-   var city = banDoc.info("AccountingDataBase","City");
-   var state = banDoc.info("AccountingDataBase","State");
-   var email = banDoc.info("AccountingDataBase","Email");
+   var company = banDoc.info("AccountingDataBase", "Company");
+   var address1 = banDoc.info("AccountingDataBase", "Address1");
+   var zip = banDoc.info("AccountingDataBase", "Zip");
+   var city = banDoc.info("AccountingDataBase", "City");
+   var state = banDoc.info("AccountingDataBase", "State");
+   var email = banDoc.info("AccountingDataBase", "Email");
 
-   
+
    /**************************************************************************************
    * COMPTE DE RÉSULTAT
    **************************************************************************************/
-    var table = report.addTable("table");
-    var column1 = table.addColumn("column1");
-    var column2 = table.addColumn("column2");
-    var column3 = table.addColumn("column3");
+   var table = report.addTable("table");
+   var column1 = table.addColumn("column1");
+   var column2 = table.addColumn("column2");
+   var column3 = table.addColumn("column3");
 
-    var tableRow = table.addRow(); 
-    tableRow.addCell(company, "bold", 1);
-    tableRow.addCell("Exercice clos le " + Banana.Converter.toLocaleDateFormat(endDate), "", 2);
-    tableRow = table.addRow();
-    tableRow.addCell(address1 + " - " + city + " - " + state, "", 1);
-    tableRow.addCell("Durée (en mois) " + months, "", 2);
+   var tableRow = table.addRow();
+   tableRow.addCell(company, "bold", 1);
+   tableRow.addCell("Exercice clos le " + Banana.Converter.toLocaleDateFormat(endDate), "", 2);
+   tableRow = table.addRow();
+   tableRow.addCell(address1 + " - " + city + " - " + state, "", 1);
+   tableRow.addCell("Durée (en mois) " + months, "", 2);
 
-    tableRow = table.addRow();
-    tableRow.addCell(" ", "", 3);
-    tableRow = table.addRow();
-    tableRow.addCell(" ", "", 3);
+   tableRow = table.addRow();
+   tableRow.addCell(" ", "", 3);
+   tableRow = table.addRow();
+   tableRow.addCell(" ", "", 3);
 
-    tableRow = table.addRow();
-    tableRow.addCell("COMPTE DE RÉSULTAT AU 31 DÉCEMBRE "  + currentYear, "bold align-center", 3);
+   tableRow = table.addRow();
+   tableRow.addCell("COMPTE DE RÉSULTAT AU 31 DÉCEMBRE " + currentYear, "bold align-center", 3);
 
-    tableRow = table.addRow();
-    tableRow.addCell(" ", "", 6);
+   tableRow = table.addRow();
+   tableRow.addCell(" ", "", 6);
 
-    // Profit & Loss table
+   // Profit & Loss table
    var table = report.addTable("table-profit-loss");
    var columnProfitLoss1 = table.addColumn("column-profit-loss1");
    var columnProfitLoss2 = table.addColumn("column-profit-loss2");
@@ -145,17 +145,17 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
    var columnProfitLoss5 = table.addColumn("column-profit-loss5");
 
    tableRow = table.addRow();
-   tableRow.addCell("REF","bold align-center",1).setStyleAttributes("border-bottom:thin solid white;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell("LIBELLÉS","bold align-center",1).setStyleAttributes("border-bottom:thin solid white;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell("Note","bold align-center",1).setStyleAttributes("border-bottom:thin solid white;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell("EXERCICE AU 31/12/" + currentYear,"bold align-center",1).setStyleAttributes("border-bottom:thin solid white;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell("EXERCICE AU 31/12/" + previousYear,"bold align-center",1).setStyleAttributes("border-bottom:thin solid white;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell("REF", "bold align-center", 1).setStyleAttributes("border-bottom:thin solid white;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell("LIBELLÉS", "bold align-center", 1).setStyleAttributes("border-bottom:thin solid white;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell("Note", "bold align-center", 1).setStyleAttributes("border-bottom:thin solid white;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell("EXERCICE AU 31/12/" + currentYear, "bold align-center", 1).setStyleAttributes("border-bottom:thin solid white;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell("EXERCICE AU 31/12/" + previousYear, "bold align-center", 1).setStyleAttributes("border-bottom:thin solid white;padding-bottom:2px;padding-top:5px");
    tableRow = table.addRow();
-   tableRow.addCell("","bold align-center",1).setStyleAttributes("padding-bottom:2px;padding-top:5px");
-   tableRow.addCell("","bold align-center",1).setStyleAttributes("padding-bottom:2px;padding-top:5px");
-   tableRow.addCell("","bold align-center",1).setStyleAttributes("padding-bottom:2px;padding-top:5px");
-   tableRow.addCell("NET","bold align-center",1).setStyleAttributes("padding-bottom:2px;padding-top:5px");
-   tableRow.addCell("NET","bold align-center",1).setStyleAttributes("padding-bottom:2px;padding-top:5px");
+   tableRow.addCell("", "bold align-center", 1).setStyleAttributes("padding-bottom:2px;padding-top:5px");
+   tableRow.addCell("", "bold align-center", 1).setStyleAttributes("padding-bottom:2px;padding-top:5px");
+   tableRow.addCell("", "bold align-center", 1).setStyleAttributes("padding-bottom:2px;padding-top:5px");
+   tableRow.addCell("NET", "bold align-center", 1).setStyleAttributes("padding-bottom:2px;padding-top:5px");
+   tableRow.addCell("NET", "bold align-center", 1).setStyleAttributes("padding-bottom:2px;padding-top:5px");
 
    /* RA */
    tableRow = table.addRow();
@@ -229,7 +229,7 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("XA"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
    tableRow.addCell(bReport.getObjectPreviousAmountFormatted("XA"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
 
-   /* TA */   
+   /* TA */
    tableRow = table.addRow();
    tableRow.addCell("TA", "align-left", 1);
    tableRow.addCell(bReport.getObjectDescription("TA"), "align-left", 1);
@@ -331,7 +331,7 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
    tableRow.addCell(bReport.getObjectDescription("XB"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
    tableRow.addCell(bReport.getObjectNote("XB"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("XB"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("XB"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold"); 
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("XB"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
 
    /* XC */
    tableRow = table.addRow();
@@ -363,7 +363,7 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
    tableRow.addCell(bReport.getObjectDescription("XD"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
    tableRow.addCell(bReport.getObjectNote("XD"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("XD"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("XD"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold"); 
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("XD"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
 
    /* XE */
    tableRow = table.addRow();
@@ -371,7 +371,7 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
    tableRow.addCell(bReport.getObjectDescription("XE"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
    tableRow.addCell(bReport.getObjectNote("XE"), "align-left", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
    tableRow.addCell(bReport.getObjectCurrentAmountFormatted("XE"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
-   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("XE"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold"); 
+   tableRow.addCell(bReport.getObjectPreviousAmountFormatted("XE"), "align-right", 1).setStyleAttributes("background-color: #C0C0C0; font-weight: bold");
 
    //checkResults(banDoc, startDate, endDate);
 
@@ -387,20 +387,20 @@ function printprofitlossstatement(banDoc, userParam, bReport, stylesheet) {
 *
 **************************************************************************************/
 function monthDiff(d1, d2) {
-    if (d2 < d1) { 
-       var dTmp = d2;
-       d2 = d1;
-       d1 = dTmp;
-    }
-    var months = (d2.getFullYear() - d1.getFullYear()) * 12;
-    months -= d1.getMonth(); //+1
-    months += d2.getMonth();
- 
-    if (d1.getDate() <= d2.getDate()) {
-       months += 1;
-    }
-    return months;
- }
+   if (d2 < d1) {
+      var dTmp = d2;
+      d2 = d1;
+      d1 = dTmp;
+   }
+   var months = (d2.getFullYear() - d1.getFullYear()) * 12;
+   months -= d1.getMonth(); //+1
+   months += d2.getMonth();
+
+   if (d1.getDate() <= d2.getDate()) {
+      months += 1;
+   }
+   return months;
+}
 
 function checkResults(banDoc, startDate, endDate) {
 }
@@ -447,7 +447,7 @@ function convertParam(userParam) {
    currentParam.type = 'bool';
    currentParam.value = userParam.logo ? true : false;
    currentParam.defaultvalue = false;
-   currentParam.readValue = function() {
+   currentParam.readValue = function () {
       userParam.logo = this.value;
    }
    convertedParam.data.push(currentParam);
@@ -458,8 +458,8 @@ function convertParam(userParam) {
    currentParam.type = 'string';
    currentParam.value = userParam.logoname ? userParam.logoname : 'Logo';
    currentParam.defaultvalue = 'Logo';
-   currentParam.readValue = function() {
-     userParam.logoname = this.value;
+   currentParam.readValue = function () {
+      userParam.logoname = this.value;
    }
    convertedParam.data.push(currentParam);
 
@@ -469,8 +469,8 @@ function convertParam(userParam) {
    currentParam.type = 'bool';
    currentParam.value = userParam.printheader ? true : false;
    currentParam.defaultvalue = false;
-   currentParam.readValue = function() {
-    userParam.printheader = this.value;
+   currentParam.readValue = function () {
+      userParam.printheader = this.value;
    }
    convertedParam.data.push(currentParam);
 
@@ -480,8 +480,8 @@ function convertParam(userParam) {
    currentParam.type = 'bool';
    currentParam.value = userParam.printtitle ? true : false;
    currentParam.defaultvalue = true;
-   currentParam.readValue = function() {
-    userParam.printtitle = this.value;
+   currentParam.readValue = function () {
+      userParam.printtitle = this.value;
    }
    convertedParam.data.push(currentParam);
 
@@ -502,7 +502,7 @@ function convertParam(userParam) {
    currentParam.type = 'string';
    currentParam.value = userParam.column ? userParam.column : 'Gr';
    currentParam.defaultvalue = 'Gr';
-   currentParam.readValue = function() {
+   currentParam.readValue = function () {
       userParam.column = this.value;
    }
    convertedParam.data.push(currentParam);
@@ -513,7 +513,7 @@ function convertParam(userParam) {
    currentParam.type = 'bool';
    currentParam.value = userParam.decimals ? userParam.decimals : false;
    currentParam.defaultvalue = false;
-   currentParam.readValue = function() {
+   currentParam.readValue = function () {
       userParam.decimals = this.value;
    }
    convertedParam.data.push(currentParam);
@@ -533,10 +533,10 @@ function initUserParam() {
 }
 
 function parametersDialog(userParam) {
-   if (typeof(Banana.Ui.openPropertyEditor) !== 'undefined') {
+   if (typeof (Banana.Ui.openPropertyEditor) !== 'undefined') {
       var dialogTitle = "Parametri";
       var convertedParam = convertParam(userParam);
-      var pageAnchor = 'dlgSettings';
+      var pageAnchor = 'ch.banana.africa.asblreportsohadardc';
       if (!Banana.Ui.openPropertyEditor(dialogTitle, convertedParam, pageAnchor)) {
          return null;
       }
@@ -606,7 +606,7 @@ function bananaRequiredVersion(requiredVersion, expmVersion) {
          }
          else {
             Banana.application.showMessages();
-            Banana.document.addMessage(getErrorMessage(ID_ERR_LICENCE_ADVANCED));           
+            Banana.document.addMessage(getErrorMessage(ID_ERR_LICENCE_ADVANCED));
             return false;
          }
       }
