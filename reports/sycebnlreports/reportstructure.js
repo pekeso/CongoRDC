@@ -182,8 +182,8 @@ function createReportStructureBalanceSheet() {
     reportStructure.push({"id":"CC", "type":"group", "note":"15", "bclass":"2", "description":"Droit d'entrée"});
     reportStructure.push({"id":"CD", "type":"group", "note":"15", "bclass":"2", "description":"Dotation consomptible"});
     reportStructure.push({"id":"CE", "type":"group", "note":"5F", "bclass":"2", "description":"Ecarts de réévaluation"});
-    reportStructure.push({"id":"CF", "type":"group", "note":"16", "bclass":"2", "description":"Report a nouveau (+ ou-)"});
-    reportStructure.push({"id":"CG", "type":"group", "note":"16", "bclass":"2", "description":"Réserves"});
+    reportStructure.push({"id":"CF", "type":"group", "note":"16", "bclass":"2", "description":"Réserves"});
+    reportStructure.push({"id":"CG", "type":"group", "note":"16", "bclass":"2", "description":"Report à nouveau (+ ou-)"});
     reportStructure.push({"id":"CHT", "type":"group", "note":"", "bclass":"2", "description":"Résultat net de l'exercice (excédent + ou déficit -)"});
     reportStructure.push({"id":"CH", "type":"group", "note":"", "description":"Résultat net de l'exercice (excédent + ou déficit -)", 
                             "sum":"-RA;-RB;-RC;-RD;-RE;-RF;-RG;-RH;TA;TB;TC;TD;TE;TF;TG;TH;TI;TJ;TK;TL;TM;TN;CHT"});

@@ -18,7 +18,7 @@
 \newenvironment{testcase}[1]{\section*{Test: #1}}{\newpage}
 \newenvironment{test}[1]{\section*{Test case: #1}}{}
 %Begin test data
-%%SCRIPT{C:/Users/joemb/Banana/CongoRDC/asblreports/test/ch.banana.africa.asblbalancesheet.test.js}
+%%SCRIPT{C:/Users/joemb/Banana/CongoRDC/reports/sycebnlreports/test/ch.banana.africa.asblbalancesheet.test.js}
 %
 \begin{testcase}{AsblBalanceSheetReport}
 \begin{test}{testBananaExtension}
@@ -83,8 +83,8 @@ CB  & Dotation non consomptible avec droit reprise  & 15  & 0.00  & 0.00 \\
 CC  & Droit d'entrée  & 15  & 98'000'000.00  & 67'500'000.00 \\
 CD  & Dotation consomptible  & 15  & 17'000'000.00  & 17'000'000.00 \\
 CE  & Ecarts de réévaluation  & 5F  & 0.00  & 0.00 \\
-CF  & Report a nouveau (+ ou-)  & 16  & 8'000'000.00  & 8'000'000.00 \\
-CG  & Réserves  & 16  & 0.00  & 0.00 \\
+CF  & Réserves  & 16  & 8'000'000.00  & 8'000'000.00 \\
+CG  & Report à nouveau (+ ou-)  & 16  & 0.00  & 0.00 \\
 CH  & Résultat net de l'exercice (excédent + ou déficit -)  &    & 199'400'000.00  & 128'400'000.00 \\
 CI  & Subventions d'investissement  & 17A  & 368'950'000.00  & 248'950'000.00 \\
 CJ  & Provisions réglementées  & 17A  & 0.00  & 0.00 \\
