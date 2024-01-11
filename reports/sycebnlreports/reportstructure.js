@@ -226,7 +226,7 @@ function createReportStructureProfitLoss() {
     reportStructure.push({"id":"RF", "type":"group", "note":"23", "bclass":"4", "description":"Subventions d'exploitation"});
     reportStructure.push({"id":"RG", "type":"group", "note":"23", "bclass":"4", "description":"Autres produits et transferts de charges"});
     reportStructure.push({"id":"RH", "type":"group", "note":"23", "bclass":"4", "description":"Reprises de provisions, dépréciations, subventions et autres reprises"});
-    reportStructure.push({"id":"XA", "type":"total", "note":"", "description":"REVENUS DES ACTIVITES ORDINAIRES (Somme RA a RG)", "sum":"RA;RB;RC;RD;RE;RF;RG;RH"});
+    reportStructure.push({"id":"XA", "type":"total", "note":"", "description":"REVENUS DES ACTIVITES ORDINAIRES (Somme RA à RH)", "sum":"RA;RB;RC;RD;RE;RF;RG;RH"});
     reportStructure.push({"id":"TA", "type":"group", "note":"24", "bclass":"3", "description":"Achats de biens et services liés à l'activité"});
     reportStructure.push({"id":"TB", "type":"group", "note":"24", "bclass":"3", "description":"Variation de stocks des achats de biens et services liés à l'activite"});
     reportStructure.push({"id":"TC", "type":"group", "note":"24", "bclass":"3", "description":"Achats de marchandises et matières premières"});
