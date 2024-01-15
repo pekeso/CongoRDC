@@ -182,8 +182,8 @@ function createReportStructureBalanceSheet() {
     reportStructure.push({"id":"CC", "type":"group", "note":"15", "bclass":"2", "description":"Droit d'entrée"});
     reportStructure.push({"id":"CD", "type":"group", "note":"15", "bclass":"2", "description":"Dotation consomptible"});
     reportStructure.push({"id":"CE", "type":"group", "note":"5F", "bclass":"2", "description":"Ecarts de réévaluation"});
-    reportStructure.push({"id":"CF", "type":"group", "note":"16", "bclass":"2", "description":"Report a nouveau (+ ou-)"});
-    reportStructure.push({"id":"CG", "type":"group", "note":"16", "bclass":"2", "description":"Réserves"});
+    reportStructure.push({"id":"CF", "type":"group", "note":"16", "bclass":"2", "description":"Réserves"});
+    reportStructure.push({"id":"CG", "type":"group", "note":"16", "bclass":"2", "description":"Report à nouveau (+ ou-)"});
     reportStructure.push({"id":"CHT", "type":"group", "note":"", "bclass":"2", "description":"Résultat net de l'exercice (excédent + ou déficit -)"});
     reportStructure.push({"id":"CH", "type":"group", "note":"", "description":"Résultat net de l'exercice (excédent + ou déficit -)", 
                             "sum":"-RA;-RB;-RC;-RD;-RE;-RF;-RG;-RH;TA;TB;TC;TD;TE;TF;TG;TH;TI;TJ;TK;TL;TM;TN;CHT"});
@@ -226,7 +226,7 @@ function createReportStructureProfitLoss() {
     reportStructure.push({"id":"RF", "type":"group", "note":"23", "bclass":"4", "description":"Subventions d'exploitation"});
     reportStructure.push({"id":"RG", "type":"group", "note":"23", "bclass":"4", "description":"Autres produits et transferts de charges"});
     reportStructure.push({"id":"RH", "type":"group", "note":"23", "bclass":"4", "description":"Reprises de provisions, dépréciations, subventions et autres reprises"});
-    reportStructure.push({"id":"XA", "type":"total", "note":"", "description":"REVENUS DES ACTIVITES ORDINAIRES (Somme RA a RG)", "sum":"RA;RB;RC;RD;RE;RF;RG;RH"});
+    reportStructure.push({"id":"XA", "type":"total", "note":"", "description":"REVENUS DES ACTIVITES ORDINAIRES (Somme RA à RH)", "sum":"RA;RB;RC;RD;RE;RF;RG;RH"});
     reportStructure.push({"id":"TA", "type":"group", "note":"24", "bclass":"3", "description":"Achats de biens et services liés à l'activité"});
     reportStructure.push({"id":"TB", "type":"group", "note":"24", "bclass":"3", "description":"Variation de stocks des achats de biens et services liés à l'activite"});
     reportStructure.push({"id":"TC", "type":"group", "note":"24", "bclass":"3", "description":"Achats de marchandises et matières premières"});
