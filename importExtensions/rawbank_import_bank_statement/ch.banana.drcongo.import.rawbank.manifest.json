@@ -1,0 +1,19 @@
+{
+    "category": "import",
+    "country": "drcongo",
+    "countryCode": "cd",
+    "description": "Rawbank - Import movements .csv (Banana+ Advanced)",
+    "description.en": "Rawbank - Import movements .csv (Banana+ Advanced)",
+    "description.it": "Rawbank - Importa movimenti .csv (Banana+ Advanced)",
+    "description.de": "Rawbank - Bewegungen importieren .csv (Banana+ Advanced)",
+    "description.fr": "Rawbank - Importer mouvements .csv (Banana+ Advanced)",
+    "id": "ch.banana.drcongo.import.rawbank",
+    "language": "en",
+    "publisher": "Banana.ch",
+    "title": "Rawbank - Import movements .csv (Banana+ Advanced)",
+    "title.en": "Rawbank - Import movements .csv (Banana+ Advanced)",
+    "title.it": "Rawbank - Importa movimenti .csv (Banana+ Advanced)",
+    "title.de": "Rawbank - Bewegungen importieren .csv (Banana+ Advanced)",
+    "title.fr": "Rawbank - Importer mouvements .csv (Banana+ Advanced)",
+    "version": "1.0"
+}
