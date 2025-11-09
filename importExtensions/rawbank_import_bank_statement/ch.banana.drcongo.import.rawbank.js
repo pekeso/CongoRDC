@@ -26,7 +26,7 @@
 // @task = import.transactions
 // @outputformat = transactions.simple
 // @inputdatasource = openfiledialog
-// @inputencoding = latin1
+// @inputencoding = UTF-8
 // @inputfilefilter = Text files (*.txt *.csv);;All files (*.*)
 // @inputfilefilter.de = Text (*.txt *.csv);;Alle Dateien (*.*)
 // @inputfilefilter.fr = Texte (*.txt *.csv);;Tous (*.*)
@@ -120,7 +120,7 @@ function exec(string, isTest) {
        }
  
        // Sort rows by date
-       transactionsToImport = transactionsToImport.reverse();
+    //    transactionsToImport = transactionsToImport.reverse();
  
        // Add header and return
        var header = [["Date", "DateValue", "Doc", "ExternalReference", "Description", "Income", "Expenses"]];
@@ -149,12 +149,12 @@ function exec(string, isTest) {
         let mappedLine = [];
    
         mappedLine.push(Banana.Converter.toInternalDateFormat(transaction["Date"], "dd.mm.yyyy"));
-        mappedLine.push(Banana.Converter.toInternalDateFormat("", "dd.mm.yyyy"));
+        mappedLine.push(Banana.Converter.toInternalDateFormat(transaction["DateValue"], "dd.mm.yyyy"));
         mappedLine.push("");
         mappedLine.push("");
         mappedLine.push(transaction["Description"]);
-        mappedLine.push(Banana.Converter.toInternalNumberFormat(transaction["Credit"], "."));
-        mappedLine.push(Banana.Converter.toInternalNumberFormat(transaction["Debit"], "."));
+        mappedLine.push(Banana.Converter.toInternalNumberFormat(transaction["Credit"], ","));
+        mappedLine.push(Banana.Converter.toInternalNumberFormat(transaction["Debit"], ","));
  
         return mappedLine;
     }
@@ -178,8 +178,8 @@ function exec(string, isTest) {
  
     /** SPECIFY AT WHICH ROW OF THE CSV FILE IS THE HEADER (COLUMN TITLES)
     We suppose the data will always begin right away after the header line */
-    convertionParam.headerLineStart = 11;
-    convertionParam.dataLineStart = 12;
+    convertionParam.headerLineStart = 12;
+    convertionParam.dataLineStart = 13;
  
     /** SPECIFY THE COLUMN TO USE FOR SORTING
     If sortColums is empty the data are not sorted */
